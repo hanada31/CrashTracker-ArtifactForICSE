@@ -1,0 +1,60 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-938",
+		"Method":"android.app.Fragment.getResources",
+		"Crash Message":"Fragment EditPostContentFragment{42b58398} not attached to Activity",
+		"stack trace":[
+			"android.support.v4.app.Fragment.getResources",
+			"org.wordpress.android.ui.posts.EditPostContentFragment$processAttachmentsTask.onPostExecute",
+			"org.wordpress.android.ui.posts.EditPostContentFragment$processAttachmentsTask.onPostExecute",
+			"android.os.AsyncTask.finish",
+			"android.os.AsyncTask.access$600",
+			"android.os.AsyncTask$InternalHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.posts.EditPostContentFragment$processAttachmentsTask.onPostExecute"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFragment \\E[\\s\\S]*\\Q not attached to Activity\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 != null\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostContentFragment$processAttachmentsTask.onPostExecute",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostContentFragment$processAttachmentsTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

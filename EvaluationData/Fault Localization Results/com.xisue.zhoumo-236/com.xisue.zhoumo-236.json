@@ -1,0 +1,137 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.xisue.zhoumo-236",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.amap.api.location.LocationManagerProxy.requestLocationUpdates",
+			"com.xisue.zhoumo.d.f.c",
+			"com.xisue.zhoumo.ui.StartActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.xisue.zhoumo.d.f.c"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.xisue.zhoumo.d.f.c",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.xisue.zhoumo.d.f.c"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xisue.zhoumo.ui.StartActivity.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.xisue.zhoumo.ui.StartActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amap.api.location.LocationManagerProxy.requestLocationUpdates",
+				"Candidate Score":80,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.amap.api.location.LocationManagerProxy.requestLocationUpdates"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amap.api.location.LocationManagerProxy.<clinit>",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amap.api.location.LocationManagerProxy: void requestLocationUpdates(java.lang.String,long,float,android.app.PendingIntent)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amap.api.location.LocationManagerProxy: void requestLocationUpdates(java.lang.String,long,float,android.app.PendingIntent)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amap.api.location.LocationManagerProxy: void requestLocationUpdates(java.lang.String,long,float,android.app.PendingIntent)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amap.api.location.LocationManagerProxy: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

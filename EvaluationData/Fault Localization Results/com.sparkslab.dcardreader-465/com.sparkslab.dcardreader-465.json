@@ -1,0 +1,65 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.sparkslab.dcardreader-465",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.sparkslab.dcardreader }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.sparkslab.dcardreader.InitialActivity$4$6.onClick",
+			"android.support.v7.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.sparkslab.dcardreader.InitialActivity$4$6.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.sparkslab.dcardreader.InitialActivity$4$6.onClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.sparkslab.dcardreader.InitialActivity$4$6: void onClick(android.content.DialogInterface,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.sparkslab.dcardreader.InitialActivity$4$6.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

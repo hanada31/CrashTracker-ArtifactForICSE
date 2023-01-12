@@ -1,0 +1,311 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-5591",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such column: title (code 1): , while compiling: SELECT geocode FROM cg_caches WHERE title = ?",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.compileStatement",
+			"cgeo.geocaching.storage.DataStore$PreparedStatement.getStatement",
+			"cgeo.geocaching.storage.DataStore$PreparedStatement.access$500",
+			"cgeo.geocaching.storage.DataStore.getGeocodeForTitle",
+			"cgeo.geocaching.files.GPXParser.findParentCache",
+			"cgeo.geocaching.files.GPXParser.access$1500",
+			"cgeo.geocaching.files.GPXParser$4.addWaypointToCache",
+			"cgeo.geocaching.files.GPXParser$4.end",
+			"android.sax.RootElement$Handler.endElement",
+			"org.apache.harmony.xml.ExpatParser.endElement",
+			"org.apache.harmony.xml.ExpatParser.appendChars",
+			"org.apache.harmony.xml.ExpatParser.parseFragment",
+			"org.apache.harmony.xml.ExpatParser.parseDocument",
+			"org.apache.harmony.xml.ExpatReader.parse",
+			"org.apache.harmony.xml.ExpatReader.parse",
+			"android.util.Xml.parse",
+			"cgeo.geocaching.files.GPXParser.parse",
+			"cgeo.geocaching.files.GPXParserTest.readVersionedGPX",
+			"cgeo.geocaching.files.GPXParserTest.readGPX10",
+			"cgeo.geocaching.files.GPXParserTest.testGc31j2hWptsWithoutCache",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.storage.DataStore$PreparedStatement.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.storage.DataStore$PreparedStatement.getStatement",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.storage.DataStore$PreparedStatement.getStatement"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cgeo.geocaching.storage.DataStore$PreparedStatement: java.lang.String query>",
+						"Influenced By Method":"<cgeo.geocaching.storage.DataStore$PreparedStatement: android.database.sqlite.SQLiteStatement getStatement()>",
+						"Trace":[
+							"<cgeo.geocaching.storage.DataStore$PreparedStatement: android.database.sqlite.SQLiteStatement getStatement()>",
+							"modify key field: <cgeo.geocaching.storage.DataStore$PreparedStatement: java.lang.String query>",
+							"<cgeo.geocaching.storage.DataStore$PreparedStatement: android.database.sqlite.SQLiteStatement getStatement()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.storage.DataStore$PreparedStatement.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cgeo.geocaching.storage.DataStore$PreparedStatement: java.lang.String query>",
+						"Influenced By Method":"<cgeo.geocaching.storage.DataStore$PreparedStatement: void <init>(java.lang.String,int,java.lang.String)>",
+						"Trace":[
+							"<cgeo.geocaching.storage.DataStore$PreparedStatement: void <init>(java.lang.String,int,java.lang.String)>",
+							"modify key field: <cgeo.geocaching.storage.DataStore$PreparedStatement: java.lang.String query>",
+							"<cgeo.geocaching.storage.DataStore$PreparedStatement: android.database.sqlite.SQLiteStatement getStatement()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.storage.DataStore$PreparedStatement.access$500",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.storage.DataStore$PreparedStatement.access$500"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.storage.DataStore.getGeocodeForTitle",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.storage.DataStore.getGeocodeForTitle"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParser.findParentCache",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParser.findParentCache"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParser.access$1500",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParser.access$1500"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParser$4.addWaypointToCache",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParser$4.addWaypointToCache"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParser$4.end",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParser$4.end"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParser.parse",
+				"Candidate Score":85,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParser.parse"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParserTest.readVersionedGPX",
+				"Candidate Score":84,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParserTest.readVersionedGPX"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParserTest.readGPX10",
+				"Candidate Score":83,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParserTest.readGPX10"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.files.GPXParserTest.testGc31j2hWptsWithoutCache",
+				"Candidate Score":82,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"cgeo.geocaching.files.GPXParserTest.testGc31j2hWptsWithoutCache"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.apache.harmony.xml.ExpatParser.endElement",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.apache.harmony.xml.ExpatParser.endElement"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.apache.harmony.xml.ExpatParser.appendChars",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.apache.harmony.xml.ExpatParser.appendChars"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.apache.harmony.xml.ExpatParser.parseFragment",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.apache.harmony.xml.ExpatParser.parseFragment"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.apache.harmony.xml.ExpatParser.parseDocument",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.apache.harmony.xml.ExpatParser.parseDocument"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.apache.harmony.xml.ExpatReader.parse",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.apache.harmony.xml.ExpatReader.parse"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

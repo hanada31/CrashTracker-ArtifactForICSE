@@ -1,0 +1,141 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.poterion.logbook-400",
+		"Method":"android.app.FragmentManagerImpl.execPendingActions",
+		"Crash Message":"Recursive entry to executePendingTransactions",
+		"stack trace":[
+			"android.app.FragmentManagerImpl.execPendingActions",
+			"android.app.FragmentManagerImpl.executePendingTransactions",
+			"android.app.FragmentManagerImpl.popBackStackImmediate",
+			"com.poterion.logbook.activities.MainActivity.show",
+			"com.poterion.logbook.fragments.SettingsFragment.onSharedPreferenceChanged",
+			"android.app.SharedPreferencesImpl$EditorImpl.notifyListeners",
+			"android.app.SharedPreferencesImpl$EditorImpl.apply",
+			"android.preference.PreferenceManager.setNoCommit",
+			"android.preference.PreferenceManager.inflateFromResource",
+			"android.preference.PreferenceFragment.addPreferencesFromResource",
+			"com.poterion.logbook.fragments.SettingsFragment.onCreate",
+			"android.app.Fragment.performCreate",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.BackStackRecord.run",
+			"android.app.FragmentManagerImpl.execPendingActions",
+			"android.app.FragmentController.execPendingActions",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performNewIntents",
+			"android.app.ActivityThread.handleNewIntent",
+			"android.app.ActivityThread.-wrap12",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.poterion.logbook.activities.MainActivity.show"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QRecursive entry to executePendingTransactions\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.poterion.logbook.activities.MainActivity.show",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.FragmentManager: boolean popBackStackImmediate()>",
+						"Trace":[
+							"<com.poterion.logbook.activities.MainActivity: void show(com.poterion.logbook.activities.MainActivity$Stack,int)>",
+							"<com.poterion.logbook.activities.MainActivity: void onNavigationDrawerItemSelected(int)>",
+							"<com.poterion.logbook.activities.MainActivity: boolean onKeyDown(int,android.view.KeyEvent)>",
+							"fw: <android.app.FragmentManager: boolean popBackStackImmediate()>, <android.app.FragmentManagerImpl: boolean executePendingTransactions()>, <android.app.FragmentManagerImpl: boolean execPendingActions()>, key field: <android.app.FragmentManagerImpl: boolean mExecutingActions>, <android.app.FragmentManagerImpl: boolean execPendingActions()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mExecutingActions"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.execPendingActions"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.poterion.logbook.activities.MainActivity.show"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.poterion.logbook.fragments.SettingsFragment.onSharedPreferenceChanged",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.poterion.logbook.fragments.SettingsFragment.onSharedPreferenceChanged"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.poterion.logbook.fragments.SettingsFragment.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.poterion.logbook.fragments.SettingsFragment.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.poterion.logbook.activities.MainActivity.onKeyDown",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.FragmentManager: boolean popBackStackImmediate()>",
+						"Trace":[
+							"<com.poterion.logbook.activities.MainActivity: void show(com.poterion.logbook.activities.MainActivity$Stack,int)>",
+							"<com.poterion.logbook.activities.MainActivity: void onNavigationDrawerItemSelected(int)>",
+							"<com.poterion.logbook.activities.MainActivity: boolean onKeyDown(int,android.view.KeyEvent)>",
+							"fw: <android.app.FragmentManager: boolean popBackStackImmediate()>, <android.app.FragmentManagerImpl: boolean executePendingTransactions()>, <android.app.FragmentManagerImpl: boolean execPendingActions()>, key field: <android.app.FragmentManagerImpl: boolean mExecutingActions>, <android.app.FragmentManagerImpl: boolean execPendingActions()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mExecutingActions"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.execPendingActions"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.poterion.logbook.activities.MainActivity.onNavigationDrawerItemSelected",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.FragmentManager: boolean popBackStackImmediate()>",
+						"Trace":[
+							"<com.poterion.logbook.activities.MainActivity: void show(com.poterion.logbook.activities.MainActivity$Stack,int)>",
+							"<com.poterion.logbook.activities.MainActivity: void onNavigationDrawerItemSelected(int)>",
+							"<com.poterion.logbook.activities.MainActivity: boolean onKeyDown(int,android.view.KeyEvent)>",
+							"fw: <android.app.FragmentManager: boolean popBackStackImmediate()>, <android.app.FragmentManagerImpl: boolean executePendingTransactions()>, <android.app.FragmentManagerImpl: boolean execPendingActions()>, key field: <android.app.FragmentManagerImpl: boolean mExecutingActions>, <android.app.FragmentManagerImpl: boolean execPendingActions()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mExecutingActions"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.execPendingActions"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

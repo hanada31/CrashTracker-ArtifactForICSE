@@ -1,0 +1,318 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-3570",
+		"Method":"android.view.WindowManagerGlobal.findViewLocked",
+		"Crash Message":"View not attached to window manager",
+		"stack trace":[
+			"android.view.WindowManagerGlobal.findViewLocked",
+			"android.view.WindowManagerGlobal.removeView",
+			"android.view.WindowManagerImpl.removeView",
+			"android.app.Dialog.dismissDialog",
+			"android.app.Dialog.dismiss",
+			"cgeo.geocaching.activity.Progress.dismiss",
+			"cgeo.geocaching.utils.AsyncTaskWithProgress.onPostExecute",
+			"android.os.AsyncTask.finish",
+			"android.os.AsyncTask.access$600",
+			"android.os.AsyncTask$InternalHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.activity.Progress.dismiss"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QView not attached to window manager\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z0 == 0\", \"$r1 == null\", \"i1 >= i0\", \"$r6 != r5\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.activity.Progress.dismiss",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.activity.Progress.dismiss"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"<cgeo.geocaching.activity.Progress: void dismiss()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"cgeo.geocaching.activity.Progress.dismiss"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.AsyncTaskWithProgress.onPostExecute",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.utils.AsyncTaskWithProgress.onPostExecute"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"cgeo.geocaching.utils.AsyncTaskWithProgress.onPostExecute"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.activity.Progress.<init>",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.AsyncTaskWithProgress.<init>",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[3].Reasons[0]"},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[3].Reasons[0]"},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.AsyncTaskWithProgress.onPostExecuteInternal",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.AsyncTask.finish",
+							"android.os.AsyncTask.isCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<cgeo.geocaching.activity.Progress: void <init>()>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String,boolean)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void <init>(android.app.Activity,java.lang.String,java.lang.String)>",
+							"android.os.AsyncTask$Status.<init>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecute(java.lang.Object)>",
+							"<cgeo.geocaching.utils.AsyncTaskWithProgress: void onPostExecuteInternal(java.lang.Object)>",
+							"<cgeo.geocaching.activity.Progress: void dismiss()>",
+							"<android.app.Dialog: boolean isShowing()>",
+							"<android.app.Dialog: void dismiss()>",
+							"android.os.AsyncTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

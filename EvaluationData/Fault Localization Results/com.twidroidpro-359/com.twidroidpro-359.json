@@ -1,0 +1,82 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.twidroidpro-359",
+		"Method":"android.database.sqlite.SQLiteOpenHelper.<init>",
+		"Crash Message":"Version must be >= 1, was 0",
+		"stack trace":[
+			"android.database.sqlite.SQLiteOpenHelper.<init>",
+			"android.database.sqlite.SQLiteOpenHelper.<init>",
+			"com.twidroidpro.misc.TweetProvider$DatabaseHelper.<init>",
+			"com.twidroidpro.misc.TweetProvider.onCreate",
+			"android.content.ContentProvider.attachInfo",
+			"android.content.ContentProvider.attachInfo",
+			"android.app.ActivityThread.installProvider"
+		],
+		"Labeled Buggy Method":"com.twidroidpro.misc.TweetProvider$DatabaseHelper.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QVersion must be >= 1, was \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			3
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i0 >= 1\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.twidroidpro.misc.TweetProvider$DatabaseHelper.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							3
+						],
+						"Influenced method":"android.database.sqlite.SQLiteOpenHelper.<init>",
+						"Trace":[
+							"<com.twidroidpro.misc.TweetProvider$DatabaseHelper: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"3",
+						"Influenced method":"android.database.sqlite.SQLiteOpenHelper.<init>",
+						"Trace":[
+							"com.twidroidpro.misc.TweetProvider$DatabaseHelper.<init>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<com.twidroidpro.misc.TweetProvider$DatabaseHelper: void <init>(android.content.Context)>",
+							"<com.twidroidpro.misc.TweetProvider$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.twidroidpro.misc.TweetProvider.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"3",
+						"Influenced method":"android.database.sqlite.SQLiteOpenHelper.<init>",
+						"Trace":[
+							"com.twidroidpro.misc.TweetProvider.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

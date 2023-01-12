@@ -1,0 +1,65 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.xy.mobile.shaketoflashlight-52",
+		"Method":"android.media.AudioRecord.startRecording",
+		"Crash Message":"startRecording() called on an uninitialized AudioRecord.",
+		"stack trace":[
+			"android.media.AudioRecord.startRecording",
+			"com.xy.mobile.shaketoflashlight.a.a.run"
+		],
+		"Labeled Buggy Method":"com.xy.mobile.shaketoflashlight.a.a.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QstartRecording() called on an uninitialized AudioRecord.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 == 1\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.xy.mobile.shaketoflashlight.a.a.run",
+				"Candidate Score":102,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.media.AudioRecord: void release()>",
+						"Trace":[
+							"<com.xy.mobile.shaketoflashlight.a.a: void run()>",
+							"fw: <android.media.AudioRecord: void startRecording()>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.media.AudioRecord.startRecording"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.xy.mobile.shaketoflashlight.a.a.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xy.mobile.shaketoflashlight.a.a.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.media.AudioRecord: void <init>(int,int,int,int,int)>",
+						"Trace":[
+							"<com.xy.mobile.shaketoflashlight.a.a: void <init>(android.os.Handler)>",
+							"fw: <android.media.AudioRecord: void <init>(int,int,int,int,int)>, <android.media.AudioRecord: void <init>(android.media.AudioAttributes,android.media.AudioFormat,int,int)>, key field: <android.media.AudioRecord: int mState>, <android.media.AudioRecord: void startRecording()>"
+						],
+						"Influenced Field":[
+							"android.media.AudioRecord: int mState"
+						],
+						"Signaler":"android.media.AudioRecord.startRecording"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

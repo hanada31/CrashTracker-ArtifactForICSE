@@ -1,0 +1,430 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"zfapps.toyobd1-341",
+		"Method":"android.app.LoadedApk.forgetReceiverDispatcher",
+		"Crash Message":"Receiver not registered: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver@57dba6b",
+		"stack trace":[
+			"android.app.LoadedApk.forgetReceiverDispatcher",
+			"android.app.ContextImpl.unregisterReceiver",
+			"android.content.ContextWrapper.unregisterReceiver",
+			"zfapps.toyobd1.TOYOBD1Activity.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"zfapps.toyobd1.TOYOBD1Activity.onStart"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QReceiver not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.onDestroy",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"zfapps.toyobd1.TOYOBD1Activity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"zfapps.toyobd1.TOYOBD1Activity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onCreate(android.os.Bundle)>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.onStart",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+							"<zfapps.toyobd1.TOYOBD1Activity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$MyDBManageReceiver DBManageRcv>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$PowerBCReceiver myPowerReceiver>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+						"Influenced By Method":"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+							"modify key field: <zfapps.toyobd1.TOYOBD1Activity: zfapps.toyobd1.TOYOBD1Activity$My2K15Receiver OBD1READ2K15rcvr>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.unregisterReceiver",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onDestroy()>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.sendOrderedBroadcastAsUser",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"fw: <android.content.ContextWrapper: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.ContextImpl: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.ContextImpl: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,int,android.os.Bundle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity$2.handleMessage",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void dismiss()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity$2: void handleMessage(android.os.Message)>",
+							"fw: <android.app.Dialog: void dismiss()>, <android.app.Dialog: void dismissDialog()>, <android.app.SearchDialog: void onStop()>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity$2: void handleMessage(android.os.Message)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.registerReceiver",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void onStart()>",
+							"<zfapps.toyobd1.TOYOBD1Activity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.dismissDialog",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void dismissDialog(int)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void dismissDialog(int)>",
+							"fw: <android.app.Activity: void dismissDialog(int)>, <android.app.Dialog: void dismiss()>, <android.app.Dialog: void dismissDialog()>, <android.app.SearchDialog: void onStop()>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.removeDialog",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void removeDialog(int)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void removeDialog(int)>",
+							"fw: <android.app.Activity: void removeDialog(int)>, <android.app.Dialog: void dismiss()>, <android.app.Dialog: void dismissDialog()>, <android.app.SearchDialog: void onStop()>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.createPackageContext",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.UpdateHeartbeat",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void UpdateTitleStatus(int)>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void UpdateHeartbeat()>",
+							"fw: <java.lang.Runnable: void run()>, <android.app.ActivityTransitionState: void lambda$startExitBackTransition$0(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.UpdateTitleStatus",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void UpdateTitleStatus(int)>",
+							"<zfapps.toyobd1.TOYOBD1Activity: void UpdateHeartbeat()>",
+							"fw: <java.lang.Runnable: void run()>, <android.app.ActivityTransitionState: void lambda$startExitBackTransition$0(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.finishAfterTransition",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void finishAfterTransition()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void finishAfterTransition()>",
+							"fw: <android.app.Activity: void finishAfterTransition()>, <android.app.ActivityTransitionState: boolean startExitBackTransition(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.onOptionsItemSelected",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"zfapps.toyobd1.TOYOBD1Activity.showDialog",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<zfapps.toyobd1.TOYOBD1Activity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

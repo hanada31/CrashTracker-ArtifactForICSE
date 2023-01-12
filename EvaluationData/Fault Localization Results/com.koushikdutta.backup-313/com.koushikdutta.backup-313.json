@@ -1,0 +1,299 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.koushikdutta.backup-313",
+		"Method":"android.app.ContextImpl.validateServiceIntent",
+		"Crash Message":"Service Intent must be explicit: Intent { act=com.amazon.testclient.iap.appUserId flg=0x10000000 (has extras) }",
+		"stack trace":[
+			"android.app.ContextImpl.validateServiceIntent",
+			"android.app.ContextImpl.startServiceCommon",
+			"android.app.ContextImpl.startService",
+			"android.content.ContextWrapper.startService",
+			"com.amazon.device.iap.internal.a.c.a",
+			"com.amazon.device.iap.internal.a.c.a",
+			"com.amazon.device.iap.internal.d.c",
+			"com.amazon.device.iap.PurchasingService.getUserData",
+			"com.clockworkmod.billing.ClockworkModBillingClient.init",
+			"com.koushikdutta.backup.BackupApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.koushikdutta.backup.BackupApplication.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService Intent must be explicit: \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 < 21\", \"$r2 != null\", \"$r1 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.koushikdutta.backup.BackupApplication.onCreate",
+				"Candidate Score":84,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"com.koushikdutta.backup.BackupApplication.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amazon.device.iap.internal.a.c.a",
+				"Candidate Score":80,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: com.amazon.device.iap.model.Receipt a(org.json.JSONObject)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.Object)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: com.amazon.device.iap.model.Product a(java.lang.String,org.json.JSONObject)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(com.amazon.device.iap.model.RequestId)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: java.lang.String a()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(com.amazon.device.iap.model.RequestId,java.lang.String,com.amazon.device.iap.model.FulfillmentResult)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(com.amazon.device.iap.model.RequestId,java.util.Set)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(com.amazon.device.iap.model.RequestId,boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(com.amazon.device.iap.model.RequestId,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.String,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"com.amazon.device.iap.internal.a.c.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amazon.device.iap.internal.a.c.<clinit>",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"java.lang.String.<clinit>",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"java.lang.String.<clinit>",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.amazon.device.iap.internal.a.c: void a(java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"java.lang.String.<clinit>",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.amazon.device.iap.internal.a.c: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amazon.device.iap.internal.d.c",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"com.amazon.device.iap.internal.d.c"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.amazon.device.iap.PurchasingService.getUserData",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"com.amazon.device.iap.PurchasingService.getUserData"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.clockworkmod.billing.ClockworkModBillingClient.init",
+				"Candidate Score":65,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"com.clockworkmod.billing.ClockworkModBillingClient.init"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

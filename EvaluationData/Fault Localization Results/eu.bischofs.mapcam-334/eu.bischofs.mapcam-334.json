@@ -1,0 +1,101 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"eu.bischofs.mapcam-334",
+		"Method":"android.app.ContextImpl.validateServiceIntent",
+		"Crash Message":"Service Intent must be explicit: Intent { act=com.android.vending.billing.InAppBillingService.BIND }",
+		"stack trace":[
+			"android.app.ContextImpl.validateServiceIntent",
+			"android.app.ContextImpl.bindServiceCommon",
+			"android.app.ContextImpl.bindService",
+			"android.content.ContextWrapper.bindService",
+			"eu.bischofs.mapcam.MapCamActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"eu.bischofs.mapcam.MapCamActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService Intent must be explicit: \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 < 21\", \"$r2 != null\", \"$r1 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"eu.bischofs.mapcam.MapCamActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.ContextImpl.validateServiceIntent",
+						"Trace":[
+							"eu.bischofs.mapcam.MapCamActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+						"Influenced By Method":"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+							"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"eu.bischofs.mapcam.MapCamActivity.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+						"Influenced By Method":"<eu.bischofs.mapcam.MapCamActivity: void <init>()>",
+						"Trace":[
+							"<eu.bischofs.mapcam.MapCamActivity: void <init>()>",
+							"modify key field: <eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+							"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"eu.bischofs.mapcam.MapCamActivity.onDestroy",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+						"Influenced By Method":"<eu.bischofs.mapcam.MapCamActivity: void onDestroy()>",
+						"Trace":[
+							"<eu.bischofs.mapcam.MapCamActivity: void onDestroy()>",
+							"modify key field: <eu.bischofs.mapcam.MapCamActivity: android.content.ServiceConnection p>",
+							"<eu.bischofs.mapcam.MapCamActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

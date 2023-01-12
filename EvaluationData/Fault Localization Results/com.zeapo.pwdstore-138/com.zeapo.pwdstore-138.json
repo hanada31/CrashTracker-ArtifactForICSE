@@ -1,0 +1,56 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.zeapo.pwdstore-138",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window android.view.ViewRootImpl$W@2fcaa65 -- permission denied for this window type",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"com.zeapo.pwdstore.autofill.AutofillService.onAccessibilityEvent",
+			"android.accessibilityservice.AccessibilityService$1.onAccessibilityEvent",
+			"android.accessibilityservice.AccessibilityService$IAccessibilityServiceClientWrapper.executeMessage",
+			"com.android.internal.os.HandlerCaller$MyHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.zeapo.pwdstore.autofill.AutofillService.onAccessibilityEvent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window \\E[\\s\\S]*\\Q -- permission denied for this window type\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i12\", \"i12 >= 0\", \"$r34 == null\", \"z5 == 0\", \"$r172 != null\", \"$z0 == 0\", \"$r153 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.zeapo.pwdstore.autofill.AutofillService.onAccessibilityEvent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.zeapo.pwdstore.autofill.AutofillService.onAccessibilityEvent"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.zeapo.pwdstore.autofill.AutofillService.onAccessibilityEvent"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

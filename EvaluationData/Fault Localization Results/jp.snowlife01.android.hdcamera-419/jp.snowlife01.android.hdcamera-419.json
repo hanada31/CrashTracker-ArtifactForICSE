@@ -1,0 +1,132 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"jp.snowlife01.android.hdcamera-419",
+		"Method":"android.hardware.Camera.startPreview",
+		"Crash Message":"startPreview failed",
+		"stack trace":[
+			"android.hardware.Camera.startPreview",
+			"jp.snowlife01.android.hdcamera.MainActivity2$90.surfaceChanged",
+			"android.view.SurfaceView.updateWindow",
+			"android.view.SurfaceView$3.onPreDraw",
+			"android.view.ViewTreeObserver.dispatchOnPreDraw",
+			"android.view.ViewRootImpl.performTraversals",
+			"android.view.ViewRootImpl.doTraversal",
+			"android.view.ViewRootImpl$TraversalRunnable.run",
+			"android.view.Choreographer$CallbackRecord.run",
+			"android.view.Choreographer.doCallbacks",
+			"android.view.Choreographer.doFrame",
+			"android.view.Choreographer$FrameDisplayEventReceiver.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"jp.snowlife01.android.hdcamera.MainActivity2$90.surfaceChanged"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"jp.snowlife01.android.hdcamera.MainActivity2$90.surfaceChanged",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.hardware.Camera.startPreview",
+						"Trace":[
+							"jp.snowlife01.android.hdcamera.MainActivity2$90.surfaceChanged"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"jp.snowlife01.android.hdcamera.MainActivity2$90.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void surfaceChanged(android.view.SurfaceHolder,int,int,int)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void <init>(jp.snowlife01.android.hdcamera.MainActivity2)>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void <init>(jp.snowlife01.android.hdcamera.MainActivity2)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void surfaceChanged(android.view.SurfaceHolder,int,int,int)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void <init>(jp.snowlife01.android.hdcamera.MainActivity2)>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<jp.snowlife01.android.hdcamera.MainActivity2$90: void <init>(jp.snowlife01.android.hdcamera.MainActivity2)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

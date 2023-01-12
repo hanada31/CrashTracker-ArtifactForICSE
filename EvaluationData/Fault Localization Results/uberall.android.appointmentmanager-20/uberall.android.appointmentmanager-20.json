@@ -1,0 +1,423 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"uberall.android.appointmentmanager-20",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"duplicate column name: weekDayId (code 1): , while compiling: ALTER TABLE ExcludeTime ADD COLUMN weekDayId INTEGER DEFAULT 0",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getWritableDatabase",
+			"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.open",
+			"uberall.android.appointmentmanager.AppointmentWidgetProvider.updateWidgetContent",
+			"uberall.android.appointmentmanager.HomeScreenActivity.showVersionHistory",
+			"uberall.android.appointmentmanager.HomeScreenActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper.onUpgrade",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void access$2(android.database.sqlite.SQLiteDatabase)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void adaptNewExcludedTimes(android.database.sqlite.SQLiteDatabase)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<java.util.ArrayList: java.lang.Object get(int)>",
+							"<android.content.ContentValues: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+							"<java.util.ArrayList: int size()>",
+							"<android.database.Cursor: void close()>",
+							"<android.database.Cursor: boolean isClosed()>",
+							"<android.database.Cursor: boolean moveToNext()>",
+							"<java.util.ArrayList: boolean add(java.lang.Object)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: int getColumnIndex(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+							"<android.content.SharedPreferences$Editor: boolean commit()>",
+							"<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>",
+							"<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>",
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.access$1",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void access$2(android.database.sqlite.SQLiteDatabase)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void adaptNewExcludedTimes(android.database.sqlite.SQLiteDatabase)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<java.util.ArrayList: java.lang.Object get(int)>",
+							"<android.content.ContentValues: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+							"<java.util.ArrayList: int size()>",
+							"<android.database.Cursor: void close()>",
+							"<android.database.Cursor: boolean isClosed()>",
+							"<android.database.Cursor: boolean moveToNext()>",
+							"<java.util.ArrayList: boolean add(java.lang.Object)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: int getColumnIndex(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+							"<android.content.SharedPreferences$Editor: boolean commit()>",
+							"<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>",
+							"<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>",
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void access$2(android.database.sqlite.SQLiteDatabase)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void adaptNewExcludedTimes(android.database.sqlite.SQLiteDatabase)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<java.util.ArrayList: java.lang.Object get(int)>",
+							"<android.content.ContentValues: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+							"<java.util.ArrayList: int size()>",
+							"<android.database.Cursor: void close()>",
+							"<android.database.Cursor: boolean isClosed()>",
+							"<android.database.Cursor: boolean moveToNext()>",
+							"<java.util.ArrayList: boolean add(java.lang.Object)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: int getColumnIndex(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+							"<android.content.SharedPreferences$Editor: boolean commit()>",
+							"<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>",
+							"<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>",
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.access$2",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void access$2(android.database.sqlite.SQLiteDatabase)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void adaptNewExcludedTimes(android.database.sqlite.SQLiteDatabase)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<java.util.ArrayList: java.lang.Object get(int)>",
+							"<android.content.ContentValues: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+							"<java.util.ArrayList: int size()>",
+							"<android.database.Cursor: void close()>",
+							"<android.database.Cursor: boolean isClosed()>",
+							"<android.database.Cursor: boolean moveToNext()>",
+							"<java.util.ArrayList: boolean add(java.lang.Object)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: int getColumnIndex(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+							"<android.content.SharedPreferences$Editor: boolean commit()>",
+							"<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>",
+							"<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>",
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.open",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.open"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.AppointmentWidgetProvider.updateWidgetContent",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"uberall.android.appointmentmanager.AppointmentWidgetProvider.updateWidgetContent"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter.adaptNewExcludedTimes",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void access$2(android.database.sqlite.SQLiteDatabase)>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: void adaptNewExcludedTimes(android.database.sqlite.SQLiteDatabase)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<java.util.ArrayList: java.lang.Object get(int)>",
+							"<android.content.ContentValues: void <init>()>",
+							"<android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+							"<java.util.ArrayList: int size()>",
+							"<android.database.Cursor: void close()>",
+							"<android.database.Cursor: boolean isClosed()>",
+							"<android.database.Cursor: boolean moveToNext()>",
+							"<java.util.ArrayList: boolean add(java.lang.Object)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: int getColumnIndex(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+							"<android.content.SharedPreferences$Editor: boolean commit()>",
+							"<android.content.SharedPreferences$Editor: android.content.SharedPreferences$Editor putBoolean(java.lang.String,boolean)>",
+							"<android.content.SharedPreferences: android.content.SharedPreferences$Editor edit()>",
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<android.preference.PreferenceManager: android.content.SharedPreferences getDefaultSharedPreferences(android.content.Context)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.content.res.Resources: java.lang.String getString(int)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<uberall.android.appointmentmanager.adapters.AppointmentDatabaseAdapter: android.content.Context access$1()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.HomeScreenActivity.showVersionHistory",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"uberall.android.appointmentmanager.HomeScreenActivity.showVersionHistory"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"uberall.android.appointmentmanager.HomeScreenActivity.onCreate",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"uberall.android.appointmentmanager.HomeScreenActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

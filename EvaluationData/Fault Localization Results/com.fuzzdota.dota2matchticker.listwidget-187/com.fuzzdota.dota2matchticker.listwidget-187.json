@@ -1,0 +1,52 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.fuzzdota.dota2matchticker.listwidget-187",
+		"Method":"android.app.SharedPreferencesImpl.getString",
+		"Crash Message":"java.util.HashSet cannot be cast to java.lang.String",
+		"stack trace":[
+			"android.app.SharedPreferencesImpl.getString",
+			"com.fuzzdota.dota2matchticker.listwidget.util.PrefUtils.getPreviousNotifications",
+			"com.fuzzdota.dota2matchticker.listwidget.services.MatchTickerService.onHandleIntent",
+			"android.app.IntentService$ServiceHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.os.HandlerThread.run"
+		],
+		"Labeled Buggy Method":"com.fuzzdota.dota2matchticker.listwidget.util.PrefUtils.getPreviousNotifications"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.fuzzdota.dota2matchticker.listwidget.util.PrefUtils.getPreviousNotifications",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getString",
+						"Trace":[
+							"com.fuzzdota.dota2matchticker.listwidget.util.PrefUtils.getPreviousNotifications"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.fuzzdota.dota2matchticker.listwidget.services.MatchTickerService.onHandleIntent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getString",
+						"Trace":[
+							"com.fuzzdota.dota2matchticker.listwidget.services.MatchTickerService.onHandleIntent"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

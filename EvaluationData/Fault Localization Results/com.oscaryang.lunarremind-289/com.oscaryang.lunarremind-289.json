@@ -1,0 +1,115 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.oscaryang.lunarremind-289",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f0700b9",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.Context.getText",
+			"android.app.AlertDialog$Builder.setTitle",
+			"com.oscaryang.lunarremind.util.Eula.show",
+			"com.oscaryang.lunarremind.LunarRemind.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.oscaryang.lunarremind.util.Eula.show"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.oscaryang.lunarremind.util.Eula.show",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.oscaryang.lunarremind.util.Eula.show"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.oscaryang.lunarremind.util.Eula: boolean show(android.app.Activity)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.oscaryang.lunarremind.util.Eula.show"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.oscaryang.lunarremind.LunarRemind.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.oscaryang.lunarremind.anniversary.AnniversarySearch$3: void onClick(android.view.View)>",
+							"<com.oscaryang.lunarremind.anniversary.AnniversarySearch$2: void onClick(android.view.View)>",
+							"<com.oscaryang.lunarremind.LunarRemind: void onCreate(android.os.Bundle)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getText(int)>",
+						"Trace":[
+							"<com.oscaryang.lunarremind.LunarRemind: void onCreate(android.os.Bundle)>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>, <android.content.res.AssetManager: java.lang.CharSequence getResourceText(int)>, <android.content.res.AssetManager: boolean getResourceValue(int,int,android.util.TypedValue,boolean)>, <android.content.res.StringBlock: java.lang.CharSequence get(int)>, <android.content.res.StringBlock: java.lang.CharSequence applyStyles(java.lang.String,int,android.content.res.StringBlock$StyleIDs)>, <android.content.res.StringBlock: android.text.style.CharacterStyle getColor(java.lang.String,boolean)>, <android.content.res.Resources: android.content.res.Resources getSystem()>, <android.content.res.Resources: void <init>()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.oscaryang.lunarremind.LunarRemind.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.oscaryang.lunarremind.LunarRemind.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,117 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"ru.location-309",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"ru.location.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"ru.location.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"ru.location.MainActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ru.location.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+						"Influenced By Method":"<ru.location.MainActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+						"Influenced By Method":"<ru.location.MainActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.location.MainActivity.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+						"Influenced By Method":"<ru.location.MainActivity: void <init>()>",
+						"Trace":[
+							"<ru.location.MainActivity: void <init>()>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+						"Influenced By Method":"<ru.location.MainActivity: void <init>()>",
+						"Trace":[
+							"<ru.location.MainActivity: void <init>()>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.location.MainActivity.onDestroy",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+						"Influenced By Method":"<ru.location.MainActivity: void onDestroy()>",
+						"Trace":[
+							"<ru.location.MainActivity: void onDestroy()>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeGps>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+						"Influenced By Method":"<ru.location.MainActivity: void onDestroy()>",
+						"Trace":[
+							"<ru.location.MainActivity: void onDestroy()>",
+							"modify key field: <ru.location.MainActivity: android.location.LocationListener onLocationChangeCell>",
+							"<ru.location.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,257 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.rormix-94",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f0c0084",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"android.content.Context.getString",
+			"android.widget.SearchView.updateQueryHint",
+			"android.widget.SearchView.setSearchableInfo",
+			"com.rormix.Rormix.onCreateOptionsMenu",
+			"android.app.Activity.onCreatePanelMenu",
+			"android.support.v4.app.FragmentActivity.onCreatePanelMenu",
+			"com.android.internal.policy.impl.PhoneWindow.preparePanel",
+			"com.android.internal.policy.impl.PhoneWindow.doInvalidatePanelMenu",
+			"com.android.internal.policy.impl.PhoneWindow$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.rormix.Rormix.onCreateOptionsMenu"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.rormix.Rormix.onCreateOptionsMenu",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.rormix.Rormix.onCreateOptionsMenu"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.rormix.Rormix: boolean onCreateOptionsMenu(android.view.Menu)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.rormix.Rormix.onCreateOptionsMenu"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.CustomStats",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.GooglePlayServicesUtil: void showErrorNotification(int,android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: int isGooglePlayServicesAvailable(android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String e(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String d(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String c(android.content.Context,int)>",
+							"<com.rormix.TagsDB: void addTags(android.content.Context)>",
+							"<com.rormix.Rormix: void registerForPushNotes()>",
+							"<com.rormix.Rormix: void getStatKey()>",
+							"<com.rormix.Rormix: void Title(int)>",
+							"<com.rormix.Rormix: void CustomStats()>",
+							"<com.rormix.Rormix: void handleIntent(android.content.Intent)>",
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"<fragments.StartupTagsDialog: void sendMetaData(java.util.List,android.content.Context)>",
+							"<com.rormix.MusicScan: void sendMetaData(java.util.List,android.content.Context)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.Title",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.GooglePlayServicesUtil: void showErrorNotification(int,android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: int isGooglePlayServicesAvailable(android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String e(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String d(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String c(android.content.Context,int)>",
+							"<com.rormix.TagsDB: void addTags(android.content.Context)>",
+							"<com.rormix.Rormix: void registerForPushNotes()>",
+							"<com.rormix.Rormix: void getStatKey()>",
+							"<com.rormix.Rormix: void Title(int)>",
+							"<com.rormix.Rormix: void CustomStats()>",
+							"<com.rormix.Rormix: void handleIntent(android.content.Intent)>",
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"<fragments.StartupTagsDialog: void sendMetaData(java.util.List,android.content.Context)>",
+							"<com.rormix.MusicScan: void sendMetaData(java.util.List,android.content.Context)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.getStatKey",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.GooglePlayServicesUtil: void showErrorNotification(int,android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: int isGooglePlayServicesAvailable(android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String e(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String d(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String c(android.content.Context,int)>",
+							"<com.rormix.TagsDB: void addTags(android.content.Context)>",
+							"<com.rormix.Rormix: void registerForPushNotes()>",
+							"<com.rormix.Rormix: void getStatKey()>",
+							"<com.rormix.Rormix: void Title(int)>",
+							"<com.rormix.Rormix: void CustomStats()>",
+							"<com.rormix.Rormix: void handleIntent(android.content.Intent)>",
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"<fragments.StartupTagsDialog: void sendMetaData(java.util.List,android.content.Context)>",
+							"<com.rormix.MusicScan: void sendMetaData(java.util.List,android.content.Context)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.handleIntent",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.GooglePlayServicesUtil: void showErrorNotification(int,android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: int isGooglePlayServicesAvailable(android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String e(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String d(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String c(android.content.Context,int)>",
+							"<com.rormix.TagsDB: void addTags(android.content.Context)>",
+							"<com.rormix.Rormix: void registerForPushNotes()>",
+							"<com.rormix.Rormix: void getStatKey()>",
+							"<com.rormix.Rormix: void Title(int)>",
+							"<com.rormix.Rormix: void CustomStats()>",
+							"<com.rormix.Rormix: void handleIntent(android.content.Intent)>",
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"<fragments.StartupTagsDialog: void sendMetaData(java.util.List,android.content.Context)>",
+							"<com.rormix.MusicScan: void sendMetaData(java.util.List,android.content.Context)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.registerForPushNotes",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.GooglePlayServicesUtil: void showErrorNotification(int,android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: int isGooglePlayServicesAvailable(android.content.Context)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String e(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String d(android.content.Context,int)>",
+							"<com.google.android.gms.common.GooglePlayServicesUtil: java.lang.String c(android.content.Context,int)>",
+							"<com.rormix.TagsDB: void addTags(android.content.Context)>",
+							"<com.rormix.Rormix: void registerForPushNotes()>",
+							"<com.rormix.Rormix: void getStatKey()>",
+							"<com.rormix.Rormix: void Title(int)>",
+							"<com.rormix.Rormix: void CustomStats()>",
+							"<com.rormix.Rormix: void handleIntent(android.content.Intent)>",
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"<fragments.StartupTagsDialog: void sendMetaData(java.util.List,android.content.Context)>",
+							"<com.rormix.MusicScan: void sendMetaData(java.util.List,android.content.Context)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rormix.Rormix.actionBarIcon",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.google.android.gms.common.images.a: android.graphics.drawable.Drawable a(android.content.Context,com.google.android.gms.internal.fa,int)>",
+							"<fragments.ShareDialog: void show(android.content.Context,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<com.rormix.Rormix: void actionBarIcon()>",
+							"<com.google.android.gms.internal.fs: void b(android.content.res.Resources,int,int)>",
+							"<org.droidparts.inner.reader.ResourceReader: java.lang.Object readVal(android.content.Context,int,java.lang.Class)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,72 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-1321",
+		"Method":"android.preference.PreferenceFragment.ensureList",
+		"Crash Message":"Content view not yet created",
+		"stack trace":[
+			"android.support.v4.app.ListFragment.ensureList",
+			"android.support.v4.app.ListFragment.getListView",
+			"org.wordpress.android.ui.notifications.NotificationsListFragment.setNoteSelected",
+			"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.notifications.NotificationsListFragment.setNoteSelected"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QContent view not yet created\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r2 != null\", \"$r1 == null\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.notifications.NotificationsListFragment.setNoteSelected",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.notifications.NotificationsListFragment.setNoteSelected"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

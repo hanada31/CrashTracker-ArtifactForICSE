@@ -1,0 +1,248 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.appfab.jokeslittleJ-82",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.appfab.jokes.police }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.appfab.jokeslittleJ.Mainf.goToApp"
+		],
+		"Labeled Buggy Method":"com.appfab.jokeslittleJ.Mainf.goToApp"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.appfab.jokeslittleJ.Mainf.goToApp",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.appfab.jokeslittleJ.Mainf: void goToApp(android.view.View)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.appfab.jokeslittleJ.Mainf.goToApp"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.appfab.jokeslittleJ.Mainf.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.appfab.jokeslittleJ.Mainf: void goToApp(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.appfab.jokeslittleJ.Mainf: void goToApp(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.appfab.jokeslittleJ.Mainf.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.appfab.jokeslittleJ.Mainf: void goToApp(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.appfab.jokeslittleJ.Mainf: void goToApp(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.appfab.jokeslittleJ.Mainf: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.appfab.jokeslittleJ.Mainf: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

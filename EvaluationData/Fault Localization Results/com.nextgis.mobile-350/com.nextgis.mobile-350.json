@@ -1,0 +1,66 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.nextgis.mobile-350",
+		"Method":"android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow",
+		"Crash Message":"no such table: layer_20160310165317326 (code 1)",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow",
+			"android.database.sqlite.SQLiteConnection.executeForCursorWindow",
+			"android.database.sqlite.SQLiteSession.executeForCursorWindow",
+			"android.database.sqlite.SQLiteQuery.fillWindow",
+			"android.database.sqlite.SQLiteCursor.fillWindow",
+			"android.database.sqlite.SQLiteCursor.getCount",
+			"android.database.AbstractCursor.moveToPosition",
+			"android.database.AbstractCursor.moveToFirst",
+			"com.nextgis.mobile.fragment.AttributesFragment.setAttributes",
+			"com.nextgis.mobile.fragment.AttributesFragment.onResume",
+			"android.support.v4.app.Fragment.performResume",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.dispatchResume",
+			"android.support.v4.app.FragmentController.dispatchResume",
+			"android.support.v4.app.FragmentActivity.onResumeFragments",
+			"android.support.v4.app.FragmentActivity.onPostResume",
+			"android.support.v7.app.AppCompatActivity.onPostResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.nextgis.mobile.fragment.AttributesFragment.setAttributes"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.nextgis.mobile.fragment.AttributesFragment.setAttributes",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow",
+						"Trace":[
+							"com.nextgis.mobile.fragment.AttributesFragment.setAttributes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.fragment.AttributesFragment.onResume",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow",
+						"Trace":[
+							"com.nextgis.mobile.fragment.AttributesFragment.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

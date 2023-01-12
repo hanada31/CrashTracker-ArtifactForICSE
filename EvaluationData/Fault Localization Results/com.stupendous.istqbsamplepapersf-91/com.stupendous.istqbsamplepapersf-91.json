@@ -1,0 +1,507 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.stupendous.istqbsamplepapersf-91",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: glossary (code 1): , while compiling: DROP TABLE glossary",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getWritableDatabase",
+			"com.stupendous.istqbsamplepapersf.PasswordDbAdapter.open",
+			"com.stupendous.istqbsamplepapersf.BaseActivity.onCreate",
+			"com.stupendous.istqbsamplepapersf.SelectPaperActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.createDB"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.onUpgrade",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: int getCount()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.createDB",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: int getCount()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: int getCount()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter.getSetting",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<java.lang.String: java.lang.String valueOf(int)>",
+							"<java.util.Calendar: int get(int)>",
+							"<java.util.Calendar: void add(int,int)>",
+							"<java.util.Calendar: void setTime(java.util.Date)>",
+							"<java.util.Date: void <init>()>",
+							"<java.util.Calendar: java.util.Calendar getInstance()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.Cursor: java.lang.String getString(int)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: int getCount()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void createDB(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter.open",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.stupendous.istqbsamplepapersf.PasswordDbAdapter.open"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.BaseActivity.onCreate",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.stupendous.istqbsamplepapersf.BaseActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.SelectPaperActivity.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.stupendous.istqbsamplepapersf.SelectPaperActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter.<init>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper.<init>",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.stupendous.istqbsamplepapersf.BaseActivity.makeActionOverflowMenuShown",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Integer: int parseInt(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: java.lang.String getSetting(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.BaseActivity: void makeActionOverflowMenuShown()>",
+							"<android.view.ViewConfiguration: android.view.ViewConfiguration get(android.content.Context)>",
+							"<java.lang.reflect.Field: void setBoolean(java.lang.Object,boolean)>",
+							"<java.lang.reflect.AccessibleObject: void setAccessible(boolean)>",
+							"<java.lang.Class: java.lang.reflect.Field getDeclaredField(java.lang.String)>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: com.stupendous.istqbsamplepapersf.PasswordDbAdapter open()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.stupendous.istqbsamplepapersf.PasswordDbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.ContextWrapper: android.content.Context getApplicationContext()>",
+							"<android.app.Activity: void setContentView(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

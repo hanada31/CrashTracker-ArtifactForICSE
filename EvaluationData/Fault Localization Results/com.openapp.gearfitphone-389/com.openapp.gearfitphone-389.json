@@ -1,0 +1,258 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.openapp.gearfitphone-389",
+		"Method":"android.app.LoadedApk.forgetReceiverDispatcher",
+		"Crash Message":"Receiver not registered: com.openapp.gearfitphone.GearFitPhoneService$1@ae8ba2f",
+		"stack trace":[
+			"android.app.LoadedApk.forgetReceiverDispatcher",
+			"android.app.ContextImpl.unregisterReceiver",
+			"android.content.ContextWrapper.unregisterReceiver",
+			"com.openapp.gearfitphone.GearFitPhoneService.onDestroy",
+			"android.app.ActivityThread.handleStopService"
+		],
+		"Labeled Buggy Method":"com.openapp.gearfitphone.GearFitPhoneService.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QReceiver not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.onDestroy",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.openapp.gearfitphone.GearFitPhoneService.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"com.openapp.gearfitphone.GearFitPhoneService.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+						"Influenced By Method":"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>",
+							"modify key field: <com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+						"Influenced By Method":"<com.openapp.gearfitphone.GearFitPhoneService: void <init>()>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void <init>()>",
+							"modify key field: <com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.onCreate",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.cz$1: void run()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onTaskRemoved(android.content.Intent)>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+							"<com.openapp.gearfitphone.MainActivity: void onCreate(android.os.Bundle)>",
+							"<com.openapp.gearfitphone.settings.EditRejectMsgActivity: boolean saveArrayToPref()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+						"Influenced By Method":"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+							"modify key field: <com.openapp.gearfitphone.GearFitPhoneService: android.content.BroadcastReceiver mPhoneStateReceiver>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.unregisterReceiver",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onDestroy()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.sendOrderedBroadcastAsUser",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.InstallReferrerService: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.google.android.gms.analytics.CampaignTrackingService: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.openapp.gearfitphone.MainActivity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.google.android.gms.tagmanager.PreviewActivity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.google.android.gms.ads.AdActivity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.openapp.gearfitphone.settings.EditRejectMsgActivity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.openapp.gearfitphone.settings.SettingsActivity: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"<com.google.android.gms.internal.dd$a: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>",
+							"fw: <android.content.ContextWrapper: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.ContextImpl: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.ContextImpl: void sendOrderedBroadcastAsUser(android.content.Intent,android.os.UserHandle,java.lang.String,int,android.os.Bundle,android.content.BroadcastReceiver,android.os.Handler,int,java.lang.String,android.os.Bundle)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.registerReceiver",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.createPackageContext",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.InstallReferrerService: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.google.android.gms.analytics.CampaignTrackingService: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.openapp.gearfitphone.MainActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.google.android.gms.tagmanager.PreviewActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.google.android.gms.ads.AdActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.openapp.gearfitphone.settings.EditRejectMsgActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.openapp.gearfitphone.settings.SettingsActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.google.android.gms.internal.dd$a: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openapp.gearfitphone.GearFitPhoneService.onTaskRemoved",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.cz$1: void run()>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onTaskRemoved(android.content.Intent)>",
+							"<com.openapp.gearfitphone.GearFitPhoneService: void onCreate()>",
+							"<com.openapp.gearfitphone.MainActivity: void onCreate(android.os.Bundle)>",
+							"<com.openapp.gearfitphone.settings.EditRejectMsgActivity: boolean saveArrayToPref()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

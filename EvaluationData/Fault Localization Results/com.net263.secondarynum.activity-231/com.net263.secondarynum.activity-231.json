@@ -1,0 +1,69 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.net263.secondarynum.activity-231",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.net263.meeting.commons.NetworkUtils.outNetworkDetail",
+			"com.net263.meeting.commons.NetworkUtils.getNetStatus",
+			"com.net263.secondarynum.activity.Preface$1.run"
+		],
+		"Labeled Buggy Method":"com.net263.secondarynum.activity.Preface$1.run"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.net263.meeting.commons.NetworkUtils.outNetworkDetail",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.net263.meeting.commons.NetworkUtils.outNetworkDetail"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.net263.meeting.commons.NetworkUtils.getNetStatus",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.net263.meeting.commons.NetworkUtils.getNetStatus"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.net263.secondarynum.activity.Preface$1.run",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.net263.secondarynum.activity.Preface$1.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

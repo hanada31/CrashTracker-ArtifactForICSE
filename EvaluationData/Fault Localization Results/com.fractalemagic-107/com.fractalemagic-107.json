@@ -1,0 +1,262 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.fractalemagic-107",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.fractalemagic }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.fractalemagic.Tenpenchii.a",
+			"com.fractalemagic.asw.onClick",
+			"com.android.internal.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.fractalemagic.Tenpenchii.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.fractalemagic.Tenpenchii.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,com.fractalemagic.zm)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.fractalemagic.Tenpenchii.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.fractalemagic.asw.onClick",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.fractalemagic.asw.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.fractalemagic.Tenpenchii.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void finish()>",
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,boolean,android.content.DialogInterface,int)>",
+							"android.app.ActivityManager.getService",
+							"<com.fractalemagic.Tenpenchii: void <clinit>()>",
+							"<java.util.Arrays: void sort(int[])>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.fractalemagic.Tenpenchii: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.Activity.finish",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.finishFromChild",
+							"android.app.Activity.finish"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void finish()>",
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,boolean,android.content.DialogInterface,int)>",
+							"android.app.ActivityManager.getService",
+							"<com.fractalemagic.Tenpenchii: void <clinit>()>",
+							"<java.util.Arrays: void sort(int[])>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.fractalemagic.Tenpenchii: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.Activity.finish",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.finishFromChild",
+							"android.app.Activity.finish"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.fractalemagic.Tenpenchii.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,boolean,android.content.DialogInterface,int)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"<com.fractalemagic.bny: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,boolean,android.content.DialogInterface,int)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"<com.fractalemagic.bny: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.fractalemagic.bny.<init>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.fractalemagic.Tenpenchii: void a(com.fractalemagic.Tenpenchii,boolean,android.content.DialogInterface,int)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"<com.fractalemagic.bny: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.fractalemagic.Tenpenchii: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

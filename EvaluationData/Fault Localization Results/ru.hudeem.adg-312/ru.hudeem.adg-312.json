@@ -1,0 +1,736 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"ru.hudeem.adg-312",
+		"Method":"android.app.LoadedApk.forgetServiceDispatcher",
+		"Crash Message":"Service not registered: ru.hudeem.adg.billing.util.IabHelper$1@71ef9d0",
+		"stack trace":[
+			"android.app.LoadedApk.forgetServiceDispatcher",
+			"android.app.ContextImpl.unbindService",
+			"android.content.ContextWrapper.unbindService",
+			"ru.hudeem.adg.billing.util.IabHelper.dispose",
+			"ru.hudeem.adg.Dieta_diary.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"ru.hudeem.adg.billing.util.IabHelper.startSetup"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"ru.hudeem.adg.billing.util.IabHelper.dispose",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ru.hudeem.adg.billing.util.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"ru.hudeem.adg.billing.util.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.hudeem.adg.billing.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>",
+						"Trace":[
+							"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>",
+							"modify key field: <ru.hudeem.adg.billing.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.billing.util.IabHelper.startSetup",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<ru.hudeem.adg.billing.util.IabHelper: void startSetup(ru.hudeem.adg.billing.util.IabHelper$OnIabSetupFinishedListener)>",
+							"fw: <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ru.hudeem.adg.billing.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<ru.hudeem.adg.billing.util.IabHelper: void startSetup(ru.hudeem.adg.billing.util.IabHelper$OnIabSetupFinishedListener)>",
+						"Trace":[
+							"<ru.hudeem.adg.billing.util.IabHelper: void startSetup(ru.hudeem.adg.billing.util.IabHelper$OnIabSetupFinishedListener)>",
+							"modify key field: <ru.hudeem.adg.billing.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<ru.hudeem.adg.billing.util.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.onDestroy",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ru.hudeem.adg.Dieta_diary.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"ru.hudeem.adg.Dieta_diary.onDestroy"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.unbindService",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<ru.hudeem.adg.Table_Calories: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.FAQ: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.Graphycs: void unbindService(android.content.ServiceConnection)>",
+							"<com.google.ads.AdActivity: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.MainActivity: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.Calc_poh: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.Dieta_diary: void unbindService(android.content.ServiceConnection)>",
+							"<org.achartengine.GraphicalActivity: void unbindService(android.content.ServiceConnection)>",
+							"<ru.hudeem.adg.PrefActivity: void unbindService(android.content.ServiceConnection)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.bindService",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Table_Calories: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.FAQ: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.Graphycs: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<com.google.ads.AdActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.MainActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.Calc_poh: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<org.achartengine.GraphicalActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"<ru.hudeem.adg.PrefActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$LoadViewTask.onPreExecute",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.ProgressDialog: void setProgress(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onProgressUpdate(java.lang.Integer[])>",
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onPreExecute()>",
+							"fw: <android.app.ProgressDialog: void setProgress(int)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.ProgressDialog: void setMax(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onPreExecute()>",
+							"fw: <android.app.ProgressDialog: void setMax(int)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<com.google.ads.internal.k$a: void onGesturePerformed(android.gesture.GestureOverlayView,android.gesture.Gesture)>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Diet_diary: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Stats: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Graphic: void onPreExecute()>",
+							"<ru.hudeem.adg.Dieta_diary$Write_MyAsyncTask: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_TK: void onPreExecute()>",
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onPreExecute()>",
+							"<com.google.ads.util.g$a: void a(android.app.AlertDialog$Builder,java.lang.String,android.webkit.JsResult)>",
+							"<com.google.ads.util.g$a: void a(android.app.AlertDialog$Builder,android.content.Context,java.lang.String,java.lang.String,android.webkit.JsPromptResult)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$LoadViewTask.onProgressUpdate",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.ProgressDialog: void setProgress(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onProgressUpdate(java.lang.Integer[])>",
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onPreExecute()>",
+							"fw: <android.app.ProgressDialog: void setProgress(int)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.createPackageContext",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Table_Calories: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.FAQ: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.Graphycs: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.google.ads.AdActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.MainActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.Calc_poh: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.Dieta_diary: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<org.achartengine.GraphicalActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<ru.hudeem.adg.PrefActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$10$2$2.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2$2: void onClick(android.content.DialogInterface,int)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$10$2.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$10.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$12$3.onItemLongClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$12.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$13.onItemLongClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$15$1.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$15.onItemClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$4.onItemClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$7.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary: void showDialog(int)>",
+							"<ru.hudeem.adg.Dieta_diary$8: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$7: void onClick(android.view.View)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$8.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary: void showDialog(int)>",
+							"<ru.hudeem.adg.Dieta_diary$8: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$7: void onClick(android.view.View)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$9.onClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary$Write_MyAsyncTask.onPreExecute",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<com.google.ads.internal.k$a: void onGesturePerformed(android.gesture.GestureOverlayView,android.gesture.Gesture)>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Diet_diary: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Stats: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_Graphic: void onPreExecute()>",
+							"<ru.hudeem.adg.Dieta_diary$Write_MyAsyncTask: void onPreExecute()>",
+							"<ru.hudeem.adg.MainActivity$MyAsyncTask_TK: void onPreExecute()>",
+							"<ru.hudeem.adg.Dieta_diary$LoadViewTask: void onPreExecute()>",
+							"<com.google.ads.util.g$a: void a(android.app.AlertDialog$Builder,java.lang.String,android.webkit.JsResult)>",
+							"<com.google.ads.util.g$a: void a(android.app.AlertDialog$Builder,android.content.Context,java.lang.String,java.lang.String,android.webkit.JsPromptResult)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.Vstavit_edu_v_DB_obnovit_LV",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.Vstavit_edu_v_DB_obnovit_LV_fav",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.onOptionsItemSelected",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary$10$2: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$15$1: void onClick(android.content.DialogInterface,int)>",
+							"<ru.hudeem.adg.Dieta_diary$13: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$15: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$10: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV_fav(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary: void Vstavit_edu_v_DB_obnovit_LV(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+							"<ru.hudeem.adg.Dieta_diary$4: void onItemClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"<ru.hudeem.adg.Dieta_diary$9: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$12$3: boolean onItemLongClick(android.widget.AdapterView,android.view.View,int,long)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ru.hudeem.adg.Dieta_diary.showDialog",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<ru.hudeem.adg.Dieta_diary: void showDialog(int)>",
+							"<ru.hudeem.adg.Dieta_diary$8: void onClick(android.view.View)>",
+							"<ru.hudeem.adg.Dieta_diary$7: void onClick(android.view.View)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

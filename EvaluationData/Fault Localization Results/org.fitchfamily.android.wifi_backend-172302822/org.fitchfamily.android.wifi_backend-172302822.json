@@ -1,0 +1,110 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.fitchfamily.android.wifi_backend-172302822",
+		"Method":"android.database.sqlite.SQLiteProgram.bindString",
+		"Crash Message":"the bind value at index 12 is null",
+		"stack trace":[
+			"android.database.sqlite.SQLiteProgram.bindString",
+			"org.fitchfamily.android.wifi_backend.database.Database.insert",
+			"org.fitchfamily.android.wifi_backend.data.ImportSpiceRequest.loadDataFromNetwork",
+			"org.fitchfamily.android.wifi_backend.data.ImportSpiceRequest.loadDataFromNetwork",
+			"com.octo.android.robospice.request.CachedSpiceRequest.loadDataFromNetwork",
+			"com.octo.android.robospice.request.DefaultRequestRunner.processRequest",
+			"com.octo.android.robospice.request.DefaultRequestRunner$1.run",
+			"java.util.concurrent.Executors$RunnableAdapter.call",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"org.fitchfamily.android.wifi_backend.data.ImportSpiceRequest.loadDataFromNetwork"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qthe bind value at index \\E[\\s\\S]*\\Q is null\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			1
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r0 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.fitchfamily.android.wifi_backend.database.Database.insert",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"org.fitchfamily.android.wifi_backend.database.Database.insert"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.fitchfamily.android.wifi_backend.data.ImportSpiceRequest.loadDataFromNetwork",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"org.fitchfamily.android.wifi_backend.data.ImportSpiceRequest.loadDataFromNetwork"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.octo.android.robospice.request.CachedSpiceRequest.loadDataFromNetwork",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"com.octo.android.robospice.request.CachedSpiceRequest.loadDataFromNetwork"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.octo.android.robospice.request.DefaultRequestRunner.processRequest",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"com.octo.android.robospice.request.DefaultRequestRunner.processRequest"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.octo.android.robospice.request.DefaultRequestRunner$1.run",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"com.octo.android.robospice.request.DefaultRequestRunner$1.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

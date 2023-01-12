@@ -1,0 +1,68 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"myprograms.application.thermometer-376",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"\"network\" location provider requires ACCESS_COARSE_LOCATION or ACCESS_FINE_LOCATION permission.",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"myprograms.application.thermometer.d.<init>",
+			"myprograms.application.thermometer.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"myprograms.application.thermometer.d.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"myprograms.application.thermometer.d.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"myprograms.application.thermometer.d.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<myprograms.application.thermometer.d: android.location.LocationListener h>",
+						"Influenced By Method":"<myprograms.application.thermometer.d: void <init>(android.content.Context)>",
+						"Trace":[
+							"<myprograms.application.thermometer.d: void <init>(android.content.Context)>",
+							"modify key field: <myprograms.application.thermometer.d: android.location.LocationListener h>",
+							"<myprograms.application.thermometer.d: void <init>(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"myprograms.application.thermometer.MainActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"myprograms.application.thermometer.MainActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Manifest XML"
+		]
+	}
+}

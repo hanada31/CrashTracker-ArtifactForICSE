@@ -1,0 +1,197 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.baidu.searchbox-296",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.baidu.searchbox.net.a.b",
+			"com.baidu.searchbox.net.a.c",
+			"com.baidu.searchbox.net.a.<init>",
+			"com.baidu.searchbox.net.i.<init>",
+			"com.baidu.searchbox.net.i.<init>",
+			"com.baidu.searchbox.util.c.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"com.baidu.searchbox.net.a.b"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.baidu.searchbox.net.a.b",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.baidu.searchbox.net.a.b"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.baidu.searchbox.net.a: android.net.Uri a>",
+						"Influenced By Method":"<com.baidu.searchbox.net.a: void b(android.content.Context)>",
+						"Trace":[
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>",
+							"modify key field: <com.baidu.searchbox.net.a: android.net.Uri a>",
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.baidu.searchbox.net.a.<clinit>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"<java.lang.Class: java.lang.String getSimpleName()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.baidu.searchbox.net.a: android.net.Uri a>",
+						"Influenced By Method":"<com.baidu.searchbox.net.a: void <clinit>()>",
+						"Trace":[
+							"<com.baidu.searchbox.net.a: void <clinit>()>",
+							"modify key field: <com.baidu.searchbox.net.a: android.net.Uri a>",
+							"<com.baidu.searchbox.net.a: void b(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.baidu.searchbox.net.a.c",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.baidu.searchbox.net.a.c"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.baidu.searchbox.net.a.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.baidu.searchbox.net.a.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.baidu.searchbox.net.i.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.baidu.searchbox.net.i.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.baidu.searchbox.util.c.run",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.baidu.searchbox.util.c.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

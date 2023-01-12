@@ -1,0 +1,65 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.netease.newsreader.activity-481",
+		"Method":"android.app.ContextImpl.makeFilename",
+		"Crash Message":"File android.widget.Button{31b311c7 VFED..C. ......ID 384,8-469,51 #7f0c007c app:id/detail_page_reply}.xml contains a path separator",
+		"stack trace":[
+			"android.app.ContextImpl.makeFilename",
+			"android.app.ContextImpl.getSharedPrefsFile",
+			"android.app.ContextImpl.getSharedPreferences",
+			"android.content.ContextWrapper.getSharedPreferences",
+			"com.netease.newsreader.activity.DetailPage$29.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.netease.newsreader.activity.DetailPage$29.handleMessage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFile \\E[\\s\\S]*\\Q contains a path separator\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i1 >= 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.netease.newsreader.activity.DetailPage$29.handleMessage",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.netease.newsreader.activity.DetailPage$29.handleMessage"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1"
+						],
+						"Influenced method":"android.app.ContextImpl.makeFilename",
+						"Trace":[
+							"<com.netease.newsreader.activity.DetailPage$29: void handleMessage(android.os.Message)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.app.ContextImpl.makeFilename",
+						"Trace":[
+							"com.netease.newsreader.activity.DetailPage$29.handleMessage"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

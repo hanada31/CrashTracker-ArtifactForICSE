@@ -1,0 +1,116 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"br.com.msapp.mycurriculumvitae.free-177",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such column: apelido (code 1): , while compiling: SELECT id, foto, nome, profissao, nacionalidade, id_estado_civil, data_nascimento, telefones, email, endereco, endereco_numero, endereco_bairro, endereco_cidade, endereco_uf, objetivo, apresentacao, label_dados_pessoais, label_objetivo, label_info_educacional, label_experiencia_profissional, label_curso_extra_curricular, label_quali_profissional, label_idioma, label_apresentacao, apelido, website, pretensao_salarial FROM usuario WHERE id = ?",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.queryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.query",
+			"android.database.sqlite.SQLiteDatabase.query",
+			"br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO.objetct",
+			"br.com.msapp.mycurriculumvitae.free.InicioActivity.updateUsuario",
+			"br.com.msapp.mycurriculumvitae.free.InicioActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"br.com.msapp.mycurriculumvitae.free.db.DBHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO.objetct",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO.objetct"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+						"Influenced By Method":"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: br.com.msapp.mycurriculumvitae.free.object.Usuario objetct(int)>",
+						"Trace":[
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: br.com.msapp.mycurriculumvitae.free.object.Usuario objetct(int)>",
+							"modify key field: <br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: br.com.msapp.mycurriculumvitae.free.object.Usuario objetct(int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"br.com.msapp.mycurriculumvitae.free.InicioActivity.updateUsuario",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"br.com.msapp.mycurriculumvitae.free.InicioActivity.updateUsuario"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO.list",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+						"Influenced By Method":"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: java.util.List list()>",
+						"Trace":[
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: java.util.List list()>",
+							"modify key field: <br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: br.com.msapp.mycurriculumvitae.free.object.Usuario objetct(int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+						"Influenced By Method":"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: java.util.List list(java.lang.String)>",
+						"Trace":[
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: java.util.List list(java.lang.String)>",
+							"modify key field: <br.com.msapp.mycurriculumvitae.free.contract.UsuarioContract: java.lang.String[] columns>",
+							"<br.com.msapp.mycurriculumvitae.free.dao.UsuarioDAO: br.com.msapp.mycurriculumvitae.free.object.Usuario objetct(int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"br.com.msapp.mycurriculumvitae.free.InicioActivity.onResume",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"br.com.msapp.mycurriculumvitae.free.InicioActivity.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

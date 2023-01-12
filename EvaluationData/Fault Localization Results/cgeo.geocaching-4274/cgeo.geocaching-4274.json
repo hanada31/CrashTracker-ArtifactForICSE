@@ -1,0 +1,252 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-4274",
+		"Method":"android.view.WindowManagerImpl.findViewLocked",
+		"Crash Message":"View not attached to window manager",
+		"stack trace":[
+			"android.view.WindowManagerImpl.findViewLocked",
+			"android.view.WindowManagerImpl.removeView",
+			"android.view.WindowManagerImpl$CompatModeWrapper.removeView",
+			"android.app.Dialog.dismissDialog",
+			"android.app.Dialog$1.run",
+			"android.app.Dialog.dismiss",
+			"cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler.handleRegularMessage",
+			"cgeo.geocaching.utils.CancellableHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler.handleRegularMessage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QView not attached to window manager\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z0 == 0\", \"i1 >= i0\", \"$r1 == null\", \"$r5 != r4\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler.handleRegularMessage",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler.handleRegularMessage"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.view.WindowManagerImpl.findViewLocked",
+						"Trace":[
+							"<cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler: void handleRegularMessage(android.os.Message)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerImpl.findViewLocked",
+						"Trace":[
+							"cgeo.geocaching.maps.CGeoMap$LoadDetailsHandler.handleRegularMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.CancellableHandler.handleMessage",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.utils.CancellableHandler.handleMessage"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerImpl.findViewLocked",
+						"Trace":[
+							"cgeo.geocaching.utils.CancellableHandler.handleMessage"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.Handler.dispatchMessage",
+							"android.os.Handler$Callback.handleMessage",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleMessage(android.os.Message)>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribe()>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribeFromAll(java.util.Collection)>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<rx.exceptions.CompositeException: void <init>(java.lang.String,java.util.Collection)>",
+							"<java.lang.RuntimeException: void <init>()>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.util.List: int size()>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<java.util.Collections: java.util.List unmodifiableList(java.util.List)>",
+							"<java.util.List: boolean addAll(java.util.Collection)>",
+							"<java.util.Set: boolean add(java.lang.Object)>",
+							"<java.util.Set: boolean addAll(java.util.Collection)>",
+							"<rx.exceptions.CompositeException: java.util.List getExceptions()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<java.util.ArrayList: void <init>()>",
+							"<java.util.LinkedHashSet: void <init>()>",
+							"<java.util.List: java.lang.Object get(int)>",
+							"<java.util.List: int size()>",
+							"<java.util.List: boolean add(java.lang.Object)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<rx.Subscription: void unsubscribe()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleRegularMessage(android.os.Message)>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleCancel(java.lang.Object)>",
+							"android.os.Handler.handleMessage",
+							"android.os.Handler.handleCallback",
+							"android.os.HandlerThread.run",
+							"android.os.HandlerThread.onLooperPrepared"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.CancellableHandler.handleCancel",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.Handler.dispatchMessage",
+							"android.os.Handler$Callback.handleMessage",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleMessage(android.os.Message)>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribe()>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribeFromAll(java.util.Collection)>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<rx.exceptions.CompositeException: void <init>(java.lang.String,java.util.Collection)>",
+							"<java.lang.RuntimeException: void <init>()>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.util.List: int size()>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<java.util.Collections: java.util.List unmodifiableList(java.util.List)>",
+							"<java.util.List: boolean addAll(java.util.Collection)>",
+							"<java.util.Set: boolean add(java.lang.Object)>",
+							"<java.util.Set: boolean addAll(java.util.Collection)>",
+							"<rx.exceptions.CompositeException: java.util.List getExceptions()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<java.util.ArrayList: void <init>()>",
+							"<java.util.LinkedHashSet: void <init>()>",
+							"<java.util.List: java.lang.Object get(int)>",
+							"<java.util.List: int size()>",
+							"<java.util.List: boolean add(java.lang.Object)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<rx.Subscription: void unsubscribe()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleRegularMessage(android.os.Message)>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleCancel(java.lang.Object)>",
+							"android.os.Handler.handleMessage",
+							"android.os.Handler.handleCallback",
+							"android.os.HandlerThread.run",
+							"android.os.HandlerThread.onLooperPrepared"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.CancellableHandler.handleRegularMessage",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.Handler.dispatchMessage",
+							"android.os.Handler$Callback.handleMessage",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleMessage(android.os.Message)>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribe()>",
+							"<rx.subscriptions.CompositeSubscription: void unsubscribeFromAll(java.util.Collection)>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<rx.exceptions.CompositeException: void <init>(java.lang.String,java.util.Collection)>",
+							"<java.lang.RuntimeException: void <init>()>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"<java.util.List: int size()>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<java.util.Collections: java.util.List unmodifiableList(java.util.List)>",
+							"<java.util.List: boolean addAll(java.util.Collection)>",
+							"<java.util.Set: boolean add(java.lang.Object)>",
+							"<java.util.Set: boolean addAll(java.util.Collection)>",
+							"<rx.exceptions.CompositeException: java.util.List getExceptions()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<java.util.Collection: java.util.Iterator iterator()>",
+							"<java.util.ArrayList: void <init>()>",
+							"<java.util.LinkedHashSet: void <init>()>",
+							"<java.util.List: java.lang.Object get(int)>",
+							"<java.util.List: int size()>",
+							"<java.util.List: boolean add(java.lang.Object)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<rx.Subscription: void unsubscribe()>",
+							"<java.util.Iterator: java.lang.Object next()>",
+							"<java.util.Iterator: boolean hasNext()>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleRegularMessage(android.os.Message)>",
+							"<cgeo.geocaching.utils.CancellableHandler: void handleCancel(java.lang.Object)>",
+							"android.os.Handler.handleMessage",
+							"android.os.Handler.handleCallback",
+							"android.os.HandlerThread.run",
+							"android.os.HandlerThread.onLooperPrepared"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.view.WindowManagerImpl.findViewLocked",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,163 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"be.thomashermine.prochainbus-96",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"be.thomashermine.prochainbus.MainActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"be.thomashermine.prochainbus.MainActivity.onResume"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"be.thomashermine.prochainbus.MainActivity.onResume",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"be.thomashermine.prochainbus.MainActivity.onResume"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+						"Influenced By Method":"<be.thomashermine.prochainbus.MainActivity: void onResume()>",
+						"Trace":[
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>",
+							"modify key field: <be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.thomashermine.prochainbus.MainActivity.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+						"Influenced By Method":"<be.thomashermine.prochainbus.MainActivity: void <init>()>",
+						"Trace":[
+							"<be.thomashermine.prochainbus.MainActivity: void <init>()>",
+							"modify key field: <be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.thomashermine.prochainbus.MainActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+						"Influenced By Method":"<be.thomashermine.prochainbus.MainActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<be.thomashermine.prochainbus.MainActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.thomashermine.prochainbus.MainActivity.onPause",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+						"Influenced By Method":"<be.thomashermine.prochainbus.MainActivity: void onPause()>",
+						"Trace":[
+							"<be.thomashermine.prochainbus.MainActivity: void onPause()>",
+							"modify key field: <be.thomashermine.prochainbus.MainActivity: be.thomashermine.prochainbus.Location.RequestLocation mlocListener>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.thomashermine.prochainbus.MainActivity$1.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"<be.thomashermine.prochainbus.MainActivity$1: void <init>(be.thomashermine.prochainbus.MainActivity)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<be.thomashermine.prochainbus.MainActivity$1: void <init>(be.thomashermine.prochainbus.MainActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<be.thomashermine.prochainbus.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"<be.thomashermine.prochainbus.MainActivity$1: void <init>(be.thomashermine.prochainbus.MainActivity)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<be.thomashermine.prochainbus.MainActivity$1: void <init>(be.thomashermine.prochainbus.MainActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

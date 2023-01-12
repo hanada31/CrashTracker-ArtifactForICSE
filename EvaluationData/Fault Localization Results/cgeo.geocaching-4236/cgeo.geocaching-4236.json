@@ -1,0 +1,86 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-4236",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=http://www.geocaching.com }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"cgeo.geocaching.settings.SettingsActivity$1.onPreferenceClick",
+			"android.preference.Preference.performClick",
+			"android.preference.PreferenceScreen.onItemClick",
+			"android.widget.AdapterView.performItemClick",
+			"android.widget.AbsListView.performItemClick",
+			"android.widget.AbsListView$PerformClick.run",
+			"android.widget.AbsListView$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.settings.SettingsActivity$1.onPreferenceClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.settings.SettingsActivity$1.onPreferenceClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<cgeo.geocaching.settings.SettingsActivity$1: boolean onPreferenceClick(android.preference.Preference)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"cgeo.geocaching.settings.SettingsActivity$1.onPreferenceClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":64,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,126 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"finance.Calculator.AD.MD-104",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f0500ec",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"android.content.Context.getString",
+			"finance.Calculator.AD.MD.Start.onClick",
+			"android.view.View.performClick",
+			"android.view.View.onKeyUp",
+			"android.widget.TextView.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"finance.Calculator.AD.MD.Start.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"finance.Calculator.AD.MD.Start.onClick",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"finance.Calculator.AD.MD.Start.onClick"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<finance.Calculator.AD.MD.Start: void onClick(android.view.View)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"finance.Calculator.AD.MD.Start.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"finance.Calculator.AD.MD.Start$1.handleMessage",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<finance.Calculator.AD.MD.Start$1: void handleMessage(android.os.Message)>",
+							"<com.alipay.android.appDemo4.MobileSecurePayHelper: void showInstallConfirmDialog(android.content.Context,java.lang.String)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,216 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-3541",
+		"Method":"android.database.sqlite.SQLiteProgram.bindString",
+		"Crash Message":"the bind value at index 1 is null",
+		"stack trace":[
+			"android.database.sqlite.SQLiteProgram.bindString",
+			"cgeo.geocaching.DataStore.saveLogsWithoutTransaction",
+			"cgeo.geocaching.DataStore.saveInventoryWithoutTransaction",
+			"cgeo.geocaching.DataStore.saveTrackable",
+			"cgeo.geocaching.connector.gc.GCParser.parseTrackable",
+			"cgeo.geocaching.connector.gc.GCParser.searchTrackable",
+			"cgeo.geocaching.connector.trackable.TravelBugConnector.searchTrackable",
+			"cgeo.geocaching.TrackableActivity$LoadTrackableThread.run"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.connector.gc.GCParser.parseTrackable"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qthe bind value at index \\E[\\s\\S]*\\Q is null\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			1
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r0 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore.saveInventoryWithoutTransaction",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							1
+						],
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"<cgeo.geocaching.DataStore: void saveInventoryWithoutTransaction(java.lang.String,java.util.List)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.DataStore.saveInventoryWithoutTransaction"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore.saveLogsWithoutTransaction",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.DataStore.saveLogsWithoutTransaction"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore.saveTrackable",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.DataStore.saveTrackable"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.connector.gc.GCParser.parseTrackable",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.connector.gc.GCParser.parseTrackable"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.connector.gc.GCParser.searchTrackable",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.connector.gc.GCParser.searchTrackable"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.connector.trackable.TravelBugConnector.searchTrackable",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.connector.trackable.TravelBugConnector.searchTrackable"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.TrackableActivity$LoadTrackableThread.run",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.bindString",
+						"Trace":[
+							"cgeo.geocaching.TrackableActivity$LoadTrackableThread.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.connector.gc.GCParser.<clinit>",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<cgeo.geocaching.connector.gc.GCParser: cgeo.geocaching.Trackable parseTrackable(java.lang.String,java.lang.String)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"<java.lang.Class: boolean desiredAssertionStatus()>",
+							"<cgeo.geocaching.utils.SynchronizedDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<cgeo.geocaching.connector.gc.GCParser: cgeo.geocaching.Trackable parseTrackable(java.lang.String,java.lang.String)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"<java.lang.Class: boolean desiredAssertionStatus()>",
+							"<cgeo.geocaching.utils.SynchronizedDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.SynchronizedDateFormat.<init>",
+				"Candidate Score":85,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<cgeo.geocaching.connector.gc.GCParser: cgeo.geocaching.Trackable parseTrackable(java.lang.String,java.lang.String)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"<java.lang.Class: boolean desiredAssertionStatus()>",
+							"<cgeo.geocaching.utils.SynchronizedDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.text.SimpleDateFormat: void <init>(java.lang.String,java.util.Locale)>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<cgeo.geocaching.connector.gc.GCParser: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

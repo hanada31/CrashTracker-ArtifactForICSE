@@ -1,0 +1,118 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.ftbpro.app-240",
+		"Method":"android.location.LocationManager.checkListener",
+		"Crash Message":"invalid listener: null",
+		"stack trace":[
+			"android.location.LocationManager.checkListener",
+			"android.location.LocationManager.removeUpdates",
+			"com.ftbpro.app.common.q.c",
+			"com.ftbpro.app.SplashActivity.onStop",
+			"android.app.Instrumentation.callActivityOnStop",
+			"android.app.Activity.performStop",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"com.ftbpro.app.common.q.b"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qinvalid listener: \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r0 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.ftbpro.app.common.q.c",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.location.LocationManager.checkListener",
+						"Trace":[
+							"<com.ftbpro.app.common.q: void c()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.location.LocationManager.checkListener",
+						"Trace":[
+							"com.ftbpro.app.common.q.c"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.ftbpro.app.common.q: android.location.LocationListener c>",
+						"Influenced By Method":"<com.ftbpro.app.common.q: void c()>",
+						"Trace":[
+							"<com.ftbpro.app.common.q: void c()>",
+							"modify key field: <com.ftbpro.app.common.q: android.location.LocationListener c>",
+							"<com.ftbpro.app.common.q: void c()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ftbpro.app.common.q.a",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.ftbpro.app.common.q: android.location.LocationListener c>",
+						"Influenced By Method":"<com.ftbpro.app.common.q: void a()>",
+						"Trace":[
+							"<com.ftbpro.app.common.q: void a()>",
+							"modify key field: <com.ftbpro.app.common.q: android.location.LocationListener c>",
+							"<com.ftbpro.app.common.q: void c()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ftbpro.app.common.q.b",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.ftbpro.app.common.q: android.location.LocationListener c>",
+						"Influenced By Method":"<com.ftbpro.app.common.q: void b()>",
+						"Trace":[
+							"<com.ftbpro.app.common.q: void b()>",
+							"modify key field: <com.ftbpro.app.common.q: android.location.LocationListener c>",
+							"<com.ftbpro.app.common.q: void c()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ftbpro.app.SplashActivity.onStop",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.location.LocationManager.checkListener",
+						"Trace":[
+							"com.ftbpro.app.SplashActivity.onStop"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

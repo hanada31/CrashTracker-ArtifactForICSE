@@ -1,0 +1,2619 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.tgb.bg.jevcyxr-215",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window android.view.ViewRootImpl$W@7c9440c -- the specified window type is not valid",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"com.heyzap.sdk.ClickableToast.show",
+			"com.heyzap.sdk.ClickableToast.show",
+			"com.heyzap.sdk.HeyzapLib$1.run",
+			"android.app.Activity.runOnUiThread",
+			"com.heyzap.sdk.HeyzapLib.load",
+			"com.heyzap.sdk.HeyzapLib.load",
+			"com.tgb.bg.jevcyxr.views.TGBMainMenu.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.heyzap.sdk.ClickableToast.show"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window \\E[\\s\\S]*\\Q -- the specified window type is not valid\\E",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.onCreate",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.tgb.bg.jevcyxr.views.TGBMainMenu.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ImageView: void setVisibility(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void c()>",
+							"<com.heyzap.sdk.HeyzapButton: void init(android.content.Context,android.util.AttributeSet)>",
+							"<com.heyzap.sdk.HeyzapButton: void setVisibility(int)>",
+							"fw: <android.widget.ImageView: void setVisibility(int)>, <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void e()>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void d()>",
+							"<com.heyzap.sdk.ClickableToast: void setOnClickListener(android.view.View$OnClickListener)>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.tgb.bg.jevcyxr.views.TGBMainMenu.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.show",
+				"Candidate Score":79,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.heyzap.sdk.ClickableToast.show"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewManager: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show()>",
+							"fw: <android.view.ViewManager: void addView(android.view.View,android.view.ViewGroup$LayoutParams)>, <android.view.ViewGroup: void addViewInner(android.view.View,int,android.view.ViewGroup$LayoutParams,boolean)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean postDelayed(java.lang.Runnable,long)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show(int)>",
+							"<com.heyzap.sdk.ClickableToast: boolean postDelayed(java.lang.Runnable,long)>",
+							"fw: <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler$1: void run()>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean access$1400(android.view.ViewRootImpl$SyntheticTouchNavigationHandler,long)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean postFling(long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void addView(android.view.View)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show(android.content.Context,android.view.View,int)>",
+							"<com.heyzap.sdk.ClickableToast: void addView(android.view.View)>",
+							"fw: <android.view.ViewGroup: void addView(android.view.View)>, <android.view.ViewGroup: void addView(android.view.View,int)>, <android.view.ViewGroup: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>, <android.view.ViewGroup: void addViewInner(android.view.View,int,android.view.ViewGroup$LayoutParams,boolean)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show(android.content.Context,android.view.View,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.heyzap.sdk.ClickableToast.show"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.HeyzapLib$1.run",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.heyzap.sdk.HeyzapLib$1.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.heyzap.sdk.HeyzapLib$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.HeyzapLib.load",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.heyzap.sdk.HeyzapLib.load"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.heyzap.sdk.HeyzapLib.load"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.a",
+				"Candidate Score":65,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void a(int)>",
+							"<com.heyzap.sdk.ClickableToast: void setVisibility(int)>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.b",
+				"Candidate Score":65,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void b()>",
+							"<com.heyzap.sdk.ClickableToast: void setBackgroundDrawable(android.graphics.drawable.Drawable)>",
+							"fw: <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.TextView: void setEnabled(boolean)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void b()>",
+							"<com.flurry.android.v: void <init>(com.flurry.android.CatalogActivity,android.content.Context)>",
+							"fw: <android.widget.TextView: void setEnabled(boolean)>, <android.view.View: void setEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.e",
+				"Candidate Score":65,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void setContentView(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void e()>",
+							"<com.tgb.bg.jevcyxr.refurbished.l: void setContentView(int)>",
+							"<com.tgb.bg.jevcyxr.views.r: void <init>(com.tgb.bg.jevcyxr.views.TGBMainGameActivity)>",
+							"<com.tgb.bg.jevcyxr.views.r: void setContentView(int)>",
+							"<com.tgb.bg.jevcyxr.views.o: void <init>(com.tgb.bg.jevcyxr.views.TGBMainGameActivity,boolean)>",
+							"<com.tgb.bg.jevcyxr.views.o: void setContentView(int)>",
+							"<com.tgb.bg.jevcyxr.views.n: void <init>(android.content.Context)>",
+							"<com.tgb.bg.jevcyxr.views.n: void setContentView(int)>",
+							"<com.tgb.bg.jevcyxr.views.aa: void <init>(com.tgb.bg.jevcyxr.views.TGBMainGameActivity)>",
+							"<com.tgb.bg.jevcyxr.views.aa: void setContentView(int)>",
+							"fw: <android.app.Dialog: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void e()>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void d()>",
+							"<com.heyzap.sdk.ClickableToast: void setOnClickListener(android.view.View$OnClickListener)>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.setContentView",
+				"Candidate Score":65,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.c",
+				"Candidate Score":64,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ImageView: void setVisibility(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void c()>",
+							"<com.heyzap.sdk.HeyzapButton: void init(android.content.Context,android.util.AttributeSet)>",
+							"<com.heyzap.sdk.HeyzapButton: void setVisibility(int)>",
+							"fw: <android.widget.ImageView: void setVisibility(int)>, <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.tgb.bg.jevcyxr.views.TGBMainMenu.d",
+				"Candidate Score":64,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void e()>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void d()>",
+							"<com.heyzap.sdk.ClickableToast: void setOnClickListener(android.view.View$OnClickListener)>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.performHapticFeedback",
+				"Candidate Score":54,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean performHapticFeedback(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean performHapticFeedback(int)>",
+							"fw: <android.view.View: boolean performHapticFeedback(int)>, <android.view.View: boolean performHapticFeedback(int,int)>, <android.view.ViewRootImpl: boolean performHapticFeedback(int,boolean)>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestFocusFromTouch",
+				"Candidate Score":54,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean requestFocusFromTouch()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean requestFocusFromTouch()>",
+							"fw: <android.view.View: boolean requestFocusFromTouch()>, <android.view.ViewRootImpl: boolean ensureTouchMode(boolean)>, <android.view.ViewRootImpl: boolean isInLocalFocusMode()>, key field: <android.view.ViewRootImpl: android.view.WindowManager$LayoutParams mWindowAttributes>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.WindowManager$LayoutParams mWindowAttributes"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestRectangleOnScreen",
+				"Candidate Score":54,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean requestRectangleOnScreen(android.graphics.Rect)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean requestRectangleOnScreen(android.graphics.Rect)>",
+							"fw: <android.view.View: boolean requestRectangleOnScreen(android.graphics.Rect)>, <android.view.View: boolean requestRectangleOnScreen(android.graphics.Rect,boolean)>, <android.view.ViewRootImpl: boolean requestChildRectangleOnScreen(android.view.View,android.graphics.Rect,boolean)>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.clearChildFocus",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearChildFocus(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.r: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.p: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.v: void clearChildFocus(android.view.View)>",
+							"fw: <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.performLongClick",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean performLongClick()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean performLongClick()>",
+							"fw: <android.view.View: boolean performLongClick()>, <android.view.View: boolean performHapticFeedback(int)>, <android.view.View: boolean performHapticFeedback(int,int)>, <android.view.ViewRootImpl: boolean performHapticFeedback(int,boolean)>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.recomputeViewAttributes",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void recomputeViewAttributes(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.r: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.p: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.v: void recomputeViewAttributes(android.view.View)>",
+							"fw: <android.view.ViewGroup: void recomputeViewAttributes(android.view.View)>, <android.view.ViewRootImpl: void recomputeViewAttributes(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestChildFocus",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.r: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.p: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.v: void requestChildFocus(android.view.View,android.view.View)>",
+							"fw: <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestLayout",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void requestLayout()>",
+						"Trace":[
+							"<com.flurry.android.l: void requestLayout()>",
+							"<com.flurry.android.p: void requestLayout()>",
+							"<com.heyzap.sdk.PopupToast: void requestLayout()>",
+							"<org.anddev.andengine.opengl.view.RenderSurfaceView: void requestLayout()>",
+							"<com.heyzap.sdk.HeyzapButton: void requestLayout()>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestLayout()>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestLayout()>",
+							"<com.heyzap.sdk.WebViewDialog: void requestLayout()>",
+							"<com.heyzap.sdk.ClickableToast: void requestLayout()>",
+							"<org.anddev.andengine.opengl.view.GLSurfaceView: void requestLayout()>",
+							"fw: <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setSystemUiVisibility",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setSystemUiVisibility(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setSystemUiVisibility(int)>",
+							"fw: <android.view.View: void setSystemUiVisibility(int)>, <android.view.ViewRootImpl: void recomputeViewAttributes(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.bringChildToFront",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void bringChildToFront(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.r: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.p: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.v: void bringChildToFront(android.view.View)>",
+							"fw: <android.view.ViewGroup: void bringChildToFront(android.view.View)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.invalidateChild",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>",
+						"Trace":[
+							"<com.flurry.android.l: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.r: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.p: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PopupToast: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PreMarketDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.HeyzapDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.WebViewDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.ClickableToast: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.v: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"fw: <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeAllViewsInLayout",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeAllViewsInLayout()>",
+						"Trace":[
+							"<com.flurry.android.l: void removeAllViewsInLayout()>",
+							"<com.flurry.android.r: void removeAllViewsInLayout()>",
+							"<com.flurry.android.p: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.PopupToast: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.WebViewDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.ClickableToast: void removeAllViewsInLayout()>",
+							"<com.flurry.android.v: void removeAllViewsInLayout()>",
+							"fw: <android.view.ViewGroup: void removeAllViewsInLayout()>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestTransparentRegion",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void requestTransparentRegion(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.r: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.p: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.v: void requestTransparentRegion(android.view.View)>",
+							"fw: <android.view.ViewGroup: void requestTransparentRegion(android.view.View)>, <android.view.ViewRootImpl: void requestTransparentRegion(android.view.View)>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setMinimumHeight",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setMinimumHeight(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setMinimumHeight(int)>",
+							"fw: <android.view.View: void setMinimumHeight(int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setMinimumWidth",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setMinimumWidth(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setMinimumWidth(int)>",
+							"fw: <android.view.View: void setMinimumWidth(int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.startLayoutAnimation",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void startLayoutAnimation()>",
+						"Trace":[
+							"<com.flurry.android.l: void startLayoutAnimation()>",
+							"<com.flurry.android.r: void startLayoutAnimation()>",
+							"<com.flurry.android.p: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.PopupToast: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.PreMarketDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.HeyzapDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.WebViewDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.ClickableToast: void startLayoutAnimation()>",
+							"<com.flurry.android.v: void startLayoutAnimation()>",
+							"fw: <android.view.ViewGroup: void startLayoutAnimation()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.bringToFront",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void bringToFront()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void bringToFront()>",
+							"fw: <android.view.View: void bringToFront()>, <android.view.ViewGroup: void bringChildToFront(android.view.View)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.onHoverEvent",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean onHoverEvent(android.view.MotionEvent)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean onHoverEvent(android.view.MotionEvent)>",
+							"fw: <android.view.View: boolean onHoverEvent(android.view.MotionEvent)>, <android.view.View: boolean dispatchGenericMotionEventInternal(android.view.MotionEvent)>, <android.view.View: boolean performContextClick()>, <android.view.View: boolean performHapticFeedback(int)>, <android.view.View: boolean performHapticFeedback(int,int)>, <android.view.ViewRootImpl: boolean performHapticFeedback(int,boolean)>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.onTouchEvent",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean onTouchEvent(android.view.MotionEvent)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean onTouchEvent(android.view.MotionEvent)>",
+							"fw: <android.view.View: boolean onTouchEvent(android.view.MotionEvent)>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeAllViews",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeAllViews()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void removeAllViews()>",
+							"fw: <android.view.ViewGroup: void removeAllViews()>, <android.view.ViewGroup: void removeAllViewsInLayout()>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeViewAt",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewAt(int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewAt(int)>",
+							"<com.flurry.android.r: void removeViewAt(int)>",
+							"<com.flurry.android.p: void removeViewAt(int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewAt(int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewAt(int)>",
+							"<com.flurry.android.v: void removeViewAt(int)>",
+							"fw: <android.view.ViewGroup: void removeViewAt(int)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeViews",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViews(int,int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViews(int,int)>",
+							"<com.flurry.android.r: void removeViews(int,int)>",
+							"<com.flurry.android.p: void removeViews(int,int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViews(int,int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViews(int,int)>",
+							"<com.flurry.android.v: void removeViews(int,int)>",
+							"fw: <android.view.ViewGroup: void removeViews(int,int)>, <android.view.ViewGroup: void removeViewsInternal(int,int)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeViewsInLayout",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewsInLayout(int,int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.r: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.p: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.v: void removeViewsInLayout(int,int)>",
+							"fw: <android.view.ViewGroup: void removeViewsInLayout(int,int)>, <android.view.ViewGroup: void removeViewsInternal(int,int)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestSendAccessibilityEvent",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+						"Trace":[
+							"<com.flurry.android.l: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.r: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.p: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.PopupToast: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.PreMarketDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.HeyzapDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.WebViewDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.ClickableToast: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.v: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"fw: <android.view.ViewGroup: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void handleWindowContentChangedEvent(android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void invalidateRectOnScreen(android.graphics.Rect)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setForegroundGravity",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.FrameLayout: void setForegroundGravity(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.PopupToast: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.WebViewDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.ClickableToast: void setForegroundGravity(int)>",
+							"fw: <android.widget.FrameLayout: void setForegroundGravity(int)>, <android.view.View: void setForegroundGravity(int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setLayoutParams",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setLayoutParams(android.view.ViewGroup$LayoutParams)>",
+							"fw: <android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>, <android.widget.AbsSpinner: void requestLayout()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.clearAnimation",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void clearAnimation()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void clearAnimation()>",
+							"fw: <android.view.View: void clearAnimation()>, <android.view.animation.Animation: void detach()>, <android.view.animation.Animation: void fireAnimationEnd()>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.hide",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewManager: void removeView(android.view.View)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void hide()>",
+							"fw: <android.view.ViewManager: void removeView(android.view.View)>, <android.view.ViewGroup: boolean removeViewInternal(android.view.View)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.onAttachedToWindow",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewManager: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void onAttachedToWindow()>",
+							"fw: <android.view.ViewManager: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>, <android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>, <android.widget.AbsSpinner: void requestLayout()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.onKeyDown",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean onKeyDown(int,android.view.KeyEvent)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean onKeyDown(int,android.view.KeyEvent)>",
+							"fw: <android.view.View: boolean onKeyDown(int,android.view.KeyEvent)>, <android.view.View: void checkForLongClick(int)>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeView",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeView(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeView(android.view.View)>",
+							"<com.flurry.android.r: void removeView(android.view.View)>",
+							"<com.flurry.android.p: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void setView(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void removeView(android.view.View)>",
+							"<com.flurry.android.v: void removeView(android.view.View)>",
+							"fw: <android.view.ViewGroup: void removeView(android.view.View)>, <android.view.ViewGroup: boolean removeViewInternal(android.view.View)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.removeViewInLayout",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewInLayout(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.r: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.p: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.v: void removeViewInLayout(android.view.View)>",
+							"fw: <android.view.ViewGroup: void removeViewInLayout(android.view.View)>, <android.view.ViewGroup: boolean removeViewInternal(android.view.View)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.sendAccessibilityEventUnchecked",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void sendAccessibilityEventUnchecked(android.view.accessibility.AccessibilityEvent)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void sendAccessibilityEventUnchecked(android.view.accessibility.AccessibilityEvent)>",
+							"fw: <android.view.View: void sendAccessibilityEventUnchecked(android.view.accessibility.AccessibilityEvent)>, <android.view.View: void sendAccessibilityEventUncheckedInternal(android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void handleWindowContentChangedEvent(android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void invalidateRectOnScreen(android.graphics.Rect)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setBackgroundDrawable",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void b()>",
+							"<com.heyzap.sdk.ClickableToast: void setBackgroundDrawable(android.graphics.drawable.Drawable)>",
+							"fw: <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setClickable",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setClickable(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setClickable(boolean)>",
+							"fw: <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setDrawingCacheEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setDrawingCacheEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setDrawingCacheEnabled(boolean)>",
+							"fw: <android.view.View: void setDrawingCacheEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setDrawingCacheQuality",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setDrawingCacheQuality(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setDrawingCacheQuality(int)>",
+							"fw: <android.view.View: void setDrawingCacheQuality(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setDuplicateParentStateEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setDuplicateParentStateEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setDuplicateParentStateEnabled(boolean)>",
+							"fw: <android.view.View: void setDuplicateParentStateEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setEnabled(boolean)>",
+							"fw: <android.view.View: void setEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setFilterTouchesWhenObscured",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setFilterTouchesWhenObscured(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setFilterTouchesWhenObscured(boolean)>",
+							"fw: <android.view.View: void setFilterTouchesWhenObscured(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setFitsSystemWindows",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setFitsSystemWindows(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setFitsSystemWindows(boolean)>",
+							"fw: <android.view.View: void setFitsSystemWindows(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setFocusable",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setFocusable(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setFocusable(boolean)>",
+							"fw: <android.view.View: void setFocusable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setFocusableInTouchMode",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setFocusableInTouchMode(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setFocusableInTouchMode(boolean)>",
+							"fw: <android.view.View: void setFocusableInTouchMode(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setHapticFeedbackEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setHapticFeedbackEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setHapticFeedbackEnabled(boolean)>",
+							"fw: <android.view.View: void setHapticFeedbackEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setKeepScreenOn",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setKeepScreenOn(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setKeepScreenOn(boolean)>",
+							"fw: <android.view.View: void setKeepScreenOn(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setLongClickable",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setLongClickable(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setLongClickable(boolean)>",
+							"fw: <android.view.View: void setLongClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setSaveEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setSaveEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setSaveEnabled(boolean)>",
+							"fw: <android.view.View: void setSaveEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setSaveFromParentEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setSaveFromParentEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setSaveFromParentEnabled(boolean)>",
+							"fw: <android.view.View: void setSaveFromParentEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setSoundEffectsEnabled",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setSoundEffectsEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setSoundEffectsEnabled(boolean)>",
+							"fw: <android.view.View: void setSoundEffectsEnabled(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setVisibility",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void a(int)>",
+							"<com.heyzap.sdk.ClickableToast: void setVisibility(int)>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setWillNotCacheDrawing",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setWillNotCacheDrawing(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setWillNotCacheDrawing(boolean)>",
+							"fw: <android.view.View: void setWillNotCacheDrawing(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setWillNotDraw",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setWillNotDraw(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setWillNotDraw(boolean)>",
+							"fw: <android.view.View: void setWillNotDraw(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.updateViewLayout",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<com.flurry.android.l: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.r: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.p: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.PopupToast: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.PreMarketDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.HeyzapDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.WebViewDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.ClickableToast: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.v: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"fw: <android.view.ViewGroup: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>, <android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>, <android.widget.AbsSpinner: void requestLayout()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.addView",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void addView(android.view.View)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show(android.content.Context,android.view.View,int)>",
+							"<com.heyzap.sdk.ClickableToast: void addView(android.view.View)>",
+							"fw: <android.view.ViewGroup: void addView(android.view.View)>, <android.view.ViewGroup: void addView(android.view.View,int)>, <android.view.ViewGroup: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>, <android.view.ViewGroup: void addViewInner(android.view.View,int,android.view.ViewGroup$LayoutParams,boolean)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.buildLayer",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void buildLayer()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void buildLayer()>",
+							"fw: <android.view.View: void buildLayer()>, <android.view.View: android.view.RenderNode updateDisplayListIfDirty()>, <android.view.ViewGroup: void dispatchDraw(android.graphics.Canvas)>, <android.view.View: boolean post(java.lang.Runnable)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.clearDisappearingChildren",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearDisappearingChildren()>",
+						"Trace":[
+							"<com.flurry.android.l: void clearDisappearingChildren()>",
+							"<com.flurry.android.r: void clearDisappearingChildren()>",
+							"<com.flurry.android.p: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.PopupToast: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.WebViewDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.ClickableToast: void clearDisappearingChildren()>",
+							"<com.flurry.android.v: void clearDisappearingChildren()>",
+							"fw: <android.view.ViewGroup: void clearDisappearingChildren()>, <android.view.View: void clearAnimation()>, <android.view.animation.Animation: void detach()>, <android.view.animation.Animation: void fireAnimationEnd()>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.clearFocus",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearFocus()>",
+						"Trace":[
+							"<com.flurry.android.l: void clearFocus()>",
+							"<com.flurry.android.r: void clearFocus()>",
+							"<com.flurry.android.p: void clearFocus()>",
+							"<com.heyzap.sdk.PopupToast: void clearFocus()>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearFocus()>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearFocus()>",
+							"<com.heyzap.sdk.WebViewDialog: void clearFocus()>",
+							"<com.heyzap.sdk.ClickableToast: void clearFocus()>",
+							"<com.flurry.android.v: void clearFocus()>",
+							"fw: <android.view.ViewGroup: void clearFocus()>, <android.widget.SearchView: void clearFocus()>, <android.view.View: void clearFocus()>, <android.view.View: void clearFocusInternal(android.view.View,boolean,boolean)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.dispatchGenericMotionEvent",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean dispatchGenericMotionEvent(android.view.MotionEvent)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean dispatchGenericMotionEvent(android.view.MotionEvent)>",
+							"fw: <android.view.View: boolean dispatchGenericMotionEvent(android.view.MotionEvent)>, <android.view.View: boolean dispatchHoverEvent(android.view.MotionEvent)>, <android.view.View: boolean onHoverEvent(android.view.MotionEvent)>, <android.view.View: boolean dispatchGenericMotionEventInternal(android.view.MotionEvent)>, <android.view.View: boolean performContextClick()>, <android.view.View: boolean performHapticFeedback(int)>, <android.view.View: boolean performHapticFeedback(int,int)>, <android.view.ViewRootImpl: boolean performHapticFeedback(int,boolean)>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.getPaddingLeft",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: int getPaddingLeft()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: int getPaddingLeft()>",
+							"fw: <android.view.View: int getPaddingLeft()>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.getPaddingRight",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: int getPaddingRight()>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: int getPaddingRight()>",
+							"fw: <android.view.View: int getPaddingRight()>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.invalidate",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void invalidate(android.graphics.Rect)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void invalidate(android.graphics.Rect)>",
+							"fw: <android.view.View: void invalidate(android.graphics.Rect)>, <android.view.View: void invalidateInternal(int,int,int,int,boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.offsetLeftAndRight",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void offsetLeftAndRight(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void offsetLeftAndRight(int)>",
+							"fw: <android.view.View: void offsetLeftAndRight(int)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.offsetTopAndBottom",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void offsetTopAndBottom(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void offsetTopAndBottom(int)>",
+							"fw: <android.view.View: void offsetTopAndBottom(int)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.post",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean post(java.lang.Runnable)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: boolean post(java.lang.Runnable)>",
+							"fw: <android.view.View: boolean post(java.lang.Runnable)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler$1: void run()>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean access$1400(android.view.ViewRootImpl$SyntheticTouchNavigationHandler,long)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean postFling(long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.postDelayed",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: boolean postDelayed(java.lang.Runnable,long)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void show(int)>",
+							"<com.heyzap.sdk.ClickableToast: boolean postDelayed(java.lang.Runnable,long)>",
+							"fw: <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler$1: void run()>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean access$1400(android.view.ViewRootImpl$SyntheticTouchNavigationHandler,long)>, <android.view.ViewRootImpl$SyntheticTouchNavigationHandler: boolean postFling(long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.requestFocus",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: boolean requestFocus(int,android.graphics.Rect)>",
+						"Trace":[
+							"<com.flurry.android.l: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.r: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.p: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PopupToast: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PreMarketDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.HeyzapDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.WebViewDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.ClickableToast: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.v: boolean requestFocus(int,android.graphics.Rect)>",
+							"fw: <android.view.ViewGroup: boolean requestFocus(int,android.graphics.Rect)>, <android.view.View: boolean requestFocus(int,android.graphics.Rect)>, <android.view.View: boolean requestFocusNoSearch(int,android.graphics.Rect)>, <android.view.View: void handleFocusGainInternal(int,android.graphics.Rect)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.scrollTo",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void scrollTo(int,int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void scrollTo(int,int)>",
+							"fw: <android.view.View: void scrollTo(int,int)>, <android.view.View: void onScrollChanged(int,int,int,int)>, <android.view.View: void postSendViewScrolledAccessibilityEventCallback()>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setAlpha",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setAlpha(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setAlpha(float)>",
+							"fw: <android.view.View: void setAlpha(float)>, <android.view.View: void notifyViewAccessibilityStateChangedIfNeeded(int)>, <android.view.View$SendViewStateChangedAccessibilityEvent: void runOrPost(int)>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setCameraDistance",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setCameraDistance(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setCameraDistance(float)>",
+							"fw: <android.view.View: void setCameraDistance(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setContentDescription",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setContentDescription(java.lang.CharSequence)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setContentDescription(java.lang.CharSequence)>",
+							"fw: <android.view.View: void setContentDescription(java.lang.CharSequence)>, <android.view.View: void notifyViewAccessibilityStateChangedIfNeeded(int)>, <android.view.View$SendViewStateChangedAccessibilityEvent: void runOrPost(int)>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setHorizontalScrollBarEnabled",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setHorizontalScrollBarEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setHorizontalScrollBarEnabled(boolean)>",
+							"fw: <android.view.View: void setHorizontalScrollBarEnabled(boolean)>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setOnClickListener",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void onCreate(android.os.Bundle)>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void e()>",
+							"<com.tgb.bg.jevcyxr.views.TGBMainMenu: void d()>",
+							"<com.heyzap.sdk.ClickableToast: void setOnClickListener(android.view.View$OnClickListener)>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setOnCreateContextMenuListener",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnCreateContextMenuListener(android.view.View$OnCreateContextMenuListener)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setOnCreateContextMenuListener(android.view.View$OnCreateContextMenuListener)>",
+							"fw: <android.view.View: void setOnCreateContextMenuListener(android.view.View$OnCreateContextMenuListener)>, <android.view.View: void setLongClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setOnLongClickListener",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnLongClickListener(android.view.View$OnLongClickListener)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setOnLongClickListener(android.view.View$OnLongClickListener)>",
+							"fw: <android.view.View: void setOnLongClickListener(android.view.View$OnLongClickListener)>, <android.view.View: void setLongClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setPivotX",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setPivotX(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setPivotX(float)>",
+							"fw: <android.view.View: void setPivotX(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setPivotY",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setPivotY(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setPivotY(float)>",
+							"fw: <android.view.View: void setPivotY(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setRotation",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setRotation(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setRotation(float)>",
+							"fw: <android.view.View: void setRotation(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setRotationX",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setRotationX(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setRotationX(float)>",
+							"fw: <android.view.View: void setRotationX(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setRotationY",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setRotationY(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setRotationY(float)>",
+							"fw: <android.view.View: void setRotationY(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setScaleX",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setScaleX(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setScaleX(float)>",
+							"fw: <android.view.View: void setScaleX(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setScaleY",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setScaleY(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setScaleY(float)>",
+							"fw: <android.view.View: void setScaleY(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setScrollBarStyle",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setScrollBarStyle(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setScrollBarStyle(int)>",
+							"fw: <android.view.View: void setScrollBarStyle(int)>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setSelected",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setSelected(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setSelected(boolean)>",
+							"fw: <android.view.View: void setSelected(boolean)>, <android.view.View: void notifyViewAccessibilityStateChangedIfNeeded(int)>, <android.view.View$SendViewStateChangedAccessibilityEvent: void runOrPost(int)>, <android.view.View: boolean postDelayed(java.lang.Runnable,long)>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setTranslationX",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setTranslationX(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setTranslationX(float)>",
+							"fw: <android.view.View: void setTranslationX(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setTranslationY",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setTranslationY(float)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setTranslationY(float)>",
+							"fw: <android.view.View: void setTranslationY(float)>, <android.view.View: void invalidateViewProperty(boolean,boolean)>, <android.view.View: void damageInParent()>, <android.view.ViewGroup: void damageChild(android.view.View,android.graphics.Rect)>, <android.view.ViewGroup: boolean damageChildDeferred(android.view.View)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setVerticalScrollBarEnabled",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVerticalScrollBarEnabled(boolean)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setVerticalScrollBarEnabled(boolean)>",
+							"fw: <android.view.View: void setVerticalScrollBarEnabled(boolean)>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.ClickableToast.setVerticalScrollbarPosition",
+				"Candidate Score":49,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVerticalScrollbarPosition(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.ClickableToast: void setVerticalScrollbarPosition(int)>",
+							"fw: <android.view.View: void setVerticalScrollbarPosition(int)>, <android.view.View: void resolvePadding()>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.clearChildFocus",
+				"Candidate Score":46,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearChildFocus(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.r: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.p: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void clearChildFocus(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void clearChildFocus(android.view.View)>",
+							"<com.flurry.android.v: void clearChildFocus(android.view.View)>",
+							"fw: <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.recomputeViewAttributes",
+				"Candidate Score":46,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void recomputeViewAttributes(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.r: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.p: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void recomputeViewAttributes(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void recomputeViewAttributes(android.view.View)>",
+							"<com.flurry.android.v: void recomputeViewAttributes(android.view.View)>",
+							"fw: <android.view.ViewGroup: void recomputeViewAttributes(android.view.View)>, <android.view.ViewRootImpl: void recomputeViewAttributes(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.requestChildFocus",
+				"Candidate Score":46,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.r: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.p: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void requestChildFocus(android.view.View,android.view.View)>",
+							"<com.flurry.android.v: void requestChildFocus(android.view.View,android.view.View)>",
+							"fw: <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.requestLayout",
+				"Candidate Score":46,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void requestLayout()>",
+						"Trace":[
+							"<com.flurry.android.l: void requestLayout()>",
+							"<com.flurry.android.p: void requestLayout()>",
+							"<com.heyzap.sdk.PopupToast: void requestLayout()>",
+							"<org.anddev.andengine.opengl.view.RenderSurfaceView: void requestLayout()>",
+							"<com.heyzap.sdk.HeyzapButton: void requestLayout()>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestLayout()>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestLayout()>",
+							"<com.heyzap.sdk.WebViewDialog: void requestLayout()>",
+							"<com.heyzap.sdk.ClickableToast: void requestLayout()>",
+							"<org.anddev.andengine.opengl.view.GLSurfaceView: void requestLayout()>",
+							"fw: <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.bringChildToFront",
+				"Candidate Score":45,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void bringChildToFront(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.r: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.p: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void bringChildToFront(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void bringChildToFront(android.view.View)>",
+							"<com.flurry.android.v: void bringChildToFront(android.view.View)>",
+							"fw: <android.view.ViewGroup: void bringChildToFront(android.view.View)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.invalidateChild",
+				"Candidate Score":45,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>",
+						"Trace":[
+							"<com.flurry.android.l: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.r: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.p: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PopupToast: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PreMarketDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.HeyzapDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.WebViewDialog: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.heyzap.sdk.ClickableToast: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"<com.flurry.android.v: void invalidateChild(android.view.View,android.graphics.Rect)>",
+							"fw: <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeAllViewsInLayout",
+				"Candidate Score":45,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeAllViewsInLayout()>",
+						"Trace":[
+							"<com.flurry.android.l: void removeAllViewsInLayout()>",
+							"<com.flurry.android.r: void removeAllViewsInLayout()>",
+							"<com.flurry.android.p: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.PopupToast: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.WebViewDialog: void removeAllViewsInLayout()>",
+							"<com.heyzap.sdk.ClickableToast: void removeAllViewsInLayout()>",
+							"<com.flurry.android.v: void removeAllViewsInLayout()>",
+							"fw: <android.view.ViewGroup: void removeAllViewsInLayout()>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.requestTransparentRegion",
+				"Candidate Score":45,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void requestTransparentRegion(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.r: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.p: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void requestTransparentRegion(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void requestTransparentRegion(android.view.View)>",
+							"<com.flurry.android.v: void requestTransparentRegion(android.view.View)>",
+							"fw: <android.view.ViewGroup: void requestTransparentRegion(android.view.View)>, <android.view.ViewRootImpl: void requestTransparentRegion(android.view.View)>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.startLayoutAnimation",
+				"Candidate Score":45,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void startLayoutAnimation()>",
+						"Trace":[
+							"<com.flurry.android.l: void startLayoutAnimation()>",
+							"<com.flurry.android.r: void startLayoutAnimation()>",
+							"<com.flurry.android.p: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.PopupToast: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.PreMarketDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.HeyzapDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.WebViewDialog: void startLayoutAnimation()>",
+							"<com.heyzap.sdk.ClickableToast: void startLayoutAnimation()>",
+							"<com.flurry.android.v: void startLayoutAnimation()>",
+							"fw: <android.view.ViewGroup: void startLayoutAnimation()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeViewAt",
+				"Candidate Score":44,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewAt(int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewAt(int)>",
+							"<com.flurry.android.r: void removeViewAt(int)>",
+							"<com.flurry.android.p: void removeViewAt(int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewAt(int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewAt(int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewAt(int)>",
+							"<com.flurry.android.v: void removeViewAt(int)>",
+							"fw: <android.view.ViewGroup: void removeViewAt(int)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeViews",
+				"Candidate Score":44,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViews(int,int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViews(int,int)>",
+							"<com.flurry.android.r: void removeViews(int,int)>",
+							"<com.flurry.android.p: void removeViews(int,int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViews(int,int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViews(int,int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViews(int,int)>",
+							"<com.flurry.android.v: void removeViews(int,int)>",
+							"fw: <android.view.ViewGroup: void removeViews(int,int)>, <android.view.ViewGroup: void removeViewsInternal(int,int)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeViewsInLayout",
+				"Candidate Score":44,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewsInLayout(int,int)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.r: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.p: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewsInLayout(int,int)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewsInLayout(int,int)>",
+							"<com.flurry.android.v: void removeViewsInLayout(int,int)>",
+							"fw: <android.view.ViewGroup: void removeViewsInLayout(int,int)>, <android.view.ViewGroup: void removeViewsInternal(int,int)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.requestSendAccessibilityEvent",
+				"Candidate Score":44,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+						"Trace":[
+							"<com.flurry.android.l: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.r: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.p: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.PopupToast: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.PreMarketDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.HeyzapDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.WebViewDialog: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.heyzap.sdk.ClickableToast: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"<com.flurry.android.v: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>",
+							"fw: <android.view.ViewGroup: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: boolean requestSendAccessibilityEvent(android.view.View,android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void handleWindowContentChangedEvent(android.view.accessibility.AccessibilityEvent)>, <android.view.ViewRootImpl: void invalidateRectOnScreen(android.graphics.Rect)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.setForegroundGravity",
+				"Candidate Score":44,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.FrameLayout: void setForegroundGravity(int)>",
+						"Trace":[
+							"<com.heyzap.sdk.PopupToast: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.PreMarketDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.HeyzapDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.WebViewDialog: void setForegroundGravity(int)>",
+							"<com.heyzap.sdk.ClickableToast: void setForegroundGravity(int)>",
+							"fw: <android.widget.FrameLayout: void setForegroundGravity(int)>, <android.view.View: void setForegroundGravity(int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeView",
+				"Candidate Score":43,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeView(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeView(android.view.View)>",
+							"<com.flurry.android.r: void removeView(android.view.View)>",
+							"<com.flurry.android.p: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void setView(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeView(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void removeView(android.view.View)>",
+							"<com.flurry.android.v: void removeView(android.view.View)>",
+							"fw: <android.view.ViewGroup: void removeView(android.view.View)>, <android.view.ViewGroup: boolean removeViewInternal(android.view.View)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.removeViewInLayout",
+				"Candidate Score":43,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void removeViewInLayout(android.view.View)>",
+						"Trace":[
+							"<com.flurry.android.l: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.r: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.p: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.PopupToast: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.PreMarketDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.HeyzapDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.WebViewDialog: void removeViewInLayout(android.view.View)>",
+							"<com.heyzap.sdk.ClickableToast: void removeViewInLayout(android.view.View)>",
+							"<com.flurry.android.v: void removeViewInLayout(android.view.View)>",
+							"fw: <android.view.ViewGroup: void removeViewInLayout(android.view.View)>, <android.view.ViewGroup: boolean removeViewInternal(android.view.View)>, <android.view.ViewGroup: void removeViewInternal(int,android.view.View)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.updateViewLayout",
+				"Candidate Score":43,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<com.flurry.android.l: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.r: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.p: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.PopupToast: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.PreMarketDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.HeyzapDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.WebViewDialog: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.heyzap.sdk.ClickableToast: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"<com.flurry.android.v: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>",
+							"fw: <android.view.ViewGroup: void updateViewLayout(android.view.View,android.view.ViewGroup$LayoutParams)>, <android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>, <android.widget.AbsSpinner: void requestLayout()>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.clearDisappearingChildren",
+				"Candidate Score":42,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearDisappearingChildren()>",
+						"Trace":[
+							"<com.flurry.android.l: void clearDisappearingChildren()>",
+							"<com.flurry.android.r: void clearDisappearingChildren()>",
+							"<com.flurry.android.p: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.PopupToast: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.WebViewDialog: void clearDisappearingChildren()>",
+							"<com.heyzap.sdk.ClickableToast: void clearDisappearingChildren()>",
+							"<com.flurry.android.v: void clearDisappearingChildren()>",
+							"fw: <android.view.ViewGroup: void clearDisappearingChildren()>, <android.view.View: void clearAnimation()>, <android.view.animation.Animation: void detach()>, <android.view.animation.Animation: void fireAnimationEnd()>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.clearFocus",
+				"Candidate Score":42,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: void clearFocus()>",
+						"Trace":[
+							"<com.flurry.android.l: void clearFocus()>",
+							"<com.flurry.android.r: void clearFocus()>",
+							"<com.flurry.android.p: void clearFocus()>",
+							"<com.heyzap.sdk.PopupToast: void clearFocus()>",
+							"<com.heyzap.sdk.PreMarketDialog: void clearFocus()>",
+							"<com.heyzap.sdk.HeyzapDialog: void clearFocus()>",
+							"<com.heyzap.sdk.WebViewDialog: void clearFocus()>",
+							"<com.heyzap.sdk.ClickableToast: void clearFocus()>",
+							"<com.flurry.android.v: void clearFocus()>",
+							"fw: <android.view.ViewGroup: void clearFocus()>, <android.widget.SearchView: void clearFocus()>, <android.view.View: void clearFocus()>, <android.view.View: void clearFocusInternal(android.view.View,boolean,boolean)>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.heyzap.sdk.PopupToast.requestFocus",
+				"Candidate Score":42,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.ViewGroup: boolean requestFocus(int,android.graphics.Rect)>",
+						"Trace":[
+							"<com.flurry.android.l: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.r: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.p: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PopupToast: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.PreMarketDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.HeyzapDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.WebViewDialog: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.heyzap.sdk.ClickableToast: boolean requestFocus(int,android.graphics.Rect)>",
+							"<com.flurry.android.v: boolean requestFocus(int,android.graphics.Rect)>",
+							"fw: <android.view.ViewGroup: boolean requestFocus(int,android.graphics.Rect)>, <android.view.View: boolean requestFocus(int,android.graphics.Rect)>, <android.view.View: boolean requestFocusNoSearch(int,android.graphics.Rect)>, <android.view.View: void handleFocusGainInternal(int,android.graphics.Rect)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

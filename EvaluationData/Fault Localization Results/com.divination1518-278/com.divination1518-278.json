@@ -1,0 +1,82 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.divination1518-278",
+		"Method":"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+		"Crash Message":"Can't downgrade database from version 19 to 17",
+		"stack trace":[
+			"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"com.divination1518.f.s.a",
+			"com.divination1518.MainActivity.a",
+			"com.divination1518.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.divination1518.g.p.onDowngrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan't downgrade database from version \\E[\\s\\S]*\\Q to \\E[\\s\\S]*",
+		"Related Variable Type":"Empty",
+		"Related Condition Type":"EmptyCondition",
+		"ETS-related Type":"NoConditionVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.divination1518.g.p.onDowngrade",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Not Override Method",
+						"Explanation":"Forgets to override the signaler method",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.divination1518.f.s.a",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.divination1518.f.s.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.divination1518.MainActivity.a",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.divination1518.MainActivity.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.divination1518.MainActivity.onCreate",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.divination1518.MainActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

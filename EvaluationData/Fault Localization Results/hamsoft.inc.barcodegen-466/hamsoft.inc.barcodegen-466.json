@@ -1,0 +1,136 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"hamsoft.inc.barcodegen-466",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: t_products (code 1): , while compiling: SELECT  * FROM t_products ORDER BY id DESC",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"hamsoft.inc.barcodegen.DatabaseHelper.getAllSavedProducts",
+			"hamsoft.inc.barcodegen.MainActivity.LaunchApp",
+			"hamsoft.inc.barcodegen.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"hamsoft.inc.barcodegen.DatabaseHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"hamsoft.inc.barcodegen.DatabaseHelper.getAllSavedProducts",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"hamsoft.inc.barcodegen.DatabaseHelper.getAllSavedProducts"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"hamsoft.inc.barcodegen.MainActivity.LaunchApp",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"hamsoft.inc.barcodegen.MainActivity.LaunchApp"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"hamsoft.inc.barcodegen.DatabaseHelper.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: java.util.List getAllSavedProducts()>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: java.util.List getAllSavedProducts()>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<hamsoft.inc.barcodegen.DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"hamsoft.inc.barcodegen.DatabaseHelper.onUpgrade",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"hamsoft.inc.barcodegen.MainActivity.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"hamsoft.inc.barcodegen.MainActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

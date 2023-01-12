@@ -1,0 +1,66 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.wordpandit.flashcards-73",
+		"Method":"android.app.SharedPreferencesImpl.getLong",
+		"Crash Message":"java.lang.Integer cannot be cast to java.lang.Long",
+		"stack trace":[
+			"android.app.SharedPreferencesImpl.getLong",
+			"com.wordpandit.flashcards.utils.AppUsageTracker.getAppLaunchCount",
+			"com.wordpandit.flashcards.utils.AppUsageTracker.trackAppLaunch",
+			"com.wordpandit.flashcards.myApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.wordpandit.flashcards.utils.AppUsageTracker.getAppLaunchCount"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.wordpandit.flashcards.utils.AppUsageTracker.getAppLaunchCount",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getLong",
+						"Trace":[
+							"com.wordpandit.flashcards.utils.AppUsageTracker.getAppLaunchCount"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wordpandit.flashcards.utils.AppUsageTracker.trackAppLaunch",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getLong",
+						"Trace":[
+							"com.wordpandit.flashcards.utils.AppUsageTracker.trackAppLaunch"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wordpandit.flashcards.myApplication.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getLong",
+						"Trace":[
+							"com.wordpandit.flashcards.myApplication.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

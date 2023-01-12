@@ -1,0 +1,279 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"be.bemobile.touringmobilis-227",
+		"Method":"android.app.LoadedApk.forgetServiceDispatcher",
+		"Crash Message":"Service not registered: be.bemobile.touringmobilis.HomeActivity$2@3749139",
+		"stack trace":[
+			"android.app.LoadedApk.forgetServiceDispatcher",
+			"android.app.ContextImpl.unbindService",
+			"android.content.ContextWrapper.unbindService",
+			"be.bemobile.touringmobilis.HomeActivity.onPause",
+			"android.app.Activity.performPause",
+			"android.app.Instrumentation.callActivityOnPause",
+			"android.app.ActivityThread.handleSendResult"
+		],
+		"Labeled Buggy Method":"be.bemobile.touringmobilis.HomeActivity.onResume"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.onPause",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"be.bemobile.touringmobilis.HomeActivity.onPause"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>",
+							"<be.bemobile.touringmobilis.HomeActivity: void unbindService(android.content.ServiceConnection)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"be.bemobile.touringmobilis.HomeActivity.onPause"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+						"Influenced By Method":"<be.bemobile.touringmobilis.HomeActivity: void onPause()>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>",
+							"modify key field: <be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+						"Influenced By Method":"<be.bemobile.touringmobilis.HomeActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.onResume",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onResume()>",
+							"<be.bemobile.touringmobilis.HomeActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+						"Influenced By Method":"<be.bemobile.touringmobilis.HomeActivity: void onResume()>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onResume()>",
+							"modify key field: <be.bemobile.touringmobilis.HomeActivity: android.content.ServiceConnection gpsPositionServiceConnection>",
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.unbindService",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onPause()>",
+							"<be.bemobile.touringmobilis.HomeActivity: void unbindService(android.content.ServiceConnection)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.bindService",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void onResume()>",
+							"<be.bemobile.touringmobilis.HomeActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.createPackageContext",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity$SimpleProgressFragment.onCreateDialog",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.ProgressDialog: android.app.ProgressDialog show(android.content.Context,java.lang.CharSequence,java.lang.CharSequence,boolean,boolean)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity$SimpleProgressFragment: android.app.Dialog onCreateDialog(android.os.Bundle)>",
+							"fw: <android.app.ProgressDialog: android.app.ProgressDialog show(android.content.Context,java.lang.CharSequence,java.lang.CharSequence,boolean,boolean)>, <android.app.ProgressDialog: android.app.ProgressDialog show(android.content.Context,java.lang.CharSequence,java.lang.CharSequence,boolean,boolean,android.content.DialogInterface$OnCancelListener)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.checkPlayServices",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: boolean checkPlayServices()>",
+							"<be.bemobile.touringmobilis.utils.PlayServicesUtils: boolean checkGooglePlaySevices(android.app.Activity)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.finishAfterTransition",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void finishAfterTransition()>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void finishAfterTransition()>",
+							"fw: <android.app.Activity: void finishAfterTransition()>, <android.app.ActivityTransitionState: boolean startExitBackTransition(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.showDialog",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"be.bemobile.touringmobilis.HomeActivity.storeRegistrationId",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<be.bemobile.touringmobilis.HomeActivity: void storeRegistrationId(java.lang.String)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

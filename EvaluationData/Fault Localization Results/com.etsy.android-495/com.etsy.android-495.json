@@ -1,0 +1,214 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.etsy.android-495",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.etsy.android.soe }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.etsy.android.ui.a.a",
+			"com.etsy.android.uikit.nav.a.d",
+			"com.etsy.android.uikit.nav.a.a",
+			"com.etsy.android.uikit.navigationview.EtsyNavigationView$1.onMenuItemSelected",
+			"android.support.v7.view.menu.MenuBuilder.dispatchMenuItemSelected",
+			"android.support.v7.view.menu.MenuItemImpl.invoke",
+			"android.support.v7.view.menu.MenuBuilder.performItemAction",
+			"com.etsy.android.uikit.navigationview.EtsyNavigationMenuPresenter.onItemClick",
+			"android.widget.AdapterView.performItemClick",
+			"android.widget.AbsListView.performItemClick",
+			"android.widget.AbsListView.onKeyUp",
+			"android.widget.ListView.commonKey",
+			"android.widget.ListView.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.widget.ListView.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"android.support.v7.app.AppCompatActivity.dispatchKeyEvent",
+			"android.support.v7.view.WindowCallbackWrapper.dispatchKeyEvent",
+			"android.support.v7.app.AppCompatDelegateImplBase$AppCompatWindowCallbackBase.dispatchKeyEvent",
+			"android.support.v7.view.WindowCallbackWrapper.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.etsy.android.ui.a.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.etsy.android.ui.a.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.etsy.android.ui.a: void a(android.view.MenuItem,android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.etsy.android.ui.a.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.etsy.android.uikit.nav.a.d",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.etsy.android.uikit.nav.a.d"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.etsy.android.uikit.nav.a.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.etsy.android.uikit.nav.a.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.etsy.android.uikit.navigationview.EtsyNavigationView$1.onMenuItemSelected",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.etsy.android.uikit.navigationview.EtsyNavigationView$1.onMenuItemSelected"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.etsy.android.uikit.nav.a.<clinit>",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.util.SparseArray: java.lang.Object get(int)>",
+							"<com.etsy.android.uikit.nav.a: void a(android.content.Context,int,android.util.SparseArray)>",
+							"android.util.SparseArray.get",
+							"<com.etsy.android.uikit.nav.a: void <clinit>()>",
+							"<android.util.SparseArray: void <init>(int)>",
+							"<java.util.ArrayList: void <init>()>",
+							"android.util.SparseArray.<clinit>",
+							"<com.etsy.android.uikit.nav.a: void <clinit>()>",
+							"android.util.SparseArray.<clinit>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.util.SparseArray: java.lang.Object get(int)>",
+							"<com.etsy.android.uikit.nav.a: void a(android.content.Context,int,android.util.SparseArray)>",
+							"android.util.SparseArray.get",
+							"<com.etsy.android.uikit.nav.a: void <clinit>()>",
+							"<android.util.SparseArray: void <init>(int)>",
+							"<java.util.ArrayList: void <init>()>",
+							"android.util.SparseArray.<clinit>",
+							"<com.etsy.android.uikit.nav.a: void <clinit>()>",
+							"android.util.SparseArray.<clinit>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.etsy.android.uikit.navigationview.EtsyNavigationMenuPresenter.onItemClick",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.etsy.android.uikit.navigationview.EtsyNavigationMenuPresenter.onItemClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

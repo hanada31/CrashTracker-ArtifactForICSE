@@ -1,0 +1,181 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.ninesky.browser-76",
+		"Method":"android.database.CursorWindow.nativeGetString",
+		"Crash Message":"Couldn't read row 0, col -1 from CursorWindow.  Make sure the Cursor is initialized correctly before accessing data from it.",
+		"stack trace":[
+			"android.database.CursorWindow.nativeGetString",
+			"android.database.CursorWindow.getString",
+			"android.database.AbstractWindowedCursor.getString",
+			"com.ninesky.browsercommon.user.i.<init>",
+			"com.ninesky.browsercommon.user.i.a",
+			"com.ninesky.browsercommon.BrowserApp.d",
+			"com.ninesky.browsercommon.cr.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.ninesky.browsercommon.user.i.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.ninesky.browsercommon.user.i.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.ninesky.browsercommon.user.i.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.ninesky.browsercommon.user.i: android.content.Context c>",
+						"Influenced By Method":"<com.ninesky.browsercommon.user.i: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.ninesky.browsercommon.user.i: void <init>(android.content.Context)>",
+							"modify key field: <com.ninesky.browsercommon.user.i: android.content.Context c>",
+							"<com.ninesky.browsercommon.user.i: void <init>(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ninesky.browsercommon.user.i.a",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.ninesky.browsercommon.user.i.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.ninesky.browsercommon.user.i: android.content.Context c>",
+						"Influenced By Method":"<com.ninesky.browsercommon.user.i: void a(java.lang.String,java.lang.String,boolean)>",
+						"Trace":[
+							"<com.ninesky.browsercommon.user.i: void a(java.lang.String,java.lang.String,boolean)>",
+							"modify key field: <com.ninesky.browsercommon.user.i: android.content.Context c>",
+							"<com.ninesky.browsercommon.user.i: void <init>(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ninesky.browsercommon.BrowserApp.d",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.ninesky.browsercommon.BrowserApp.d"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ninesky.browsercommon.cr.run",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.ninesky.browsercommon.cr.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ninesky.browsercommon.user.i.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.ninesky.browsercommon.user.i: void a(java.lang.String,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"<java.util.ArrayList: void <init>()>",
+							"java.lang.String.<clinit>",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.ninesky.browsercommon.user.i: void a(java.lang.String,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"<java.util.ArrayList: void <init>()>",
+							"java.lang.String.<clinit>",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.ninesky.browsercommon.user.i: void a(java.lang.String,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"<java.util.ArrayList: void <init>()>",
+							"java.lang.String.<clinit>",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.ninesky.browsercommon.user.i: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

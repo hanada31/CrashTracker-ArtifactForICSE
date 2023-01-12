@@ -1,0 +1,75 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.bailleul.mike.go.toulouse.ads-69",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: velo (code 1): , while compiling: select * from velo order by velo_name",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.bailleul.mike.go.toulouse.ads.util.DBHelper.queryVelos",
+			"com.bailleul.mike.go.toulouse.ads.adapter.MyListVeloAdapter.loadItemsVelo",
+			"com.bailleul.mike.go.toulouse.ads.fragment.ListVeloFragment$UpdateItemsListView.doInBackground",
+			"com.bailleul.mike.go.toulouse.ads.fragment.ListVeloFragment$UpdateItemsListView.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"com.bailleul.mike.go.toulouse.ads.util.DBHelper.queryVelos"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.bailleul.mike.go.toulouse.ads.util.DBHelper.queryVelos",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.bailleul.mike.go.toulouse.ads.util.DBHelper.queryVelos"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.bailleul.mike.go.toulouse.ads.adapter.MyListVeloAdapter.loadItemsVelo",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.bailleul.mike.go.toulouse.ads.adapter.MyListVeloAdapter.loadItemsVelo"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.bailleul.mike.go.toulouse.ads.fragment.ListVeloFragment$UpdateItemsListView.doInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.bailleul.mike.go.toulouse.ads.fragment.ListVeloFragment$UpdateItemsListView.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

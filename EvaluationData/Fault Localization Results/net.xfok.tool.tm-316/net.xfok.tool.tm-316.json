@@ -1,0 +1,133 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"net.xfok.tool.tm-316",
+		"Method":"android.view.ViewGroup.addView",
+		"Crash Message":"Cannot add a null child view to a ViewGroup",
+		"stack trace":[
+			"android.view.ViewGroup.addView",
+			"android.view.ViewGroup.addView",
+			"net.xfok.tool.tm.TaskActivity.setViews",
+			"net.xfok.tool.tm.TaskActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"net.xfok.tool.tm.TaskActivity.setViews"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCannot add a null child view to a ViewGroup\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r0 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"net.xfok.tool.tm.TaskActivity.setViews",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.view.ViewGroup.addView",
+						"Trace":[
+							"<net.xfok.tool.tm.TaskActivity: void setViews()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewGroup.addView",
+						"Trace":[
+							"net.xfok.tool.tm.TaskActivity.setViews"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.xfok.tool.tm.TaskActivity.onResume",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewGroup.addView",
+						"Trace":[
+							"net.xfok.tool.tm.TaskActivity.onResume"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.xfok.tool.tm.TaskActivity$1.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<net.xfok.tool.tm.TaskActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"<net.xfok.tool.tm.TaskActivity$1: void <init>(net.xfok.tool.tm.TaskActivity)>",
+							"<android.os.Handler: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<net.xfok.tool.tm.TaskActivity$1: void <init>(net.xfok.tool.tm.TaskActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<net.xfok.tool.tm.TaskActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"<net.xfok.tool.tm.TaskActivity$1: void <init>(net.xfok.tool.tm.TaskActivity)>",
+							"<android.os.Handler: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<net.xfok.tool.tm.TaskActivity$1: void <init>(net.xfok.tool.tm.TaskActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

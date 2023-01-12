@@ -1,0 +1,581 @@
+Category	AppId	signaler	ETS-related type	location_of_the_real_buggy / number_of_reported_candidates
+A	cgeo.geocaching-600	android.app.ContextImpl.startActivity	Parameter	2	/	3	
+A	cgeo.geocaching-3570	android.view.WindowManagerGlobal.findViewLocked	Unknown	1	/	6	
+A	org.wordpress.android-1590	android.app.Activity.missingDialog	Unknown	1	/	20	
+B	org.wordpress.android-2855	android.database.CursorWindow.nativeGetString	Unknown	999	/	3	
+C	org.wordpress.android-5449	dalvik.system.BaseDexClassLoader.findClass	Unknown	1	/	2	
+A	cgeo.geocaching-4236	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.pcinpact-147505046	android.app.ContextImpl.startActivity	Parameter	1	/	2	
+A	ch.logixisland.anuto-1	android.app.FragmentManagerImpl.checkStateLoss	Field	5	/	9	
+A	fr.free.nrw.commons-225563649	android.view.ViewRootImpl.checkThread	Field	1	/	2	
+A	org.wordpress.android-2695	android.text.SpannableStringBuilder.checkRange	Parameter	2	/	5	
+A	org.kontalk-782	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	org.kontalk-734	android.os.Parcel.readException	Parameter	2	/	3	
+A	org.kontalk-795	android.view.ViewRootImpl.checkThread	Field	2	/	3	
+A	org.wordpress.android-1469	android.app.Fragment.instantiate	Unknown	1	/	2	
+A	com.nextgis.mobile-532	android.os.Parcel.readParcelableCreator	ParaAndField	1	/	7	
+B	org.y20k.transistor-21	android.support.v4.app.Fragment.startActivityForResult	Unknown	999	/	9	
+B	com.nextgis.mobile-315	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	11	
+A	org.wordpress.android-5297	android.view.WindowManagerGlobal.findViewLocked	Unknown	1	/	7	
+A	org.wordpress.android-4845	android.app.Instrumentation.checkStartActivityResult	Unknown	1	/	4	
+A	com.nextgis.mobile-493	android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow	Unknown	1	/	2	
+A	cgeo.geocaching-4541	android.hardware.SensorManager$ListenerDelegate.setDelay	Unknown	1	/	4	Hardware
+A	org.kontalk-526	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	4	/	4	
+A	com.nextgis.mobile-350	android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow	Unknown	1	/	2	
+A	org.wordpress.android-4875	android.support.v4.app.Fragment.getResources	Unknown	2	/	3	
+A	cgeo.geocaching-4524	android.view.ViewRoot.checkThread	Unknown	1	/	2	
+A	org.kontalk-46	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	1	/	5	
+C	com.nextgis.mobile-260	android.content.res.Resources.loadDrawable	Unknown	1	/	2	
+A	org.wordpress.android-1588	android.support.v4.app.FragmentManagerImpl.enqueueAction	Unknown	1	/	11	
+A	com.zeapo.pwdstore-138	android.view.ViewRootImpl.setView	Unknown	1	/	1	
+B	cgeo.geocaching-4450	android.database.sqlite.SQLiteClosable.acquireReference	Field	1	/	5	Hardware
+A	org.kontalk-883	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	1	/	6	
+A	cgeo.geocaching-3541	android.database.sqlite.SQLiteProgram.bindString	Parameter	4	/	9	
+A	org.fitchfamily.android.wifi_backend-172302822	android.database.sqlite.SQLiteProgram.bindString	Parameter	2	/	5	
+B	cgeo.geocaching-5591	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	2	/	17	
+A	org.wordpress.android-1320	android.support.v4.app.FragmentManagerImpl.checkStateLoss	Unknown	1	/	4	
+A	de.tum.in.tumcampus-392	android.os.Parcel.readException	Parameter	1	/	1	
+A	org.kontalk-930	android.content.res.Resources.getQuantityText	Unknown	1	/	2	
+B	cgeo.geocaching-1884	android.database.sqlite.SQLiteCompiledSql.native_compile	Unknown	1	/	17	
+A	cgeo.geocaching-3527	android.database.sqlite.SQLiteCompiledSql.native_compile	Unknown	1	/	2	
+A	org.kiwix.kiwixmobile-19	android.widget.ListView.addHeaderView	Unknown	1	/	2	
+C	cgeo.geocaching-6061547	android.content.res.Resources.getText	ParaAndField	3	/	5	Asset, Resource XML
+A	org.wordpress.android-938	android.support.v4.app.Fragment.getResources	Unknown	1	/	4	
+A	org.kontalk-860	android.app.Instrumentation.checkStartActivityResult	Unknown	1	/	2	
+A	org.kontalk-511	android.support.v4.app.FragmentManagerImpl.checkStateLoss	Unknown	1	/	1	
+A	org.thoughtcrime.securesms-92317259	android.view.ViewRootImpl.checkThread	Field	2	/	4	
+A	org.kontalk-454	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	3	/	4	
+A	org.wordpress.android-134	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	3	
+A	org.kontalk-994	android.support.v4.app.FragmentManagerImpl.ensureExecReady	Unknown	1	/	4	
+A	de.tum.in.tumcampus-150363580	android.database.AbstractCursor.checkPosition	Field	1	/	1	
+A	com.joulespersecond.seattlebusbot-168	android.os.Bundle.getInt	Unknown	1	/	6	
+A	com.matburt.mobileorg-177	android.database.sqlite.SQLiteProgram.native_compile	Unknown	1	/	3	
+A	com.seafile.seadroid-474	com.android.internal.policy.impl.PhoneWindow.requestFeature	Unknown	1	/	1	
+A	org.wordpress.android-1843	android.content.res.Resources.getText	ParaAndField	1	/	2	Asset, Resource XML
+B	org.kontalk-255597670	android.database.CursorWindow.nativeGetLong	Unknown	1	/	6	
+A	com.nextgis.mobile-346	android.app.SharedPreferencesImpl.getString	Unknown	1	/	1	
+A	org.wordpress.android-1504	android.support.v4.app.FragmentManagerImpl.enqueueAction	Unknown	1	/	5	
+A	org.kontalk-510	android.support.v4.app.Fragment.getResources	Unknown	1	/	1	
+A	org.kontalk-958	android.os.Parcel.readException	Parameter	2	/	2	
+A	cgeo.geocaching-1503	android.view.ViewRoot.checkThread	Unknown	3	/	10	
+A	de.danoeh.antennapod-1073	android.support.v7.app.ActionBarActivityDelegateBase.setSupportActionBar	Unknown	1	/	1	
+C	org.wordpress.android-2372	android.app.FragmentManagerImpl.checkStateLoss	Field	1	/	2	
+A	org.wordpress.android-1321	android.support.v4.app.ListFragment.ensureList	Unknown	1	/	3	
+A	cgeo.geocaching-4275	android.app.FragmentManagerImpl.enqueueAction	ParaAndField	1	/	33	Hardware
+A	cgeo.geocaching-23234767	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	cgeo.geocaching-4274	android.view.WindowManagerImpl.findViewLocked	Unknown	1	/	6	
+A	org.kontalk-808	android.database.AbstractCursor.checkPosition	Field	1	/	8	
+A	org.kontalk-723	android.support.v4.app.Fragment.getResources	Unknown	1	/	4	
+A	org.kontalk-709	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	org.kontalk-773	android.database.sqlite.SQLiteProgram.bindString	Parameter	1	/	6	
+A	com.igg.pokerdeluxe-79	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	mynet.games.sound.fenbei-27	android.media.AudioRecord.startRecording	Field	1	/	2	Hardware
+A	com.glt.infobank.app-64	android.view.ViewRootImpl.setView	Field	1	/	1	
+C	com.jawfin.sol3d-307	android.view.ViewRootImpl.setView	Unknown	1	/	195	
+A	me.dsa.echopoint-170	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.dong.sleepwell-133	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.efinite.pnrstatus-163	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	fr.meilleurlogiciel.cultureislamique-254	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	wait.what.bassbooster-299	android.media.MediaPlayer.isPlaying	Unknown	999	/	1	
+A	com.manevikardeslik.kuran-484	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.peony.hmmsApp-243	android.os.Parcel.readException	Parameter	4	/	4	
+C	com.onelouder.baconreader-242	android.os.Parcel.readException	Parameter	1	/	4	Manifest XML
+A	com.whaff.whaff-445	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.cracked.android.lite-483	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.jb.gokeyboard.theme.BestThemes.electriccolor-85	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.bluecorner.totalgym-499	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.tgb.bg.jevcyxr-215	android.view.ViewRootImpl.setView	Unknown	2	/	4	
+B	br.com.msapp.mycurriculumvitae.free-177	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	4	
+B	com.smallapp.BlowApp-439	android.media.AudioRecord.startRecording	Field	2	/	3	Hardware
+A	com.javaexp.alarm-160	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.mdk.smartalarm-375	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	12	
+A	com.manzy.bellaftervib-428	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.oman.english4spanishkids-65	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.inauinterpopo-318	android.os.Parcel.readException	Parameter	1	/	10	
+A	cz.lucky.sudoku-141	android.content.res.Resources.getValue	Unknown	1	/	15	
+A	com.blackdevelopers.babypiano-285	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.cenker.yardimci.app-308	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+B	com.apps.salad.bengali.recipe-229	android.widget.Spinner.setAdapter	ParaAndField	999	/	1	OS Update
+A	com.appfab.jokes.quotes-68	android.os.Parcel.readException	Parameter	1	/	11	
+A	com.appfab.jokes.crude-99	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.imcompany.school2-43	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.cordonbleu.wifipasswordrecovery-35	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.josegd.monthcalwidget-183	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.harjuconsulting.android.weather-137	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.myloveisyy.safenote-323	android.os.Parcel.readException	Parameter	1	/	59	
+A	com.eortes2-449	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	kr.co.azsmart.hobanvertium6-500	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	finance.Calculator.AD.MD-104	android.content.res.Resources.getText	ParaAndField	1	/	2	Asset, Resource XML
+A	yzd.zirco-373	android.content.res.Resources.getText	ParaAndField	1	/	73	Asset, Resource XML
+A	com.fsinib.batterymonitor-274	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.yamlearning.geographylearning-211	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	12	
+A	com.jaemokhakwon.jaemokhakwon-459	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.bruno.myapps.droidwallet-260	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.dbscar.carbilling-216	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.tamco.cats-238	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.dumplingsandwich.cartoonphoto-300	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.xnview.XnRetro-262	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.wearablelab.fitnessmate-372	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.funbox.englishidioms-75	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	5	
+A	fr.shywim.antoinedaniel-461	android.database.AbstractCursor.checkPosition	Field	1	/	4	
+B	com.Android56-123	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	3	/	13	
+A	com.loveandroidsoft.transparent-72	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.keyja-249	android.os.Parcel.readException	Parameter	1	/	27	
+B	com.chunshuitang.hackbuteer-103	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	6	
+A	com.navyfederal.android-121	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	nl.marktplaats.android-134	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.lenovo.leos.cloud.sync-388	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.chinatan-146	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.wordpandit.flashcards-73	android.app.SharedPreferencesImpl.getLong	Unknown	1	/	3	
+C	com.dangerb.timingfly-193	android.os.Parcel.readException	Parameter	1	/	2	
+B	com.jxl.note-497	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	9	/	27	
+A	com.applegargensoft.ring-462	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	6	
+A	in.betterbutter.android-441	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	net.dotpicko.dotpict-427	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.manle.phone.android.baby-409	android.os.Parcel.readException	Parameter	1	/	31	
+A	com.baidu.searchbox-296	android.os.Parcel.readException	Parameter	1	/	6	
+B	com.azeus.anywherepad-110	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	6	/	124	
+A	com.outthinking.photo-197	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.androidapps.widget.weather2-403	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.myloveisyy.doodlesokoban-390	android.os.Parcel.readException	Parameter	1	/	68	
+A	com.source.coach-282	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	17	
+A	nl.efteling.android-209	android.os.Parcel.readException	Parameter	1	/	16	
+A	jp.harucolor3.kanmusububblewallpaper-349	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.hentica.app.bireader-17	android.view.ViewRootImpl.setView	Field	1	/	2	
+A	it.drd.uuultimatemyplace-379	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.worldnewsnow4alead.app-86	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.akmact.voice.changer.girl.boy-455	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.josapps.mosaicapp-252	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.fxsolutions.fxess.android-306	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.iqoption-184	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.yes123.mobile-153	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	org.ovh.SpaceSTG3-60	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.aizheke.aizheked-233	android.os.Parcel.readException	Parameter	1	/	17	
+A	com.rcpopo-112	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.enrasoft.camera.ghost.detector-149	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.gb.compassleveler-158	android.content.res.Resources.getText	ParaAndField	1	/	10	Asset, Resource XML
+A	com.game.anak.indonesia.cerdas.cermat-382	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.shyl.train-432	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.blogspot.MyAndroidApps4u.uk_lotto-273	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.playcom.bathenga-39	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	5	
+A	com.arkay.gkingujarati-301	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+C	com.esthar.d3.sserver-381	com.android.vending.billing.util.IabHelper.checkSetupDone	Unknown	1	/	2	
+A	cn.mzyou.mzgame.douniu-255	android.os.Parcel.readException	Parameter	1	/	2	
+A	biz.mtoy.phitdroid.seventh-264	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	5	
+A	vcam.dk.QuotidianiItaliani-92	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	chk.chk.partyplay-95	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.tpvapps.simpledrumkit-139	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	org.greenlie.livefootballtv-33	android.view.WindowManagerGlobal.findViewLocked	ParaAndField	1	/	1	
+A	com.inisoft.mediaplayer.a-350	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	se.nansen.coop-463	android.media.MediaPlayer.prepareAsync	Unknown	1	/	2	
+A	westport.andrewirwin.com.drivesafe-367	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	16	
+A	com.cricbuzz.android-248	android.content.res.TypedArray.getResourceId	Field	1	/	1	
+A	com.picframefx.android-268	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	zfapps.toyobd1-341	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	15	
+A	com.ssysoftware.weavingbraids-239	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.georgekurniawan.radiorohaniindonesia-125	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.mamarzan.hograisers-38	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	11	
+A	com.app4joy.blue_marble_free-4	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	cn.net.inch.android-237	android.os.Parcel.readException	Parameter	1	/	1	
+A	mobi.infolife.ezweather.widget.card-392	android.app.Instrumentation.checkStartActivityResult	Parameter	3	/	3	
+A	cn.htbn.launcher-478	android.content.res.Resources.getText	ParaAndField	1	/	11	Asset, Resource XML
+C	com.beka.tools.mp3cutter-395	android.os.Parcel.readException	Parameter	1	/	28	
+A	com.wlanplus.chang-354	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.starphoto.android-418	android.content.res.Resources.getText	ParaAndField	1	/	4	Asset, Resource XML
+B	com.smallapp.BlowApp-71	android.media.AudioRecord.startRecording	Field	2	/	3	Hardware
+A	droidconsulting.livewallpaper11free-385	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.koushikdutta.backup-313	android.app.ContextImpl.validateServiceIntent	Parameter	1	/	6	OS Update
+B	com.travelzoo.android-90	android.database.sqlite.SQLiteOpenHelper.onDowngrade	Empty	1	/	4	OS Update
+A	com.hg.ceyanli-496	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.appfab.jokeslittleJ-82	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	nl.robertloeberdevelopment-210	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.winit.starnews.hin-81	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.keangame.popice-228	android.os.Parcel.readException	Parameter	1	/	11	
+A	com.ncsoft.android.buff-402	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.levelup.beautifulwidgets-105	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	droidconsulting.livewallpaper19free-369	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.exampl.allelectronicradiodance-66	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.hxb.poetry-199	android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked	Field	6	/	13	
+A	com.telenav.doudouyou.android.autonavi-205	android.os.Parcel.readException	Parameter	1	/	3	
+B	org.vv.brainTwister-352	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	2	
+B	com.stupendous.istqbsamplepapersf-91	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	3	/	10	
+A	com.bigapps.mpcvol5-440	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.springpad-42	android.support.v4.app.Fragment.getResources	Unknown	1	/	1	
+A	com.mn2square.slowmotionplayer-154	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.influenster-223	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.app.liveweatherlite-321	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.wowgames.labyrinth-324	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	18	
+A	com.gsapp.wifitransport-492	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.codiwans.cinesa-28	android.os.Parcel.readException	Parameter	1	/	4	
+B	com.openapp.gearfitphone-389	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	8	
+A	kb2.soft.fuelmanager-108	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.bigoven.android-6	android.os.Parcel.readException	Parameter	1	/	4	
+A	therau2000.amcamobiusac-429	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.everydaycalculation.androidapp_free-298	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.dbd.ghostcamera-340	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	nz.co.stuff.android.news-2	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	us.music.marine-173	android.app.Instrumentation.checkStartActivityResult	Parameter	2	/	4	
+C	com.primenap.primenap-286	android.os.Parcel.readException	Parameter	1	/	1	Manifest XML
+B	com.malib.dhbtcepte-399	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	10	
+A	com.mazex-411	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.xixun.textimage-276	android.os.Parcel.readException	Parameter	1	/	6	
+A	org.dangge-272	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.dencreak.esmemo-58	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.indiataps.allindiabankinfo-288	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.hundsun.winner.pazq-145	android.database.CursorWindow.nativeGetString	Unknown	2	/	5	
+A	de2dev4u.android.birthday-164	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.fuzzdota.dota2matchticker.listwidget-187	android.app.SharedPreferencesImpl.getString	Unknown	1	/	2	
+A	com.likeapp.game.bubbleshooter-401	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	hk.gogovan.GoGoVanClient2-417	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.blogspot.MyAndroidApps4u.mega_millions_usa-319	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	tw.nicky.HDCallerID-315	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.leddigitalclockwidget-18	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	32	
+A	com.king.batterytest-464	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	uberall.android.appointmentmanager-20	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	9	
+C	cnace.net-280	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.alarmclock.xtreme.free-430	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.keramidas.TitaniumBackup-32	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	appvpn.vpn-325	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	jp.andosan.futabaviewer-218	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	mynet.games.sound.test-165	android.media.AudioRecord.startRecording	Field	1	/	4	Hardware
+A	ru.liogames.flowerframe-182	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	ru.location-309	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.tinymission.dailycardioworkoutfree-189	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.rodcas.pinconnectwifi-24	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	cn.hiyou.activity-256	android.os.Parcel.readException	Parameter	4	/	44	
+A	com.mhsoft.sintongbangtong-200	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+B	org.voicenightlight.v3-471	android.media.AudioRecord.startRecording	Field	1	/	6	Hardware
+A	com.allysoft.valentinekeyboard-55	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	earth.rasull.forestgrass.affirmator-198	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.trapster.android-203	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.xtreme_.makeupschool-302	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.app4joy.algeria_free-361	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.avpig.exam-245	android.database.sqlite.SQLiteClosable.acquireReference	Field	1	/	14	Hardware
+A	ru.motivaciaplus.motiv.primer.app-438	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.scary.friends-171	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	info.thereisonlywe.salahaware-126	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.jb.gokeyboard.theme.BestThemes.hell-172	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.interpark.shop-122	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.poterion.logbook-400	android.app.FragmentManagerImpl.execPendingActions	Unknown	1	/	3	
+B	llc.auroraappdesign.votd-370	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	14	
+A	fr.meilleurlogiciel.holyquranpro-51	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	nz.co.kiwibank.mobile-410	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.strlabs.appdietas-140	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.ninesky.browser-76	android.database.CursorWindow.nativeGetString	Unknown	1	/	5	
+A	com.flashlightled-49	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.corusen.accupedo.te-11	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.repost-443	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.colapps.reminder-181	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.calengoo.android-294	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	6	
+A	com.keerby.videotomp3-448	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	fr.meilleurlogiciel.culturegenerale-460	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	kr.mcpe.mods2-77	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.mejdoo.tv-98	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	mobi.infolife.ezweather.widget.nori-224	android.app.Instrumentation.checkStartActivityResult	Parameter	3	/	3	
+A	s.hd_live_wallpaper.birthday_greeting_cards_maker-291	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.goldsunday.centralgate-138	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	xiaoyu.fruit.sric.android-366	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.dis.torch-116	android.media.AudioRecord.startRecording	Field	1	/	2	Hardware
+C	com.jss.android.windows8-378	android.os.Parcel.readException	Parameter	2	/	3	
+A	com.yikao.app-50	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	7	
+A	com.weightwatchers.mobile-46	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	eu.bischofs.mapcam-334	android.app.ContextImpl.validateServiceIntent	Parameter	1	/	3	OS Update
+A	circle.news.bd-405	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.javaexp.discolight-414	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.keyja.pool-204	android.os.Parcel.readException	Parameter	1	/	36	Manifest XML
+A	com.rhinocerosstory-34	android.os.Parcel.readException	Parameter	1	/	4	
+A	kr.co.psynet-293	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.myloveisyy.doodlebubble-342	android.os.Parcel.readException	Parameter	1	/	112	
+C	com.silvermoonapps.learnkoreanquicklite-147	android.content.res.Resources.getValue	Unknown	1	/	3	
+A	be.thomashermine.prochainbus-96	android.os.Parcel.readException	Parameter	1	/	5	
+A	com.marsor.lottery-47	android.content.res.Resources.getText	ParaAndField	1	/	7	Asset, Resource XML
+A	com.ophone.reader.ui-362	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.framy.moment-355	android.os.Parcel.readException	Parameter	1	/	3	
+B	com.chimani.parks.free-247	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	7	
+A	com.miruphotobook.miruphotobook-59	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.keyja.chat-230	android.os.Parcel.readException	Parameter	1	/	27	
+C	com.rjfittime.app-106	android.app.DownloadManager$Request.setDestinationInExternalPublicDir	Parameter	1	/	2	
+A	com.cg.android.countdown-263	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	34	
+C	com.melero.music-159	android.app.DownloadManager$Request.setDestinationInExternalPublicDir	Parameter	1	/	1	
+C	com.fy.tnzbsq-374	android.os.Parcel.readException	Parameter	1	/	2	Manifest XML
+A	com.SkyDivers.petals3d-303	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.zentertain.photoeditor-185	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.kosherdev.koshergator-53	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.submad.autumn-394	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.sparkslab.ourcitylove-225	android.view.ViewRootImpl.setView	Field	1	/	8	
+A	com.tobeamaster.mypillbox-454	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.adtube.tube-89	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.justnote-78	android.database.sqlite.SQLiteClosable.acquireReference	Field	8	/	35	Hardware
+A	com.saudagran.asanNamaz-83	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.vndtech.phrasebookengfr.lite-433	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.softwego.universaldetector-70	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.bestringtonesapps.funnyalarmringtones-279	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	sina.mobile.tianqitong-458	android.os.Parcel.readException	Parameter	1	/	4	
+C	com.kugou.android.ringtone-498	android.app.ActivityThread.getPackageInfo	Field	1	/	5	
+B	com.dong.profile-7	android.database.CursorWindow.nativeGetLong	Unknown	11	/	11	
+A	net.huaerzhong.brainteaser-434	android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked	Field	1	/	5	
+A	com.shyl.trace-124	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.masslight.nrmp-235	android.database.sqlite.SQLiteClosable.acquireReference	Field	999	/	7	Hardware
+A	com.ramadan2014.shams-387	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	klwinkel.huiswerk-93	android.database.AbstractCursor.checkPosition	Field	3	/	22	
+B	mynet.games.sound.jianshen-473	android.media.AudioRecord.startRecording	Field	1	/	2	Hardware
+A	com.dridev.kamusku-491	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	br.com.ctncardoso.ctncar-422	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	me.selfish.android-456	android.view.Choreographer$1.initialValue	Unknown	3	/	3	
+A	com.world.newspapers-157	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.JeLocalisetrackerApp.view-383	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+C	net.orizinal.subway-305	android.app.ContextImpl.validateServiceIntent	Parameter	1	/	68	OS Update
+A	com.androbros.wordsearchportuguese-386	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.lectek.android.ecp-221	android.os.Parcel.readException	Parameter	3	/	3	
+A	pawelz.Apps.Guns.Shoot.Sounds-63	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.tgtap.gtacheats-44	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.alarmclock.xtreme-143	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.wisetoto-16	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.hairstyle-178	android.os.Parcel.readException	Parameter	1	/	6	
+A	de.quoka.kleinanzeigen-437	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.gurkhatech.schoolmanagement-353	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.divi.volumebooster-310	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	9	
+A	com.cga.flexconnector-156	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	2	/	7	
+C	com.yuanyu.tinber-119	android.app.DownloadManager$Request.setDestinationInExternalPublicDir	Parameter	1	/	2	
+A	com.xnview.XnSketch-311	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.oilpricetool-284	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	info.thereisonlywe.evliyalaransiklopedisi-25	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.edushi.card-457	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.copy.paste.ocr.screen.text.copypastetrial-358	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.surmin.assistant-271	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.icechen1.speechjammer-217	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.turkusoz-357	android.content.res.Resources.getText	ParaAndField	1	/	16	Asset, Resource XML
+B	com.streema.podcast-22	android.database.sqlite.SQLiteOpenHelper.onDowngrade	Empty	1	/	8	OS Update
+B	be.bemobile.touringmobilis-227	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	3	/	11	
+A	com.rebelnow.fingerboard-317	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.danez.wifimanager-339	android.os.Parcel.readException	Parameter	1	/	6	
+A	com.instacollage.android-336	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.micabyte.android.pirates-61	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.doodoobird.activity-26	android.os.Parcel.readException	Parameter	3	/	3	
+A	com.kidsfun.caveman2tablets-408	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.appsfabrica.naturepack-246	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	jp.co.johospace.jorte-258	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	9	
+A	com.dietcoacher.sos-15	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+C	myprograms.application.thermometer-376	android.os.Parcel.readException	Parameter	1	/	2	Manifest XML
+A	com.javaexp.shareapk-480	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.guosen.android-14	android.os.Parcel.readException	Parameter	1	/	3	
+B	com.taweb.siac-62	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	6	
+A	mobi.infolife.ezweather.widget.sunnyafternoon-337	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.controlpointllp.bluebox-244	android.os.Parcel.readException	Parameter	1	/	3	
+C	com.rormix-94	android.content.res.Resources.getText	ParaAndField	1	/	7	Asset, Resource XML
+C	me.zuiq.android.app27-176	android.graphics.Typeface.createFromAsset	ParaAndField	1	/	4	Asset
+A	com.jb.gokeyboard.theme.BestThemes.themescolor-9	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.kugou.android-266	android.os.Parcel.readException	Parameter	1	/	4	
+C	com.ciberdroix.ghostsandspirits-406	android.hardware.Camera.startPreview	Unknown	1	/	1	Hardware
+A	com.youba.ringtones-450	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.gigabud.tasklabels-192	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.handyapps.expenseiq-21	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	6	
+A	com.ahmaeyad.vid.qurban-328	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.turkusoz_tablet-287	android.content.res.Resources.getText	ParaAndField	1	/	16	Asset, Resource XML
+B	ru.hudeem.adg-312	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	25	
+A	net.lyoness.mterm-435	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.growingpath-442	android.content.res.Resources.getText	ParaAndField	1	/	67	Asset, Resource XML
+C	com.xing.android-74	android.content.res.Resources.getValue	Unknown	1	/	1	
+A	com.zg.iqtest-222	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	org.vv.bus-135	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	stechsolutions.flowers.livewallpaper-326	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.joynow.ecodrivefree-169	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.channelnewsasia-304	android.os.Parcel.readException	Parameter	1	/	5	Manifest XML
+A	kr.co.azsmart.suwannobleland6-453	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.catbag.sonswhatsapp-23	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.ahmaeyad.vid.h_sh-117	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.apps.calendar-40	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	au.com.tapstyle-344	android.graphics.Typeface.createFromAsset	ParaAndField	1	/	1	Asset
+A	com.twidroidpro-359	android.database.sqlite.SQLiteOpenHelper.<init>	Parameter	1	/	2	
+A	net.webis.pocketinformant-360	android.view.ViewRootImpl.setView	Field	1	/	5	
+A	com.anyview-111	android.os.Parcel.readException	Parameter	1	/	4	
+A	mobile.visuals.ascenttotranscendence-129	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	7	
+A	com.changemystyle.gentlewakeup-416	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.huluxia.gametools-292	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+A	com.colorsplashphoto.android-377	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.netMonitor-191	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	9	
+A	net.xfok.tool.tm-316	android.view.ViewGroup.addView	Parameter	1	/	3	
+A	com.koushikdutta.rommanager-88	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	strangefactory.mosquito-226	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.net263.secondarynum.activity-231	android.os.Parcel.readException	Parameter	3	/	3	
+A	com.news360.news360app-472	android.view.ViewGroup.addViewInner	ParaAndField	1	/	42	
+B	com.microcell.MyHouse-398	android.app.ContextImpl.bindServiceCommon	Parameter	2	/	2	
+A	com.piclens.fotos365-338	android.app.Instrumentation.checkStartActivityResult	Parameter	2	/	5	
+A	org.ghelli.motoriasincronitoolsdemo.app-12	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.heuser.helidroid_full-420	android.view.ViewRootImpl.setView	Unknown	1	/	28	
+A	com.etsy.android-495	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+A	com.eonsoft.Magnifier-479	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.sparkslab.dcardreader-465	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.blogspot.MyAndroidApps4u.power_ball_usa-322	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.sweetsugar.pencileffectfree-206	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.tresebrothers.games.cyberknights-168	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.agus.calendar.id-219	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+B	jp.co.excite.netamanma_yoga-345	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	9	
+A	org.sufficientlysecure.keychain-446	android.support.v4.app.FragmentManagerImpl.checkStateLoss	Unknown	1	/	2	
+A	com.zhongxunmusic.zpy-136	android.os.Parcel.readException	Parameter	1	/	3	
+B	hamsoft.inc.barcodegen-466	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	4	/	5	
+A	mo.in.en.photofolder-166	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	de.jugendfeuerwehrsteinhagen.app-363	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.spice.hangman-421	android.database.sqlite.SQLiteOpenHelper.onDowngrade	Empty	1	/	7	OS Update
+B	com.shenyuan.militarynews-80	android.database.sqlite.SQLiteClosable.acquireReference	Field	10	/	34	Hardware
+A	com.ifreehindishayari-144	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	kr.sira.ruler-56	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	ar.com.grupoesfera.futbolfan-194	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	5	/	15	
+A	mobi.thinkchange.android.soundmeter-447	android.media.MediaRecorder.start	Unknown	1	/	5	
+A	com.fractalemagic-107	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	5	
+A	com.jayuins.movie.english.lite-115	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.necta.aircall_accept.free-253	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+C	jp.snowlife01.android.hdcamera-419	android.hardware.Camera.startPreview	Unknown	1	/	2	Hardware
+A	com.class123.teacher-330	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.lifecake.android-10	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.dong.animals-477	android.database.CursorWindow.nativeGetString	Unknown	1	/	13	
+A	com.bailleul.mike.go.toulouse.ads-69	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	3	
+A	com.ffcs.SmsHelper-196	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	3	/	58	
+A	com.mk.news-142	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.a0soft.gphone.aDataOnOff-67	android.app.IActivityWatcher$Stub.<init>	Unknown	1	/	2	
+A	com.fishmy.android-494	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	hm.songster-482	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	hk.gogovan.GoGoVanClient2-180	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.ppking.stocktracker-13	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.funrary.androids.backgroundremover-391	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.DKSquad.LeagueofLegendsItems-118	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.bestringtonesapps.sleepsounds-397	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.vaxini.free-36	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.sketchlab.livehomeshopping-452	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.rayg.loudringtones-425	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+A	org.vv.baby.cognize.character-380	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.kalpvaig.quest-150	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	4	/	4	
+A	com.huotu.funnycamera-371	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.blueskyapps.rugbyworldcup-431	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.jrj.christmas-470	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+A	info.goro3goro.japanese-174	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+C	mobi.infolife.ezweather.widget.armedheroes-384	android.graphics.Typeface.createFromAsset	ParaAndField	1	/	13	Asset
+A	org.vinczu.ultimatefishingknots-132	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.br.myprofission-48	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	2	
+A	com.interpark.app-186	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	org.sensortracker.sensor_zh-487	android.view.Surface.checkNotReleasedLocked	Field	1	/	6	Hardware
+A	com.brilliantlabs.solitaire-97	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.harteg.crookcatcher-54	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	droidconsulting.livewallpaper10free-476	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.tom.music.fm-469	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.ansangha.drjanggi-201	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.everydaycalculation.tvmfinancialcalculator-413	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	idv.nightgospel.TWRailScheduleLookUp-467	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	kids.math.mathforkids-251	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	ect.emessager.esms-281	android.os.Parcel.readException	Parameter	1	/	8	
+A	com.eonsoft.Converter-152	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.kaname.surya.android.heartphotomaker-155	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+B	com.xy.mobile.shaketoflashlight-52	android.media.AudioRecord.startRecording	Field	2	/	2	Hardware
+A	tkstudio.wachatbotlite-368	android.view.ViewRootImpl.setView	Field	1	/	4	
+A	com.magdalm.flashlightledenergyball-297	android.view.ViewRootImpl.setView	Field	1	/	3	
+A	com.mobileanarchy.dividendsdashboard-348	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	10	
+A	qukean.spaceship-327	android.os.Parcel.readException	Parameter	1	/	11	
+A	com.przemyslwslota.bmi-30	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.cg.android.birthdaycountdown-393	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	2	/	37	
+A	com.qrpopo-488	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.scalisoft.spacedraw-490	android.opengl.GLErrorWrapper.checkError	Field	1	/	11	Hardware
+C	com.futurecomes.android.alter-404	android.hardware.Camera.startPreview	Unknown	1	/	1	Hardware
+A	cn.mzyou.mzgame-275	android.os.Parcel.readException	Parameter	1	/	3	
+A	com.birkot-101	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	17	
+A	org.youhu.baishitong-346	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.blizzardscale.befemall-102	android.view.ViewRootImpl.setView	Field	1	/	5	
+A	kb2.soft.carexpenses-1	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	org.iplatform.android.phone2-31	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.freelancer.android.messenger-208	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.ggeye.jiakao.api-57	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.gallery.cloud.sync-213	android.app.ContextImpl.validateServiceIntent	Parameter	1	/	9	OS Update
+A	com.nvidia.tegrazone-295	android.view.ViewRootImpl.setView	Field	1	/	2	
+A	com.MSoft.cloudradio-100	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.superthomaslab.rootessentials-493	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	8	
+A	com.san.guesstheemoji-436	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	sk.henrichg.phoneprofilesplus-131	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	2	/	11	
+B	com.ftbpro.app-240	android.location.LocationManager.checkListener	Parameter	3	/	4	Hardware
+A	com.hukuhuku.area-207	android.os.Parcel.readException	Parameter	1	/	7	
+A	com.mycloudplayers.mycloudplayer-87	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.hope.flashgameplayer-335	android.os.Parcel.readException	Parameter	1	/	113	
+A	com.netease.newsreader.activity-481	android.app.ContextImpl.makeFilename	ParaAndField	1	/	1	
+A	com.rami.puissance4-175	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.bestappsmarket.android.bestapps-424	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	egovframework.tcpor.mobile.csr-195	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	hu.psicore.mfportable-290	android.view.ViewRootImpl.setView	Field	1	/	11	
+A	rwx.profile-468	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	5	
+A	com.platform.pclord-364	android.graphics.Canvas.setBitmap	Parameter	1	/	3	
+A	yudo.work.saitosan-486	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.khipu.android-412	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+C	ch.btcfx-329	android.app.ContextImpl.validateServiceIntent	Parameter	1	/	3	OS Update
+A	com.stoik.mdscanlite-489	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+C	com.ss.zhendong2-347	android.os.Parcel.readException	Parameter	1	/	1	Manifest XML
+A	droidconsulting.livewallpaper9free-29	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	ru.allyteam.gramoteifree-332	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	org.vv.baby.cognize.thomas-220	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.guangjun.brainteaser-333	android.os.Parcel.readException	Parameter	1	/	71	
+A	com.tamco.cutegirlsdolls-257	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	kr.co.nsaram-407	android.os.Parcel.readException	Parameter	1	/	5	
+C	telecom.mdesk-5	android.os.Parcel.readException	Parameter	1	/	43	
+A	com.meshref.pregnancy-265	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.rayg.soundfx-474	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	6	
+A	com.tappsi.passenger.android-3	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.funbox.englishlisteningpractice-444	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.infomil.leclercdrive-277	android.os.MessageQueue.enqueueMessage	Parameter	1	/	3	
+A	cc.leet.free-269	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	26	
+A	com.effective.weight.loss.tips-128	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.tircycle.halfclub-120	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.androidapps.bodymassindex-148	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.found.found-423	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	org.void1898.ss.agilebuddy-202	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	elsayed.mohamed.com.steelyard-113	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	br.com.couldsys.percursion-167	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.PinkBear.ScooterHelper-426	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	4	
+A	com.eonsoft.InterestCalc-190	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+B	com.ccemusic.downloader-151	android.os.AsyncTask.executeOnExecutor	Field	3	/	6	
+A	com.ltt.compass-343	android.os.Parcel.readException	Parameter	1	/	38	
+A	kr.sira.measure-8	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.calendar.example-109	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	999	/	3	
+A	com.softwego.crackscreen-212	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.xda.miroex-37	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.grigerlab.transport-267	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+B	com.gtcsoft.musicat-241	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	10	
+A	com.habra.example.com-19	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.mediawill.findalljob-451	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.douban.event-250	android.os.Parcel.readException	Parameter	1	/	2	
+A	com.dumplingsandwich.focuseffect-320	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.myung.snsday-45	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	cn.damai-270	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	netgenius.bizcal-188	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.outthinking.textonpic-365	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	com.superrensy.android.pingpang-162	android.content.res.Resources.getText	ParaAndField	1	/	4	Asset, Resource XML
+A	com.kono.reader-214	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+B	com.divination1518-278	android.database.sqlite.SQLiteOpenHelper.onDowngrade	Empty	1	/	4	OS Update
+A	com.spring.cargo-283	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.ismartcreations.flashlightonclap-232	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.workoutroutines.gladiatorlite-314	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.manle.phone.android.tangniaobing-259	android.content.res.Resources.getText	ParaAndField	1	/	13	Asset, Resource XML
+A	com.lenovocw.music-356	android.os.Parcel.readException	Parameter	5	/	65	
+A	club.fromfactory-114	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.oscaryang.lunarremind-289	android.content.res.Resources.getText	ParaAndField	1	/	2	Asset, Resource XML
+A	com.sofascore.android-130	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.lbei.android-127	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	com.app.free.studio.lockscreen-161	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.manle.phone.android.baby-84	android.os.Parcel.readException	Parameter	1	/	25	
+A	eu.ekinnolab.naviparking-331	android.os.Parcel.readException	Parameter	1	/	2	
+C	com.iasku.iaskujuniorchemistry-396	android.os.Parcel.readException	Parameter	1	/	1	
+A	com.xisue.zhoumo-236	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.androidapps.unitconverter-485	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+C	com.orange.mylivebox.fr-41	android.content.res.Resources.getValue	Unknown	2	/	2	
+A	com.bestringtonesapps.soundeffects-261	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	1	
+A	info.goro3goro.igojoseki-351	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	droid.iPlaya-179	android.os.Parcel.readException	Parameter	1	/	4	
+A	com.gonliapps.WorldCupBrazil2014FootballQuiz-234	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	com.sillens.shapeupclub-415	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+C	com.google.android.gms-475	android.os.Parcel.readException	Parameter	1	/	7	Manifest XML
+C	facebook-android-sdk-1030	android.app.Activity.onCreate	Field	1	/	1	OS Update, Manifest XML
+A	facebook-android-sdk-905	android.app.ContextImpl.getSystemService	Unknown	1	/	7	
+A	facebook-android-sdk-615	android.app.LoadedApk.forgetServiceDispatcher	ParaAndField	1	/	4	
+A	facebook-android-sdk-906	android.os.Parcel.createException	Unknown	2	/	7	
+C	com.google.maps-532	android.content.res.ResourcesImpl.getValue	ParaAndField	1	/	9	Asset, Resource XML
+A	com.google.maps-770	android.os.Handler.<init>	Field	1	/	4	
+A	facebook-android-sdk-927	android.webkit.WebViewFactory.getWebViewContextAndSetProvider	Unknown	2	/	9	
+A	com.google.maps-768	android.os.AsyncTask$4.done	Unknown	2	/	2	
+A	facebook-android-sdk-997	android.app.PendingIntent.checkFlags	Unknown	1	/	7	OS Update
+A	facebook-android-sdk-894	android.app.ContextImpl.bindServiceCommon	ParaAndField	2	/	7	
+A	facebook-android-sdk-1032	android.os.Parcel.readParcelableCreator	ParaAndField	1	/	21	

@@ -1,0 +1,119 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-2695",
+		"Method":"android.text.SpannableStringBuilder.checkRange",
+		"Crash Message":"getChars (0 ... 25125) ends beyond length 25124",
+		"stack trace":[
+			"android.text.SpannableStringBuilder.checkRange",
+			"android.text.SpannableStringBuilder.getChars",
+			"android.text.TextUtils.getChars",
+			"android.text.SpannableStringBuilder.",
+			"android.text.SpannableStringBuilder.",
+			"org.wordpress.android.ui.posts.EditPostActivity.updatePostContent",
+			"org.wordpress.android.ui.posts.EditPostActivity.updatePostObject",
+			"org.wordpress.android.ui.posts.EditPostActivity.savePost",
+			"org.wordpress.android.ui.posts.EditPostActivity.savePost",
+			"org.wordpress.android.ui.posts.EditPostActivity.access$400",
+			"org.wordpress.android.ui.posts.EditPostActivity$AutoSaveTask.run",
+			"java.util.Timer$TimerImpl.run"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.posts.EditPostActivity.updatePostContent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*\\Q \\E[\\s\\S]*\\Q ends beyond length \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i1 > i2\", \"i0 >= i1\", \"i0 <= i2\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostActivity.updatePostObject",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"2"
+						],
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"<org.wordpress.android.ui.posts.EditPostActivity: void updatePostObject(boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 2",
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostActivity.updatePostObject"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostActivity.updatePostContent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 2",
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostActivity.updatePostContent"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostActivity.savePost",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 2",
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostActivity.savePost"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostActivity.access$400",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 2",
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostActivity.access$400"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.posts.EditPostActivity$AutoSaveTask.run",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 2",
+						"Influenced method":"android.text.SpannableStringBuilder.checkRange",
+						"Trace":[
+							"org.wordpress.android.ui.posts.EditPostActivity$AutoSaveTask.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

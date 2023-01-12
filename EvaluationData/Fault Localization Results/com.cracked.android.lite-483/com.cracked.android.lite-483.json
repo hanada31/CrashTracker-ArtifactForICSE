@@ -1,0 +1,71 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.cracked.android.lite-483",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.cracked.android.lite.Controller.onStart",
+			"com.cracked.android.lite.ArticlesList.onStart",
+			"android.app.Instrumentation.callActivityOnStart",
+			"android.app.Activity.performStart",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.cracked.android.lite.Controller.onStart"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.cracked.android.lite.Controller.onStart",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.cracked.android.lite.Controller.onStart"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cracked.android.lite.ArticlesList.onStart",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.cracked.android.lite.ArticlesList.onStart"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cracked.android.lite.Controller$1.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":3,
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"android.location.LocationManager.requestLocationUpdates",
+							"com.cracked.android.lite.Controller$1.<init>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

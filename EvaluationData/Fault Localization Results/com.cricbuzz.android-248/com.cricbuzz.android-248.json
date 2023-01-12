@@ -1,0 +1,51 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.cricbuzz.android-248",
+		"Method":"android.content.res.TypedArray.getResourceId",
+		"Crash Message":"Cannot make calls to a recycled instance!",
+		"stack trace":[
+			"android.content.res.TypedArray.getResourceId",
+			"com.cricbuzz.android.NavigationDrawerFragment.onCreateView",
+			"android.support.v4.app.Fragment.performCreateView",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.addFragment",
+			"android.support.v4.app.FragmentActivity.onCreateView",
+			"android.view.LayoutInflater.createViewFromTag"
+		],
+		"Labeled Buggy Method":"com.cricbuzz.android.NavigationDrawerFragment.onCreateView"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCannot make calls to a recycled instance!\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.cricbuzz.android.NavigationDrawerFragment.onCreateView",
+				"Candidate Score":102,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.TypedArray: void recycle()>",
+						"Trace":[
+							"<com.cricbuzz.android.NavigationDrawerFragment: android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>",
+							"fw: <android.content.res.TypedArray: int getResourceId(int,int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.TypedArray.getResourceId"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.cricbuzz.android.NavigationDrawerFragment.onCreateView"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

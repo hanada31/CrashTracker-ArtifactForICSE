@@ -1,0 +1,37 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.androidapps.widget.weather2-403",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.androidapps.widget.weather2.UpdateService.onStartCommand",
+			"android.app.ActivityThread.handleServiceArgs"
+		],
+		"Labeled Buggy Method":"com.androidapps.widget.weather2.UpdateService.onStartCommand"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.androidapps.widget.weather2.UpdateService.onStartCommand",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.androidapps.widget.weather2.UpdateService.onStartCommand"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

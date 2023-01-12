@@ -1,0 +1,98 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-4845",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.BaseFragmentActivityJB.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.openEmailClient",
+			"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.access$100",
+			"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment$2.onClick",
+			"android.view.View.performClick",
+			"android.view.View$PerformClick.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.openEmailClient"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.openEmailClient",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.openEmailClient"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.access$100",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment.access$100"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment$2.onClick",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.login.MagicLinkSentFragment$2.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

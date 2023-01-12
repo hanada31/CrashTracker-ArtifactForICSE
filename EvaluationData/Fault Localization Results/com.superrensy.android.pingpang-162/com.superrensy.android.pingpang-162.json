@@ -1,0 +1,189 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.superrensy.android.pingpang-162",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f06001c",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"android.content.Context.getString",
+			"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer1Name",
+			"com.superrensy.android.pingpang.view.GameView.drawPlayerName",
+			"com.superrensy.android.pingpang.view.GameView.onDraw",
+			"android.view.View.draw",
+			"android.widget.FrameLayout.draw",
+			"android.view.View.draw",
+			"android.view.ViewGroup.drawChild",
+			"android.view.ViewGroup.dispatchDraw",
+			"android.view.View.draw",
+			"android.view.ViewGroup.drawChild",
+			"android.view.ViewGroup.dispatchDraw",
+			"android.view.View.draw",
+			"android.view.ViewGroup.drawChild",
+			"android.view.ViewGroup.dispatchDraw",
+			"android.view.View.draw",
+			"android.widget.FrameLayout.draw",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.draw",
+			"android.view.ViewRootImpl.drawSoftware",
+			"android.view.ViewRootImpl.draw",
+			"android.view.ViewRootImpl.performDraw",
+			"android.view.ViewRootImpl.performTraversals",
+			"android.view.ViewRootImpl.doTraversal",
+			"android.view.ViewRootImpl$TraversalRunnable.run",
+			"android.view.Choreographer$CallbackRecord.run",
+			"android.view.Choreographer.doCallbacks",
+			"android.view.Choreographer.doFrame",
+			"android.view.Choreographer$FrameDisplayEventReceiver.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer1Name"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer1Name",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer1Name"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer2Name()>",
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer1Name()>",
+							"<com.superrensy.android.pingpang.view.GameView: void onDraw(android.graphics.Canvas)>",
+							"fw: <android.content.Context: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer1Name()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer1Name"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.superrensy.android.pingpang.view.GameView.drawPlayerName",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.GameView.drawPlayerName"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.GameView.drawPlayerName"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.superrensy.android.pingpang.view.GameView.onDraw",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.GameView.onDraw"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer2Name()>",
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer1Name()>",
+							"<com.superrensy.android.pingpang.view.GameView: void onDraw(android.graphics.Canvas)>",
+							"fw: <android.content.Context: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.superrensy.android.pingpang.view.GameView.onDraw"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.superrensy.android.pingpang.view.OnePlayerView.getPlayer2Name",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer2Name()>",
+							"<com.superrensy.android.pingpang.view.OnePlayerView: java.lang.String getPlayer1Name()>",
+							"<com.superrensy.android.pingpang.view.GameView: void onDraw(android.graphics.Canvas)>",
+							"fw: <android.content.Context: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

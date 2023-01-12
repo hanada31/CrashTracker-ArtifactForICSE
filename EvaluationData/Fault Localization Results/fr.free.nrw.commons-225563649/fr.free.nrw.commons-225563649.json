@@ -1,0 +1,56 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"fr.free.nrw.commons-225563649",
+		"Method":"android.view.ViewRootImpl.checkThread",
+		"Crash Message":"Only the original thread that created a view hierarchy can touch its views.",
+		"stack trace":[
+			"android.view.ViewRootImpl.checkThread",
+			"android.view.ViewRootImpl.invalidateChildInParent",
+			"android.view.ViewGroup.invalidateChild",
+			"android.view.View.invalidateInternal",
+			"android.view.View.invalidate",
+			"android.view.View.setFlags",
+			"android.view.View.setVisibility",
+			"fr.free.nrw.commons.contributions.ContributionsListFragment.clearSyncMessage",
+			"fr.free.nrw.commons.contributions.ContributionsSyncAdapter.onPerformSync",
+			"android.content.AbstractThreadedSyncAdapter$SyncThread.run"
+		],
+		"Labeled Buggy Method":"fr.free.nrw.commons.contributions.ContributionsListFragment.clearSyncMessage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QOnly the original thread that created a view hierarchy can touch its views.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 == $r2\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"fr.free.nrw.commons.contributions.ContributionsListFragment.clearSyncMessage",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"fr.free.nrw.commons.contributions.ContributionsListFragment.clearSyncMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"fr.free.nrw.commons.contributions.ContributionsSyncAdapter.onPerformSync",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"fr.free.nrw.commons.contributions.ContributionsSyncAdapter.onPerformSync"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,150 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.hundsun.winner.pazq-145",
+		"Method":"android.database.CursorWindow.nativeGetString",
+		"Crash Message":"Couldn't read row 0, col 0 from CursorWindow.  Make sure the Cursor is initialized correctly before accessing data from it.",
+		"stack trace":[
+			"android.database.CursorWindow.nativeGetString",
+			"android.database.CursorWindow.getString",
+			"android.database.AbstractWindowedCursor.getString",
+			"com.hundsun.winner.pazq.d.g$a.getString",
+			"com.hundsun.winner.pazq.b.c.a.b",
+			"com.hundsun.winner.pazq.b.c.a.a",
+			"com.hundsun.winner.pazq.application.base.WinnerApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.hundsun.winner.pazq.b.c.a.b"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.hundsun.winner.pazq.d.g$a.getString",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.hundsun.winner.pazq.d.g$a.getString"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hundsun.winner.pazq.b.c.a.b",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.hundsun.winner.pazq.b.c.a.b"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hundsun.winner.pazq.b.c.a.a",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.hundsun.winner.pazq.b.c.a.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hundsun.winner.pazq.application.base.WinnerApplication.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"com.hundsun.winner.pazq.application.base.WinnerApplication.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hundsun.winner.pazq.b.c.a.<clinit>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.hundsun.winner.pazq.b.c.a: int b(java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.hundsun.winner.pazq.b.c.a: int b(java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.hundsun.winner.pazq.b.c.a: int b(java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.hundsun.winner.pazq.b.c.a: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

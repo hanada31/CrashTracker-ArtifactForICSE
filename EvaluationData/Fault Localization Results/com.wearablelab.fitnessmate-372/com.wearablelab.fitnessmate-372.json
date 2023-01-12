@@ -1,0 +1,81 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.wearablelab.fitnessmate-372",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.wearablelab.fitnessmate.SensorListenerService.locationSetup",
+			"com.wearablelab.fitnessmate.SensorListenerService.onCreate",
+			"android.app.ActivityThread.handleCreateService"
+		],
+		"Labeled Buggy Method":"com.wearablelab.fitnessmate.SensorListenerService.locationSetup"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.wearablelab.fitnessmate.SensorListenerService.locationSetup",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.wearablelab.fitnessmate.SensorListenerService.locationSetup"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.wearablelab.fitnessmate.SensorListenerService: android.location.LocationListener locationListenerWiFi>",
+						"Influenced By Method":"<com.wearablelab.fitnessmate.SensorListenerService: void locationSetup()>",
+						"Trace":[
+							"<com.wearablelab.fitnessmate.SensorListenerService: void locationSetup()>",
+							"modify key field: <com.wearablelab.fitnessmate.SensorListenerService: android.location.LocationListener locationListenerWiFi>",
+							"<com.wearablelab.fitnessmate.SensorListenerService: void locationSetup()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wearablelab.fitnessmate.SensorListenerService.finalizeService",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.wearablelab.fitnessmate.SensorListenerService: android.location.LocationListener locationListenerWiFi>",
+						"Influenced By Method":"<com.wearablelab.fitnessmate.SensorListenerService: void finalizeService()>",
+						"Trace":[
+							"<com.wearablelab.fitnessmate.SensorListenerService: void finalizeService()>",
+							"modify key field: <com.wearablelab.fitnessmate.SensorListenerService: android.location.LocationListener locationListenerWiFi>",
+							"<com.wearablelab.fitnessmate.SensorListenerService: void locationSetup()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wearablelab.fitnessmate.SensorListenerService.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.wearablelab.fitnessmate.SensorListenerService.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,162 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"kr.co.nsaram-407",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"kr.co.nsaram.MainActivity.b",
+			"kr.co.nsaram.MainActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"kr.co.nsaram.MainActivity.b"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"kr.co.nsaram.MainActivity.b",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"kr.co.nsaram.MainActivity.b"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+						"Influenced By Method":"<kr.co.nsaram.MainActivity: void b()>",
+						"Trace":[
+							"<kr.co.nsaram.MainActivity: void b()>",
+							"modify key field: <kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+							"<kr.co.nsaram.MainActivity: void b()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"kr.co.nsaram.MainActivity.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+						"Influenced By Method":"<kr.co.nsaram.MainActivity: void <init>()>",
+						"Trace":[
+							"<kr.co.nsaram.MainActivity: void <init>()>",
+							"modify key field: <kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+							"<kr.co.nsaram.MainActivity: void b()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"kr.co.nsaram.MainActivity.onPause",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+						"Influenced By Method":"<kr.co.nsaram.MainActivity: void onPause()>",
+						"Trace":[
+							"<kr.co.nsaram.MainActivity: void onPause()>",
+							"modify key field: <kr.co.nsaram.MainActivity: android.location.LocationListener m>",
+							"<kr.co.nsaram.MainActivity: void b()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"kr.co.nsaram.MainActivity.onResume",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"kr.co.nsaram.MainActivity.onResume"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"kr.co.nsaram.MainActivity.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<kr.co.nsaram.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"<kr.co.nsaram.MainActivity: void <clinit>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<kr.co.nsaram.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<kr.co.nsaram.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"<kr.co.nsaram.MainActivity: void <clinit>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<kr.co.nsaram.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

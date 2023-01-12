@@ -1,0 +1,88 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-454",
+		"Method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+		"Crash Message":"column number is not unique (code 19)",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+			"android.database.sqlite.SQLiteConnection.executeForChangedRowCount",
+			"android.database.sqlite.SQLiteSession.executeForChangedRowCount",
+			"android.database.sqlite.SQLiteStatement.executeUpdateDelete",
+			"android.database.sqlite.SQLiteDatabase.updateWithOnConflict",
+			"android.database.sqlite.SQLiteDatabase.update",
+			"org.kontalk.provider.UsersProvider.updateUser",
+			"org.kontalk.provider.UsersProvider.update",
+			"android.content.ContentProvider$Transport.update",
+			"android.content.ContentProviderClient.update",
+			"org.kontalk.sync.Syncer.performSync",
+			"org.kontalk.sync.SyncAdapter.onPerformSync",
+			"android.content.AbstractThreadedSyncAdapter$SyncThread.run"
+		],
+		"Labeled Buggy Method":"org.kontalk.sync.Syncer.performSync"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider.updateUser",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider.updateUser"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider.update",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider.update"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.sync.Syncer.performSync",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.sync.Syncer.performSync"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.sync.SyncAdapter.onPerformSync",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.sync.SyncAdapter.onPerformSync"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

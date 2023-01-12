@@ -1,0 +1,123 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.taweb.siac-62",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: notifica (code 1): , while compiling: SELECT a.id, a.id_server, a.titolo, a.testo, a.data, a.letto, b.titolo, b.immagine, a.immagine, a.type FROM notifica a  LEFT JOIN categoria_notifica b ON b.id= a.id_categoria_notifica",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.taweb.siac.model.MNotifica.recuperaNotifiche",
+			"com.taweb.siac.model.MNotifica.recuperaNotificheLette",
+			"com.taweb.siac.parts.Header.settaNotifiche",
+			"com.taweb.siac.parts.Header.<init>",
+			"com.taweb.siac.MainActivity.settaHeaderbar",
+			"com.taweb.siac.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.taweb.siac.model.DatabaseHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.taweb.siac.model.MNotifica.recuperaNotifiche",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.model.MNotifica.recuperaNotifiche"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.taweb.siac.model.MNotifica.recuperaNotificheLette",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.model.MNotifica.recuperaNotificheLette"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.taweb.siac.parts.Header.settaNotifiche",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.parts.Header.settaNotifiche"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.taweb.siac.parts.Header.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.parts.Header.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.taweb.siac.MainActivity.settaHeaderbar",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.MainActivity.settaHeaderbar"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.taweb.siac.MainActivity.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.taweb.siac.MainActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

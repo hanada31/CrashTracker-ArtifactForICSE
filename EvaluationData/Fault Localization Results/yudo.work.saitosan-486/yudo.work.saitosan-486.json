@@ -1,0 +1,94 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"yudo.work.saitosan-486",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=yudo.work.saitosan }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.a",
+			"android.support.v4.app.Fragment.startActivityForResult",
+			"yudo.work.saitosan.fragment.LaunchConnectFragment.k",
+			"yudo.work.saitosan.fragment.hl.a",
+			"yudo.work.saitosan.d.a.onDismiss",
+			"android.app.Dialog$ListenersHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"yudo.work.saitosan.fragment.LaunchConnectFragment.k"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"yudo.work.saitosan.fragment.LaunchConnectFragment.k",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<yudo.work.saitosan.fragment.LaunchConnectFragment: void k(yudo.work.saitosan.fragment.LaunchConnectFragment)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"yudo.work.saitosan.fragment.LaunchConnectFragment.k"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"yudo.work.saitosan.fragment.hl.a",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"yudo.work.saitosan.fragment.hl.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"yudo.work.saitosan.d.a.onDismiss",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"yudo.work.saitosan.d.a.onDismiss"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

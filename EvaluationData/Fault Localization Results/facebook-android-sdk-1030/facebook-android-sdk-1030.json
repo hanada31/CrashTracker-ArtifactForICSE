@@ -1,0 +1,53 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"facebook-android-sdk-1030",
+		"Method":"android.app.Activity.onCreate",
+		"Crash Message":"Only fullscreen opaque activities can request orientation",
+		"stack trace":[
+			"android.app.Activity.onCreate",
+			"androidx.core.app.ComponentActivity.onCreate",
+			"androidx.activity.ComponentActivity.onCreate",
+			"androidx.fragment.app.FragmentActivity.onCreate",
+			"com.facebook.FacebookActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.-wrap11",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.Zygote$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.facebook.FacebookActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QOnly fullscreen opaque activities can request orientation\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z3 == 0\", \"$z2 == 0\", \"$i0 <= 26\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.facebook.FacebookActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.FacebookActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update",
+			"Manifest XML"
+		]
+	}
+}

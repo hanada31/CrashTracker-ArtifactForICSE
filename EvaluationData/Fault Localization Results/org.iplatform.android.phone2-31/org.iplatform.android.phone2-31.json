@@ -1,0 +1,97 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.iplatform.android.phone2-31",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"Unable to find explicit activity class {org.iplatform.android.phone2/org.iplatform.android.phone2.activity.InitFragment}; have you declared this activity in your AndroidManifest.xml?",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"org.iplatform.android.phone2.activity.PhoneScreen.runActivity",
+			"org.iplatform.android.phone2.activity.PhoneScreen.access$800",
+			"org.iplatform.android.phone2.activity.PhoneScreen$5$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.iplatform.android.phone2.activity.PhoneScreen.runActivity"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to find explicit activity class \\E[\\s\\S]*\\Q; have you declared this activity in your AndroidManifest.xml?\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r9 == null\", \"$z1 == 0\", \"i0\", \"$z0 != 0\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.iplatform.android.phone2.activity.PhoneScreen.runActivity",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<org.iplatform.android.phone2.activity.PhoneScreen: void runActivity(java.lang.Class)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.iplatform.android.phone2.activity.PhoneScreen.runActivity"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.iplatform.android.phone2.activity.PhoneScreen.access$800",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.iplatform.android.phone2.activity.PhoneScreen.access$800"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.iplatform.android.phone2.activity.PhoneScreen$5$1.run",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.iplatform.android.phone2.activity.PhoneScreen$5$1.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

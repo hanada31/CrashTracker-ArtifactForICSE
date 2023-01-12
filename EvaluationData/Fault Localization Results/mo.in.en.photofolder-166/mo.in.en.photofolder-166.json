@@ -1,0 +1,141 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"mo.in.en.photofolder-166",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=mo.in.en.diary }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"mo.in.en.photofolder.ba.a",
+			"mo.in.en.photofolder.P_Top.onClickDog"
+		],
+		"Labeled Buggy Method":"mo.in.en.photofolder.ba.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"mo.in.en.photofolder.ba.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<mo.in.en.photofolder.ba: void a(android.content.Context,android.widget.LinearLayout,android.content.SharedPreferences)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"mo.in.en.photofolder.ba.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"mo.in.en.photofolder.P_Top.onClickDog",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"mo.in.en.photofolder.P_Top.onClickDog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"mo.in.en.photofolder.ba.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<mo.in.en.photofolder.ba: android.graphics.drawable.Drawable a(android.content.Context,int,java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"<java.lang.Boolean: java.lang.Boolean valueOf(boolean)>",
+							"java.lang.String.<clinit>",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<mo.in.en.photofolder.ba: android.graphics.drawable.Drawable a(android.content.Context,int,java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"<java.lang.Boolean: java.lang.Boolean valueOf(boolean)>",
+							"java.lang.String.<clinit>",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<mo.in.en.photofolder.ba: android.graphics.drawable.Drawable a(android.content.Context,int,java.lang.String,java.lang.String)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"<java.lang.Boolean: java.lang.Boolean valueOf(boolean)>",
+							"java.lang.String.<clinit>",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<mo.in.en.photofolder.ba: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

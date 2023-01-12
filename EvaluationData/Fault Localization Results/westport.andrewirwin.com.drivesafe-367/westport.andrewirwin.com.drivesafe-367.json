@@ -1,0 +1,581 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"westport.andrewirwin.com.drivesafe-367",
+		"Method":"android.app.LoadedApk.forgetServiceDispatcher",
+		"Crash Message":"Service not registered: westport.andrewirwin.com.drivesafe.a.e@f3d67b0",
+		"stack trace":[
+			"android.app.LoadedApk.forgetServiceDispatcher",
+			"android.app.ContextImpl.unbindService",
+			"android.content.ContextWrapper.unbindService",
+			"westport.andrewirwin.com.drivesafe.a.d.a",
+			"westport.andrewirwin.com.drivesafe.a.d.b",
+			"westport.andrewirwin.com.drivesafe.MainActivity.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"westport.andrewirwin.com.drivesafe.a.d.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.a.d.a",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.a.d.a"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a()>",
+							"<com.google.android.gms.common.stats.b: void a(android.content.Context,android.content.ServiceConnection)>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(westport.andrewirwin.com.drivesafe.a.j)>",
+							"<com.google.android.gms.common.stats.b: boolean a(android.content.Context,java.lang.String,android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(android.app.Activity,java.lang.String,java.lang.String,java.util.List,int,westport.andrewirwin.com.drivesafe.a.i,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(android.app.Activity,java.lang.String,int,westport.andrewirwin.com.drivesafe.a.i,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: int a(java.lang.String,westport.andrewirwin.com.drivesafe.a.m,java.util.List)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: int a(westport.andrewirwin.com.drivesafe.a.m,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: westport.andrewirwin.com.drivesafe.a.m a(boolean,java.util.List,java.util.List)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: boolean a(int,int,android.content.Intent)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: int a(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(westport.andrewirwin.com.drivesafe.a.j)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(boolean,java.util.List,java.util.List,westport.andrewirwin.com.drivesafe.a.k)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: int a(android.content.Intent)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(westport.andrewirwin.com.drivesafe.a.k)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: java.lang.String a(int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.a.d.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<westport.andrewirwin.com.drivesafe.a.d: android.content.ServiceConnection l>",
+						"Influenced By Method":"<westport.andrewirwin.com.drivesafe.a.d: void a()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a()>",
+							"modify key field: <westport.andrewirwin.com.drivesafe.a.d: android.content.ServiceConnection l>",
+							"<westport.andrewirwin.com.drivesafe.a.d: void a()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<westport.andrewirwin.com.drivesafe.a.d: android.content.ServiceConnection l>",
+						"Influenced By Method":"<westport.andrewirwin.com.drivesafe.a.d: void a(westport.andrewirwin.com.drivesafe.a.j)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.a.d: void a(westport.andrewirwin.com.drivesafe.a.j)>",
+							"modify key field: <westport.andrewirwin.com.drivesafe.a.d: android.content.ServiceConnection l>",
+							"<westport.andrewirwin.com.drivesafe.a.d: void a()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.a.d.b",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.a.d.b"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.a.d.b"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.onDestroy",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.MainActivity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"westport.andrewirwin.com.drivesafe.MainActivity.onDestroy"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.unbindService",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void unbindService(android.content.ServiceConnection)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.bindService",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.createPackageContext",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.a",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void onCreate(android.os.Bundle)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void m()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void a(android.content.Context)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void t()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.c",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void p()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void c(java.lang.String)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void s()>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.d",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: void apply()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void d(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: void apply()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.finishAfterTransition",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void finishAfterTransition()>",
+						"Trace":[
+							"<com.google.android.gms.ads.purchase.InAppPurchaseActivity: void finishAfterTransition()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void finishAfterTransition()>",
+							"<com.google.android.gms.ads.AdActivity: void finishAfterTransition()>",
+							"<com.google.android.gms.auth.api.signin.internal.SignInHubActivity: void finishAfterTransition()>",
+							"fw: <android.app.Activity: void finishAfterTransition()>, <android.app.ActivityTransitionState: boolean startExitBackTransition(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.m",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void onCreate(android.os.Bundle)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void m()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void a(android.content.Context)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void t()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.onCreate",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void onCreate(android.os.Bundle)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void m()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void a(android.content.Context)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void t()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.p",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void p()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void c(java.lang.String)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void s()>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.s",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void p()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void c(java.lang.String)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void s()>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.showDialog",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<com.google.android.gms.ads.purchase.InAppPurchaseActivity: void showDialog(int)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void showDialog(int)>",
+							"<com.google.android.gms.ads.AdActivity: void showDialog(int)>",
+							"<com.google.android.gms.auth.api.signin.internal.SignInHubActivity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"westport.andrewirwin.com.drivesafe.MainActivity.t",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void onCreate(android.os.Bundle)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void m()>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void a(android.content.Context)>",
+							"<westport.andrewirwin.com.drivesafe.MainActivity: void t()>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

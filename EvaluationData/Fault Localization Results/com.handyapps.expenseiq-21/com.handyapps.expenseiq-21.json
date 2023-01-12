@@ -1,0 +1,264 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.handyapps.expenseiq-21",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"ambiguous column name: _id (code 1): , while compiling: SELECT SUM(amount) AS total, CASE WHEN (b.parent_id IS NULL OR TRIM(b.parent_id) = '' ) THEN CASE WHEN ((SELECT _id from category where uuid = a.category_id)) = '' then 0 else ((SELECT _id from category where uuid = a.category_id)) end ELSE CASE WHEN ((SELECT _id from category where uuid = b.parent_id)) = '' then 0 else ((SELECT _id from category where uuid = b.parent_id)) end END AS _id, CASE WHEN (b.parent_id IS NULL OR TRIM(b.parent_id) = '' ) THEN b.name ELSE (SELECT name FROM category WHERE uuid = b.parent_id) END AS category, CASE WHEN (b.parent_id IS NULL OR TRIM(b.parent_id) = '' ) THEN b.color ELSE (SELECT color FROM category WHERE uuid = b.parent_id) END AS color FROM tran a, category b WHERE a.category_id = b.uuid AND a.category_id NOT IN ('2669d8b9c7b9428c89a073e8d62879e8','ba49a7ebe02d4dee8042e122cf5cca15') AND a.status IN ('C', 'U', 'R') AND a.account_id IN (SELECT uuid FROM account WHERE currency = 'USD') AND b.type = 'E'  AND b.deleted == '0' AND a.deleted == '0' AND a.tran_date >= 1527804000000 AND a.tran_date <= 1530395999999  GROUP BY _id ORDER BY total ASC",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.handyapps.expenseiq.DbAdapter.fetchExpenseByCategory",
+			"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.getExpenseChart",
+			"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.loadInBackground",
+			"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.loadInBackground",
+			"android.support.v4.content.AsyncTaskLoader.onLoadInBackground",
+			"android.support.v4.content.AsyncTaskLoader$LoadTask.doInBackground",
+			"android.support.v4.content.AsyncTaskLoader$LoadTask.doInBackground",
+			"android.support.v4.content.ModernAsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"com.handyapps.expenseiq.DbAdapter.ifEmptyReturn"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.handyapps.expenseiq.DbAdapter.fetchExpenseByCategory",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.handyapps.expenseiq.DbAdapter.fetchExpenseByCategory"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.getExpenseChart",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.getExpenseChart"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.handyapps.expenseiq.DbAdapter.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.handyapps.expenseiq.DbAdapter: android.database.Cursor fetchExpenseByCategory(long,long,long,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: com.handyapps.expenseiq.DbAdapter$DatabaseHelper getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.handyapps.expenseiq.DbAdapter: android.database.Cursor fetchExpenseByCategory(long,long,long,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: com.handyapps.expenseiq.DbAdapter$DatabaseHelper getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.loadInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.handyapps.expenseiq.fragments.OverviewFragment$OverViewCardLoader.loadInBackground"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.handyapps.expenseiq.DbAdapter$DatabaseHelper.getInstance",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.handyapps.expenseiq.DbAdapter: android.database.Cursor fetchExpenseByCategory(long,long,long,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: com.handyapps.expenseiq.DbAdapter$DatabaseHelper getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.handyapps.expenseiq.DbAdapter$DatabaseHelper.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.handyapps.expenseiq.DbAdapter: android.database.Cursor fetchExpenseByCategory(long,long,long,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: com.handyapps.expenseiq.DbAdapter$DatabaseHelper getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.handyapps.expenseiq.DbAdapter$DatabaseHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.handyapps.expenseiq.DbAdapter: void <init>(android.content.Context)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

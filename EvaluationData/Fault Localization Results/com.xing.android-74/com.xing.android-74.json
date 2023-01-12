@@ -1,0 +1,114 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.xing.android-74",
+		"Method":"android.content.res.Resources.getValue",
+		"Crash Message":"Resource ID #0x0",
+		"stack trace":[
+			"android.content.res.Resources.getValue",
+			"android.content.res.Resources.getDrawable",
+			"android.content.res.Resources.getDrawable",
+			"com.xing.android.XingApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.xing.android.XingApplication.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QResource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z1 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.xing.android.XingApplication.onCreate",
+				"Candidate Score":102,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.google.android.gms.internal.gw: boolean a(android.content.Context)>",
+							"<com.google.android.gms.plus.f: boolean a()>",
+							"<com.google.android.gms.plus.f: android.graphics.drawable.Drawable a(int)>",
+							"<com.google.android.gms.plus.e: android.graphics.drawable.Drawable a(int)>",
+							"<com.xing.android.XingApplication: void onCreate()>",
+							"<de.infonline.lib.ak: int f(android.content.Context)>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.google.android.gms.internal.ho: void a(android.content.res.Resources,int,int)>",
+							"<com.xing.android.XingApplication: void onCreate()>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getColor(int)>",
+						"Trace":[
+							"<com.google.zxing.client.android.CaptureActivity: void a(com.google.zxing.o,android.graphics.Bitmap)>",
+							"<com.xing.android.fragments.CommunitiesPostCommentsFragment: android.view.View a(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle)>",
+							"<com.viewpagerindicator.TitlePageIndicator: void <init>(android.content.Context,android.util.AttributeSet,int)>",
+							"<com.xing.android.XingApplication: void onCreate()>",
+							"<com.google.zxing.client.android.ViewfinderView: void <init>(android.content.Context,android.util.AttributeSet)>",
+							"<com.viewpagerindicator.UnderlinePageIndicator: void <init>(android.content.Context,android.util.AttributeSet,int)>",
+							"<com.xing.android.c.az: void <init>(android.app.Activity,java.util.List,com.xing.android.d.r)>",
+							"<com.xing.android.c.as: android.view.View getView(int,android.view.View,android.view.ViewGroup)>",
+							"<com.xing.android.c.ac: void <init>(android.app.Activity,java.util.List)>",
+							"<com.xing.android.c.aa: void <init>(android.app.Activity,java.util.List)>",
+							"fw: <android.content.res.Resources: int getColor(int)>, <android.content.res.Resources: android.content.res.ColorStateList loadColorStateList(android.util.TypedValue,int)>, <android.content.res.ColorStateList: android.content.res.ColorStateList createFromXml(android.content.res.Resources,org.xmlpull.v1.XmlPullParser)>, <android.content.res.ColorStateList: android.content.res.ColorStateList createFromXmlInner(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)>, <android.content.res.ColorStateList: void inflate(android.content.res.Resources,org.xmlpull.v1.XmlPullParser,android.util.AttributeSet)>, <android.content.res.Resources: float getFloat(int)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.xing.android.XingApplication.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"<com.xing.android.XingApplication: void onCreate()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"com.xing.android.XingApplication.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

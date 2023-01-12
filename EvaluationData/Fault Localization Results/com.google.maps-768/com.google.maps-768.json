@@ -1,0 +1,63 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.google.maps-768",
+		"Method":"android.os.AsyncTask$4.done",
+		"Crash Message":"An error occurred while executing doInBackground()",
+		"stack trace":[
+			"android.os.AsyncTask$4.done",
+			"java.util.concurrent.FutureTask.finishCompletion",
+			"java.util.concurrent.FutureTask.setException",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run",
+			"java.util.concurrent.locks.ReentrantReadWriteLock$Sync.tryRelease",
+			"java.util.concurrent.locks.AbstractQueuedSynchronizer.release",
+			"java.util.concurrent.locks.ReentrantReadWriteLock$WriteLock.unlock",
+			"com.google.maps.android.clustering.algo.AbstractAlgorithm.unlock",
+			"com.google.maps.android.clustering.ClusterManager$ClusterTask.doInBackground",
+			"com.google.maps.android.clustering.ClusterManager$ClusterTask.doInBackground",
+			"android.os.AsyncTask$3.call",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"com.google.maps.android.clustering.ClusterManager$ClusterTask.doInBackground"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QAn error occurred while executing doInBackground()\\E",
+		"Related Variable Type":"Empty",
+		"Related Condition Type":"EmptyCondition",
+		"ETS-related Type":"NoConditionVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.google.maps.android.clustering.algo.AbstractAlgorithm.unlock",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.clustering.algo.AbstractAlgorithm.unlock"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.clustering.ClusterManager$ClusterTask.doInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.clustering.ClusterManager$ClusterTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

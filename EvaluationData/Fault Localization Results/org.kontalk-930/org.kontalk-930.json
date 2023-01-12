@@ -1,0 +1,61 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-930",
+		"Method":"android.content.res.Resources.getQuantityText",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.content.res.Resources.getQuantityText",
+			"android.content.res.Resources.getQuantityString",
+			"org.kontalk.ui.ConversationListFragment.onItemCheckedStateChanged"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.ConversationListFragment.onItemCheckedStateChanged"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.ui.ConversationListFragment.onItemCheckedStateChanged",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.content.res.Resources.getQuantityText",
+						"Trace":[
+							"org.kontalk.ui.ConversationListFragment.onItemCheckedStateChanged"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.ui.ConversationListFragment: int mCheckedItemCount>",
+						"Influenced By Method":"<org.kontalk.ui.ConversationListFragment: void onItemCheckedStateChanged(android.support.v7.view.ActionMode,int,long,boolean)>",
+						"Trace":[
+							"<org.kontalk.ui.ConversationListFragment: void onItemCheckedStateChanged(android.support.v7.view.ActionMode,int,long,boolean)>",
+							"modify key field: <org.kontalk.ui.ConversationListFragment: int mCheckedItemCount>",
+							"<org.kontalk.ui.ConversationListFragment: void onItemCheckedStateChanged(android.support.v7.view.ActionMode,int,long,boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ConversationListFragment.onDestroyActionMode",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.ui.ConversationListFragment: int mCheckedItemCount>",
+						"Influenced By Method":"<org.kontalk.ui.ConversationListFragment: void onDestroyActionMode(android.support.v7.view.ActionMode)>",
+						"Trace":[
+							"<org.kontalk.ui.ConversationListFragment: void onDestroyActionMode(android.support.v7.view.ActionMode)>",
+							"modify key field: <org.kontalk.ui.ConversationListFragment: int mCheckedItemCount>",
+							"<org.kontalk.ui.ConversationListFragment: void onItemCheckedStateChanged(android.support.v7.view.ActionMode,int,long,boolean)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

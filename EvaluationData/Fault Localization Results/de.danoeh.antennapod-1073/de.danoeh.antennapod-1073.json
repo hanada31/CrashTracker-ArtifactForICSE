@@ -1,0 +1,47 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"de.danoeh.antennapod-1073",
+		"Method":"android.support.v7.app.ActionBarActivityDelegateBase.setSupportActionBar",
+		"Crash Message":"This Activity already has an action bar supplied by the window decor. Do not request Window.FEATURE_ACTION_BAR and set windowActionBar to false in your theme to use a Toolbar instead.",
+		"stack trace":[
+			"android.support.v7.app.ActionBarActivityDelegateBase.setSupportActionBar",
+			"android.support.v7.app.ActionBarActivity.setSupportActionBar",
+			"de.danoeh.antennapod.activity.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"de.danoeh.antennapod.activity.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"de.danoeh.antennapod.activity.MainActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v7.app.ActionBarActivityDelegateBase.setSupportActionBar",
+						"Trace":[
+							"de.danoeh.antennapod.activity.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<de.danoeh.antennapod.activity.MainActivity: android.support.v7.widget.Toolbar a>",
+						"Influenced By Method":"<de.danoeh.antennapod.activity.MainActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<de.danoeh.antennapod.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <de.danoeh.antennapod.activity.MainActivity: android.support.v7.widget.Toolbar a>",
+							"<de.danoeh.antennapod.activity.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

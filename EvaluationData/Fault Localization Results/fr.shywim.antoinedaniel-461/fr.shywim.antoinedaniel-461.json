@@ -1,0 +1,175 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"fr.shywim.antoinedaniel-461",
+		"Method":"android.database.AbstractCursor.checkPosition",
+		"Crash Message":"Index 0 requested, with a size of 0",
+		"stack trace":[
+			"android.database.AbstractCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.getString",
+			"fr.shywim.antoinedaniel.da.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getWritableDatabase",
+			"fr.shywim.antoinedaniel.SoundProvider.onCreate",
+			"android.content.ContentProvider.attachInfo",
+			"android.content.ContentProvider.attachInfo",
+			"android.app.ActivityThread.installProvider"
+		],
+		"Labeled Buggy Method":"fr.shywim.antoinedaniel.da.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"-1 == $i0\", \"$i3 != $i4\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"fr.shywim.antoinedaniel.da.onUpgrade",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"fr.shywim.antoinedaniel.da.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.da: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.google.android.gms.analytics.s: java.util.List b(int)>",
+							"<com.google.android.gms.analytics.s: java.util.List a(int)>",
+							"<com.google.android.gms.internal.eg: java.util.List a(long)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.da: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.da: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.google.android.gms.analytics.u: boolean a(java.lang.String,android.database.sqlite.SQLiteDatabase)>",
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteCursor: void <init>(android.database.sqlite.SQLiteCursorDriver,java.lang.String,android.database.sqlite.SQLiteQuery)>, <android.database.AbstractWindowedCursor: void <init>()>, <android.database.AbstractCursor: void <init>()>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			},
+			{
+				"Candidate Name":"fr.shywim.antoinedaniel.SoundProvider.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"fr.shywim.antoinedaniel.SoundProvider.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"fr.shywim.antoinedaniel.SoundProvider.query",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.MatrixCursor: void <init>(java.lang.String[])>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.MatrixCursor: void <init>(java.lang.String)>, <android.database.MatrixCursor: void <init>(java.lang.String,int)>, <android.database.AbstractCursor: void <init>()>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.da: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteCursor: void <init>(android.database.sqlite.SQLiteCursorDriver,java.lang.String,android.database.sqlite.SQLiteQuery)>, <android.database.AbstractWindowedCursor: void <init>()>, <android.database.AbstractCursor: void <init>()>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<fr.shywim.antoinedaniel.da: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.google.android.gms.analytics.u: boolean a(java.lang.String,android.database.sqlite.SQLiteDatabase)>",
+							"<fr.shywim.antoinedaniel.SoundProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteCursor: void <init>(android.database.sqlite.SQLiteCursorDriver,java.lang.String,android.database.sqlite.SQLiteQuery)>, <android.database.AbstractWindowedCursor: void <init>()>, <android.database.AbstractCursor: void <init>()>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			},
+			{
+				"Candidate Name":"fr.shywim.antoinedaniel.SoundProvider.insert",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.google.android.gms.analytics.s: void a(java.util.Map,long,java.lang.String)>",
+							"<com.google.android.gms.internal.eg: void b(com.google.android.gms.internal.ee)>",
+							"<fr.shywim.antoinedaniel.SoundProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.CursorJoiner: java.lang.Object next()>, <android.database.CursorJoiner: android.database.CursorJoiner$Result next()>, <android.database.CursorJoiner: void incrementCursors()>, <android.database.CursorWrapper: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

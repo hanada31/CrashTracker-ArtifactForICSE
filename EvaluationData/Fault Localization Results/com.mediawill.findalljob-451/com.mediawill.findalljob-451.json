@@ -1,0 +1,163 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.mediawill.findalljob-451",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.mediawill.findalljob }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.mediawill.findalljob.util.VersionUtil.connectMarketPage",
+			"com.mediawill.findalljob.util.VersionUtil.connectMaket",
+			"com.mediawill.findalljob.IntroActivity$5.onClick",
+			"com.android.internal.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.mediawill.findalljob.util.VersionUtil.connectMarketPage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.mediawill.findalljob.util.VersionUtil.connectMarketPage",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.mediawill.findalljob.util.VersionUtil: void connectMarketPage(android.app.Activity,java.lang.String,boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.mediawill.findalljob.util.VersionUtil.connectMarketPage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mediawill.findalljob.util.VersionUtil.connectMaket",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.mediawill.findalljob.util.VersionUtil.connectMaket"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mediawill.findalljob.IntroActivity$5.onClick",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.mediawill.findalljob.IntroActivity$5.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mediawill.findalljob.util.VersionUtil.<clinit>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.mediawill.findalljob.util.VersionUtil: void connectMaket(android.app.Activity,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.mediawill.findalljob.util.VersionUtil: void connectMaket(android.app.Activity,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.mediawill.findalljob.util.VersionUtil: void connectMaket(android.app.Activity,java.lang.String,boolean)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.mediawill.findalljob.util.VersionUtil: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

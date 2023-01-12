@@ -1,0 +1,37 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.springpad-42",
+		"Method":"android.app.Fragment.getResources",
+		"Crash Message":"Fragment jx{19a0f9e9} not attached to Activity",
+		"stack trace":[
+			"android.support.v4.app.Fragment.getResources",
+			"com.springpad.fragments.kg.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"com.springpad.fragments.kg.doInBackground"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFragment \\E[\\s\\S]*\\Q not attached to Activity\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 != null\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.springpad.fragments.kg.doInBackground",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.springpad.fragments.kg.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

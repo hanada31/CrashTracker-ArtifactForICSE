@@ -1,0 +1,203 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.hairstyle-178",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.hairstyle.LocationValet.startAquire",
+			"com.hairstyle.MainActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.hairstyle.LocationValet.startAquire"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.hairstyle.LocationValet.startAquire",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.hairstyle.LocationValet.startAquire"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+						"Influenced By Method":"<com.hairstyle.LocationValet: java.lang.Boolean startAquire(java.lang.Boolean)>",
+						"Trace":[
+							"<com.hairstyle.LocationValet: java.lang.Boolean startAquire(java.lang.Boolean)>",
+							"modify key field: <com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+							"<com.hairstyle.LocationValet: java.lang.Boolean startAquire(java.lang.Boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hairstyle.LocationValet.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+						"Influenced By Method":"<com.hairstyle.LocationValet: void <init>(android.content.Context,com.hairstyle.LocationValet$ILocationValetListener)>",
+						"Trace":[
+							"<com.hairstyle.LocationValet: void <init>(android.content.Context,com.hairstyle.LocationValet$ILocationValetListener)>",
+							"modify key field: <com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+							"<com.hairstyle.LocationValet: java.lang.Boolean startAquire(java.lang.Boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hairstyle.LocationValet.stopAquire",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+						"Influenced By Method":"<com.hairstyle.LocationValet: void stopAquire()>",
+						"Trace":[
+							"<com.hairstyle.LocationValet: void stopAquire()>",
+							"modify key field: <com.hairstyle.LocationValet: android.location.LocationListener _listener>",
+							"<com.hairstyle.LocationValet: java.lang.Boolean startAquire(java.lang.Boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hairstyle.MainActivity.onResume",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.hairstyle.MainActivity.onResume"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hairstyle.MainActivity$1.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<com.hairstyle.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<com.hairstyle.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hairstyle.MainActivity.<clinit>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onResume()>",
+							"<com.hairstyle.MainActivity: void onResume()>",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.ActivityTransitionState.onResume",
+							"android.app.ActivityTransitionState.restoreExitedViews",
+							"<com.hairstyle.MainActivity$1: void <init>(com.hairstyle.MainActivity)>",
+							"android.app.ActivityTransitionState$1.<init>",
+							"android.app.ActivityTransitionState$1.run",
+							"android.app.ActivityTransitionState.restoreReenteringViews",
+							"android.app.Activity.enableAutofillCompatibilityIfNeeded",
+							"android.app.Activity.getCurrentFocus",
+							"android.app.Activity.getApplication",
+							"android.app.Activity.getAutofillManager"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[4].Reasons[0]"}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

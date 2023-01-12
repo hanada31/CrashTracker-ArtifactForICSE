@@ -1,0 +1,149 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.streema.podcast-22",
+		"Method":"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+		"Crash Message":"Can't downgrade database from version 19 to 3",
+		"stack trace":[
+			"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getWritableDatabase",
+			"com.streema.podcast.data.db.PodcastDatabase.<init>",
+			"com.streema.podcast.e.d.a",
+			"com.streema.podcast.e.i.a",
+			"com.streema.podcast.e.i.get",
+			"a.a.c.get",
+			"com.streema.podcast.e.o.a",
+			"com.streema.podcast.e.o.get",
+			"com.streema.podcast.c.d.injectMembers",
+			"com.streema.podcast.c.d.injectMembers",
+			"com.streema.podcast.e.b.a",
+			"com.streema.podcast.c.c.<init>",
+			"com.streema.podcast.e.d.d",
+			"com.streema.podcast.e.m.a",
+			"com.streema.podcast.e.m.get",
+			"a.a.c.get",
+			"com.streema.podcast.b.a",
+			"com.streema.podcast.b.injectMembers",
+			"com.streema.podcast.e.b.a",
+			"com.streema.podcast.PodcastApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.streema.podcast.data.db.PodcastDatabase.onDowngrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan't downgrade database from version \\E[\\s\\S]*\\Q to \\E[\\s\\S]*",
+		"Related Variable Type":"Empty",
+		"Related Condition Type":"EmptyCondition",
+		"ETS-related Type":"NoConditionVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.streema.podcast.data.db.PodcastDatabase.onDowngrade",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Not Override Method",
+						"Explanation":"Forgets to override the signaler method",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.streema.podcast.data.db.PodcastDatabase.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.streema.podcast.data.db.PodcastDatabase.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.streema.podcast.e.d.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.streema.podcast.e.d.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.streema.podcast.e.i.a",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.streema.podcast.e.i.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.streema.podcast.e.i.get",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.streema.podcast.e.i.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.streema.podcast.e.o.a",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.streema.podcast.e.o.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"a.a.c.get",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"a.a.c.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.b.a.a.h.a.a.onDowngrade",
+				"Candidate Score":59,
+				"Reasons":[
+					{
+						"Reason Type":"Not Override Method",
+						"Explanation":"Forgets to override the signaler method",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

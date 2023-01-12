@@ -1,0 +1,123 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.spring.cargo-283",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.spring.cargo }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.spring.cargo.BeginContents.rateBegin",
+			"com.spring.cargo.More.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.spring.cargo.BeginContents.rateBegin"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.spring.cargo.BeginContents.rateBegin",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.spring.cargo.BeginContents: void rateBegin(android.app.Activity)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.spring.cargo.BeginContents.rateBegin"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.spring.cargo.More: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.spring.cargo.More: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.spring.cargo.BeginContents: void rateBegin(android.app.Activity)>",
+							"<android.content.Intent: void <init>(java.lang.String)>",
+							"<android.app.Activity: void finish()>",
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<android.content.Intent: android.content.Intent setData(android.net.Uri)>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<android.content.ContextWrapper: java.lang.String getPackageName()>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.spring.cargo.More.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.spring.cargo.More.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.spring.cargo.More: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.spring.cargo.More: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.spring.cargo.BeginContents: void rateBegin(android.app.Activity)>",
+							"<android.content.Intent: void <init>(java.lang.String)>",
+							"<android.app.Activity: void finish()>",
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<android.content.Intent: android.content.Intent setData(android.net.Uri)>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<android.content.ContextWrapper: java.lang.String getPackageName()>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

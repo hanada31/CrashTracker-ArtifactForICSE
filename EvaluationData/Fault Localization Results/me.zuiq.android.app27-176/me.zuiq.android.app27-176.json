@@ -1,0 +1,153 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"me.zuiq.android.app27-176",
+		"Method":"android.graphics.Typeface.createFromAsset",
+		"Crash Message":"Font asset not found BarloesiusSchrift.ttf",
+		"stack trace":[
+			"android.graphics.Typeface.createFromAsset",
+			"me.zuiq.android.app27.PostalotMainActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"me.zuiq.android.app27.PostalotMainActivity.onResume"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFont asset not found \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0,
+			1
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r0 == null\", \"$z0 == 0\", \"r21 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"me.zuiq.android.app27.PostalotMainActivity.onResume",
+				"Candidate Score":101,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void changeFont()>",
+							"<me.zuiq.android.app27.PostActivity: void onStart()>",
+							"<me.zuiq.android.app27.PostActivity: void onCreate(android.os.Bundle)>",
+							"fw: <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>, <android.graphics.Typeface: android.graphics.Typeface createFromFamiliesWithDefault(android.graphics.FontFamily)>, key field: <android.graphics.Typeface: android.graphics.FontFamily sFallbackFonts>, <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.graphics.Typeface.createFromAsset"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"me.zuiq.android.app27.PostalotMainActivity.onResume"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0,
+							1
+						],
+						"Influenced method":"android.graphics.Typeface.createFromAsset",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.graphics.Typeface.createFromAsset",
+						"Trace":[
+							"me.zuiq.android.app27.PostalotMainActivity.onResume"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+						"Influenced By Method":"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>",
+							"modify key field: <me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"me.zuiq.android.app27.PostalotMainActivity.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+						"Influenced By Method":"<me.zuiq.android.app27.PostalotMainActivity: void <init>()>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void <init>()>",
+							"modify key field: <me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"me.zuiq.android.app27.PostalotMainActivity.changeFont",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void changeFont()>",
+							"<me.zuiq.android.app27.PostActivity: void onStart()>",
+							"<me.zuiq.android.app27.PostActivity: void onCreate(android.os.Bundle)>",
+							"fw: <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>, <android.graphics.Typeface: android.graphics.Typeface createFromFamiliesWithDefault(android.graphics.FontFamily)>, key field: <android.graphics.Typeface: android.graphics.FontFamily sFallbackFonts>, <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.graphics.Typeface.createFromAsset"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+						"Influenced By Method":"<me.zuiq.android.app27.PostalotMainActivity: void changeFont()>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void changeFont()>",
+							"modify key field: <me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"me.zuiq.android.app27.PostalotMainActivity.onPause",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+						"Influenced By Method":"<me.zuiq.android.app27.PostalotMainActivity: void onPause()>",
+						"Trace":[
+							"<me.zuiq.android.app27.PostalotMainActivity: void onPause()>",
+							"modify key field: <me.zuiq.android.app27.PostalotMainActivity: java.lang.String fontName>",
+							"<me.zuiq.android.app27.PostalotMainActivity: void onResume()>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset"
+		]
+	}
+}

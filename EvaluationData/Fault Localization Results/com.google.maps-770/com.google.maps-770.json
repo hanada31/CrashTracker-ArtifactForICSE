@@ -1,0 +1,87 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.google.maps-770",
+		"Method":"android.os.Handler.<init>",
+		"Crash Message":"Can't create handler inside thread that has not called Looper.prepare()",
+		"stack trace":[
+			"android.os.Handler.<init>",
+			"android.os.Handler.<init>",
+			"android.widget.Toast$TN.<init>",
+			"android.widget.Toast.<init>",
+			"android.widget.Toast.makeText",
+			"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getJsonPlaces",
+			"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getPoints",
+			"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.access$200",
+			"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity$MakeOverlayTask.doInBackground",
+			"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity$MakeOverlayTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getJsonPlaces"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan't create handler inside thread that has not called Looper.prepare()\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r2 != null\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getJsonPlaces",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getJsonPlaces"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getPoints",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.getPoints"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.access$200",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity.access$200"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity$MakeOverlayTask.doInBackground",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.utils.demo.HeatmapsPlacesDemoActivity$MakeOverlayTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,328 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.orange.mylivebox.fr-41",
+		"Method":"android.content.res.Resources.getValue",
+		"Crash Message":"Resource ID #0x7f030025",
+		"stack trace":[
+			"android.content.res.Resources.getValue",
+			"android.content.res.Resources.loadXmlResourceParser",
+			"android.content.res.Resources.getLayout",
+			"android.view.LayoutInflater.inflate",
+			"android.view.LayoutInflater.inflate",
+			"com.android.internal.policy.impl.PhoneWindow.setContentView",
+			"android.app.Activity.setContentView",
+			"com.orange.mylivebox.fr.gui.LiveboxActivity.setCustomTitleBar",
+			"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QResource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z1 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.LiveboxActivity.setCustomTitleBar",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.orange.mylivebox.fr.gui.LiveboxActivity.setCustomTitleBar"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void setCustomTitleBar(int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"com.orange.mylivebox.fr.gui.LiveboxActivity.setCustomTitleBar"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.onCreate",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.populateFields",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getText(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void resetFields()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void populateFields(com.orange.mylivebox.fr.business.datamodel.LiveboxProperties)>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.refreshEthernetBox",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getQuantityText(int,int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshWifiBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshUSBBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshLivephoneBox()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshEthernetBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void refreshLivephoneBox()>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.refreshLivephoneBox",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getQuantityText(int,int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshWifiBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshUSBBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshLivephoneBox()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshEthernetBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void refreshLivephoneBox()>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.refreshUSBBox",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getQuantityText(int,int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshWifiBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshUSBBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshLivephoneBox()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshEthernetBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void refreshLivephoneBox()>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.refreshWifiBox",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getQuantityText(int,int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshWifiBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshUSBBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshLivephoneBox()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void refreshEthernetBox(int)>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void refreshLivephoneBox()>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.resetFields",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.CharSequence getText(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void resetFields()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void populateFields(com.orange.mylivebox.fr.business.datamodel.LiveboxProperties)>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.LiveboxActivity.onCreateOptionsMenu",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateCorner(int)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateBackground(boolean)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.ad4screen.sdk.service.modules.inapp.DisplayView: void f()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.WifiShutdownActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void updateLiveboxImage()>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.LiveboxActivity.updateBackground",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateCorner(int)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateBackground(boolean)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.ad4screen.sdk.service.modules.inapp.DisplayView: void f()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.WifiShutdownActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void updateLiveboxImage()>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.LiveboxActivity.updateCorner",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateCorner(int)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateBackground(boolean)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.ad4screen.sdk.service.modules.inapp.DisplayView: void f()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.WifiShutdownActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void updateLiveboxImage()>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.updateServiceStatus",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.webtrends.mobile.analytics.WebtrendsConfigurator: void _ConfigureDC(android.content.Context,java.lang.String)>",
+							"<com.webtrends.mobile.analytics.WebtrendsConfigurator: void LoadConfig(com.webtrends.mobile.analytics.WebtrendsConfigurator$ConfigSettings,android.content.Context)>",
+							"<com.orange.mylivebox.fr.gui.SimpleContactAdapter: void initSearchMessage()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void updateServiceStatus(com.orange.mylivebox.fr.gui.tablet.main.MainActivity$ServiceID,com.orange.mylivebox.fr.gui.tablet.main.MainActivity$ServiceStatus)>",
+							"<com.orange.mylivebox.fr.gui.tablet.AccessControlDevicesActivity: void initSearchMessage(com.orange.mylivebox.fr.gui.tablet.AccessControlDevicesActivity$ListAdapterState)>",
+							"<com.orange.mylivebox.fr.gui.DevicesActivity: void onCreate(android.os.Bundle)>",
+							"<com.orange.mylivebox.fr.gui.DevicesActivity: void initSearchMessage(com.orange.mylivebox.fr.gui.DevicesActivity$eListAdapterID,com.orange.mylivebox.fr.gui.DevicesActivity$ListAdapterState)>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void initSearchMessage(com.orange.mylivebox.fr.gui.tablet.DevicesActivity$eListAdapterID,com.orange.mylivebox.fr.gui.tablet.DevicesActivity$ListAdapterState)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.orange.mylivebox.fr.gui.tablet.main.MainActivity.updateLiveboxImage",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateCorner(int)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: void updateBackground(boolean)>",
+							"<com.orange.mylivebox.fr.gui.LiveboxActivity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.ad4screen.sdk.service.modules.inapp.DisplayView: void f()>",
+							"<com.orange.mylivebox.fr.gui.tablet.main.MainActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.WifiShutdownActivity: void updateLiveboxImage()>",
+							"<com.orange.mylivebox.fr.gui.tablet.DevicesActivity: void updateLiveboxImage()>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

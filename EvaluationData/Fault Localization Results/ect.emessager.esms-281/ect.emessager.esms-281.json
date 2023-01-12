@@ -1,0 +1,351 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"ect.emessager.esms-281",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"ect.emessager.esms.network.a.a",
+			"ect.emessager.esms.network.b.e",
+			"ect.emessager.esms.disposal.c.f",
+			"ect.emessager.esms.disposal.c.a",
+			"ect.emessager.esms.ui.im.IMConnectionService.onStartCommand",
+			"android.app.ActivityThread.handleServiceArgs"
+		],
+		"Labeled Buggy Method":"ect.emessager.esms.network.a.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"ect.emessager.esms.network.a.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ect.emessager.esms.network.a.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri b>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri b>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri b>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri b>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.network.a.<clinit>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: void <clinit>()>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: void <clinit>()>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: int a(android.content.ContentResolver,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri b>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: void <clinit>()>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: void <clinit>()>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri b>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ect.emessager.esms.network.a: android.net.Uri a>",
+						"Influenced By Method":"<ect.emessager.esms.network.a: void <clinit>()>",
+						"Trace":[
+							"<ect.emessager.esms.network.a: void <clinit>()>",
+							"modify key field: <ect.emessager.esms.network.a: android.net.Uri a>",
+							"<ect.emessager.esms.network.a: java.lang.String a(android.content.ContentResolver)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.network.b.e",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ect.emessager.esms.network.b.e"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.disposal.c.f",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ect.emessager.esms.disposal.c.f"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.disposal.c.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ect.emessager.esms.disposal.c.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.network.b.<clinit>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<ect.emessager.esms.network.b: boolean e(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<ect.emessager.esms.network.b: boolean e(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<ect.emessager.esms.network.b: boolean e(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<ect.emessager.esms.network.b: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.ui.im.IMConnectionService.onStartCommand",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"ect.emessager.esms.ui.im.IMConnectionService.onStartCommand"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ect.emessager.esms.disposal.c.<init>",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<ect.emessager.esms.disposal.c: void f(android.content.Context)>",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask.onPreExecute",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask$SerialExecutor.scheduleNext",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask$SerialExecutor$1.<init>",
+							"android.os.AsyncTask.executeOnExecutor",
+							"android.os.AsyncTask.onPreExecute",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<ect.emessager.esms.disposal.c: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.os.AsyncTask$Status.<init>",
+							"android.os.AsyncTask$4.<clinit>",
+							"android.os.AsyncTask$4.<clinit>",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask.onPostExecute",
+							"android.os.AsyncTask.<clinit>",
+							"android.os.AsyncTask$SerialExecutor.<init>",
+							"<ect.emessager.esms.disposal.c: void <init>()>",
+							"android.os.AsyncTask$SerialExecutor.<init>",
+							"android.os.AsyncTask$1.<init>",
+							"android.os.AsyncTask.<clinit>",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.doInBackground"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<ect.emessager.esms.disposal.c: void f(android.content.Context)>",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask.onPreExecute",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask$SerialExecutor.scheduleNext",
+							"android.os.AsyncTask$SerialExecutor$1.run",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask$SerialExecutor$1.<init>",
+							"android.os.AsyncTask.executeOnExecutor",
+							"android.os.AsyncTask.onPreExecute",
+							"android.os.AsyncTask$Status.<clinit>",
+							"android.os.AsyncTask$Status.<clinit>",
+							"<ect.emessager.esms.disposal.c: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"android.os.AsyncTask$Status.<init>",
+							"android.os.AsyncTask$4.<clinit>",
+							"android.os.AsyncTask$4.<clinit>",
+							"android.os.AsyncTask$SerialExecutor.execute",
+							"android.os.AsyncTask.onPostExecute",
+							"android.os.AsyncTask.<clinit>",
+							"android.os.AsyncTask$SerialExecutor.<init>",
+							"<ect.emessager.esms.disposal.c: void <init>()>",
+							"android.os.AsyncTask$SerialExecutor.<init>",
+							"android.os.AsyncTask$1.<init>",
+							"android.os.AsyncTask.<clinit>",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.onCancelled",
+							"android.os.AsyncTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,100 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.rhinocerosstory-34",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.rhinocerosstory.main.ui.Welcome.t",
+			"com.rhinocerosstory.main.ui.Welcome.onStart",
+			"android.app.Instrumentation.callActivityOnStart",
+			"android.app.Activity.performStart",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.rhinocerosstory.main.ui.Welcome.t"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.rhinocerosstory.main.ui.Welcome.t",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.rhinocerosstory.main.ui.Welcome.t"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+						"Influenced By Method":"<com.rhinocerosstory.main.ui.Welcome: void t()>",
+						"Trace":[
+							"<com.rhinocerosstory.main.ui.Welcome: void t()>",
+							"modify key field: <com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+							"<com.rhinocerosstory.main.ui.Welcome: void t()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rhinocerosstory.main.ui.Welcome.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+						"Influenced By Method":"<com.rhinocerosstory.main.ui.Welcome: void <init>()>",
+						"Trace":[
+							"<com.rhinocerosstory.main.ui.Welcome: void <init>()>",
+							"modify key field: <com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+							"<com.rhinocerosstory.main.ui.Welcome: void t()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rhinocerosstory.main.ui.Welcome.onStart",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.rhinocerosstory.main.ui.Welcome.onStart"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.rhinocerosstory.main.ui.Welcome.onStop",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+						"Influenced By Method":"<com.rhinocerosstory.main.ui.Welcome: void onStop()>",
+						"Trace":[
+							"<com.rhinocerosstory.main.ui.Welcome: void onStop()>",
+							"modify key field: <com.rhinocerosstory.main.ui.Welcome: android.location.LocationListener q>",
+							"<com.rhinocerosstory.main.ui.Welcome: void t()>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

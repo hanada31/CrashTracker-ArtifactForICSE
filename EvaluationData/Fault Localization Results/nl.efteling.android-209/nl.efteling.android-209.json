@@ -1,0 +1,296 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"nl.efteling.android-209",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestSingleUpdate",
+			"nl.efteling.android.location.impl.MyLocationManagerImpl.<init>",
+			"java.lang.reflect.Constructor.newInstance",
+			"com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance",
+			"com.google.inject.internal.ConstructorInjector.construct",
+			"com.google.inject.internal.ConstructorBindingImpl$Factory.get",
+			"com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call",
+			"com.google.inject.internal.InjectorImpl.callInContext",
+			"com.google.inject.internal.ProviderToInternalFactoryAdapter.get",
+			"com.google.inject.Scopes$1$1.get",
+			"com.google.inject.internal.InternalFactoryToProviderAdapter.get",
+			"com.google.inject.internal.FactoryProxy.get",
+			"com.google.inject.internal.SingleParameterInjector.inject",
+			"com.google.inject.internal.SingleParameterInjector.getAll",
+			"com.google.inject.internal.ConstructorInjector.construct",
+			"com.google.inject.internal.ConstructorBindingImpl$Factory.get",
+			"com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call",
+			"com.google.inject.internal.InjectorImpl.callInContext"
+		],
+		"Labeled Buggy Method":"nl.efteling.android.location.impl.MyLocationManagerImpl.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"nl.efteling.android.location.impl.MyLocationManagerImpl.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"nl.efteling.android.location.impl.MyLocationManagerImpl.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+						"Influenced By Method":"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>",
+						"Trace":[
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>",
+							"modify key field: <nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nl.efteling.android.location.impl.MyLocationManagerImpl.register",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+						"Influenced By Method":"<nl.efteling.android.location.impl.MyLocationManagerImpl: void register(nl.efteling.android.location.MyLocationListener)>",
+						"Trace":[
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void register(nl.efteling.android.location.MyLocationListener)>",
+							"modify key field: <nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nl.efteling.android.location.impl.MyLocationManagerImpl.unRegister",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+						"Influenced By Method":"<nl.efteling.android.location.impl.MyLocationManagerImpl: void unRegister(nl.efteling.android.location.MyLocationListener)>",
+						"Trace":[
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void unRegister(nl.efteling.android.location.MyLocationListener)>",
+							"modify key field: <nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nl.efteling.android.location.impl.MyLocationManagerImpl.unRegisterAll",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+						"Influenced By Method":"<nl.efteling.android.location.impl.MyLocationManagerImpl: void unRegisterAll()>",
+						"Trace":[
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void unRegisterAll()>",
+							"modify key field: <nl.efteling.android.location.impl.MyLocationManagerImpl: android.location.LocationListener locationListener>",
+							"<nl.efteling.android.location.impl.MyLocationManagerImpl: void <init>(nl.efteling.android.prefs.MyPreferences,android.location.LocationManager,android.content.res.Resources,android.content.Context,nl.efteling.android.tag.MyTagManager,nl.efteling.android.location.GeoFencer)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.DefaultConstructionProxyFactory$1.newInstance"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.ConstructorInjector.construct",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.ConstructorInjector.construct"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.ConstructorBindingImpl$Factory.get",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.ConstructorBindingImpl$Factory.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.DefaultConstructionProxyFactory$1.<init>",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.AssertionError: void <init>(java.lang.Object)>",
+							"<com.google.inject.internal.DefaultConstructionProxyFactory$1: java.lang.Object newInstance(java.lang.Object[])>",
+							"<com.google.inject.internal.DefaultConstructionProxyFactory$1: void <init>(com.google.inject.internal.DefaultConstructionProxyFactory,java.lang.reflect.Constructor)>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.AssertionError.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.ProviderToInternalFactoryAdapter$1.call"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.InjectorImpl.callInContext",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.InjectorImpl.callInContext"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.ProviderToInternalFactoryAdapter.get",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.ProviderToInternalFactoryAdapter.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.Scopes$1$1.get",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.Scopes$1$1.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.InternalFactoryToProviderAdapter.get",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.InternalFactoryToProviderAdapter.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.FactoryProxy.get",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.FactoryProxy.get"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.SingleParameterInjector.inject",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.SingleParameterInjector.inject"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.inject.internal.SingleParameterInjector.getAll",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.inject.internal.SingleParameterInjector.getAll"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

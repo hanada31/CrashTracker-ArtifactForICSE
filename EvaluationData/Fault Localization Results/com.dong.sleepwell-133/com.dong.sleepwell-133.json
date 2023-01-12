@@ -1,0 +1,95 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.dong.sleepwell-133",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"Permission Denial: not allowed to send broadcast android.intent.action.AIRPLANE_MODE from pid=31099, uid=10099",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.ActivityManagerProxy.broadcastIntent",
+			"android.app.ContextImpl.sendBroadcast",
+			"android.content.ContextWrapper.sendBroadcast",
+			"com.dong.sleepwell.SleepWell.offLine",
+			"com.dong.sleepwell.SleepWell$3.onClick",
+			"android.view.View.performClick",
+			"android.view.View.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.dong.sleepwell.SleepWell.offLine"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.dong.sleepwell.SleepWell.offLine",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.dong.sleepwell.SleepWell.offLine"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.dong.sleepwell.SleepWell$3.onClick",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.dong.sleepwell.SleepWell$3.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

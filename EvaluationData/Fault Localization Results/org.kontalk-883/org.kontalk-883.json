@@ -1,0 +1,234 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-883",
+		"Method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+			"android.database.sqlite.SQLiteConnection.executeForChangedRowCount",
+			"android.database.sqlite.SQLiteSession.executeForChangedRowCount",
+			"android.database.sqlite.SQLiteStatement.executeUpdateDelete",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"org.kontalk.provider.UsersProvider$DatabaseHelper.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"org.kontalk.provider.UsersProvider$DatabaseHelper.getReadableDatabase",
+			"org.kontalk.provider.UsersProvider.query"
+		],
+		"Labeled Buggy Method":"org.kontalk.provider.UsersProvider$DatabaseHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider$DatabaseHelper.onUpgrade",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider$DatabaseHelper.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onOpen(android.database.sqlite.SQLiteDatabase)>",
+							"<android.content.Context: java.io.File getDatabasePath(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<java.io.File: java.lang.String getPath()>",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V7>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V7>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V8>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V8>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V9>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V9>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider$DatabaseHelper.<clinit>",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onOpen(android.database.sqlite.SQLiteDatabase)>",
+							"<android.content.Context: java.io.File getDatabasePath(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<java.io.File: java.lang.String getPath()>",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V7>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V7>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V8>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V8>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V9>",
+						"Influenced By Method":"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+						"Trace":[
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void <clinit>()>",
+							"modify key field: <org.kontalk.provider.UsersProvider$DatabaseHelper: java.lang.String[] SCHEMA_UPGRADE_V9>",
+							"<org.kontalk.provider.UsersProvider$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider$DatabaseHelper.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider$DatabaseHelper.onOpen",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider$DatabaseHelper.getReadableDatabase",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider$DatabaseHelper.getReadableDatabase"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider.query",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider.query"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

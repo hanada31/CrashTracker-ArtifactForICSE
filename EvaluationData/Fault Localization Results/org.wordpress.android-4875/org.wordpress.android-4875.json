@@ -1,0 +1,75 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-4875",
+		"Method":"android.support.v4.app.Fragment.getResources",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.support.v4.app.Fragment.getResources",
+			"android.support.v4.app.Fragment.getString",
+			"org.wordpress.android.ui.accounts.SignInFragment.showSelfHostedSignInForm",
+			"org.wordpress.android.ui.accounts.SignInFragment$14.onResponse",
+			"org.wordpress.android.ui.accounts.SignInFragment$14.onResponse",
+			"com.wordpress.rest.RestRequest.deliverResponse",
+			"com.wordpress.rest.RestRequest.deliverResponse",
+			"com.android.volley.ExecutorDelivery$ResponseDeliveryRunnable.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.accounts.SignInFragment$14.onResponse"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.SignInFragment.showSelfHostedSignInForm",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.Fragment.getResources",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.SignInFragment.showSelfHostedSignInForm"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.SignInFragment$14.onResponse",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.Fragment.getResources",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.SignInFragment$14.onResponse"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wordpress.rest.RestRequest.deliverResponse",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.Fragment.getResources",
+						"Trace":[
+							"com.wordpress.rest.RestRequest.deliverResponse"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

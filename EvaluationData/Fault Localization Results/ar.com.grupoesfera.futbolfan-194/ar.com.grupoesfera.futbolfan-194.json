@@ -1,0 +1,429 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"ar.com.grupoesfera.futbolfan-194",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"duplicate column name: clase (code 1): , while compiling: ALTER TABLE Mensaje ADD COLUMN clase TEXT;",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8.actualizarImpl",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizar",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$9.actualizarImpl",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizar",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$10.actualizarImpl",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizar",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.open",
+			"ar.com.grupoesfera.futbolfan.modelo.persistencia.AdministradorDeCompetencias.buscarCampeonato",
+			"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.getCampeonato",
+			"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.<init>",
+			"ar.com.grupoesfera.futbolfan.Aplicacion.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8.actualizarImpl",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8.actualizarImpl"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<ar.com.grupoesfera.futbolfan.modelo.persistencia.esquema.Esquema: ar.com.grupoesfera.futbolfan.modelo.persistencia.esquema.Esquema$Mensaje MENSAJE>",
+						"Influenced By Method":"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+						"Trace":[
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"modify key field: <ar.com.grupoesfera.futbolfan.modelo.persistencia.esquema.Esquema: ar.com.grupoesfera.futbolfan.modelo.persistencia.esquema.Esquema$Mensaje MENSAJE>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$8: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizar",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizar"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$9.actualizarImpl",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$9.actualizarImpl"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$10.actualizarImpl",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos$10.actualizarImpl"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.onUpgrade",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.conVersion",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.crear",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.open",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.open"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.AdministradorDeCompetencias.buscarCampeonato",
+				"Candidate Score":90,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.persistencia.AdministradorDeCompetencias.buscarCampeonato"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.actualizarImpl",
+				"Candidate Score":90,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos.values",
+				"Candidate Score":90,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizar(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void actualizarImpl(android.database.sqlite.SQLiteDatabase,ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos conVersion(int)>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos[] values()>",
+							"<java.lang.Object: java.lang.Object clone()>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<ar.com.grupoesfera.futbolfan.modelo.persistencia.BaseDeDatos: void crear(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.getCampeonato",
+				"Candidate Score":89,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.getCampeonato"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.<init>",
+				"Candidate Score":88,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.modelo.servicios.FutbolFan.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.Aplicacion.onCreate",
+				"Candidate Score":87,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"ar.com.grupoesfera.futbolfan.Aplicacion.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ar.com.grupoesfera.futbolfan.modelo.persistencia.ServicioDePersistencia.onCreate",
+				"Candidate Score":86,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[4].Reasons[1]"}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

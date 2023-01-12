@@ -1,0 +1,198 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.keangame.popice-228",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.openfeint.internal.LocationProxy.init",
+			"com.openfeint.internal.LocationProxy.<init>",
+			"com.openfeint.internal.LocationProxy.getInstance",
+			"com.openfeint.internal.OpenFeintInternal.getDeviceParams",
+			"com.openfeint.internal.OpenFeintInternal.createDeviceSession",
+			"com.openfeint.internal.OpenFeintInternal.initializeWithoutLoggingIn",
+			"com.openfeint.internal.OpenFeintInternal.initialize",
+			"com.openfeint.api.OpenFeint.initialize",
+			"com.keangame.popice.the9Application.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.keangame.popice.the9Application.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.keangame.popice.the9Application.onCreate",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.keangame.popice.the9Application.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.LocationProxy.init",
+				"Candidate Score":80,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.LocationProxy.init"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.LocationProxy.<init>",
+				"Candidate Score":79,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.LocationProxy.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.LocationProxy.getInstance",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.LocationProxy.getInstance"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.OpenFeintInternal.getDeviceParams",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.OpenFeintInternal.getDeviceParams"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.OpenFeintInternal.createDeviceSession",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.OpenFeintInternal.createDeviceSession"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.OpenFeintInternal.initializeWithoutLoggingIn",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.OpenFeintInternal.initializeWithoutLoggingIn"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.OpenFeintInternal.initialize",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.internal.OpenFeintInternal.initialize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.api.OpenFeint.initialize",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.openfeint.api.OpenFeint.initialize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.LocationProxy$GpsLocationListener.<init>",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":3,
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"android.location.LocationManager.requestLocationUpdates",
+							"com.openfeint.internal.LocationProxy$GpsLocationListener.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.openfeint.internal.LocationProxy$NetworkLocationListener.<init>",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":3,
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"android.location.LocationManager.requestLocationUpdates",
+							"com.openfeint.internal.LocationProxy$NetworkLocationListener.<init>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

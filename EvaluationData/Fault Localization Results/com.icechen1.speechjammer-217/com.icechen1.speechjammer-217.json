@@ -1,0 +1,123 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.icechen1.speechjammer-217",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://search?q=pub:Yu Chen Hou }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.icechen1.speechjammer.MainActivity.onOptionsItemSelected",
+			"android.support.v4.app.Watson.onMenuItemSelected",
+			"com.actionbarsherlock.ActionBarSherlock.callbackOptionsItemSelected",
+			"com.actionbarsherlock.internal.ActionBarSherlockNative.dispatchOptionsItemSelected",
+			"com.actionbarsherlock.app.SherlockFragmentActivity.onMenuItemSelected",
+			"com.android.internal.policy.PhoneWindow.onMenuItemSelected",
+			"com.android.internal.view.menu.MenuBuilder.dispatchMenuItemSelected",
+			"com.android.internal.view.menu.MenuItemImpl.invoke",
+			"com.android.internal.view.menu.MenuBuilder.performItemAction",
+			"com.android.internal.view.menu.MenuBuilder.performItemAction",
+			"com.android.internal.view.menu.MenuPopupHelper.onItemClick",
+			"android.widget.AdapterView.performItemClick",
+			"android.widget.AbsListView.performItemClick",
+			"android.widget.AbsListView$PerformClick.run",
+			"android.widget.AbsListView$3.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.icechen1.speechjammer.MainActivity.onOptionsItemSelected"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.icechen1.speechjammer.MainActivity.onOptionsItemSelected",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.icechen1.speechjammer.MainActivity: boolean onOptionsItemSelected(com.actionbarsherlock.view.MenuItem)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.icechen1.speechjammer.MainActivity.onOptionsItemSelected"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.actionbarsherlock.ActionBarSherlock.callbackOptionsItemSelected",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.actionbarsherlock.ActionBarSherlock.callbackOptionsItemSelected"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.actionbarsherlock.internal.ActionBarSherlockNative.dispatchOptionsItemSelected",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.actionbarsherlock.internal.ActionBarSherlockNative.dispatchOptionsItemSelected"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.actionbarsherlock.app.SherlockFragmentActivity.onMenuItemSelected",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.actionbarsherlock.app.SherlockFragmentActivity.onMenuItemSelected"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

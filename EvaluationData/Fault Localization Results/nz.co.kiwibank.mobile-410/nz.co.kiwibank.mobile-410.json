@@ -1,0 +1,94 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"nz.co.kiwibank.mobile-410",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=nz.co.kiwibank.mobile flg=0x10000000 (has extras) }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.ContextImpl.startActivity",
+			"android.app.ContextImpl.startActivity",
+			"android.content.ContextWrapper.startActivity",
+			"nz.co.kiwibank.mobile.infrastructure.data.d.b.a",
+			"nz.co.kiwibank.mobile.infrastructure.data.d.b.a",
+			"nz.co.kiwibank.mobile.infrastructure.f.b.i.a",
+			"nz.co.kiwibank.mobile.infrastructure.f.f.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"nz.co.kiwibank.mobile.infrastructure.data.d.b.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"nz.co.kiwibank.mobile.infrastructure.data.d.b.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<nz.co.kiwibank.mobile.infrastructure.data.d.b: void a(java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.kiwibank.mobile.infrastructure.data.d.b.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nz.co.kiwibank.mobile.infrastructure.f.b.i.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.kiwibank.mobile.infrastructure.f.b.i.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nz.co.kiwibank.mobile.infrastructure.f.f.run",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.kiwibank.mobile.infrastructure.f.f.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

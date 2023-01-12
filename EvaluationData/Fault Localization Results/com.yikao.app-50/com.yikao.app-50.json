@@ -1,0 +1,395 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.yikao.app-50",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"duplicate column name: xxx (code 1): , while compiling: ALTER TABLE configuration ADD COLUMN xxx",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"com.yikao.app.db.DBHelper.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"com.yikao.app.db.DBUtil.<init>",
+			"com.yikao.app.db.DBUtil.getInstance",
+			"com.yikao.app.ui.BaseAC.onCreate",
+			"com.yikao.app.ui.ACSplash.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.yikao.app.db.DBHelper.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.yikao.app.db.DBHelper.onUpgrade",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.yikao.app.db.DBHelper.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.yikao.app.db.DBHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<com.yikao.app.db.DBHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.utils.LogUtil: void doLog(java.lang.String,com.yikao.app.utils.LogUtil$LogLevel,java.lang.String,int,boolean,java.lang.Throwable)>",
+							"<java.lang.Throwable: void <init>()>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void printStackTrace(java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void e(java.lang.String,java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void doLog(com.yikao.app.utils.LogUtil$LogLevel,java.lang.String,int,boolean,java.lang.Throwable)>",
+							"<java.lang.Throwable: void <init>()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String)>",
+							"<java.lang.Enum: int ordinal()>",
+							"<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>",
+							"<java.lang.String: boolean contains(java.lang.CharSequence)>",
+							"<java.lang.StackTraceElement: int getLineNumber()>",
+							"<java.lang.StackTraceElement: java.lang.String getMethodName()>",
+							"<java.lang.StackTraceElement: java.lang.String getFileName()>",
+							"<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String)>",
+							"<java.lang.Enum: int ordinal()>",
+							"<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>",
+							"<java.lang.String: boolean contains(java.lang.CharSequence)>",
+							"<java.lang.StackTraceElement: int getLineNumber()>",
+							"<java.lang.StackTraceElement: java.lang.String getMethodName()>",
+							"<java.lang.StackTraceElement: java.lang.String getFileName()>",
+							"<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.yikao.app.db.DBHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.db.DBHelper.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.yikao.app.db.DBHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<com.yikao.app.db.DBHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.utils.LogUtil: void doLog(java.lang.String,com.yikao.app.utils.LogUtil$LogLevel,java.lang.String,int,boolean,java.lang.Throwable)>",
+							"<java.lang.Throwable: void <init>()>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void printStackTrace(java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void e(java.lang.String,java.lang.Throwable)>",
+							"<com.yikao.app.utils.LogUtil: void doLog(com.yikao.app.utils.LogUtil$LogLevel,java.lang.String,int,boolean,java.lang.Throwable)>",
+							"<java.lang.Throwable: void <init>()>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int w(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int i(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<android.util.Log: int e(java.lang.String,java.lang.String)>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String,java.lang.Throwable)>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<android.util.Log: int d(java.lang.String,java.lang.String)>",
+							"<java.lang.Enum: int ordinal()>",
+							"<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>",
+							"<java.lang.String: boolean contains(java.lang.CharSequence)>",
+							"<java.lang.StackTraceElement: int getLineNumber()>",
+							"<java.lang.StackTraceElement: java.lang.String getMethodName()>",
+							"<java.lang.StackTraceElement: java.lang.String getFileName()>",
+							"<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>",
+							"<android.util.Log: int v(java.lang.String,java.lang.String)>",
+							"<java.lang.Enum: int ordinal()>",
+							"<java.lang.String: java.lang.String format(java.lang.String,java.lang.Object[])>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<java.lang.String: java.lang.String replace(java.lang.CharSequence,java.lang.CharSequence)>",
+							"<java.lang.String: boolean contains(java.lang.CharSequence)>",
+							"<java.lang.StackTraceElement: int getLineNumber()>",
+							"<java.lang.StackTraceElement: java.lang.String getMethodName()>",
+							"<java.lang.StackTraceElement: java.lang.String getFileName()>",
+							"<java.lang.Throwable: java.lang.StackTraceElement[] getStackTrace()>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.yikao.app.db.DBHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.db.DBUtil.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.yikao.app.db.DBUtil.<init>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.bean.User: com.yikao.app.bean.User getInstance(android.content.Context)>",
+							"<com.yikao.app.bean.User: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.bean.User: void loadData()>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.db.DBUtil: com.yikao.app.db.DBUtil getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.db.DBUtil: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.yikao.app.db.DBHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<android.app.Activity: boolean requestWindowFeature(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.db.DBUtil.getInstance",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.yikao.app.db.DBUtil.getInstance"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.bean.User: com.yikao.app.bean.User getInstance(android.content.Context)>",
+							"<com.yikao.app.bean.User: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.bean.User: void loadData()>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.db.DBUtil: com.yikao.app.db.DBUtil getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.db.DBUtil: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.yikao.app.db.DBHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<android.app.Activity: boolean requestWindowFeature(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.ui.BaseAC.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.yikao.app.ui.BaseAC.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.bean.User: com.yikao.app.bean.User getInstance(android.content.Context)>",
+							"<com.yikao.app.bean.User: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.bean.User: void loadData()>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.db.DBUtil: com.yikao.app.db.DBUtil getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.db.DBUtil: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.yikao.app.db.DBHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<android.app.Activity: boolean requestWindowFeature(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.ui.ACSplash.onCreate",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.yikao.app.ui.ACSplash.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yikao.app.db.DBHelper.<init>",
+				"Candidate Score":90,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.yikao.app.ui.BaseAC: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.yikao.app.bean.User: com.yikao.app.bean.User getInstance(android.content.Context)>",
+							"<com.yikao.app.bean.User: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.content.Context: android.content.SharedPreferences getSharedPreferences(java.lang.String,int)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.bean.User: void loadData()>",
+							"<android.content.SharedPreferences: java.lang.String getString(java.lang.String,java.lang.String)>",
+							"<com.yikao.app.db.DBUtil: com.yikao.app.db.DBUtil getInstance(android.content.Context)>",
+							"<android.content.Context: android.content.Context getApplicationContext()>",
+							"<com.yikao.app.db.DBUtil: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.yikao.app.db.DBHelper: void <init>(android.content.Context)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"<com.yikao.app.utils.LogUtil: void d(java.lang.String,java.lang.String)>",
+							"<android.app.Activity: boolean requestWindowFeature(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

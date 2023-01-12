@@ -1,0 +1,70 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-1469",
+		"Method":"android.app.Fragment.instantiate",
+		"Crash Message":"org.wordpress.android.ui.accounts.NewUserPageFragment cannot be cast to android.app.Fragment",
+		"stack trace":[
+			"android.app.Fragment.instantiate",
+			"android.app.Fragment.instantiate",
+			"android.app.Activity.onCreateView",
+			"android.view.LayoutInflater.createViewFromTag",
+			"android.view.LayoutInflater.rInflate",
+			"android.view.LayoutInflater.inflate",
+			"android.view.LayoutInflater.inflate",
+			"android.view.LayoutInflater.inflate",
+			"com.android.internal.policy.impl.PhoneWindow.setContentView",
+			"android.app.Activity.setContentView",
+			"org.wordpress.android.ui.accounts.NewAccountActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.access$600",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.accounts.NewAccountActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.accounts.NewAccountActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Fragment.instantiate",
+						"Trace":[
+							"org.wordpress.android.ui.accounts.NewAccountActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Fragment.instantiate",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

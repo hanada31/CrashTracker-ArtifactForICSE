@@ -1,0 +1,55 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.fy.tnzbsq-374",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"getDeviceId: Neither user 11028 nor current process has android.permission.READ_PHONE_STATE.",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"com.android.internal.telephony.ITelephony$Stub$Proxy.getDeviceId",
+			"android.telephony.TelephonyManager.getDeviceId",
+			"org.kymjs.kjframe.utils.SystemTool.getPhoneIMEI",
+			"com.fy.tnzbsq.App.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.fy.tnzbsq.App.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.fy.tnzbsq.App.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.fy.tnzbsq.App.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kymjs.kjframe.utils.SystemTool.getPhoneIMEI",
+				"Candidate Score":80,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kymjs.kjframe.utils.SystemTool.getPhoneIMEI"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Manifest XML"
+		]
+	}
+}

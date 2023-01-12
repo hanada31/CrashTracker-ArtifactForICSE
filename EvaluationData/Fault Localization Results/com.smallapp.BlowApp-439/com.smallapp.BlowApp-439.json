@@ -1,0 +1,71 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.smallapp.BlowApp-439",
+		"Method":"android.media.AudioRecord.startRecording",
+		"Crash Message":"startRecording() called on an uninitialized AudioRecord.",
+		"stack trace":[
+			"android.media.AudioRecord.startRecording",
+			"com.smallapp.BlowApp.BlowMainActivity$RecordThread.run"
+		],
+		"Labeled Buggy Method":"com.smallapp.BlowApp.BlowMainActivity$RecordThread.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QstartRecording() called on an uninitialized AudioRecord.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 == 1\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.smallapp.BlowApp.BlowMainActivity$RecordThread.end",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.media.AudioRecord: void release()>",
+						"Trace":[
+							"<com.smallapp.BlowApp.BlowMainActivity$RecordThread: void end()>",
+							"fw: <android.media.AudioRecord: void startRecording()>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.media.AudioRecord.startRecording"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.smallapp.BlowApp.BlowMainActivity$RecordThread.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.media.AudioRecord: void <init>(int,int,int,int,int)>",
+						"Trace":[
+							"<com.smallapp.BlowApp.BlowMainActivity$RecordThread: void <init>(com.smallapp.BlowApp.BlowMainActivity)>",
+							"fw: <android.media.AudioRecord: void <init>(int,int,int,int,int)>, <android.media.AudioRecord: void <init>(android.media.AudioAttributes,android.media.AudioFormat,int,int)>, key field: <android.media.AudioRecord: int mState>, <android.media.AudioRecord: void startRecording()>"
+						],
+						"Influenced Field":[
+							"android.media.AudioRecord: int mState"
+						],
+						"Signaler":"android.media.AudioRecord.startRecording"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.smallapp.BlowApp.BlowMainActivity$RecordThread.run",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.smallapp.BlowApp.BlowMainActivity$RecordThread.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

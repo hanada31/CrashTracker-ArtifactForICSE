@@ -1,0 +1,39 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.tom.music.fm-469",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"Permission Denial: not allowed to send broadcast android.intent.action.MEDIA_MOUNTED from pid=27174, uid=10097",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.ActivityManagerProxy.broadcastIntent",
+			"android.app.ContextImpl.sendBroadcast",
+			"android.content.ContextWrapper.sendBroadcast",
+			"com.tom.music.fm.activity.Main.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.tom.music.fm.activity.Main.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.tom.music.fm.activity.Main.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.tom.music.fm.activity.Main.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

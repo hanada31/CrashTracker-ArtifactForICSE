@@ -1,0 +1,248 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"facebook-android-sdk-894",
+		"Method":"android.app.ContextImpl.bindServiceCommon",
+		"Crash Message":"Not allowed to bind to service Intent { act=com.google.android.gms.ads.identifier.service.START pkg=com.google.android.gms }",
+		"stack trace":[
+			"android.app.ContextImpl.bindServiceCommon",
+			"android.app.ContextImpl.bindService",
+			"android.content.ContextWrapper.bindService",
+			"com.facebook.internal.AttributionIdentifiers.getAndroidIdViaService",
+			"com.facebook.internal.AttributionIdentifiers.getAndroidId",
+			"com.facebook.internal.AttributionIdentifiers.getAttributionIdentifiers",
+			"com.facebook.internal.AttributionIdentifiers.isTrackingLimited",
+			"com.facebook.appevents.aam.MetadataIndexer$1.run"
+		],
+		"Labeled Buggy Method":"com.facebook.internal.AttributionIdentifiers.getAndroidIdViaService"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNot allowed to bind to service \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i0 >= 0\", \"r21 != null\", \"$r2 == null\", \"r0 != null\", \"$i1 != 0\", \"$r15 == null\", \"$i2 >= 14\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.facebook.appevents.aam.MetadataIndexer$1.run",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.appevents.aam.MetadataIndexer$1.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1",
+							"3",
+							"2",
+							"4"
+						],
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"<com.facebook.appevents.aam.MetadataIndexer$1: void run()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 3, 2, 4",
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"com.facebook.appevents.aam.MetadataIndexer$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers.getAndroidIdViaService",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAndroidIdViaService"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 3, 2, 4",
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAndroidIdViaService"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers.getAndroidId",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAndroidId"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 3, 2, 4",
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAndroidId"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers.getAttributionIdentifiers",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAttributionIdentifiers"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 3, 2, 4",
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.getAttributionIdentifiers"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers.isTrackingLimited",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.isTrackingLimited"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 3, 2, 4",
+						"Influenced method":"android.app.ContextImpl.bindServiceCommon",
+						"Trace":[
+							"com.facebook.internal.AttributionIdentifiers.isTrackingLimited"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers$Companion.getAndroidIdViaService",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.iap.InAppPurchaseActivityLifecycleTracker: void startTracking()>",
+							"fw: <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, key field: <android.app.ContextImpl: android.app.ActivityThread mMainThread>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>"
+						],
+						"Influenced Field":[
+							"android.app.ContextImpl: android.app.ActivityThread mMainThread"
+						],
+						"Signaler":"android.app.ContextImpl.bindServiceCommon"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, key field: <android.app.ContextImpl: android.app.LoadedApk mPackageInfo>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>"
+						],
+						"Influenced Field":[
+							"android.app.ContextImpl: android.app.LoadedApk mPackageInfo"
+						],
+						"Signaler":"android.app.ContextImpl.bindServiceCommon"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, key field: <android.app.ContextImpl: android.app.LoadedApk mPackageInfo>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>"
+						],
+						"Influenced Field":[
+							"android.app.ContextImpl: android.app.LoadedApk mPackageInfo"
+						],
+						"Signaler":"android.app.ContextImpl.bindServiceCommon"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.internal.AttributionIdentifiers$Companion: com.facebook.internal.AttributionIdentifiers getAndroidIdViaService(android.content.Context)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"<com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper: com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$ServiceResult sendEvents(com.facebook.appevents.ondeviceprocessing.RemoteServiceWrapper$EventType,java.lang.String,java.util.List)>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, key field: <android.app.ContextImpl: android.app.LoadedApk mPackageInfo>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>"
+						],
+						"Influenced Field":[
+							"android.app.ContextImpl: android.app.LoadedApk mPackageInfo"
+						],
+						"Signaler":"android.app.ContextImpl.bindServiceCommon"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.AttributionIdentifiers$Companion.getInstallerPackageName",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getPackageName()>",
+						"Trace":[
+							"<com.facebook.internal.AttributionIdentifiers$Companion: java.lang.String getInstallerPackageName(android.content.Context)>",
+							"<com.facebook.appevents.internal.AppEventsLoggerUtility: org.json.JSONObject getJSONObjectForGraphAPICall(com.facebook.appevents.internal.AppEventsLoggerUtility$GraphAPIActivityType,com.facebook.internal.AttributionIdentifiers,java.lang.String,boolean,android.content.Context)>",
+							"fw: <android.content.Context: java.lang.String getPackageName()>, <android.app.ContextImpl: java.lang.String getPackageName()>, key field: <android.app.ContextImpl: android.app.LoadedApk mPackageInfo>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>"
+						],
+						"Influenced Field":[
+							"android.app.ContextImpl: android.app.LoadedApk mPackageInfo"
+						],
+						"Signaler":"android.app.ContextImpl.bindServiceCommon"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

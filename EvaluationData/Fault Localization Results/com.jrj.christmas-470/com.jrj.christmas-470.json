@@ -1,0 +1,340 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.jrj.christmas-470",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://search?q=pub:\"JRJ Unlimited\" }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.jrj.christmas.Mainmenu.showOurApps",
+			"com.jrj.christmas.Mainmenu.access$1",
+			"com.jrj.christmas.Mainmenu$3.onClick",
+			"android.view.View.performClick",
+			"android.view.View.onKeyUp",
+			"android.widget.TextView.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.jrj.christmas.Mainmenu.showOurApps"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu.showOurApps",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.jrj.christmas.Mainmenu: void showOurApps()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.jrj.christmas.Mainmenu.showOurApps"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu.access$1",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.jrj.christmas.Mainmenu.access$1"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu$1.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.jrj.christmas.Mainmenu: void showOurApps()>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu$1: void <init>(com.jrj.christmas.Mainmenu)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu$3.onClick",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.jrj.christmas.Mainmenu$3.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.jrj.christmas.Mainmenu: void showOurApps()>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu$1: void <init>(com.jrj.christmas.Mainmenu)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[0]"}
+				]
+			},
+			{
+				"Candidate Name":"com.jrj.christmas.Mainmenu.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.jrj.christmas.Mainmenu: void showOurApps()>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu$1: void <init>(com.jrj.christmas.Mainmenu)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.jrj.christmas.Mainmenu: void showOurApps()>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu: void <clinit>()>",
+							"android.app.ActivityManager.<clinit>",
+							"<com.jrj.christmas.Mainmenu$1: void <init>(com.jrj.christmas.Mainmenu)>",
+							"<java.lang.Object: void <init>()>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.jrj.christmas.Mainmenu: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

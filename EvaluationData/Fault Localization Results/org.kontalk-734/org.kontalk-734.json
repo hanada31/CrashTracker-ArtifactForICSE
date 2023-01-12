@@ -1,0 +1,80 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-734",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No persistable permission grants found for UID 10187 and Uri 0 @ content://media/external/images/media/34906",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.ActivityManagerProxy.takePersistableUriPermission",
+			"android.content.ContentResolver.takePersistableUriPermission",
+			"org.kontalk.util.MediaStorage.requestPersistablePermissions",
+			"org.kontalk.ui.ComposeMessageFragment.onActivityResult",
+			"android.support.v4.app.FragmentActivity.onActivityResult",
+			"org.kontalk.ui.ComposeMessage.onActivityResult",
+			"android.app.Activity.dispatchActivityResult",
+			"android.app.ActivityThread.deliverResults",
+			"android.app.ActivityThread.handleSendResult",
+			"android.app.ActivityThread.access$1300",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.ComposeMessageFragment.onActivityResult"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.util.MediaStorage.requestPersistablePermissions",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kontalk.util.MediaStorage.requestPersistablePermissions"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.onActivityResult",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kontalk.ui.ComposeMessageFragment.onActivityResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessage.onActivityResult",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kontalk.ui.ComposeMessage.onActivityResult"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

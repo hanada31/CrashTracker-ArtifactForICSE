@@ -1,0 +1,358 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cn.htbn.launcher-478",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f090162",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"cn.htbn.launcher.desktop.appcahe.LocalThemeManager.loadTheme",
+			"cn.htbn.launcher.HtSkinActivity.LoadLocalThemeList",
+			"cn.htbn.launcher.HtSkinActivity.access$12",
+			"cn.htbn.launcher.HtSkinActivity$LoadLocalThemeListTask.doInBackground",
+			"cn.htbn.launcher.HtSkinActivity$LoadLocalThemeListTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"cn.htbn.launcher.desktop.appcahe.LocalThemeManager.loadTheme"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cn.htbn.launcher.desktop.appcahe.LocalThemeManager.loadTheme",
+				"Candidate Score":102,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<cn.htbn.launcher.WallpaperChooser: void addWallpapers(android.content.res.Resources,java.lang.String,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.Launcher: void loadThemeResource(android.content.res.Resources,java.lang.String,java.lang.String,android.view.View,int)>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.catalogue.AppGroupAdapter$ListItem: void <init>(cn.htbn.launcher.catalogue.AppGroupAdapter,android.content.res.Resources,int,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.AddAdapter$ListItem: void <init>(cn.htbn.launcher.AddAdapter,android.content.res.Resources,int,int,int)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.EditCatalogAdapter$ListItem: void <init>(cn.htbn.launcher.EditCatalogAdapter,android.content.res.Resources,java.lang.String,int,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.Launcher: void loadThemeResource(android.content.res.Resources,java.lang.String,java.lang.String,android.view.View,int)>",
+							"<cn.htbn.launcher.AddAdapter$ListItem: void <init>(cn.htbn.launcher.AddAdapter,android.content.res.Resources,int,int,int)>",
+							"<cn.htbn.launcher.HtSkinActivity$ThemeListAdapter: android.view.View getView(int,android.view.View,android.view.ViewGroup)>",
+							"<cn.htbn.launcher.ColorPickerDialog$TextSeekBarDrawable: void <init>(android.content.res.Resources,java.lang.String,boolean)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cn.htbn.launcher.desktop.appcahe.LocalThemeManager.loadTheme"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cn.htbn.launcher.desktop.appcahe.LocalThemeManager.loadTheme"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.HtSkinActivity.LoadLocalThemeList",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity.LoadLocalThemeList"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity.LoadLocalThemeList"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.HtSkinActivity.access$12",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity.access$12"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity.access$12"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.HtSkinActivity$LoadLocalThemeListTask.doInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity$LoadLocalThemeListTask.doInBackground"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cn.htbn.launcher.HtSkinActivity$LoadLocalThemeListTask.doInBackground"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.HtSkinActivity$ThemeListAdapter.getView",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getColor(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.Folder: void onFinishInflate()>",
+							"<cn.htbn.launcher.ApplicationsAdapter: void <init>(android.content.Context,java.util.ArrayList,cn.htbn.launcher.catalogue.AppCatalogueFilter)>",
+							"<cn.htbn.launcher.DragLayer: void <init>(android.content.Context,android.util.AttributeSet)>",
+							"<cn.htbn.launcher.BubbleTextView: void init()>",
+							"<cn.htbn.launcher.UserFolder$FolderAdapter: void <init>(cn.htbn.launcher.UserFolder,android.content.Context,java.util.ArrayList)>",
+							"<cn.htbn.launcher.DesktopIndicator: void loadThemeColors(android.content.Context)>",
+							"<cn.htbn.launcher.Catalog: void onFinishInflate()>",
+							"<cn.htbn.launcher.HtSkinActivity$ThemeListAdapter: android.view.View getView(int,android.view.View,android.view.ViewGroup)>",
+							"<cn.htbn.launcher.Utilities: android.graphics.Bitmap centerToFit(android.graphics.Bitmap,int,int,android.content.Context)>",
+							"fw: <android.content.res.Resources: int getColor(int)>, <android.content.res.Resources: int getColor(int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.EditCatalogAdapter$ListItem: void <init>(cn.htbn.launcher.EditCatalogAdapter,android.content.res.Resources,java.lang.String,int,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.Launcher: void loadThemeResource(android.content.res.Resources,java.lang.String,java.lang.String,android.view.View,int)>",
+							"<cn.htbn.launcher.AddAdapter$ListItem: void <init>(cn.htbn.launcher.AddAdapter,android.content.res.Resources,int,int,int)>",
+							"<cn.htbn.launcher.HtSkinActivity$ThemeListAdapter: android.view.View getView(int,android.view.View,android.view.ViewGroup)>",
+							"<cn.htbn.launcher.ColorPickerDialog$TextSeekBarDrawable: void <init>(android.content.res.Resources,java.lang.String,boolean)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.checkForLocaleChange",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.content.res.Configuration getConfiguration()>",
+						"Trace":[
+							"<cn.htbn.launcher.Launcher: void onResume()>",
+							"<cn.htbn.launcher.Launcher: void onPause()>",
+							"<cn.htbn.launcher.Launcher: void checkForLocaleChange()>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.loadThemeResource",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<cn.htbn.launcher.WallpaperChooser: void addWallpapers(android.content.res.Resources,java.lang.String,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.Launcher: void loadThemeResource(android.content.res.Resources,java.lang.String,java.lang.String,android.view.View,int)>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.EditCatalogAdapter$ListItem: void <init>(cn.htbn.launcher.EditCatalogAdapter,android.content.res.Resources,java.lang.String,int,int)>",
+							"<cn.htbn.launcher.desktop.appcahe.LocalThemeManager: java.util.List loadTheme(android.content.Context,android.content.pm.PackageManager)>",
+							"<cn.htbn.launcher.Launcher: void loadThemeResource(android.content.res.Resources,java.lang.String,java.lang.String,android.view.View,int)>",
+							"<cn.htbn.launcher.AddAdapter$ListItem: void <init>(cn.htbn.launcher.AddAdapter,android.content.res.Resources,int,int,int)>",
+							"<cn.htbn.launcher.HtSkinActivity$ThemeListAdapter: android.view.View getView(int,android.view.View,android.view.ViewGroup)>",
+							"<cn.htbn.launcher.ColorPickerDialog$TextSeekBarDrawable: void <init>(android.content.res.Resources,java.lang.String,boolean)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.onPause",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.content.res.Configuration getConfiguration()>",
+						"Trace":[
+							"<cn.htbn.launcher.Launcher: void onResume()>",
+							"<cn.htbn.launcher.Launcher: void onPause()>",
+							"<cn.htbn.launcher.Launcher: void checkForLocaleChange()>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.onResume",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.content.res.Configuration getConfiguration()>",
+						"Trace":[
+							"<cn.htbn.launcher.Launcher: void onResume()>",
+							"<cn.htbn.launcher.Launcher: void onPause()>",
+							"<cn.htbn.launcher.Launcher: void checkForLocaleChange()>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.setupViews",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.content.res.AssetManager getAssets()>",
+						"Trace":[
+							"<cn.htbn.launcher.desktop.appcahe.AppCache: java.util.List LoadSoftClassFromAssets()>",
+							"<cn.htbn.launcher.desktop.appcahe.AppCache: java.util.List LoadAllRecommendAppFromAssets()>",
+							"<cn.htbn.launcher.desktop.appcahe.AppCache: java.util.List GetSoftListByCategoryId(int)>",
+							"<cn.htbn.launcher.Folder: void onFinishInflate()>",
+							"<cn.htbn.launcher.util.AssetUtils: android.graphics.Bitmap getImageFromAssets(android.content.Context,java.lang.String)>",
+							"<cn.htbn.launcher.util.AssetUtils: java.lang.String getFromAssets(android.content.Context,java.lang.String,java.lang.String)>",
+							"<cn.htbn.launcher.ApplicationsAdapter: void <init>(android.content.Context,java.util.ArrayList,cn.htbn.launcher.catalogue.AppCatalogueFilter)>",
+							"<cn.htbn.launcher.UserFolder$FolderAdapter: void <init>(cn.htbn.launcher.UserFolder,android.content.Context,java.util.ArrayList)>",
+							"<cn.htbn.launcher.Catalog: void onFinishInflate()>",
+							"<cn.htbn.launcher.Launcher: void setupViews()>",
+							"fw: <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.htbn.launcher.Launcher.initToolbarIconSize",
+				"Candidate Score":84,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: float getDimension(int)>",
+						"Trace":[
+							"<cn.htbn.launcher.AllAppsSlidingView: void onLayout(boolean,int,int,int,int)>",
+							"<cn.htbn.launcher.CustomCatalogActivity: void onCreate(android.os.Bundle)>",
+							"<cn.htbn.launcher.Launcher: void initToolbarIconSize(android.content.Context)>",
+							"<cn.htbn.launcher.CustomShirtcutActivity: void onCreate(android.os.Bundle)>",
+							"<cn.htbn.launcher.Utilities: void initAppIconSize(android.content.Context)>",
+							"<cn.htbn.launcher.Utilities: int getMaxIconSize(android.content.Context)>",
+							"<cn.htbn.launcher.Utilities: int getIconSize(android.content.Context)>",
+							"fw: <android.content.res.Resources: float getDimension(int)>, <android.content.res.ResourcesImpl: void getValue(int,android.util.TypedValue,boolean)>, <android.content.res.AssetManager: boolean getResourceValue(int,int,android.util.TypedValue,boolean)>, <android.content.res.StringBlock: java.lang.CharSequence get(int)>, <android.content.res.StringBlock: java.lang.CharSequence applyStyles(java.lang.String,int,android.content.res.StringBlock$StyleIDs)>, <android.content.res.StringBlock: android.text.style.CharacterStyle getColor(java.lang.String,boolean)>, <android.content.res.Resources: android.content.res.Resources getSystem()>, <android.content.res.Resources: void <init>()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

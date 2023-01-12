@@ -1,0 +1,116 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"sina.mobile.tianqitong-458",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"sina.mobile.tianqitong.service.a.a",
+			"sina.mobile.tianqitong.service.h.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"sina.mobile.tianqitong.service.ai.run"
+		],
+		"Labeled Buggy Method":"sina.mobile.tianqitong.service.a.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"sina.mobile.tianqitong.service.a.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"sina.mobile.tianqitong.service.a.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"sina.mobile.tianqitong.service.h.handleMessage",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"sina.mobile.tianqitong.service.h.handleMessage"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.Handler.dispatchMessage",
+							"android.os.Handler$Callback.handleMessage",
+							"android.os.Handler.<clinit>",
+							"android.os.Handler.<clinit>",
+							"<sina.mobile.tianqitong.service.h: void handleMessage(android.os.Message)>",
+							"<android.os.Message: android.os.Bundle getData()>",
+							"<sina.mobile.tianqitong.service.g: void a(int,int,android.os.Bundle)>",
+							"<android.os.Bundle: java.lang.Object clone()>",
+							"android.os.Handler.handleMessage",
+							"android.os.Handler.handleCallback",
+							"android.os.Handler$BlockingRunnable.run",
+							"android.os.Handler$BlockingRunnable.run",
+							"android.os.HandlerThread.run",
+							"android.os.HandlerThread.onLooperPrepared"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"sina.mobile.tianqitong.service.ai.run",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"sina.mobile.tianqitong.service.ai.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"sina.mobile.tianqitong.service.g.a",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.os.Handler.dispatchMessage",
+							"android.os.Handler$Callback.handleMessage",
+							"android.os.Handler.<clinit>",
+							"android.os.Handler.<clinit>",
+							"<sina.mobile.tianqitong.service.h: void handleMessage(android.os.Message)>",
+							"<android.os.Message: android.os.Bundle getData()>",
+							"<sina.mobile.tianqitong.service.g: void a(int,int,android.os.Bundle)>",
+							"<android.os.Bundle: java.lang.Object clone()>",
+							"android.os.Handler.handleMessage",
+							"android.os.Handler.handleCallback",
+							"android.os.Handler$BlockingRunnable.run",
+							"android.os.Handler$BlockingRunnable.run",
+							"android.os.HandlerThread.run",
+							"android.os.HandlerThread.onLooperPrepared"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

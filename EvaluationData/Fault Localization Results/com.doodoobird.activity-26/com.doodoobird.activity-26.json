@@ -1,0 +1,72 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.doodoobird.activity-26",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.doodoobird.service.APNService.getCurrentApnName",
+			"com.doodoobird.service.APNService.checkAPNStatusOff",
+			"com.doodoobird.activity.IndexActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.doodoobird.activity.IndexActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.doodoobird.service.APNService.getCurrentApnName",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.doodoobird.service.APNService.getCurrentApnName"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.doodoobird.service.APNService.checkAPNStatusOff",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.doodoobird.service.APNService.checkAPNStatusOff"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.doodoobird.activity.IndexActivity.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.doodoobird.activity.IndexActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

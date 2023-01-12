@@ -1,0 +1,327 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.mamarzan.hograisers-38",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: pigs_keys (code 1): , while compiling: SELECT key_type, key_object, key_name, key_value, comment FROM pigs_keys WHERE key_type = 'LOAD'  AND key_object = 'CONFIG' and key_name = 'Override'",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.queryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.query",
+			"android.database.sqlite.SQLiteDatabase.query",
+			"com.mamarzan.hograisers.a.a.a.a.k.c",
+			"com.mamarzan.hograisers.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.mamarzan.hograisers.ag.c"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.c",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.mamarzan.hograisers.a.a.a.a.k.c"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+						"Influenced By Method":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+						"Trace":[
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"modify key field: <com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.MainActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.mamarzan.hograisers.MainActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.<clinit>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"<com.mamarzan.hograisers.ag: com.mamarzan.hograisers.ag q()>",
+							"<com.mamarzan.hograisers.ag: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.mamarzan.hograisers.ah: void <init>(com.mamarzan.hograisers.ag)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.util.LinkedHashMap: void <init>()>",
+							"<java.util.HashMap: void <init>()>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"<com.mamarzan.hograisers.ag: com.mamarzan.hograisers.ag q()>",
+							"<com.mamarzan.hograisers.ag: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.mamarzan.hograisers.ah: void <init>(com.mamarzan.hograisers.ag)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.util.LinkedHashMap: void <init>()>",
+							"<java.util.HashMap: void <init>()>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+						"Influenced By Method":"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+						"Trace":[
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"modify key field: <com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+						"Influenced By Method":"<com.mamarzan.hograisers.a.a.a.a.k: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <init>(android.content.Context)>",
+							"modify key field: <com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.a",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+						"Influenced By Method":"<com.mamarzan.hograisers.a.a.a.a.k: java.lang.Boolean a(java.lang.String)>",
+						"Trace":[
+							"<com.mamarzan.hograisers.a.a.a.a.k: java.lang.Boolean a(java.lang.String)>",
+							"modify key field: <com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.b",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+						"Influenced By Method":"<com.mamarzan.hograisers.a.a.a.a.k: java.util.List b(java.lang.String)>",
+						"Trace":[
+							"<com.mamarzan.hograisers.a.a.a.a.k: java.util.List b(java.lang.String)>",
+							"modify key field: <com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.ag a>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[0]"}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.a.a.a.a.k.onUpgrade",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[0]"}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.ag.q",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"<com.mamarzan.hograisers.ag: com.mamarzan.hograisers.ag q()>",
+							"<com.mamarzan.hograisers.ag: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.mamarzan.hograisers.ah: void <init>(com.mamarzan.hograisers.ag)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.util.LinkedHashMap: void <init>()>",
+							"<java.util.HashMap: void <init>()>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.ag.<init>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"<com.mamarzan.hograisers.ag: com.mamarzan.hograisers.ag q()>",
+							"<com.mamarzan.hograisers.ag: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.mamarzan.hograisers.ah: void <init>(com.mamarzan.hograisers.ag)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.util.LinkedHashMap: void <init>()>",
+							"<java.util.HashMap: void <init>()>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mamarzan.hograisers.ah.<init>",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: com.mamarzan.hograisers.a.a.a.a.d c(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"<com.mamarzan.hograisers.ag: com.mamarzan.hograisers.ag q()>",
+							"<com.mamarzan.hograisers.ag: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.mamarzan.hograisers.ah: void <init>(com.mamarzan.hograisers.ag)>",
+							"<java.lang.Object: void <init>()>",
+							"<java.util.LinkedHashMap: void <init>()>",
+							"<java.util.HashMap: void <init>()>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void <clinit>()>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.mamarzan.hograisers.a.a.a.a.k: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

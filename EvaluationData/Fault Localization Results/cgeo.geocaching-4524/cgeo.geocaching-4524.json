@@ -1,0 +1,68 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-4524",
+		"Method":"android.view.ViewRoot.checkThread",
+		"Crash Message":"Only the original thread that created a view hierarchy can touch its views.",
+		"stack trace":[
+			"android.view.ViewRoot.checkThread",
+			"android.view.ViewRoot.invalidateChild",
+			"android.view.ViewRoot.invalidateChildInParent",
+			"android.view.ViewGroup.invalidateChild",
+			"android.view.View.invalidate",
+			"android.widget.TextView.setCompoundDrawables",
+			"android.widget.TextView.setCompoundDrawablesWithIntrinsicBounds",
+			"android.support.v7.internal.view.menu.ActionMenuItemView.setIcon",
+			"android.support.v7.internal.view.menu.ActionMenuItemView.initialize",
+			"android.support.v7.internal.view.menu.ActionMenuPresenter.bindItemView",
+			"android.support.v7.internal.view.menu.BaseMenuPresenter.getItemView",
+			"android.support.v7.internal.view.menu.ActionMenuPresenter.getItemView",
+			"android.support.v7.internal.view.menu.BaseMenuPresenter.updateMenuView",
+			"android.support.v7.internal.view.menu.ActionMenuPresenter.updateMenuView",
+			"android.support.v7.internal.view.menu.MenuBuilder.dispatchPresenterUpdate",
+			"android.support.v7.internal.view.menu.MenuBuilder.onItemsChanged",
+			"android.support.v7.internal.view.menu.MenuBuilder.startDispatchingItemsChanged",
+			"android.support.v7.app.ActionBarActivityDelegateBase.preparePanel",
+			"android.support.v7.app.ActionBarActivityDelegateBase.supportInvalidateOptionsMenu",
+			"android.support.v7.app.ActionBarActivity.supportInvalidateOptionsMenu",
+			"cgeo.geocaching.CachePopupFragment$StoreCacheClickListener$2.call",
+			"rx.internal.schedulers.ScheduledAction.run"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.CachePopupFragment$StoreCacheClickListener$2.call"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QOnly the original thread that created a view hierarchy can touch its views.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 == $r2\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.CachePopupFragment$StoreCacheClickListener$2.call",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.CachePopupFragment$StoreCacheClickListener$2.call"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"rx.internal.schedulers.ScheduledAction.run",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"rx.internal.schedulers.ScheduledAction.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

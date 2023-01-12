@@ -1,0 +1,212 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.google.android.gms-475",
+		"Method":"android.accounts.AccountManagerService.checkBinderPermission",
+		"Crash Message":"caller uid 10058 lacks any of android.permission.INTERACT_ACROSS_USERS",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.accounts.IAccountManager$Stub$Proxy.getAccountsByTypeForPackage",
+			"android.accounts.AccountManager.getAccountsByTypeForPackage",
+			"com.google.android.gms.chimera.i.b",
+			"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.a",
+			"com.google.android.gms.chimera.i.onCreate",
+			"com.google.android.gms.chimera.g.onCreate",
+			"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.onCreate",
+			"com.google.android.chimera.Activity.publicOnCreate",
+			"com.google.android.chimera.container.ActivityProxy.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.google.android.gms.chimera.i.b"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qcaller uid \\E[\\s\\S]*\\Q lacks any of \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i5 >= i1\", \"$i3 != 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.google.android.gms.chimera.i.b",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.gms.chimera.i.b"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"<com.google.android.gms.chimera.i: boolean b()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.gms.chimera.i.b"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.a",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.chimera.i.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.gms.chimera.i.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.gms.chimera.i.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.chimera.g.onCreate",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.gms.chimera.g.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.gms.chimera.g.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.gms.app.settings.GoogleSettingsChimeraActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.chimera.Activity.publicOnCreate",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.android.chimera.Activity.publicOnCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.chimera.Activity.publicOnCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.chimera.container.ActivityProxy.onCreate",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.google.android.chimera.container.ActivityProxy.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.chimera.Activity.runOnUiThread",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<com.google.android.chimera.Activity: void runOnUiThread(java.lang.Runnable)>",
+							"fw: <java.lang.Runnable: void run()>, <android.accounts.AccountManager$GetAuthTokenByTypeAndFeaturesTask$1: void run(android.accounts.AccountManagerFuture)>, <android.accounts.AccountManager$AmsTask$Response: void onResult(android.os.Bundle)>, <android.accounts.AccountManager$5: void doWork()>, <android.accounts.AccountManagerService: void getAuthToken(android.accounts.IAccountManagerResponse,android.accounts.Account,java.lang.String,boolean,boolean,android.os.Bundle)>, <android.accounts.AccountManagerService: void checkBinderPermission(java.lang.String)>, key field: <android.accounts.AccountManagerService: android.content.Context mContext>, <android.accounts.AccountManagerService: void checkBinderPermission(java.lang.String)>"
+						],
+						"Influenced Field":[
+							"android.accounts.AccountManagerService: android.content.Context mContext"
+						],
+						"Signaler":"android.os.Parcel.readException"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

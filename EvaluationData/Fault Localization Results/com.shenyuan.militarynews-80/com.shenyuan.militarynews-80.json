@@ -1,0 +1,1167 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.shenyuan.militarynews-80",
+		"Method":"android.database.sqlite.SQLiteClosable.acquireReference",
+		"Crash Message":"attempt to re-open an already-closed object: SQLiteDatabase: /data/data/com.shenyuan.militarynews/databases/xjsm.db",
+		"stack trace":[
+			"android.database.sqlite.SQLiteClosable.acquireReference",
+			"android.database.sqlite.SQLiteDatabase.beginTransaction",
+			"android.database.sqlite.SQLiteDatabase.beginTransaction",
+			"com.shenyuan.militarynews.db.DBMgr.transaction_Begin",
+			"com.shenyuan.militarynews.db.NewsServer.insertNewsList",
+			"com.shenyuan.militarynews.db.ImprotentNewsAction.AddNewsListToDB",
+			"com.shenyuan.militarynews.db.ImprotentNewsAction.InitNewsList",
+			"com.shenyuan.militarynews.fragment.ImportentNewsFragment$1.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"com.shenyuan.militarynews.db.DBMgr.close"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qattempt to re-open an already-closed object: \\E[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 > 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.transaction_Begin",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.shenyuan.militarynews.db.DBMgr.transaction_Begin"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Begin()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void beginTransaction()>, <android.database.sqlite.SQLiteDatabase: void beginTransaction(android.database.sqlite.SQLiteTransactionListener,boolean)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.insertNewsList",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.shenyuan.militarynews.db.NewsServer.insertNewsList"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.ImprotentNewsAction.AddNewsListToDB",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.shenyuan.militarynews.db.ImprotentNewsAction.AddNewsListToDB"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.ImprotentNewsAction.InitNewsList",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.shenyuan.militarynews.db.ImprotentNewsAction.InitNewsList"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.fragment.ImportentNewsFragment$1.run",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.shenyuan.militarynews.fragment.ImportentNewsFragment$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.defaultInsert_SectionTable",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_End()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void endTransaction()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_End()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Comit()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Begin()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void beginTransaction()>, <android.database.sqlite.SQLiteDatabase: void beginTransaction(android.database.sqlite.SQLiteTransactionListener,boolean)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.transaction_Comit",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_End()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Comit()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.transaction_End",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_End()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void endTransaction()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_End()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Comit()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.close",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: void close()>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void close()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void close()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void close()>",
+							"<com.umeng.common.net.c: void finalize()>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.close",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: void close()>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void close()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void close()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void close()>",
+							"<com.umeng.common.net.c: void finalize()>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.deletAllData",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: long delete(java.lang.String,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void deletAllData(java.lang.String)>",
+							"<com.umeng.common.net.c: void e(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.delete",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: long delete(java.lang.String,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void deletAllData(java.lang.String)>",
+							"<com.umeng.common.net.c: void e(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int delete(java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.createTable_Config",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.createTable_Forum",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.createTable_News",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.createTable_SectionTable",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.defaultInsert_config",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.onUpgrade",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.executeSql",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr: void executeSql(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_News(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Forum(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void createTable_Config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.insert",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.transaction_Insert",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: void transaction_Insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_config(android.database.sqlite.SQLiteDatabase)>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: void defaultInsert_SectionTable(android.database.sqlite.SQLiteDatabase)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.udpate",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: int udpate(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,int)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int updateWithOnConflict(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.tabbleIsExist",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getTheme()>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getPostsByPos(int,int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getNewsPostsTop(int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List GetFavorite()>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.find",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.Date d(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.lang.String c(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: int b(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.findAll",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findById(java.lang.String,java.lang.String,int,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.GetFavorite",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getTheme()>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getPostsByPos(int,int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getNewsPostsTop(int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List GetFavorite()>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.getNewsById",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.getNewsByPos",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getTheme()>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getPostsByPos(int,int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getNewsPostsTop(int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List GetFavorite()>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.getNewsTop",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getTheme()>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getPostsByPos(int,int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List getNewsPostsTop(int,int)>",
+							"<com.shenyuan.militarynews.db.FroumServer: java.util.List GetFavorite()>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: boolean tabbleIsExist(java.lang.String)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.NewsServer.getPartTime",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsTop(int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List getNewsByPos(int,int,java.lang.String)>",
+							"<com.shenyuan.militarynews.db.NewsServer: com.shenyuan.militarynews.beans.data.NewsBean getNewsById(int)>",
+							"<com.shenyuan.militarynews.db.NewsServer: java.util.List GetFavorite(java.lang.String)>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor find(java.lang.String,java.lang.String,java.lang.String[],java.lang.String[],java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.NewsServer: java.lang.String getPartTime(java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.Date d(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.lang.String c(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: int b(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.getReadableDatabase",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.umeng.common.net.c: java.util.Date d(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.lang.String c(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: int b(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: java.util.List a(java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr$DatabaseHelper.getWritableDatabase",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void open()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.umeng.common.net.c: void e(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,int)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.findById",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findById(java.lang.String,java.lang.String,int,java.lang.String[])>",
+							"<com.shenyuan.militarynews.db.DBMgr: android.database.Cursor findAll(java.lang.String,java.lang.String[])>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor query(boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor queryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,boolean,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.shenyuan.militarynews.db.DBMgr.open",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.umeng.common.net.c$a: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.shenyuan.militarynews.db.DBMgr: void open()>",
+							"<com.shenyuan.militarynews.db.DBMgr$DatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.umeng.common.net.c: void e(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: boolean a(java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,java.lang.String)>",
+							"<com.umeng.common.net.c: void a(java.lang.String,java.lang.String,int)>",
+							"<com.umeng.common.net.c: void a(int)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

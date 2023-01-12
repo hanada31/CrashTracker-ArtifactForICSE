@@ -1,0 +1,146 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.xnview.XnRetro-262",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.xnview.xnblackcam }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.xnview.XnRetroBase.PromoApp$4.onClick",
+			"android.view.View.performClick",
+			"android.view.View$PerformClick.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.xnview.XnRetroBase.PromoApp$4.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.xnview.XnRetroBase.PromoApp$4.onClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.xnview.XnRetroBase.PromoApp$4: void onClick(android.view.View)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.xnview.XnRetroBase.PromoApp$4.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xnview.XnRetroBase.PromoApp$4.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xnview.XnRetroBase.PromoApp$4: void onClick(android.view.View)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xnview.XnRetroBase.PromoApp$4: void <init>(com.xnview.XnRetroBase.PromoApp,android.app.Dialog)>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xnview.XnRetroBase.PromoApp$4: void <init>(com.xnview.XnRetroBase.PromoApp,android.app.Dialog)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xnview.XnRetroBase.PromoApp$4: void onClick(android.view.View)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xnview.XnRetroBase.PromoApp$4: void <init>(com.xnview.XnRetroBase.PromoApp,android.app.Dialog)>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xnview.XnRetroBase.PromoApp$4: void <init>(com.xnview.XnRetroBase.PromoApp,android.app.Dialog)>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

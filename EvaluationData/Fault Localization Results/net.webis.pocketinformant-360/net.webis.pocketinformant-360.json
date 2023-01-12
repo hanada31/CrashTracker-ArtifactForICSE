@@ -1,0 +1,169 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"net.webis.pocketinformant-360",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token android.os.BinderProxy@1752bdc is not valid; is your activity running?",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"net.webis.pocketinformant.MainActivity$2.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"net.webis.pocketinformant.MainActivity$2.run"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not valid; is your activity running?\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"net.webis.pocketinformant.MainActivity$2.run",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"net.webis.pocketinformant.MainActivity$2.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<net.webis.pocketinformant.MainActivity$2: void run()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"net.webis.pocketinformant.MainActivity$2.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.webis.pocketinformant.MainActivity.setMode",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ViewAnimator: void removeAllViews()>",
+						"Trace":[
+							"<net.webis.pocketinformant.MainActivity: void setMode(int,long,boolean)>",
+							"fw: <android.widget.ViewAnimator: void removeAllViews()>, <android.view.ViewGroup: void removeAllViews()>, <android.view.ViewGroup: void removeAllViewsInLayout()>, <android.view.ViewGroup: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void clearChildFocus(android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ViewSwitcher: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>",
+						"Trace":[
+							"<net.webis.pocketinformant.MainActivity: void setMode(int,long,boolean)>",
+							"<net.webis.pocketinformant.controls.dialog.MonthGridDatePickerDialog: android.view.View prepareContentView()>",
+							"fw: <android.widget.ViewSwitcher: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>, <android.widget.ViewAnimator: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>, <android.view.ViewGroup: void addView(android.view.View,int,android.view.ViewGroup$LayoutParams)>, <android.view.ViewGroup: void addViewInner(android.view.View,int,android.view.ViewGroup$LayoutParams,boolean)>, <android.view.ViewGroup: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void requestChildFocus(android.view.View,android.view.View)>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.webis.pocketinformant.MainActivity.onTouchEvent",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.GestureDetector: boolean onTouchEvent(android.view.MotionEvent)>",
+						"Trace":[
+							"<net.webis.pocketinformant.mainview.BaseMainView: boolean onTouchEvent(android.view.MotionEvent)>",
+							"<net.webis.pocketinformant.mainview.BaseMainView: boolean dispatchTouchEvent(android.view.MotionEvent)>",
+							"<net.webis.pocketinformant.controls.dialog.MonthGridDatePickerDialog$1: boolean dispatchTouchEvent(android.view.MotionEvent)>",
+							"<net.webis.pocketinformant.MainActivity: boolean onTouchEvent(android.view.MotionEvent)>",
+							"fw: <android.view.GestureDetector: boolean onTouchEvent(android.view.MotionEvent)>, <android.view.accessibility.AccessibilityManager$MyHandler: void handleMessage(android.os.Message)>, <android.view.accessibility.AccessibilityManager: void access$200(android.view.accessibility.AccessibilityManager)>, <android.view.accessibility.AccessibilityManager: void handleNotifyHighTextContrastStateChanged()>, <android.view.ViewRootImpl$HighContrastTextManager: void onHighTextContrastStateChanged(boolean)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.webis.pocketinformant.Utils$SignupDialog.onCreate",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void setContentView(int)>",
+						"Trace":[
+							"<net.webis.pocketinformant.controls.dialog.ColorPalettePickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.Utils$SignupDialog: void onCreate(android.os.Bundle)>",
+							"<net.webis.pocketinformant.Utils$SignupDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.TimePickerDialogEx: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.DatePickerDialogEx: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.IntervalSelectionDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.ColorPickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.MonthGridDatePickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.LabelEntryDialog: void setContentView(int)>",
+							"fw: <android.app.Dialog: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"net.webis.pocketinformant.Utils$SignupDialog.setContentView",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void setContentView(int)>",
+						"Trace":[
+							"<net.webis.pocketinformant.controls.dialog.ColorPalettePickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.Utils$SignupDialog: void onCreate(android.os.Bundle)>",
+							"<net.webis.pocketinformant.Utils$SignupDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.TimePickerDialogEx: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.DatePickerDialogEx: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.IntervalSelectionDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.ColorPickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.MonthGridDatePickerDialog: void setContentView(int)>",
+							"<net.webis.pocketinformant.controls.dialog.LabelEntryDialog: void setContentView(int)>",
+							"fw: <android.app.Dialog: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

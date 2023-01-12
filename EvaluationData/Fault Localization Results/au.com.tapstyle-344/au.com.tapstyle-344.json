@@ -1,0 +1,78 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"au.com.tapstyle-344",
+		"Method":"android.graphics.Typeface.createFromAsset",
+		"Crash Message":"Font asset not found courier.ttf",
+		"stack trace":[
+			"android.graphics.Typeface.createFromAsset",
+			"au.com.tapstyle.BaseApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"au.com.tapstyle.BaseApplication.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFont asset not found \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0,
+			1
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r0 == null\", \"$z0 == 0\", \"r21 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"au.com.tapstyle.BaseApplication.onCreate",
+				"Candidate Score":101,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>",
+						"Trace":[
+							"<com.beardedhen.androidbootstrap.BootstrapButton: void a(android.content.Context)>",
+							"<au.com.tapstyle.activity.service.r: void b()>",
+							"<au.com.tapstyle.BaseApplication: void onCreate()>",
+							"<com.beardedhen.androidbootstrap.c: void a(android.content.Context)>",
+							"<au.com.tapstyle.util.s: void <init>(int,int,int,boolean,boolean,float,float,float,int,android.content.Context)>",
+							"fw: <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>, <android.graphics.Typeface: android.graphics.Typeface createFromFamiliesWithDefault(android.graphics.FontFamily)>, key field: <android.graphics.Typeface: android.graphics.FontFamily sFallbackFonts>, <android.graphics.Typeface: android.graphics.Typeface createFromAsset(android.content.res.AssetManager,java.lang.String)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.graphics.Typeface.createFromAsset"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"au.com.tapstyle.BaseApplication.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0,
+							1
+						],
+						"Influenced method":"android.graphics.Typeface.createFromAsset",
+						"Trace":[
+							"<au.com.tapstyle.BaseApplication: void onCreate()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.graphics.Typeface.createFromAsset",
+						"Trace":[
+							"au.com.tapstyle.BaseApplication.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset"
+		]
+	}
+}

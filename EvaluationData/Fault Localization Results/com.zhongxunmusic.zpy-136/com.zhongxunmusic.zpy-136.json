@@ -1,0 +1,126 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.zhongxunmusic.zpy-136",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.zhongxunmusic.zpy.uibase.LocationInfoTool.<init>",
+			"com.zhongxunmusic.zpy.AppContent.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.zhongxunmusic.zpy.uibase.LocationInfoTool.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.zhongxunmusic.zpy.uibase.LocationInfoTool.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.zhongxunmusic.zpy.uibase.LocationInfoTool.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: long defaultminTime>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: long defaultminTime>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: float defaultMinDistance>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: float defaultMinDistance>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener gpsLocationListener>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener gpsLocationListener>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener netWorkLocationListener>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener netWorkLocationListener>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.zhongxunmusic.zpy.AppContent.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.zhongxunmusic.zpy.AppContent.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.zhongxunmusic.zpy.uibase.LocationInfoTool.removeLocationListener",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener gpsLocationListener>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void removeLocationListener()>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void removeLocationListener()>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener gpsLocationListener>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener netWorkLocationListener>",
+						"Influenced By Method":"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void removeLocationListener()>",
+						"Trace":[
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void removeLocationListener()>",
+							"modify key field: <com.zhongxunmusic.zpy.uibase.LocationInfoTool: android.location.LocationListener netWorkLocationListener>",
+							"<com.zhongxunmusic.zpy.uibase.LocationInfoTool: void <init>(android.content.Context)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

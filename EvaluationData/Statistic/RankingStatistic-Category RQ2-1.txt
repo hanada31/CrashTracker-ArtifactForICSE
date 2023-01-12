@@ -1,0 +1,80 @@
+Ranking-Data-0902-allCond-baseline.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	0	0	0	0.862	0.969	0.978	0.0
+B	0	0	0	0.25	0.679	0.768	0.0
+Find	0	rankSum	0
+CandiSum	241	CandiSum	0.415
+
+
+
+Ranking-Data-0902-baseline.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	0	0	0	0.862	0.969	0.978	0.0
+B	0	0	0	0.25	0.679	0.768	0.0
+Find	0	rankSum	0
+CandiSum	0	CandiSum	0.0
+
+
+
+Ranking-Data-0902-ExtendCGOnly.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-5	-11	-13	0.853	0.95	0.955	-0.017
+B	-8	-7	-11	0.107	0.554	0.571	-0.163
+Find	-8	rankSum	564
+CandiSum	11966	CandiSum	20.631
+
+
+
+Ranking-Data-0902-NoCallFilter.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	0	0	0	0.862	0.969	0.978	0.0
+B	0	0	0	0.25	0.679	0.768	0.0
+Find	0	rankSum	0
+CandiSum	489	CandiSum	0.843
+
+
+
+Ranking-Data-0902-NoKeyAPI.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-4	-8	-11	0.855	0.955	0.959	-0.01
+B	-4	-7	-10	0.179	0.554	0.589	-0.102
+Find	-11	rankSum	182
+CandiSum	-682	CandiSum	-1.176
+
+
+
+Ranking-Data-0902-NOParaChainANDDataTrace.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	0	-3	-2	0.862	0.964	0.974	-0.005
+B	0	-3	-2	0.25	0.625	0.732	-0.055
+Find	-3	rankSum	66
+CandiSum	-86	CandiSum	-0.149
+
+
+
+Ranking-Data-0902-NoSourceType.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-4	-12	-15	0.855	0.948	0.952	-0.016
+B	-8	-11	-14	0.107	0.482	0.518	-0.186
+Find	-15	rankSum	409
+CandiSum	-121	CandiSum	-0.209
+
+
+
+Ranking-Data-0902-version12.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-1	0	0	0.86	0.969	0.978	-0.001
+B	0	0	0	0.25	0.679	0.768	-0.007
+Find	0	rankSum	4
+CandiSum	-193	CandiSum	-0.333
+
+
+
+Ranking-Data-0902-version2.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-3	-5	-8	0.857	0.96	0.964	-0.01
+B	-3	-5	-8	0.196	0.589	0.625	-0.1
+Find	-7	rankSum	219
+CandiSum	-1489	CandiSum	-2.568
+
+
+
+Ranking-Data-0902-version8.txt	R@1	R@5	R@10	R@1	R@5	R@10	MRR
+All	-2	0	0	0.859	0.969	0.978	-0.002
+B	0	0	0	0.25	0.679	0.768	0.0
+Find	0	rankSum	4
+CandiSum	-6	CandiSum	-0.011
+
+
+

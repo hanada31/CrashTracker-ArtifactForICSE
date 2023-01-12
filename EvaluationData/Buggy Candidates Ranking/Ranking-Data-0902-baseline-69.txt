@@ -1,0 +1,71 @@
+Category	AppId	signaler	ETS-related type	location_of_the_real_buggy / number_of_reported_candidates
+A	cgeo.geocaching-600	android.app.ContextImpl.startActivity	Parameter	2	/	3	
+A	cgeo.geocaching-3570	android.view.WindowManagerGlobal.findViewLocked	ParaAndField	1	/	6	
+A	org.wordpress.android-1590	android.app.Activity.dismissDialog	Field	1	/	3	
+B	org.wordpress.android-2855	android.database.CursorWindow.nativeGetString	Unknown	999	/	3	
+C	org.wordpress.android-5449	dalvik.system.BaseDexClassLoader.findClass	Unknown	1	/	2	
+A	cgeo.geocaching-4236	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	com.pcinpact-147505046	android.app.ContextImpl.startActivity	Parameter	1	/	2	
+A	org.wordpress.android-2695	android.text.SpannableStringBuilder.checkRange	Parameter	2	/	5	
+A	ch.logixisland.anuto-1	android.app.FragmentManagerImpl.checkStateLoss	Field	5	/	9	
+A	fr.free.nrw.commons-225563649	android.view.ViewRootImpl.checkThread	Field	1	/	2	
+A	org.kontalk-782	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	4	
+A	org.kontalk-795	android.view.ViewRootImpl.checkThread	Field	2	/	3	
+A	org.kontalk-734	android.os.Parcel.readException	Unknown	2	/	3	
+A	org.wordpress.android-1469	android.app.Fragment.instantiate	Unknown	1	/	2	
+A	com.nextgis.mobile-532	android.os.Parcel.readParcelableCreator	ParaAndField	1	/	7	
+B	org.y20k.transistor-21	android.app.Fragment.getResources	Field	999	/	3	
+B	com.nextgis.mobile-315	android.app.LoadedApk.forgetReceiverDispatcher	ParaAndField	3	/	11	
+A	org.wordpress.android-5297	android.view.WindowManagerGlobal.findViewLocked	Unknown	1	/	7	
+A	org.wordpress.android-4845	android.app.Instrumentation.checkStartActivityResult	Unknown	1	/	4	
+A	com.nextgis.mobile-493	android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow	Unknown	1	/	2	
+A	cgeo.geocaching-4541	android.hardware.SensorManager$ListenerDelegate.setDelay	Unknown	1	/	4	Hardware
+A	org.kontalk-526	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	4	/	4	
+A	com.nextgis.mobile-350	android.database.sqlite.SQLiteConnection.nativeExecuteForCursorWindow	Unknown	1	/	2	
+A	org.wordpress.android-4875	android.support.v4.app.Fragment.getResources	Unknown	2	/	3	
+A	cgeo.geocaching-4524	android.view.ViewRoot.checkThread	Field	1	/	2	
+A	org.kontalk-46	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	1	/	5	
+C	com.nextgis.mobile-260	android.content.res.Resources.loadDrawable	ParaAndField	1	/	2	Resource XML
+A	org.wordpress.android-1588	android.app.FragmentManagerImpl.enqueueAction	ParaAndField	1	/	11	
+A	com.zeapo.pwdstore-138	android.view.ViewRootImpl.setView	Field	1	/	1	
+A	cgeo.geocaching-3541	android.database.sqlite.SQLiteProgram.bindString	Parameter	4	/	9	
+B	cgeo.geocaching-4450	android.database.sqlite.SQLiteClosable.acquireReference	Field	1	/	5	Hardware
+A	org.kontalk-883	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	1	/	6	
+A	org.fitchfamily.android.wifi_backend-172302822	android.database.sqlite.SQLiteProgram.bindString	Parameter	2	/	5	
+B	cgeo.geocaching-5591	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	2	/	17	
+A	org.wordpress.android-1320	android.app.FragmentManagerImpl.checkStateLoss	Field	1	/	4	
+A	de.tum.in.tumcampus-392	android.os.Parcel.readException	Unknown	1	/	1	
+A	org.kontalk-930	android.content.res.Resources.getQuantityText	Unknown	1	/	2	
+B	cgeo.geocaching-1884	android.database.sqlite.SQLiteCompiledSql.native_compile	Unknown	1	/	17	
+A	cgeo.geocaching-3527	android.database.sqlite.SQLiteCompiledSql.native_compile	Unknown	1	/	2	
+A	org.kiwix.kiwixmobile-19	android.widget.ListView.addHeaderView	Field	1	/	2	
+A	org.wordpress.android-938	android.app.Fragment.getResources	Field	1	/	2	
+C	cgeo.geocaching-6061547	android.content.res.Resources.getText	ParaAndField	3	/	5	Asset, Resource XML
+A	org.kontalk-860	android.app.Instrumentation.checkStartActivityResult	Unknown	1	/	2	
+A	org.kontalk-511	android.app.FragmentManagerImpl.checkStateLoss	Field	1	/	13	
+A	org.thoughtcrime.securesms-92317259	android.view.ViewRootImpl.checkThread	Field	2	/	4	
+A	org.kontalk-454	android.database.sqlite.SQLiteConnection.nativeExecuteForChangedRowCount	Unknown	3	/	4	
+A	org.wordpress.android-134	android.database.sqlite.SQLiteConnection.nativePrepareStatement	Unknown	1	/	3	
+A	org.kontalk-994	android.support.v4.app.FragmentManagerImpl.ensureExecReady	Unknown	1	/	4	
+A	com.joulespersecond.seattlebusbot-168	android.os.Bundle.getInt	Unknown	1	/	6	
+A	de.tum.in.tumcampus-150363580	android.database.AbstractCursor.checkPosition	Field	1	/	1	
+A	com.matburt.mobileorg-177	android.database.sqlite.SQLiteProgram.native_compile	Unknown	1	/	3	
+A	com.seafile.seadroid-474	com.android.internal.policy.impl.PhoneWindow.requestFeature	Unknown	1	/	1	
+A	org.wordpress.android-1843	android.content.res.Resources.getText	ParaAndField	1	/	2	Asset, Resource XML
+B	org.kontalk-255597670	android.database.CursorWindow.nativeGetLong	Unknown	1	/	6	
+A	com.nextgis.mobile-346	android.app.SharedPreferencesImpl.getString	Unknown	1	/	1	
+A	org.wordpress.android-1504	android.app.FragmentManagerImpl.enqueueAction	ParaAndField	1	/	5	
+A	org.kontalk-510	android.app.Fragment.getResources	Field	1	/	1	
+A	org.kontalk-958	android.os.Parcel.readException	Unknown	2	/	2	
+A	cgeo.geocaching-1503	android.view.ViewRoot.checkThread	Field	3	/	6	
+C	org.wordpress.android-2372	android.app.FragmentManagerImpl.checkStateLoss	Field	1	/	2	
+A	de.danoeh.antennapod-1073	android.support.v7.app.ActionBarActivityDelegateBase.setSupportActionBar	Unknown	1	/	1	
+A	org.wordpress.android-1321	android.preference.PreferenceFragment.ensureList	Field	1	/	3	
+A	cgeo.geocaching-23234767	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	2	
+A	cgeo.geocaching-4274	android.view.WindowManagerImpl.findViewLocked	ParaAndField	1	/	5	
+A	cgeo.geocaching-4275	android.app.FragmentManagerImpl.enqueueAction	ParaAndField	1	/	33	Hardware
+A	org.kontalk-808	android.database.AbstractCursor.checkPosition	Field	1	/	8	
+A	org.kontalk-723	android.app.Fragment.getResources	Field	1	/	4	
+A	org.kontalk-709	android.app.Instrumentation.checkStartActivityResult	Parameter	1	/	3	
+A	org.kontalk-773	android.database.sqlite.SQLiteProgram.bindString	Parameter	1	/	6	
+

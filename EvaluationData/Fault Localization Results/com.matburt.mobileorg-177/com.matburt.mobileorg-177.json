@@ -1,0 +1,72 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.matburt.mobileorg-177",
+		"Method":"android.database.sqlite.SQLiteProgram.native_compile",
+		"Crash Message":"no such column: file.node_id: , while compiling: SELECT data.* FROM orgdata data JOIN(SELECT f.node_id FROM files f) file on file.node_id = data._id ORDER BY data.name ASC",
+		"stack trace":[
+			"android.database.sqlite.SQLiteProgram.native_compile",
+			"android.database.sqlite.SQLiteProgram.compile",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.matburt.mobileorg.Parsing.OrgDatabase.getFileCursor",
+			"com.matburt.mobileorg.Gui.OutlineActivity.refreshDisplay",
+			"com.matburt.mobileorg.Gui.OutlineActivity.onCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.matburt.mobileorg.Parsing.OrgDatabase.getFileCursor"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.matburt.mobileorg.Parsing.OrgDatabase.getFileCursor",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.native_compile",
+						"Trace":[
+							"com.matburt.mobileorg.Parsing.OrgDatabase.getFileCursor"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.matburt.mobileorg.Gui.OutlineActivity.refreshDisplay",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.native_compile",
+						"Trace":[
+							"com.matburt.mobileorg.Gui.OutlineActivity.refreshDisplay"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.matburt.mobileorg.Gui.OutlineActivity.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteProgram.native_compile",
+						"Trace":[
+							"com.matburt.mobileorg.Gui.OutlineActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

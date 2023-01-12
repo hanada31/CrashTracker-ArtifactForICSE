@@ -1,0 +1,345 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-511",
+		"Method":"android.app.FragmentManagerImpl.checkStateLoss",
+		"Crash Message":"Can not perform this action after onSaveInstanceState",
+		"stack trace":[
+			"android.support.v4.app.FragmentManagerImpl.checkStateLoss",
+			"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+			"android.support.v4.app.BackStackRecord.commitInternal",
+			"android.support.v4.app.BackStackRecord.commit",
+			"org.kontalk.ui.ComposeMessage.onNewIntent",
+			"org.kontalk.ui.ComposeMessage.onNewIntent",
+			"android.app.Instrumentation.callActivityOnNewIntent",
+			"android.app.Instrumentation.callActivityOnNewIntent",
+			"android.app.ActivityThread.deliverNewIntents",
+			"android.app.ActivityThread.performNewIntents",
+			"android.app.ActivityThread.handleNewIntent",
+			"android.app.ActivityThread.access$1600",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.ComposeMessage.onNewIntent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan not perform this action after onSaveInstanceState\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessage.onNewIntent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.ui.ComposeMessage.onNewIntent"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.deleteMessage",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAudioAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteMessage(long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteThread()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.deleteThread",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAudioAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteMessage(long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteThread()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.processArguments",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAudioAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteMessage(long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteThread()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.selectAttachment",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAudioAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteMessage(long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteThread()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.selectAudioAttachment",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAudioAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteMessage(long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void deleteThread()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void selectAttachment()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment$14.onClick",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.blockUser",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.onContextItemSelected",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.onListItemClick",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.showIdentityDialog",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.startMediaPlayerUpdater",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<org.kontalk.ui.view.ComposerBar: void startTimer()>",
+							"<org.kontalk.ui.NumberValidation: void delayedSync()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void startMediaPlayerUpdater(org.kontalk.ui.view.AudioContentViewControl)>",
+							"fw: <java.lang.Runnable: void run()>, <android.app.FragmentManagerImpl: boolean execPendingActions()>, <android.app.FragmentManagerImpl: void doPendingDeferredStart()>, <android.app.FragmentManagerImpl: void startPendingDeferredFragments()>, <android.app.FragmentManagerImpl: void performPendingDeferredStart(android.app.Fragment)>, <android.app.FragmentManagerImpl: void moveToState(android.app.Fragment,int,int,int,boolean)>, <android.app.Fragment: void performResume()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.unblockUser",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void unblockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: void blockUser()>",
+							"<org.kontalk.ui.ComposeMessageFragment: boolean onContextItemSelected(android.view.MenuItem)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void onListItemClick(android.widget.ListView,android.view.View,int,long)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void showIdentityDialog(boolean)>",
+							"<org.kontalk.ui.ComposeMessageFragment$14: void onClick(android.view.View)>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleResumeActivity(android.os.IBinder,boolean,boolean,boolean,int,java.lang.String)>, <android.app.ActivityThread: android.app.ActivityThread$ActivityClientRecord performResumeActivity(android.os.IBinder,boolean,java.lang.String)>, <android.app.FragmentController: void noteStateNotSaved()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.support.v4.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,274 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.gb.compassleveler-158",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f09007c",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.Context.getText",
+			"android.app.AlertDialog$Builder.setPositiveButton",
+			"com.gb.compassleveler.weather.ConfigureActivity.onCreateDialog",
+			"com.gb.compassleveler.weather.ConfigureActivity.<init>",
+			"com.gb.compassleveler.weather.DetailForecastActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.gb.compassleveler.weather.ConfigureActivity.onCreateDialog"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.ConfigureActivity.onCreateDialog",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.gb.compassleveler.weather.ConfigureActivity.onCreateDialog"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.gb.compassleveler.weather.ConfigureActivity: void onCreateDialog()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.gb.compassleveler.weather.ConfigureActivity.onCreateDialog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.ConfigureActivity.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.gb.compassleveler.weather.ConfigureActivity.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.gb.compassleveler.weather.ConfigureActivity.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.gb.compassleveler.weather.DetailForecastActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.gb.compassleveler.weather.DetailForecastActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.getText",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.CharSequence getText(int)>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.service.ForecastTimeService: java.lang.CharSequence getText(int)>",
+							"<com.adwo.adsdk.AdwoSplashAdActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.SensorActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.ac.ACActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.weather.service.ForecastService: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.ac.PreferencesActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.MoreappActivity: java.lang.CharSequence getText(int)>",
+							"<com.gb.compassleveler.MainActivity: java.lang.CharSequence getText(int)>",
+							"fw: <android.content.Context: java.lang.CharSequence getText(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.getAssets",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.res.AssetManager getAssets()>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.service.ForecastTimeService: android.content.res.AssetManager getAssets()>",
+							"<com.adwo.adsdk.AdwoSplashAdActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.SensorActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.ac.ACActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.weather.service.ForecastService: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.ac.PreferencesActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.MoreappActivity: android.content.res.AssetManager getAssets()>",
+							"<com.gb.compassleveler.MainActivity: android.content.res.AssetManager getAssets()>",
+							"fw: <android.content.ContextWrapper: android.content.res.AssetManager getAssets()>, <com.android.internal.policy.DecorContext: android.content.res.AssetManager getAssets()>, <android.content.res.Resources: android.content.res.AssetManager getAssets()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.getString",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.util.ForecastUtil: java.lang.String getDayofWeek(android.content.Context,int)>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: java.lang.String getString(int)>",
+							"<com.gb.compassleveler.weather.ForecastWidget: android.widget.RemoteViews updateTime(android.content.Context)>",
+							"fw: <android.content.Context: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity$UpDateThread$1.run",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int,java.lang.Object[])>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.DetailForecastActivity$UpDateThread$1: void run()>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: void upDateTopView()>",
+							"fw: <android.content.Context: java.lang.String getString(int,java.lang.Object)>, <android.content.res.Resources: java.lang.String getString(int,java.lang.Object)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.upDateTopView",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int,java.lang.Object[])>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.DetailForecastActivity$UpDateThread$1: void run()>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: void upDateTopView()>",
+							"fw: <android.content.Context: java.lang.String getString(int,java.lang.Object)>, <android.content.res.Resources: java.lang.String getString(int,java.lang.Object)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.createPackageContext",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.service.ForecastTimeService: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.adwo.adsdk.AdwoSplashAdActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.SensorActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.ac.ACActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.weather.service.ForecastService: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.ac.PreferencesActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.MoreappActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"<com.gb.compassleveler.MainActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ContextImpl: android.view.DisplayAdjustments getDisplayAdjustments(int)>, <android.content.res.Resources: android.view.DisplayAdjustments getDisplayAdjustments()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.gb.compassleveler.weather.DetailForecastActivity.obtainStyledAttributes",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+						"Trace":[
+							"<com.gb.compassleveler.weather.service.ForecastTimeService: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.adwo.adsdk.AdwoSplashAdActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.SensorActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.ac.ACActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.weather.service.ForecastService: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.ac.PreferencesActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.weather.DetailForecastActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.MoreappActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"<com.gb.compassleveler.MainActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"fw: <android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int)>, <android.content.res.Resources$Theme: android.content.res.TypedArray obtainStyledAttributes(int)>, <android.content.res.ResourcesImpl$ThemeImpl: android.content.res.TypedArray obtainStyledAttributes(android.content.res.Resources$Theme,android.util.AttributeSet,int,int,int)>, <android.content.res.TypedArray: android.content.res.TypedArray obtain(android.content.res.Resources,int)>, <android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,266 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.nvidia.tegrazone-295",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token android.os.BinderProxy@1279b37 is not valid; is your activity running?",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"com.nvidia.tegrazone.control.LoadingController.showDialog",
+			"com.nvidia.tegrazone.HomeActivity$4.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.nvidia.tegrazone.control.LoadingController.showDialog"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not valid; is your activity running?\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.nvidia.tegrazone.control.LoadingController.showDialog",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.nvidia.tegrazone.control.LoadingController.showDialog"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<com.nvidia.tegrazone.control.LoadingController: void showDialog(android.app.Activity)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.nvidia.tegrazone.control.LoadingController.showDialog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nvidia.tegrazone.HomeActivity$4.run",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.nvidia.tegrazone.HomeActivity$4.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.nvidia.tegrazone.HomeActivity$4.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nvidia.tegrazone.control.LoadingController.<clinit>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.nvidia.tegrazone.control.LoadingController: void showDialog(android.app.Activity)>",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.StringBuffer.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.nvidia.tegrazone.control.LoadingController: void showDialog(android.app.Activity)>",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.StringBuffer.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.nvidia.tegrazone.control.LoadingController: void showDialog(android.app.Activity)>",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.StringBuffer.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.nvidia.tegrazone.control.LoadingController: void showDialog(android.app.Activity)>",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.StringBuffer.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.nvidia.tegrazone.control.LoadingController: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nvidia.tegrazone.control.LoadingController.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[0]"},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[2].Reasons[3]"}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,67 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cnace.net-280",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"Permission Denial: not allowed to send broadcast android.intent.action.MEDIA_MOUNTED from pid=10883, uid=11154",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.ActivityManagerProxy.broadcastIntent",
+			"android.app.ContextImpl.sendBroadcast",
+			"android.content.ContextWrapper.sendBroadcast",
+			"cnace.net.SecondPanelTask.doInBackground",
+			"cnace.net.SecondPanelTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"cnace.net.SecondPanelTask.doInBackground"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cnace.net.SecondPanelTask.doInBackground",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"cnace.net.SecondPanelTask.doInBackground"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cnace.net.SecondPanelTask: android.content.Context m_context>",
+						"Influenced By Method":"<cnace.net.SecondPanelTask: java.lang.Void doInBackground(cnace.net.MenuPicAdapter[])>",
+						"Trace":[
+							"<cnace.net.SecondPanelTask: java.lang.Void doInBackground(cnace.net.MenuPicAdapter[])>",
+							"modify key field: <cnace.net.SecondPanelTask: android.content.Context m_context>",
+							"<cnace.net.SecondPanelTask: java.lang.Void doInBackground(cnace.net.MenuPicAdapter[])>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cnace.net.SecondPanelTask.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cnace.net.SecondPanelTask: android.content.Context m_context>",
+						"Influenced By Method":"<cnace.net.SecondPanelTask: void <init>(android.content.Context,int)>",
+						"Trace":[
+							"<cnace.net.SecondPanelTask: void <init>(android.content.Context,int)>",
+							"modify key field: <cnace.net.SecondPanelTask: android.content.Context m_context>",
+							"<cnace.net.SecondPanelTask: java.lang.Void doInBackground(cnace.net.MenuPicAdapter[])>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

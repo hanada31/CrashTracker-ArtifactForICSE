@@ -1,0 +1,242 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.netMonitor-191",
+		"Method":"android.app.LoadedApk.forgetReceiverDispatcher",
+		"Crash Message":"Receiver not registered: null",
+		"stack trace":[
+			"android.app.LoadedApk.forgetReceiverDispatcher",
+			"android.app.ContextImpl.unregisterReceiver",
+			"android.content.ContextWrapper.unregisterReceiver",
+			"com.netMonitor.FlowMonitoringActivity.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"com.netMonitor.FlowMonitoringActivity.onStart"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QReceiver not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.onDestroy",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.netMonitor.FlowMonitoringActivity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>",
+							"<com.netMonitor.FlowMonitoringActivity: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetReceiverDispatcher",
+						"Trace":[
+							"com.netMonitor.FlowMonitoringActivity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+						"Influenced By Method":"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>",
+							"modify key field: <com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+						"Influenced By Method":"<com.netMonitor.FlowMonitoringActivity: void <init>()>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void <init>()>",
+							"modify key field: <com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.onStart",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onStart()>",
+							"<com.netMonitor.FlowMonitoringActivity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+						"Influenced By Method":"<com.netMonitor.FlowMonitoringActivity: void onStart()>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onStart()>",
+							"modify key field: <com.netMonitor.FlowMonitoringActivity: com.netMonitor.f y>",
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.unregisterReceiver",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onDestroy()>",
+							"<com.netMonitor.FlowMonitoringActivity: void unregisterReceiver(android.content.BroadcastReceiver)>",
+							"fw: <android.content.ContextWrapper: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.registerReceiver",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void onStart()>",
+							"<com.netMonitor.FlowMonitoringActivity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.LoadedApk: android.content.IIntentReceiver getReceiverDispatcher(android.content.BroadcastReceiver,android.content.Context,android.os.Handler,android.app.Instrumentation,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.dismissDialog",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void dismissDialog(int)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void dismissDialog(int)>",
+							"fw: <android.app.Activity: void dismissDialog(int)>, <android.app.Dialog: void dismiss()>, <android.app.Dialog: void dismissDialog()>, <android.app.SearchDialog: void onStop()>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.removeDialog",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void removeDialog(int)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void removeDialog(int)>",
+							"fw: <android.app.Activity: void removeDialog(int)>, <android.app.Dialog: void dismiss()>, <android.app.Dialog: void dismissDialog()>, <android.app.SearchDialog: void onStop()>, <android.app.ContextImpl: void unregisterReceiver(android.content.BroadcastReceiver)>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.createPackageContext",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.netMonitor.FlowMonitoringActivity.showDialog",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<com.netMonitor.FlowMonitoringActivity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers>, <android.app.LoadedApk: android.content.IIntentReceiver forgetReceiverDispatcher(android.content.Context,android.content.BroadcastReceiver)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnregisteredReceivers"
+						],
+						"Signaler":"android.app.LoadedApk.forgetReceiverDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

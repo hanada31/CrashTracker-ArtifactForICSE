@@ -1,0 +1,216 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.sparkslab.ourcitylove-225",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token android.os.BinderProxy@ab6954e is not valid; is your activity running?",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"android.app.AlertDialog$Builder.show",
+			"com.sparkslab.ourcitylove.SplashActivity.check_update",
+			"com.sparkslab.ourcitylove.SplashActivity.access$000",
+			"com.sparkslab.ourcitylove.SplashActivity$1.lambda$onAnimationEnd$0",
+			"com.sparkslab.ourcitylove.SplashActivity$1.access$lambda$0",
+			"com.sparkslab.ourcitylove.SplashActivity$1$$Lambda$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.sparkslab.ourcitylove.SplashActivity.check_update"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not valid; is your activity running?\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity.check_update",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity.check_update"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<com.sparkslab.ourcitylove.SplashActivity: void check_update()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity.check_update"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity.access$000",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity.access$000"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity.access$000"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity$1.lambda$onAnimationEnd$0",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1.lambda$onAnimationEnd$0"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1.lambda$onAnimationEnd$0"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity$1.access$lambda$0",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1.access$lambda$0"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1.access$lambda$0"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity$1$$Lambda$1.run",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1$$Lambda$1.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.sparkslab.ourcitylove.SplashActivity$1$$Lambda$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity$1.onAnimationEnd",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<org.ourcitylove.share.activity.NormalWeb: void timerDelayRemoveDialog(android.app.Dialog)>",
+							"<com.nostra13.universalimageloader.core.LoadAndDisplayImageTask: void runTask(java.lang.Runnable,boolean,android.os.Handler,com.nostra13.universalimageloader.core.ImageLoaderEngine)>",
+							"<com.sparkslab.ourcitylove.SplashActivity$1: void onAnimationEnd(android.view.animation.Animation)>",
+							"fw: <java.lang.Runnable: void run()>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity.onCreate",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<com.sparkslab.ourcitylove.SplashActivity: void onCreate(android.os.Bundle)>",
+							"<com.sparkslab.ourcitylove.SplashActivity: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.sparkslab.ourcitylove.SplashActivity.setContentView",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<com.sparkslab.ourcitylove.SplashActivity: void onCreate(android.os.Bundle)>",
+							"<com.sparkslab.ourcitylove.SplashActivity: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

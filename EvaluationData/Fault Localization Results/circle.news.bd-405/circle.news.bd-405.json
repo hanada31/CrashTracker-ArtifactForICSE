@@ -1,0 +1,138 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"circle.news.bd-405",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=circle.news.bd }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"circle.news.bd.BaseActivity.rateIt",
+			"circle.news.bd.Home.onOptionsItemSelected",
+			"android.app.Activity.onMenuItemSelected",
+			"android.support.v4.app.FragmentActivity.onMenuItemSelected",
+			"android.support.v7.app.AppCompatActivity.onMenuItemSelected",
+			"android.support.v7.view.WindowCallbackWrapper.onMenuItemSelected",
+			"android.support.v7.view.WindowCallbackWrapper.onMenuItemSelected",
+			"android.support.v7.app.ToolbarActionBar$2.onMenuItemClick",
+			"android.support.v7.widget.Toolbar$1.onMenuItemClick",
+			"android.support.v7.widget.ActionMenuView$MenuBuilderCallback.onMenuItemSelected",
+			"android.support.v7.view.menu.MenuBuilder.dispatchMenuItemSelected",
+			"android.support.v7.view.menu.MenuItemImpl.invoke",
+			"android.support.v7.view.menu.MenuBuilder.performItemAction",
+			"android.support.v7.view.menu.ListMenuPresenter.onItemClick",
+			"android.widget.AdapterView.performItemClick",
+			"android.widget.AbsListView.performItemClick",
+			"android.widget.AbsListView.onKeyUp",
+			"android.widget.ListView.commonKey",
+			"android.widget.ListView.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.widget.ListView.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.support.v7.app.AppCompatDelegateImplV7$ListMenuDecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl.deliverInputEvent",
+			"android.view.ViewRootImpl.doProcessInputEvents",
+			"android.view.ViewRootImpl.enqueueInputEvent",
+			"android.view.ViewRootImpl$WindowInputEventReceiver.onInputEvent",
+			"android.view.InputEventReceiver.dispatchInputEvent",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"circle.news.bd.BaseActivity.rateIt"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"circle.news.bd.BaseActivity.rateIt",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<circle.news.bd.BaseActivity: void rateIt()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"circle.news.bd.BaseActivity.rateIt"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"circle.news.bd.Home.onOptionsItemSelected",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"circle.news.bd.Home.onOptionsItemSelected"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

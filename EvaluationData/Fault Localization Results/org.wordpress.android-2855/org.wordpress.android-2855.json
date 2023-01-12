@@ -1,0 +1,72 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-2855",
+		"Method":"android.database.CursorWindow.nativeGetString",
+		"Crash Message":"Couldn't read row 3, col 6 from CursorWindow.  Make sure the Cursor is initialized correctly before accessing data from it.",
+		"stack trace":[
+			"android.database.CursorWindow.nativeGetString",
+			"android.database.CursorWindow.getString",
+			"android.database.AbstractWindowedCursor.getString",
+			"org.wordpress.android.datasets.CommentTable.getCommentFromCursor",
+			"org.wordpress.android.datasets.CommentTable.getCommentsForBlog",
+			"org.wordpress.android.ui.comments.CommentAdapter$LoadCommentsTask.doInBackground",
+			"org.wordpress.android.ui.comments.CommentAdapter$LoadCommentsTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.util.SqlUtils.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.datasets.CommentTable.getCommentFromCursor",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"org.wordpress.android.datasets.CommentTable.getCommentFromCursor"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.datasets.CommentTable.getCommentsForBlog",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"org.wordpress.android.datasets.CommentTable.getCommentsForBlog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.comments.CommentAdapter$LoadCommentsTask.doInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetString",
+						"Trace":[
+							"org.wordpress.android.ui.comments.CommentAdapter$LoadCommentsTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

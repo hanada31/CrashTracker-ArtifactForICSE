@@ -1,0 +1,179 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.marsor.lottery-47",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f05000c",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.widget.TextView.setText",
+			"com.marsor.lottery.activities.AdFlashActivity.initialComponent",
+			"com.marsor.lottery.activities.AdFlashActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.marsor.lottery.activities.AdFlashActivity.initialComponent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.initialComponent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.marsor.lottery.activities.AdFlashActivity.initialComponent"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.marsor.lottery.activities.AdFlashActivity: void initialComponent()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.marsor.lottery.activities.AdFlashActivity.initialComponent"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.marsor.lottery.activities.AdFlashActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.marsor.lottery.activities.AdFlashActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.getText",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.CharSequence getText(int)>",
+						"Trace":[
+							"<com.marsor.lottery.activities.AdFlashActivity: java.lang.CharSequence getText(int)>",
+							"fw: <android.content.Context: java.lang.CharSequence getText(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.getAssets",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.res.AssetManager getAssets()>",
+						"Trace":[
+							"<com.marsor.lottery.activities.AdFlashActivity: android.content.res.AssetManager getAssets()>",
+							"fw: <android.content.ContextWrapper: android.content.res.AssetManager getAssets()>, <com.android.internal.policy.DecorContext: android.content.res.AssetManager getAssets()>, <android.content.res.Resources: android.content.res.AssetManager getAssets()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.getString",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.umeng.fb.ui.b: void a(com.umeng.fb.a.a,android.widget.TextView)>",
+							"<com.marsor.lottery.activities.AdFlashActivity: java.lang.String getString(int)>",
+							"fw: <android.content.Context: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.createPackageContext",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.marsor.lottery.activities.AdFlashActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ContextImpl: android.view.DisplayAdjustments getDisplayAdjustments(int)>, <android.content.res.Resources: android.view.DisplayAdjustments getDisplayAdjustments()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.marsor.lottery.activities.AdFlashActivity.obtainStyledAttributes",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+						"Trace":[
+							"<com.marsor.lottery.activities.AdFlashActivity: android.content.res.TypedArray obtainStyledAttributes(int[])>",
+							"fw: <android.content.Context: android.content.res.TypedArray obtainStyledAttributes(int)>, <android.content.res.Resources$Theme: android.content.res.TypedArray obtainStyledAttributes(int)>, <android.content.res.ResourcesImpl$ThemeImpl: android.content.res.TypedArray obtainStyledAttributes(android.content.res.Resources$Theme,android.util.AttributeSet,int,int,int)>, <android.content.res.TypedArray: android.content.res.TypedArray obtain(android.content.res.Resources,int)>, <android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,70 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cn.net.inch.android-237",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"cn.net.inch.android.activity.Leziyou$1.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"cn.net.inch.android.activity.Leziyou$1.handleMessage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cn.net.inch.android.activity.Leziyou$1.handleMessage",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"cn.net.inch.android.activity.Leziyou$1.handleMessage"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cn.net.inch.android.activity.Leziyou$1: cn.net.inch.android.activity.Leziyou this$0>",
+						"Influenced By Method":"<cn.net.inch.android.activity.Leziyou$1: void handleMessage(android.os.Message)>",
+						"Trace":[
+							"<cn.net.inch.android.activity.Leziyou$1: void handleMessage(android.os.Message)>",
+							"modify key field: <cn.net.inch.android.activity.Leziyou$1: cn.net.inch.android.activity.Leziyou this$0>",
+							"<cn.net.inch.android.activity.Leziyou$1: void handleMessage(android.os.Message)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.net.inch.android.activity.Leziyou$1.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cn.net.inch.android.activity.Leziyou$1: cn.net.inch.android.activity.Leziyou this$0>",
+						"Influenced By Method":"<cn.net.inch.android.activity.Leziyou$1: void <init>(cn.net.inch.android.activity.Leziyou)>",
+						"Trace":[
+							"<cn.net.inch.android.activity.Leziyou$1: void <init>(cn.net.inch.android.activity.Leziyou)>",
+							"modify key field: <cn.net.inch.android.activity.Leziyou$1: cn.net.inch.android.activity.Leziyou this$0>",
+							"<cn.net.inch.android.activity.Leziyou$1: void handleMessage(android.os.Message)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

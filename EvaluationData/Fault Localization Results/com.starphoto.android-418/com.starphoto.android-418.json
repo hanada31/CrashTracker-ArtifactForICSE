@@ -1,0 +1,186 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.starphoto.android-418",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x7f09003d",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"com.android.internal.view.menu.MenuBuilder.add",
+			"com.starphoto.android.StarPhoto.onCreateOptionsMenu",
+			"android.app.Activity.onCreatePanelMenu",
+			"com.android.internal.policy.impl.PhoneWindow.preparePanel",
+			"com.android.internal.policy.impl.PhoneWindow.onKeyDownPanel",
+			"com.android.internal.policy.impl.PhoneWindow.onKeyDown",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.starphoto.android.StarPhoto.onCreateOptionsMenu"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.starphoto.android.StarPhoto.onCreateOptionsMenu",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.starphoto.android.StarPhoto.onCreateOptionsMenu"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<com.starphoto.android.StarPhoto: boolean onCreateOptionsMenu(android.view.Menu)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"com.starphoto.android.StarPhoto.onCreateOptionsMenu"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.starphoto.android.StarPhoto: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<com.starphoto.android.StarPhoto: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<android.app.Activity: boolean onCreateOptionsMenu(android.view.Menu)>",
+							"<android.view.Menu: android.view.MenuItem add(int,int,int,int)>",
+							"android.app.Activity.onCreateOptionsMenu"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.starphoto.android.StarPhoto.onActivityResult",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.umeng.api.sns.UMSnsService: void setSharetoItem(android.content.Context,android.widget.RelativeLayout,int)>",
+							"<com.starphoto.android.OnLineActivity: void onActivityResult(int,int,android.content.Intent)>",
+							"<com.starphoto.android.StarPhoto: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<com.starphoto.android.StarPhoto: void onActivityResult(int,int,android.content.Intent)>",
+							"<com.umeng.api.common.Util: java.lang.String getResourceString(android.content.Context,java.lang.String)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.starphoto.android.StarPhoto.onOptionsItemSelected",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.umeng.api.sns.UMSnsService: void setSharetoItem(android.content.Context,android.widget.RelativeLayout,int)>",
+							"<com.starphoto.android.OnLineActivity: void onActivityResult(int,int,android.content.Intent)>",
+							"<com.starphoto.android.StarPhoto: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<com.starphoto.android.StarPhoto: void onActivityResult(int,int,android.content.Intent)>",
+							"<com.umeng.api.common.Util: java.lang.String getResourceString(android.content.Context,java.lang.String)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>",
+						"Trace":[
+							"<com.starphoto.android.StarPhoto: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"<com.umeng.api.activity.UpdateStatusActivity$7$1: android.graphics.drawable.Drawable getDrawable(java.lang.String)>",
+							"fw: <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawable(int,android.content.res.Resources$Theme)>, <android.content.res.Resources: android.graphics.drawable.Drawable getDrawableForDensity(int,int,android.content.res.Resources$Theme)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.starphoto.android.StarPhoto.shareTxtImg",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.io.InputStream openRawResource(int)>",
+						"Trace":[
+							"<com.starphoto.android.OnLineActivity: void shareTxtImg(java.lang.String,java.lang.String)>",
+							"<com.starphoto.android.StarPhoto: void shareTxtImg(java.lang.String,java.lang.String)>",
+							"fw: <android.content.res.Resources: java.io.InputStream openRawResource(int)>, <android.content.res.Resources: java.io.InputStream openRawResource(int,android.util.TypedValue)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

@@ -1,0 +1,106 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-4450",
+		"Method":"android.database.sqlite.SQLiteClosable.acquireReference",
+		"Crash Message":"attempt to re-open an already-closed object: SQLiteProgram: SELECT count(_id) FROM cg_caches WHERE reason >= 1",
+		"stack trace":[
+			"android.database.sqlite.SQLiteClosable.acquireReference",
+			"android.database.sqlite.SQLiteStatement.simpleQueryForLong",
+			"cgeo.geocaching.DataStore$PreparedStatement.simpleQueryForLong",
+			"cgeo.geocaching.DataStore.getAllCachesCount",
+			"cgeo.geocaching.MainActivity$CountBubbleUpdateThread.run"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.DataStore$PreparedStatement.clearPreparedStatements"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qattempt to re-open an already-closed object: \\E[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 > 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore$PreparedStatement.clearPreparedStatements",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteClosable: void close()>",
+						"Trace":[
+							"<cgeo.geocaching.DataStore: void closeDb()>",
+							"<com.google.android.gms.common.data.DataHolder: void close()>",
+							"<cgeo.geocaching.DataStore$PreparedStatement: void clearPreparedStatements()>",
+							"fw: <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore.closeDb",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteClosable: void close()>",
+						"Trace":[
+							"<cgeo.geocaching.DataStore: void closeDb()>",
+							"<com.google.android.gms.common.data.DataHolder: void close()>",
+							"<cgeo.geocaching.DataStore$PreparedStatement: void clearPreparedStatements()>",
+							"fw: <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore$PreparedStatement.simpleQueryForLong",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.DataStore$PreparedStatement.simpleQueryForLong"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.DataStore.getAllCachesCount",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.DataStore.getAllCachesCount"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.MainActivity$CountBubbleUpdateThread.run",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.MainActivity$CountBubbleUpdateThread.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

@@ -1,0 +1,275 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.malib.dhbtcepte-399",
+		"Method":"android.app.LoadedApk.forgetServiceDispatcher",
+		"Crash Message":"Service not registered: com.malib.dhbtcepte.util.IabHelper$1@a843869",
+		"stack trace":[
+			"android.app.LoadedApk.forgetServiceDispatcher",
+			"android.app.ContextImpl.unbindService",
+			"android.content.ContextWrapper.unbindService",
+			"com.malib.dhbtcepte.util.IabHelper.dispose",
+			"com.malib.dhbtcepte.util.IabHelper.disposeWhenFinished",
+			"com.malib.dhbtcepte.MainActivity.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"com.malib.dhbtcepte.util.IabHelper.startSetup"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.malib.dhbtcepte.util.IabHelper.dispose",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.malib.dhbtcepte.util.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.util.IabHelper: void dispose()>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<com.malib.dhbtcepte.util.IabHelper: void dispose()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"com.malib.dhbtcepte.util.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.malib.dhbtcepte.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<com.malib.dhbtcepte.util.IabHelper: void dispose()>",
+						"Trace":[
+							"<com.malib.dhbtcepte.util.IabHelper: void dispose()>",
+							"modify key field: <com.malib.dhbtcepte.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<com.malib.dhbtcepte.util.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.util.IabHelper.startSetup",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<com.google.android.gms.common.stats.zzb: boolean zza(android.content.Context,java.lang.String,android.content.Intent,android.content.ServiceConnection,int)>",
+							"<com.google.android.gms.cast.CastRemoteDisplayLocalService: void startServiceWithOptions(android.content.Context,java.lang.Class,java.lang.String,com.google.android.gms.cast.CastDevice,com.google.android.gms.cast.CastRemoteDisplayLocalService$Options,com.google.android.gms.cast.CastRemoteDisplayLocalService$NotificationSettings,com.google.android.gms.cast.CastRemoteDisplayLocalService$Callbacks)>",
+							"<com.google.android.gms.ads.internal.purchase.zzi: void zzt(android.content.Context)>",
+							"<com.malib.dhbtcepte.util.IabHelper: void startSetup(com.malib.dhbtcepte.util.IabHelper$OnIabSetupFinishedListener)>",
+							"fw: <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.malib.dhbtcepte.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<com.malib.dhbtcepte.util.IabHelper: void startSetup(com.malib.dhbtcepte.util.IabHelper$OnIabSetupFinishedListener)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.util.IabHelper: void startSetup(com.malib.dhbtcepte.util.IabHelper$OnIabSetupFinishedListener)>",
+							"modify key field: <com.malib.dhbtcepte.util.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<com.malib.dhbtcepte.util.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.util.IabHelper.disposeWhenFinished",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.malib.dhbtcepte.util.IabHelper.disposeWhenFinished"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"com.malib.dhbtcepte.util.IabHelper.disposeWhenFinished"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.onDestroy",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.malib.dhbtcepte.MainActivity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"com.malib.dhbtcepte.MainActivity.onDestroy"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.unbindService",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.MainActivity: void unbindService(android.content.ServiceConnection)>",
+							"<com.google.android.gms.internal.zzdq: void zzd(android.app.Activity)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.bindService",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.MainActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.createPackageContext",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.MainActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.alert",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<com.malib.dhbtcepte.BaseGameUtils: void showAlert(android.app.Activity,java.lang.String)>",
+							"<com.malib.dhbtcepte.BaseGameUtils: void showActivityResultError(android.app.Activity,int,int,int)>",
+							"<com.malib.dhbtcepte.BaseGameUtils: boolean resolveConnectionFailure(android.app.Activity,com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.common.ConnectionResult,int,java.lang.String)>",
+							"<com.malib.dhbtcepte.MainActivity: void alert(java.lang.String)>",
+							"<com.malib.dhbtcepte.GameHelper: void showFailureDialog(android.app.Activity,int,int)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.finishAfterTransition",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void finishAfterTransition()>",
+						"Trace":[
+							"<com.malib.dhbtcepte.MainActivity: void finishAfterTransition()>",
+							"fw: <android.app.Activity: void finishAfterTransition()>, <android.app.ActivityTransitionState: boolean startExitBackTransition(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.malib.dhbtcepte.MainActivity.showDialog",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<com.malib.dhbtcepte.MainActivity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,151 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.channelnewsasia-304",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"\"gps\" location provider requires ACCESS_FINE_LOCATION permission.",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.channelnewsasia.util.AppLocationListener.listen",
+			"com.channelnewsasia.activity.BaseActivity.onResume",
+			"com.channelnewsasia.activity.ActivityHome.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.channelnewsasia.util.AppLocationListener.listen"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.channelnewsasia.util.AppLocationListener.listen",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.channelnewsasia.util.AppLocationListener.listen"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.channelnewsasia.activity.BaseActivity.onResume",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.channelnewsasia.activity.BaseActivity.onResume"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.channelnewsasia.util.AppLocationListener.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: void <init>()>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: void <init>()>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: void <init>()>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: void <init>()>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.channelnewsasia.util.AppLocationListener.cancel",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: void cancel()>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: void cancel()>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerNetwork>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+						"Influenced By Method":"<com.channelnewsasia.util.AppLocationListener: void cancel()>",
+						"Trace":[
+							"<com.channelnewsasia.util.AppLocationListener: void cancel()>",
+							"modify key field: <com.channelnewsasia.util.AppLocationListener: android.location.LocationListener locationListenerGps>",
+							"<com.channelnewsasia.util.AppLocationListener: boolean listen(android.app.Activity,com.channelnewsasia.util.GpsHahdler)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.channelnewsasia.activity.ActivityHome.onResume",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.channelnewsasia.activity.ActivityHome.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Manifest XML"
+		]
+	}
+}

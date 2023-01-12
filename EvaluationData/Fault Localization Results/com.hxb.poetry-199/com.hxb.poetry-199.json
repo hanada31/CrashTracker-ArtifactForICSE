@@ -1,0 +1,347 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.hxb.poetry-199",
+		"Method":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked",
+		"Crash Message":"Cannot perform this operation because the connection pool has been closed.",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked",
+			"android.database.sqlite.SQLiteConnectionPool.waitForConnection",
+			"android.database.sqlite.SQLiteConnectionPool.acquireConnection",
+			"android.database.sqlite.SQLiteSession.acquireConnection",
+			"android.database.sqlite.SQLiteSession.executeForCursorWindow",
+			"android.database.sqlite.SQLiteQuery.fillWindow",
+			"android.database.sqlite.SQLiteCursor.fillWindow",
+			"android.database.sqlite.SQLiteCursor.getCount",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.hxb.poetry.MainActivity.onCheckedChanged",
+			"android.widget.RadioGroup.setCheckedId",
+			"android.widget.RadioGroup.access$600",
+			"android.widget.RadioGroup$CheckedStateTracker.onCheckedChanged",
+			"android.widget.CompoundButton.setChecked",
+			"com.hxb.poetry.MainActivity.setupView",
+			"com.hxb.poetry.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.close"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCannot perform this operation because the connection pool has been closed.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 != 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.hxb.poetry.MainActivity.onCheckedChanged",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.hxb.poetry.MainActivity.onCheckedChanged"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.MainActivity.setupView",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.hxb.poetry.MainActivity.setupView"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.MainActivity.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.hxb.poetry.MainActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.MainActivity$TangshiCursorAdapter.bindView",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.hxb.poetry.MainActivity$TangshiCursorAdapter: void bindView(android.view.View,android.content.Context,android.database.Cursor)>",
+							"<com.hxb.poetry.ArticleActivity: void prePage()>",
+							"<com.hxb.poetry.ArticleActivity: void nextPage()>",
+							"<com.hxb.poetry.ArticleActivity: void initArticle(int)>",
+							"<net.youmi.android.ba: void a(android.app.Activity,android.webkit.WebView)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.run",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void run()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void endTransaction()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void run()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void run()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void beginTransaction()>, <android.database.sqlite.SQLiteDatabase: void beginTransaction(android.database.sqlite.SQLiteTransactionListener,boolean)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void run()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: long executeInsert()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.close",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: void close()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void close()>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.getReadableDatabase",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)>, <android.database.sqlite.SQLiteDatabase: void open()>, <android.database.sqlite.SQLiteDatabase: void openInner()>, <android.database.sqlite.SQLiteConnectionPool: android.database.sqlite.SQLiteConnectionPool open(android.database.sqlite.SQLiteDatabaseConfiguration)>, <android.database.sqlite.SQLiteConnectionPool: void open()>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.getWritableDatabase",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)>, <android.database.sqlite.SQLiteDatabase: void open()>, <android.database.sqlite.SQLiteDatabase: void openInner()>, <android.database.sqlite.SQLiteConnectionPool: android.database.sqlite.SQLiteConnectionPool open(android.database.sqlite.SQLiteDatabaseConfiguration)>, <android.database.sqlite.SQLiteConnectionPool: void open()>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.onCreate",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper.onUpgrade",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider.insert",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)>, <android.database.sqlite.SQLiteDatabase: void open()>, <android.database.sqlite.SQLiteDatabase: void openInner()>, <android.database.sqlite.SQLiteConnectionPool: android.database.sqlite.SQLiteConnectionPool open(android.database.sqlite.SQLiteDatabaseConfiguration)>, <android.database.sqlite.SQLiteConnectionPool: void open()>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: void run()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: long executeInsert()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider.query",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)>, <android.database.sqlite.SQLiteDatabase: void open()>, <android.database.sqlite.SQLiteDatabase: void openInner()>, <android.database.sqlite.SQLiteConnectionPool: android.database.sqlite.SQLiteConnectionPool open(android.database.sqlite.SQLiteDatabaseConfiguration)>, <android.database.sqlite.SQLiteConnectionPool: void open()>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteQueryBuilder: android.database.Cursor query(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.hxb.poetry.db.PoetryContentProvider.update",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider$PoetryDatabaseHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.hxb.poetry.db.PoetryContentProvider: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"<com.hxb.poetry.db.PoetryContentProvider: android.net.Uri insert(android.net.Uri,android.content.ContentValues)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: android.database.sqlite.SQLiteDatabase openDatabase(java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,android.database.DatabaseErrorHandler)>, <android.database.sqlite.SQLiteDatabase: void open()>, <android.database.sqlite.SQLiteDatabase: void openInner()>, <android.database.sqlite.SQLiteConnectionPool: android.database.sqlite.SQLiteConnectionPool open(android.database.sqlite.SQLiteDatabaseConfiguration)>, <android.database.sqlite.SQLiteConnectionPool: void open()>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.hxb.poetry.db.PoetryContentProvider: int update(android.net.Uri,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int updateWithOnConflict(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String,int)>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, <android.database.sqlite.SQLiteDatabase: void onAllReferencesReleased()>, <android.database.sqlite.SQLiteDatabase: void dispose(boolean)>, <android.database.sqlite.SQLiteConnectionPool: void close()>, <android.database.sqlite.SQLiteConnectionPool: void dispose(boolean)>, key field: <android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen>, <android.database.sqlite.SQLiteConnectionPool: void throwIfClosedLocked()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteConnectionPool: boolean mIsOpen"
+						],
+						"Signaler":"android.database.sqlite.SQLiteConnectionPool.throwIfClosedLocked"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

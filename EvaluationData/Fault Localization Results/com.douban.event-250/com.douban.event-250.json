@@ -1,0 +1,52 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.douban.event-250",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.douban.event.util.GPSManager$LocationLooper.run"
+		],
+		"Labeled Buggy Method":"com.douban.event.util.GPSManager$LocationLooper.run"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.douban.event.util.GPSManager$LocationLooper.run",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.douban.event.util.GPSManager$LocationLooper.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.douban.event.util.GPSManager$LocationLooper.removeListeners",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":3,
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"android.location.LocationManager.requestLocationUpdates",
+							"com.douban.event.util.GPSManager$LocationLooper.removeListeners"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

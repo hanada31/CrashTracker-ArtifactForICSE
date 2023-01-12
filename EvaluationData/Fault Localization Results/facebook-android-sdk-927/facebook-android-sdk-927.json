@@ -1,0 +1,193 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"facebook-android-sdk-927",
+		"Method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+		"Crash Message":"Failed to load WebView provider: No WebView installed",
+		"stack trace":[
+			"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+			"android.webkit.WebViewFactory.getProviderClass",
+			"android.webkit.WebViewFactory.getProvider",
+			"android.webkit.CookieManager.getInstance",
+			"android.webkit.CookieSyncManager.sync",
+			"com.facebook.internal.Utility.clearCookiesForDomain",
+			"com.facebook.internal.Utility.clearFacebookCookies",
+			"com.facebook.login.WebLoginMethodHandler.getParameters",
+			"com.facebook.login.CustomTabLoginMethodHandler.tryAuthorize",
+			"com.facebook.login.LoginClient.tryCurrentHandler",
+			"com.facebook.login.LoginClient.tryNextHandler",
+			"com.facebook.login.LoginClient.authorize",
+			"com.facebook.login.LoginClient.startOrContinueAuth",
+			"com.facebook.login.LoginFragment.onResume",
+			"androidx.fragment.app.Fragment.performResume",
+			"androidx.fragment.app.FragmentStateManager.resume",
+			"androidx.fragment.app.FragmentManager.moveToState",
+			"androidx.fragment.app.FragmentManager.moveToState",
+			"androidx.fragment.app.FragmentManager.moveFragmentToExpectedState",
+			"androidx.fragment.app.FragmentManager.moveToState",
+			"androidx.fragment.app.FragmentManager.dispatchStateChange",
+			"androidx.fragment.app.FragmentManager.dispatchResume",
+			"androidx.fragment.app.FragmentController.dispatchResume",
+			"androidx.fragment.app.FragmentActivity.onResumeFragments",
+			"androidx.fragment.app.FragmentActivity.onPostResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity",
+			"android.app.ActivityThread.handleResumeActivity",
+			"android.app.servertransaction.ResumeActivityItem.execute",
+			"android.app.servertransaction.TransactionExecutor.executeLifecycleState",
+			"android.app.servertransaction.TransactionExecutor.execute",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.facebook.internal.Utility.clearFacebookCookies"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QFailed to load WebView provider: \\E[\\s\\S]*",
+		"Related Variable Type":"Unknown",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i1 == 3\", \"$i0 == 0\"",
+		"ETS-related Type":"NoOutsideVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.facebook.internal.Utility.clearCookiesForDomain",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.internal.Utility.clearCookiesForDomain"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.internal.Utility.clearFacebookCookies",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.internal.Utility.clearFacebookCookies"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.WebLoginMethodHandler.getParameters",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.WebLoginMethodHandler.getParameters"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.CustomTabLoginMethodHandler.tryAuthorize",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.CustomTabLoginMethodHandler.tryAuthorize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.tryCurrentHandler",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.LoginClient.tryCurrentHandler"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.tryNextHandler",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.LoginClient.tryNextHandler"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.authorize",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.LoginClient.authorize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.startOrContinueAuth",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.LoginClient.startOrContinueAuth"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginFragment.onResume",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"",
+						"Influenced method":"android.webkit.WebViewFactory.getWebViewContextAndSetProvider",
+						"Trace":[
+							"com.facebook.login.LoginFragment.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

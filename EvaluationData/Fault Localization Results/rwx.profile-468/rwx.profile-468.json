@@ -1,0 +1,133 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"rwx.profile-468",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"duplicate column name: show_fix_tip (code 1): , while compiling: alter table setting add show_fix_tip integer default 1",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"rwx.profile.a.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"rwx.profile.b.a",
+			"rwx.profile.ProfileService.c",
+			"rwx.profile.ProfileService.onCreate",
+			"android.app.ActivityThread.handleCreateService"
+		],
+		"Labeled Buggy Method":"rwx.profile.a.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"rwx.profile.a.onUpgrade",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"rwx.profile.a.onUpgrade"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<rwx.profile.a: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<java.lang.String: java.lang.String substring(int,int)>",
+							"<android.telephony.TelephonyManager: java.lang.String getNetworkOperator()>",
+							"<android.telephony.TelephonyManager: int getPhoneType()>",
+							"<android.content.Context: java.lang.Object getSystemService(java.lang.String)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<android.content.ContentValues: void <init>()>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<rwx.profile.a: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<android.content.ContentValues: void clear()>",
+							"<android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.Integer)>",
+							"<java.lang.Integer: java.lang.Integer valueOf(int)>",
+							"<android.content.ContentValues: void put(java.lang.String,java.lang.String)>",
+							"<android.content.ContentValues: void <init>()>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"rwx.profile.a.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[1]"}
+				]
+			},
+			{
+				"Candidate Name":"rwx.profile.b.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"rwx.profile.b.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"rwx.profile.ProfileService.c",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"rwx.profile.ProfileService.c"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"rwx.profile.ProfileService.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"rwx.profile.ProfileService.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

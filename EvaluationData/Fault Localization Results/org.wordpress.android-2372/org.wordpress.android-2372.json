@@ -1,0 +1,61 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-2372",
+		"Method":"android.app.FragmentManagerImpl.checkStateLoss",
+		"Crash Message":"Can not perform this action after onSaveInstanceState",
+		"stack trace":[
+			"android.app.FragmentManagerImpl.checkStateLoss",
+			"android.app.FragmentManagerImpl.enqueueAction",
+			"android.app.FragmentManagerImpl.popBackStack",
+			"org.wordpress.android.ui.WPDrawerActivity$4.onClick",
+			"android.view.View.performClick",
+			"android.view.View$PerformClick.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.WPDrawerActivity$4.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan not perform this action after onSaveInstanceState\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.WPDrawerActivity$4.onClick",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.WPDrawerActivity$4.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

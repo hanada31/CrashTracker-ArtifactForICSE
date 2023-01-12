@@ -1,0 +1,104 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-994",
+		"Method":"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+			"android.support.v4.app.FragmentManagerImpl.execSingleAction",
+			"android.support.v4.app.BackStackRecord.commitNow",
+			"org.kontalk.ui.AbstractComposeFragment.getAudioFragment",
+			"org.kontalk.ui.AbstractComposeFragment.processArguments",
+			"org.kontalk.ui.AbstractComposeFragment.onActivityCreated",
+			"android.support.v4.app.Fragment.performActivityCreated",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveFragmentToExpectedState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.dispatchActivityCreated",
+			"android.support.v4.app.FragmentController.dispatchActivityCreated",
+			"android.support.v4.app.FragmentActivity.onStart",
+			"android.support.v7.app.AppCompatActivity.onStart",
+			"android.app.Instrumentation.callActivityOnStart",
+			"android.app.Activity.performStart",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.handleRelaunchActivity",
+			"android.app.ActivityThread.access$900",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.AbstractComposeFragment.getAudioFragment"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.ui.AbstractComposeFragment.getAudioFragment",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+						"Trace":[
+							"org.kontalk.ui.AbstractComposeFragment.getAudioFragment"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.AbstractComposeFragment.processArguments",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+						"Trace":[
+							"org.kontalk.ui.AbstractComposeFragment.processArguments"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.AbstractComposeFragment.onActivityCreated",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+						"Trace":[
+							"org.kontalk.ui.AbstractComposeFragment.onActivityCreated"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":55,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.ensureExecReady",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

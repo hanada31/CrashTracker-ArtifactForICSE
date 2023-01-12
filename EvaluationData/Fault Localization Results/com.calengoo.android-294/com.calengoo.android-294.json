@@ -1,0 +1,168 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.calengoo.android-294",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"table ReminderLog has no column named shadow$_klass_ (code 1): , while compiling: INSERT INTO ReminderLog(pk, displaytime, eventpk, remindertext, sound, systemevent, volume, shadow$_klass_, shadow$_monitor_) VALUES (NULL,?,?,?,?,?,?,?,?)",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.compileStatement",
+			"com.calengoo.android.persistency.GenericDAO.a",
+			"com.calengoo.android.persistency.GenericDAO.a",
+			"com.calengoo.android.controller.BackgroundSync.d",
+			"com.calengoo.android.controller.BackgroundSync.onCreate",
+			"android.app.ActivityThread.handleCreateService"
+		],
+		"Labeled Buggy Method":"com.calengoo.android.persistency.GenericDAO.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.calengoo.android.persistency.GenericDAO.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.calengoo.android.persistency.GenericDAO.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.calengoo.android.persistency.GenericDAO: java.util.Map m>",
+						"Influenced By Method":"<com.calengoo.android.persistency.GenericDAO: void a(com.calengoo.android.model.Entity,android.database.sqlite.SQLiteDatabase,boolean)>",
+						"Trace":[
+							"<com.calengoo.android.persistency.GenericDAO: void a(com.calengoo.android.model.Entity,android.database.sqlite.SQLiteDatabase,boolean)>",
+							"modify key field: <com.calengoo.android.persistency.GenericDAO: java.util.Map m>",
+							"<com.calengoo.android.persistency.GenericDAO: void a(com.calengoo.android.model.Entity,android.database.sqlite.SQLiteDatabase,boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.calengoo.android.persistency.GenericDAO.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.calengoo.android.persistency.GenericDAO: java.util.Map m>",
+						"Influenced By Method":"<com.calengoo.android.persistency.GenericDAO: void <init>(android.content.Context,java.lang.String,java.lang.String,android.content.ContentResolver,boolean,android.app.Activity)>",
+						"Trace":[
+							"<com.calengoo.android.persistency.GenericDAO: void <init>(android.content.Context,java.lang.String,java.lang.String,android.content.ContentResolver,boolean,android.app.Activity)>",
+							"modify key field: <com.calengoo.android.persistency.GenericDAO: java.util.Map m>",
+							"<com.calengoo.android.persistency.GenericDAO: void a(com.calengoo.android.model.Entity,android.database.sqlite.SQLiteDatabase,boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.calengoo.android.controller.BackgroundSync.d",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.calengoo.android.controller.BackgroundSync.d"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.calengoo.android.persistency.GenericDAO$1.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Class: java.lang.Object newInstance()>",
+							"<com.calengoo.android.persistency.GenericDAO: java.util.List a(java.lang.Class,java.lang.String,java.util.List,com.calengoo.android.persistency.GenericDAO$ProcessEntity)>",
+							"java.lang.Class.getName",
+							"java.lang.Class$1.run",
+							"java.lang.Class.checkMemberAccess",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.getConstructor0",
+							"java.lang.Class.arrayContentsEq",
+							"java.lang.Class.getName",
+							"java.lang.Class.privateGetDeclaredConstructors",
+							"java.lang.Class.checkInitted",
+							"java.lang.Class.isInterface",
+							"java.lang.Class.getDeclaredConstructors0",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.reflectionData",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.getReflectionFactory",
+							"java.lang.Class.argumentTypesToString",
+							"<com.calengoo.android.persistency.GenericDAO$1: void <init>(com.calengoo.android.persistency.GenericDAO,android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,boolean,android.content.Context,android.content.ContentResolver)>",
+							"<com.calengoo.android.persistency.CalenGooSQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,boolean)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.Class$1.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.calengoo.android.controller.BackgroundSync.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.calengoo.android.controller.BackgroundSync.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.calengoo.android.persistency.CalenGooSQLiteOpenHelper.<init>",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Class: java.lang.Object newInstance()>",
+							"<com.calengoo.android.persistency.GenericDAO: java.util.List a(java.lang.Class,java.lang.String,java.util.List,com.calengoo.android.persistency.GenericDAO$ProcessEntity)>",
+							"java.lang.Class.getName",
+							"java.lang.Class$1.run",
+							"java.lang.Class.checkMemberAccess",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.getConstructor0",
+							"java.lang.Class.arrayContentsEq",
+							"java.lang.Class.getName",
+							"java.lang.Class.privateGetDeclaredConstructors",
+							"java.lang.Class.checkInitted",
+							"java.lang.Class.isInterface",
+							"java.lang.Class.getDeclaredConstructors0",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.reflectionData",
+							"java.lang.Class.<clinit>",
+							"java.lang.Class.getReflectionFactory",
+							"java.lang.Class.argumentTypesToString",
+							"<com.calengoo.android.persistency.GenericDAO$1: void <init>(com.calengoo.android.persistency.GenericDAO,android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,boolean,android.content.Context,android.content.ContentResolver)>",
+							"<com.calengoo.android.persistency.CalenGooSQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int,boolean)>",
+							"<android.database.sqlite.SQLiteOpenHelper: void <init>(android.content.Context,java.lang.String,android.database.sqlite.SQLiteDatabase$CursorFactory,int)>",
+							"java.lang.Class$1.<init>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

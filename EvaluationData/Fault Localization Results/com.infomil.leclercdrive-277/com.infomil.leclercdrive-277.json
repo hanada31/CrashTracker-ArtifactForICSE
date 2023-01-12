@@ -1,0 +1,95 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.infomil.leclercdrive-277",
+		"Method":"android.os.MessageQueue.enqueueMessage",
+		"Crash Message":"{ when=+1s20ms callback=android.view.View$ScrollabilityCache arg1=-1 arg2=1 obj=OK target=android.view.ViewRootImpl$ViewRootHandler } This message is already in use.",
+		"stack trace":[
+			"android.os.MessageQueue.enqueueMessage",
+			"android.os.Handler.enqueueMessage",
+			"android.os.Handler.sendMessageAtTime",
+			"android.os.Handler.sendMessageDelayed",
+			"android.os.Handler.sendMessage",
+			"android.os.Message.sendToTarget",
+			"com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler.afterHandleMessage",
+			"com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler.afterHandleMessage",
+			"com.infomil.leclercdrive.ui.handlers.LCDRAGenericHandler.handleMessage",
+			"com.infomil.library.handlers.WeakReferenceHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler.afterHandleMessage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*\\Q This message is already in use.\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			-1
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\", \"$r1 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler.afterHandleMessage",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							-1
+						],
+						"Influenced method":"android.os.MessageQueue.enqueueMessage",
+						"Trace":[
+							"<com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler: void afterHandleMessage(android.os.Handler,android.os.Message)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.MessageQueue.enqueueMessage",
+						"Trace":[
+							"com.infomil.leclercdrive.ui.delegates.LoadingDelegate$GetParametersHandler.afterHandleMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.infomil.leclercdrive.ui.handlers.LCDRAGenericHandler.handleMessage",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.MessageQueue.enqueueMessage",
+						"Trace":[
+							"com.infomil.leclercdrive.ui.handlers.LCDRAGenericHandler.handleMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.infomil.library.handlers.WeakReferenceHandler.handleMessage",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.MessageQueue.enqueueMessage",
+						"Trace":[
+							"com.infomil.library.handlers.WeakReferenceHandler.handleMessage"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

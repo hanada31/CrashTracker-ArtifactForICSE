@@ -1,0 +1,65 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.youhu.baishitong-346",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"org.youhu.baishitong.LocationHandler.<init>",
+			"org.youhu.baishitong.BaishitongApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"org.youhu.baishitong.LocationHandler.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.youhu.baishitong.LocationHandler.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.youhu.baishitong.LocationHandler.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.youhu.baishitong.LocationHandler: java.lang.String sLocationProvider>",
+						"Influenced By Method":"<org.youhu.baishitong.LocationHandler: void <init>(android.location.LocationManager,android.location.Geocoder)>",
+						"Trace":[
+							"<org.youhu.baishitong.LocationHandler: void <init>(android.location.LocationManager,android.location.Geocoder)>",
+							"modify key field: <org.youhu.baishitong.LocationHandler: java.lang.String sLocationProvider>",
+							"<org.youhu.baishitong.LocationHandler: void <init>(android.location.LocationManager,android.location.Geocoder)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.youhu.baishitong.BaishitongApplication.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.youhu.baishitong.BaishitongApplication.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

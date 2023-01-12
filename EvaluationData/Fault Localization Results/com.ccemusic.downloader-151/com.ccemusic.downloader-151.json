@@ -1,0 +1,175 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.ccemusic.downloader-151",
+		"Method":"android.os.AsyncTask.executeOnExecutor",
+		"Crash Message":"Cannot execute task: the task is already running.",
+		"stack trace":[
+			"android.os.AsyncTask.executeOnExecutor",
+			"android.os.AsyncTask.execute",
+			"com.ccemusic.downloader.Activity_TabHost.ST_OnFinished",
+			"com.ccemusic.downloader.search.SearchTask.onPostExecute",
+			"com.ccemusic.downloader.search.SearchTask.onPostExecute",
+			"android.os.AsyncTask.finish",
+			"android.os.AsyncTask.access$500",
+			"android.os.AsyncTask$InternalHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.ccemusic.downloader.Activity_TabHost.SearchTaskExe"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCannot execute task: the task is already running.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i1\", \"$r2 == $r1\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.ccemusic.downloader.Activity_TabHost.ST_OnFinished",
+				"Candidate Score":101,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+						"Trace":[
+							"<com.ccemusic.downloader.Activity_TabHost: void ST_OnFinished(boolean)>",
+							"<com.ccemusic.downloader.Activity_TabHost: void SearchTaskExe()>",
+							"<com.ccemusic.downloader.download.DownloadTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.BaiduEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.AdViewOverlayView$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.google.ads.mediation.jsadapter.AdViewCheckTask$a: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.ProstopleerEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.XiamiV2Engine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.SearchTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.CachedVideoPlayerActivity$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"fw: <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object)>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>, key field: <android.os.AsyncTask$4: int $SwitchMap$android$os$AsyncTask$Status>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.os.AsyncTask.executeOnExecutor"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.ccemusic.downloader.Activity_TabHost.ST_OnFinished"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ccemusic.downloader.search.SearchTask.onPostExecute",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.ccemusic.downloader.search.SearchTask.onPostExecute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ccemusic.downloader.Activity_TabHost.SearchTaskExe",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+						"Trace":[
+							"<com.ccemusic.downloader.Activity_TabHost: void ST_OnFinished(boolean)>",
+							"<com.ccemusic.downloader.Activity_TabHost: void SearchTaskExe()>",
+							"<com.ccemusic.downloader.download.DownloadTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.BaiduEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.AdViewOverlayView$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.google.ads.mediation.jsadapter.AdViewCheckTask$a: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.ProstopleerEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.XiamiV2Engine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.SearchTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.CachedVideoPlayerActivity$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"fw: <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object)>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>, key field: <android.os.AsyncTask$4: int $SwitchMap$android$os$AsyncTask$Status>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.os.AsyncTask.executeOnExecutor"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ccemusic.downloader.search.SearchTask.executeOnExecutor",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+						"Trace":[
+							"<com.ccemusic.downloader.download.DownloadTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.BaiduEngine: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.millennialmedia.android.AdViewOverlayView$FetchWebViewContentTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.google.ads.mediation.jsadapter.AdViewCheckTask$a: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.ProstopleerEngine: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.XiamiV2Engine: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.SearchTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"<com.millennialmedia.android.CachedVideoPlayerActivity$FetchWebViewContentTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object[])>",
+							"fw: <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.os.AsyncTask.executeOnExecutor"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ccemusic.downloader.search.SearchTask.<init>",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.AsyncTask: void <init>()>",
+						"Trace":[
+							"<com.ccemusic.downloader.download.DownloadTask: void <init>(com.ccemusic.downloader.download.DownloadProcess)>",
+							"<com.millennialmedia.android.AdViewOverlayView$FetchWebViewContentTask: void <init>(com.millennialmedia.android.AdViewOverlayView,java.lang.String)>",
+							"<com.google.ads.mediation.jsadapter.AdViewCheckTask$a: void <init>(com.google.ads.mediation.jsadapter.AdViewCheckTask,int,int,android.webkit.WebView)>",
+							"<com.ccemusic.downloader.search.SearchTask: void <init>()>",
+							"<com.millennialmedia.android.CachedVideoPlayerActivity$FetchWebViewContentTask: void <init>(com.millennialmedia.android.CachedVideoPlayerActivity,java.lang.String)>",
+							"fw: <android.os.AsyncTask: void <init>()>, <android.os.AsyncTask: void <init>(android.os.Looper)>, key field: <android.os.AsyncTask: android.os.AsyncTask$Status mStatus>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>"
+						],
+						"Influenced Field":[
+							"android.os.AsyncTask: android.os.AsyncTask$Status mStatus"
+						],
+						"Signaler":"android.os.AsyncTask.executeOnExecutor"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ccemusic.downloader.search.SearchTask.execute",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+						"Trace":[
+							"<com.ccemusic.downloader.Activity_TabHost: void ST_OnFinished(boolean)>",
+							"<com.ccemusic.downloader.Activity_TabHost: void SearchTaskExe()>",
+							"<com.ccemusic.downloader.download.DownloadTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.BaiduEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.AdViewOverlayView$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.google.ads.mediation.jsadapter.AdViewCheckTask$a: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.ProstopleerEngine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.XiamiV2Engine: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.ccemusic.downloader.search.SearchTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.millennialmedia.android.CachedVideoPlayerActivity$FetchWebViewContentTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"fw: <android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object)>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>, key field: <android.os.AsyncTask$4: int $SwitchMap$android$os$AsyncTask$Status>, <android.os.AsyncTask: android.os.AsyncTask executeOnExecutor(java.util.concurrent.Executor,java.lang.Object)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.os.AsyncTask.executeOnExecutor"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

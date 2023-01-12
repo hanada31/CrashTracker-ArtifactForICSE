@@ -1,0 +1,5 @@
+Ranking-Data-0902-baseline.txt	Parameter	Field	ParaAndField	Empty	Unknown
+All	304	58	59	6	153
+C	8	5	11	null	22
+B	2	14	16	4	20
+A	294	39	32	2	111

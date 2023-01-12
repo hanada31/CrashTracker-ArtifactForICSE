@@ -1,0 +1,96 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-4541",
+		"Method":"android.hardware.SensorManager$ListenerDelegate.setDelay",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.hardware.SensorManager$ListenerDelegate.setDelay",
+			"android.hardware.SensorManager.registerListener",
+			"android.hardware.SensorManager.registerListener",
+			"cgeo.geocaching.sensors.RotationProvider.onStart",
+			"cgeo.geocaching.utils.RxUtils$LooperCallbacks$1.call",
+			"rx.internal.schedulers.ScheduledAction.run"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.sensors.RotationProvider.onStart"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.sensors.RotationProvider.onStart",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.hardware.SensorManager$ListenerDelegate.setDelay",
+						"Trace":[
+							"cgeo.geocaching.sensors.RotationProvider.onStart"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cgeo.geocaching.sensors.RotationProvider: android.hardware.Sensor rotationSensor>",
+						"Influenced By Method":"<cgeo.geocaching.sensors.RotationProvider: void onStart()>",
+						"Trace":[
+							"<cgeo.geocaching.sensors.RotationProvider: void onStart()>",
+							"modify key field: <cgeo.geocaching.sensors.RotationProvider: android.hardware.Sensor rotationSensor>",
+							"<cgeo.geocaching.sensors.RotationProvider: void onStart()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.sensors.RotationProvider.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cgeo.geocaching.sensors.RotationProvider: android.hardware.Sensor rotationSensor>",
+						"Influenced By Method":"<cgeo.geocaching.sensors.RotationProvider: void <init>(android.content.Context,boolean)>",
+						"Trace":[
+							"<cgeo.geocaching.sensors.RotationProvider: void <init>(android.content.Context,boolean)>",
+							"modify key field: <cgeo.geocaching.sensors.RotationProvider: android.hardware.Sensor rotationSensor>",
+							"<cgeo.geocaching.sensors.RotationProvider: void onStart()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.utils.RxUtils$LooperCallbacks$1.call",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.hardware.SensorManager$ListenerDelegate.setDelay",
+						"Trace":[
+							"cgeo.geocaching.utils.RxUtils$LooperCallbacks$1.call"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"rx.internal.schedulers.ScheduledAction.run",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.hardware.SensorManager$ListenerDelegate.setDelay",
+						"Trace":[
+							"rx.internal.schedulers.ScheduledAction.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

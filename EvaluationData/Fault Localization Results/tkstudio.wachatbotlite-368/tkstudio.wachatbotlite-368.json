@@ -1,0 +1,156 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"tkstudio.wachatbotlite-368",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token android.os.BinderProxy@10ff038 is not valid; is your activity running?",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"android.app.AlertDialog$Builder.show",
+			"tkstudio.wachatbotlite.MainActivity.k",
+			"tkstudio.wachatbotlite.MainActivity.a",
+			"tkstudio.wachatbotlite.l.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"tkstudio.wachatbotlite.MainActivity.k"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not valid; is your activity running?\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"tkstudio.wachatbotlite.MainActivity.k",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"tkstudio.wachatbotlite.MainActivity.k"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<tkstudio.wachatbotlite.MainActivity: void k()>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setBackground(android.graphics.drawable.Drawable)>",
+						"Trace":[
+							"<tkstudio.wachatbotlite.MainActivity: void onResume()>",
+							"<tkstudio.wachatbotlite.MainActivity: void k()>",
+							"fw: <android.view.View: void setBackground(android.graphics.drawable.Drawable)>, <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<tkstudio.wachatbotlite.MainActivity: void k()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"tkstudio.wachatbotlite.MainActivity.k"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"tkstudio.wachatbotlite.MainActivity.a",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"tkstudio.wachatbotlite.MainActivity.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"tkstudio.wachatbotlite.MainActivity.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"tkstudio.wachatbotlite.l.run",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"tkstudio.wachatbotlite.l.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"tkstudio.wachatbotlite.l.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"tkstudio.wachatbotlite.MainActivity.onResume",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setBackground(android.graphics.drawable.Drawable)>",
+						"Trace":[
+							"<tkstudio.wachatbotlite.MainActivity: void onResume()>",
+							"<tkstudio.wachatbotlite.MainActivity: void k()>",
+							"fw: <android.view.View: void setBackground(android.graphics.drawable.Drawable)>, <android.view.View: void setBackgroundDrawable(android.graphics.drawable.Drawable)>, <android.widget.CheckedTextView: void internalSetPadding(int,int,int,int)>, <android.view.View: void internalSetPadding(int,int,int,int)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

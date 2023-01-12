@@ -1,0 +1,153 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.huotu.funnycamera-371",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.huotu.funnycamera.b.a.a",
+			"com.huotu.funnycamera.b.a.a",
+			"com.huotu.funnycamera.b.a.a",
+			"com.huotu.funnycamera.c.b.a",
+			"com.huotu.funnycamera.c.b.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run"
+		],
+		"Labeled Buggy Method":"com.huotu.funnycamera.b.a.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.huotu.funnycamera.b.a.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.huotu.funnycamera.b.a.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.huotu.funnycamera.b.a.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.huotu.funnycamera.b.a: java.lang.String a(com.huotu.funnycamera.b.b[])>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.huotu.funnycamera.b.a: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.huotu.funnycamera.b.a: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.huotu.funnycamera.b.a: java.lang.String a(com.huotu.funnycamera.b.b[])>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.huotu.funnycamera.b.a: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.huotu.funnycamera.b.a: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.huotu.funnycamera.c.b.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.huotu.funnycamera.c.b.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.huotu.funnycamera.c.b.doInBackground",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.huotu.funnycamera.c.b.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

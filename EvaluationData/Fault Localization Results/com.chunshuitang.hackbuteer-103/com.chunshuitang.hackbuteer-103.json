@@ -1,0 +1,172 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.chunshuitang.hackbuteer-103",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"no such table: ModeIVType (code 1): , while compiling: select * from ModeIVType where isDefaultMode = '1'",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteQuery.<init>",
+			"android.database.sqlite.SQLiteDirectCursorDriver.query",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.chunshuitang.hackbuteer.hackbuteer.dao.d.<init>",
+			"com.chunshuitang.hackbuteer.hackbuteer.dao.k.a",
+			"com.chunshuitang.lib.db.d.<init>",
+			"com.chunshuitang.lib.db.d.a",
+			"com.chunshuitang.hackbuteer.PlayMusicApplication.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.chunshuitang.lib.db.DBHelper.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.chunshuitang.hackbuteer.hackbuteer.dao.d.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.chunshuitang.hackbuteer.hackbuteer.dao.d.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.chunshuitang.hackbuteer.hackbuteer.dao.k.a",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.chunshuitang.hackbuteer.hackbuteer.dao.k.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.chunshuitang.lib.db.d.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.chunshuitang.lib.db.d.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.chunshuitang.lib.db.d.a",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.chunshuitang.lib.db.d.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.chunshuitang.hackbuteer.PlayMusicApplication.onCreate",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.chunshuitang.hackbuteer.PlayMusicApplication.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.chunshuitang.lib.db.d.<clinit>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.chunshuitang.lib.db.d: void a(java.lang.String,com.chunshuitang.lib.db.a,int,java.lang.Object[])>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.chunshuitang.lib.db.d: void a(java.lang.String,com.chunshuitang.lib.db.a,int,java.lang.Object[])>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.chunshuitang.lib.db.d: void a(java.lang.String,com.chunshuitang.lib.db.a,int,java.lang.Object[])>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.chunshuitang.lib.db.d: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,63 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cn.damai-270",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"Unable to find explicit activity class {com.android.settings/com.android.settings.ApnSettings}; have you declared this activity in your AndroidManifest.xml?",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"cn.damai.Start_View$5.onClick",
+			"com.android.internal.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"cn.damai.Start_View$5.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to find explicit activity class \\E[\\s\\S]*\\Q; have you declared this activity in your AndroidManifest.xml?\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r9 == null\", \"$z1 == 0\", \"i0\", \"$z0 != 0\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cn.damai.Start_View$5.onClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<cn.damai.Start_View$5: void onClick(android.content.DialogInterface,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"cn.damai.Start_View$5.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

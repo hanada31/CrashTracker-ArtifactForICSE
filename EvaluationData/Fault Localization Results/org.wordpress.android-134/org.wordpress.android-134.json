@@ -1,0 +1,75 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-134",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"near \"=\": syntax error (code 1): , while compiling: UPDATE notes SET id=?,timestamp=?,type=?,note_id=?,raw_note_data=?,placeholder=? WHERE id=",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.updateWithOnConflict",
+			"android.database.sqlite.SQLiteDatabase.update",
+			"org.wordpress.android.WordPressDB.addNote",
+			"org.wordpress.android.GCMIntentService.onMessage",
+			"com.google.android.gcm.GCMBaseIntentService.onHandleIntent",
+			"android.app.IntentService$ServiceHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.os.HandlerThread.run"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.WordPressDB.addNote"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.WordPressDB.addNote",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.wordpress.android.WordPressDB.addNote"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.GCMIntentService.onMessage",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"org.wordpress.android.GCMIntentService.onMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gcm.GCMBaseIntentService.onHandleIntent",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.google.android.gcm.GCMBaseIntentService.onHandleIntent"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

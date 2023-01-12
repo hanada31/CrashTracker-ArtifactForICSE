@@ -1,0 +1,191 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.kugou.android.ringtone-498",
+		"Method":"android.app.ActivityThread.getPackageInfo",
+		"Crash Message":"Requesting code from com.android.dialer (with uid 10004) to be run in process com.kugou.android.ringtone (with uid 10064)",
+		"stack trace":[
+			"android.app.ActivityThread.getPackageInfo",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.startActivityNow",
+			"android.app.LocalActivityManager.moveToState",
+			"android.app.LocalActivityManager.startActivity",
+			"com.kugou.android.ringtone.activity.MainActivity.startActivity",
+			"com.android.internal.policy.impl.PhoneFallbackEventHandler.startCallActivity",
+			"com.android.internal.policy.impl.PhoneFallbackEventHandler.onKeyUp",
+			"com.android.internal.policy.impl.PhoneFallbackEventHandler.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.kugou.android.ringtone.activity.MainActivity.startActivity"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QRequesting code from \\E[\\s\\S]*\\Q (with uid \\E[\\s\\S]*\\Q)\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r11 == null\", \"z1 == 0\", \"$r24 == null\", \"$i6 == 1000\", \"$i5 == 0\", \"$z4 == 0\", \"$i1 == 0\", \"$z3 != 0\", \"$i9 != 1\", \"$i4 == 0\", \"z0 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.kugou.android.ringtone.activity.MainActivity.startActivity",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.kugou.android.ringtone.activity.MainActivity.startActivity"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.LocalActivityManager: android.view.Window startActivity(java.lang.String,android.content.Intent)>",
+						"Trace":[
+							"<com.kugou.android.ringtone.activity.MainActivity: void startActivity(android.content.Intent)>",
+							"fw: <android.app.LocalActivityManager: android.view.Window startActivity(java.lang.String,android.content.Intent)>, <android.app.ActivityThread: void performNewIntents(android.os.IBinder,java.util.List,boolean)>, <android.app.ActivityThread: void deliverNewIntents(android.app.ActivityThread$ActivityClientRecord,java.util.List)>, <android.content.ContextWrapper: java.lang.ClassLoader getClassLoader()>, <android.app.ContextImpl: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: void createOrUpdateClassLoaderLocked(java.util.List)>, <android.app.ActivityThread: java.lang.String currentPackageName()>, key field: <android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>"
+						],
+						"Influenced Field":[
+							"android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication"
+						],
+						"Signaler":"android.app.ActivityThread.getPackageInfo"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"2"
+						],
+						"Influenced method":"android.app.ActivityThread.getPackageInfo",
+						"Trace":[
+							"<com.kugou.android.ringtone.activity.MainActivity: void startActivity(android.content.Intent)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 2",
+						"Influenced method":"android.app.ActivityThread.getPackageInfo",
+						"Trace":[
+							"com.kugou.android.ringtone.activity.MainActivity.startActivity"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.kugou.android.ringtone.activity.MainActivity.getClassLoader",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: java.lang.ClassLoader getClassLoader()>",
+						"Trace":[
+							"<com.kugou.android.ringtone.RingtoneApplication: java.lang.ClassLoader getClassLoader()>",
+							"<com.umeng.common.net.DownloadingService: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.activity.SearchActivity: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.activity.DownloadActivity: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.activity.CategoryActivity: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.activity.MainActivity: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.playback.MediaPlaybackService: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.download.DownloadServiceImpl: java.lang.ClassLoader getClassLoader()>",
+							"<com.kugou.android.ringtone.activity.MyRingActivity: java.lang.ClassLoader getClassLoader()>",
+							"fw: <android.content.ContextWrapper: java.lang.ClassLoader getClassLoader()>, <android.app.ContextImpl: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: void createOrUpdateClassLoaderLocked(java.util.List)>, <android.app.ActivityThread: java.lang.String currentPackageName()>, key field: <android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>"
+						],
+						"Influenced Field":[
+							"android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication"
+						],
+						"Signaler":"android.app.ActivityThread.getPackageInfo"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.kugou.android.ringtone.activity.MainActivity.onKeyDown",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<com.kugou.android.ringtone.activity.y: void run()>",
+							"<com.kugou.android.ringtone.a.f: void <init>(android.content.Context,com.kugou.android.ringtone.d.c)>",
+							"<com.kugou.android.ringtone.a.l: void a(android.content.Context,java.lang.String,java.lang.String,android.widget.Toast)>",
+							"<com.kugou.android.ringtone.a.l: void a(android.content.Context)>",
+							"<com.kugou.android.ringtone.activity.MainActivity: boolean onKeyDown(int,android.view.KeyEvent)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: void handleDispatchPackageBroadcast(int,java.lang.String)>, <android.app.LoadedApk: void updateApplicationInfo(android.content.pm.ApplicationInfo,java.util.List)>, <android.app.LoadedApk: void createOrUpdateClassLoaderLocked(java.util.List)>, <android.app.ActivityThread: java.lang.String currentPackageName()>, key field: <android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>"
+						],
+						"Influenced Field":[
+							"android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication"
+						],
+						"Signaler":"android.app.ActivityThread.getPackageInfo"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.kugou.android.ringtone.activity.MainActivity.onCreate",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.kugou.android.ringtone.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"<com.kugou.android.ringtone.activity.MainActivity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.ContextImpl: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: void createOrUpdateClassLoaderLocked(java.util.List)>, <android.app.ActivityThread: java.lang.String currentPackageName()>, key field: <android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>"
+						],
+						"Influenced Field":[
+							"android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication"
+						],
+						"Signaler":"android.app.ActivityThread.getPackageInfo"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.kugou.android.ringtone.activity.MainActivity.registerReceiver",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+						"Trace":[
+							"<com.kugou.android.ringtone.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"<com.kugou.android.ringtone.activity.MainActivity: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>",
+							"fw: <android.content.ContextWrapper: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter)>, <android.app.ContextImpl: android.content.Intent registerReceiver(android.content.BroadcastReceiver,android.content.IntentFilter,java.lang.String,android.os.Handler)>, <android.app.ContextImpl: android.content.Intent registerReceiverInternal(android.content.BroadcastReceiver,int,android.content.IntentFilter,java.lang.String,android.os.Handler,android.content.Context,int)>, <android.app.ContextImpl: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: java.lang.ClassLoader getClassLoader()>, <android.app.LoadedApk: void createOrUpdateClassLoaderLocked(java.util.List)>, <android.app.ActivityThread: java.lang.String currentPackageName()>, key field: <android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>"
+						],
+						"Influenced Field":[
+							"android.app.ActivityThread: android.app.ActivityThread$AppBindData mBoundApplication"
+						],
+						"Signaler":"android.app.ActivityThread.getPackageInfo"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

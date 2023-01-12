@@ -1,0 +1,140 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-5297",
+		"Method":"android.view.WindowManagerGlobal.findViewLocked",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.view.WindowManagerGlobal.findViewLocked",
+			"android.view.WindowManagerGlobal.removeView",
+			"android.view.WindowManagerImpl.removeViewImmediate",
+			"android.app.Dialog.dismissDialog",
+			"android.app.Dialog.dismiss",
+			"org.wordpress.android.ui.WPLaunchActivity$1.onCompletion",
+			"org.wordpress.android.WordPress.endMigration",
+			"org.wordpress.android.WordPress.migrateDrafts",
+			"org.wordpress.android.WordPress.migrateSelfHostedSites",
+			"org.wordpress.android.WordPress.onSiteChanged",
+			"java.lang.reflect.Method.invoke",
+			"org.greenrobot.eventbus.EventBus.invokeSubscriber",
+			"org.greenrobot.eventbus.EventBus.invokeSubscriber",
+			"org.greenrobot.eventbus.HandlerPoster.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.WPLaunchActivity$1.onCompletion"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.WPLaunchActivity$1.onCompletion",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.wordpress.android.ui.WPLaunchActivity$1.onCompletion"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.WordPress.endMigration",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.wordpress.android.WordPress.endMigration"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.WordPress.migrateDrafts",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.wordpress.android.WordPress.migrateDrafts"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.WordPress.migrateSelfHostedSites",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.wordpress.android.WordPress.migrateSelfHostedSites"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.WordPress.onSiteChanged",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.wordpress.android.WordPress.onSiteChanged"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.greenrobot.eventbus.EventBus.invokeSubscriber",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.greenrobot.eventbus.EventBus.invokeSubscriber"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.greenrobot.eventbus.HandlerPoster.handleMessage",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.view.WindowManagerGlobal.findViewLocked",
+						"Trace":[
+							"org.greenrobot.eventbus.HandlerPoster.handleMessage"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

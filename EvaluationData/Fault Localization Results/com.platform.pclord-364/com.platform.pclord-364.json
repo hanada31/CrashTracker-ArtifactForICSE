@@ -1,0 +1,173 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.platform.pclord-364",
+		"Method":"android.graphics.Canvas.setBitmap",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.graphics.Canvas.setBitmap",
+			"com.platform.pclord.e.a.onSizeChanged",
+			"android.view.View.sizeChange",
+			"android.view.View.setFrame",
+			"android.view.View.layout",
+			"android.widget.FrameLayout.layoutChildren",
+			"android.widget.FrameLayout.onLayout",
+			"android.view.View.layout",
+			"android.view.ViewGroup.layout",
+			"android.widget.LinearLayout.setChildFrame",
+			"android.widget.LinearLayout.layoutVertical",
+			"android.widget.LinearLayout.onLayout",
+			"android.view.View.layout",
+			"android.view.ViewGroup.layout",
+			"android.widget.FrameLayout.layoutChildren",
+			"android.widget.FrameLayout.onLayout",
+			"com.android.internal.policy.PhoneWindow$DecorView.onLayout",
+			"android.view.View.layout",
+			"android.view.ViewGroup.layout",
+			"android.view.ViewRootImpl.performLayout",
+			"android.view.ViewRootImpl.performTraversals",
+			"android.view.ViewRootImpl.doTraversal",
+			"android.view.ViewRootImpl$TraversalRunnable.run",
+			"android.view.Choreographer$CallbackRecord.run",
+			"android.view.Choreographer.doCallbacks",
+			"android.view.Choreographer.doFrame",
+			"android.view.Choreographer$FrameDisplayEventReceiver.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.platform.pclord.e.a.onSizeChanged"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 != 0\", \"r1 != null\", \"r1 == null\", \"$z0 == 0\", \"$z2 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.platform.pclord.e.a.onSizeChanged",
+				"Candidate Score":101,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.graphics.Canvas: void <init>()>",
+						"Trace":[
+							"<com.tencent.mobwin.core.c.b: void a(int)>",
+							"<com.adchina.android.ads.views.ContentView: void c(java.lang.String)>",
+							"<com.platform.pclord.e.e: void onSizeChanged(int,int,int,int)>",
+							"<com.platform.pclord.e.d: void onSizeChanged(int,int,int,int)>",
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>",
+							"<com.adchina.android.ads.views.GifImageView: boolean handleMessage(android.os.Message)>",
+							"<com.tencent.mobwin.utils.a: android.graphics.Bitmap a(int,int,android.content.Context)>",
+							"<com.tencent.mobwin.utils.a: android.graphics.Bitmap a(int,int,int,int)>",
+							"fw: <android.graphics.Canvas: void <init>()>, <android.graphics.Canvas: void <clinit>()>, key field: <android.graphics.Canvas: boolean sCompatibilitySetBitmap>, <android.graphics.Canvas: void setBitmap(android.graphics.Bitmap)>"
+						],
+						"Influenced Field":[
+							"android.graphics.Canvas: boolean sCompatibilitySetBitmap"
+						],
+						"Signaler":"android.graphics.Canvas.setBitmap"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.graphics.Canvas: void setBitmap(android.graphics.Bitmap)>",
+						"Trace":[
+							"<com.tencent.mobwin.core.c.b: void a(int)>",
+							"<com.adchina.android.ads.views.ContentView: void c(java.lang.String)>",
+							"<com.platform.pclord.e.e: void onSizeChanged(int,int,int,int)>",
+							"<com.platform.pclord.e.d: void onSizeChanged(int,int,int,int)>",
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>",
+							"<com.adchina.android.ads.views.GifImageView: boolean handleMessage(android.os.Message)>",
+							"<com.tencent.mobwin.utils.a: android.graphics.Bitmap a(int,int,android.content.Context)>",
+							"<com.tencent.mobwin.utils.a: android.graphics.Bitmap a(int,int,int,int)>",
+							"fw: <android.graphics.Canvas: void setBitmap(android.graphics.Bitmap)>, <android.graphics.Canvas: android.graphics.Matrix getMatrix()>, <android.graphics.Canvas: void getMatrix(android.graphics.Matrix)>, <android.graphics.Canvas: void <clinit>()>, key field: <android.graphics.Canvas: boolean sCompatibilitySetBitmap>, <android.graphics.Canvas: void setBitmap(android.graphics.Bitmap)>"
+						],
+						"Influenced Field":[
+							"android.graphics.Canvas: boolean sCompatibilitySetBitmap"
+						],
+						"Signaler":"android.graphics.Canvas.setBitmap"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.platform.pclord.e.a.onSizeChanged"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.graphics.Canvas.setBitmap",
+						"Trace":[
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.graphics.Canvas.setBitmap",
+						"Trace":[
+							"com.platform.pclord.e.a.onSizeChanged"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.platform.pclord.e.a: android.graphics.Bitmap h>",
+						"Influenced By Method":"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>",
+						"Trace":[
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>",
+							"modify key field: <com.platform.pclord.e.a: android.graphics.Bitmap h>",
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.platform.pclord.e.a.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.platform.pclord.e.a: android.graphics.Bitmap h>",
+						"Influenced By Method":"<com.platform.pclord.e.a: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.platform.pclord.e.a: void <init>(android.content.Context)>",
+							"modify key field: <com.platform.pclord.e.a: android.graphics.Bitmap h>",
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.platform.pclord.e.a.onDraw",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.platform.pclord.e.a: android.graphics.Bitmap h>",
+						"Influenced By Method":"<com.platform.pclord.e.a: void onDraw(android.graphics.Canvas)>",
+						"Trace":[
+							"<com.platform.pclord.e.a: void onDraw(android.graphics.Canvas)>",
+							"modify key field: <com.platform.pclord.e.a: android.graphics.Bitmap h>",
+							"<com.platform.pclord.e.a: void onSizeChanged(int,int,int,int)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

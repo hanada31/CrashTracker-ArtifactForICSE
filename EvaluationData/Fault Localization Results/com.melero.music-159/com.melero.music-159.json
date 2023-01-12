@@ -1,0 +1,60 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.melero.music-159",
+		"Method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+		"Crash Message":"Unable to create directory: /storage/sdcard/Download",
+		"stack trace":[
+			"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+			"com.melero.music.MainActivity$2.onDownloadStart",
+			"com.android.webview.chromium.WebViewContentsClientAdapter.onDownloadStart",
+			"com.android.org.chromium.android_webview.AwContentsClientCallbackHelper$MyHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.melero.music.MainActivity$2.onDownloadStart"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to create directory: \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 != 0\", \"$z0 == 0\", \"r1 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.melero.music.MainActivity$2.onDownloadStart",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+						"Trace":[
+							"<com.melero.music.MainActivity$2: void onDownloadStart(java.lang.String,java.lang.String,java.lang.String,java.lang.String,long)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+						"Trace":[
+							"com.melero.music.MainActivity$2.onDownloadStart"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

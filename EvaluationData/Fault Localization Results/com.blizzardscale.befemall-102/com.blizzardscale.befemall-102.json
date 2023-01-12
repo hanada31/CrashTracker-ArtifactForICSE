@@ -1,0 +1,183 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.blizzardscale.befemall-102",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token null is not for an application",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"com.blizzardscale.befemall.activity.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.blizzardscale.befemall.activity.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not for an application\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.blizzardscale.befemall.activity.MainActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.blizzardscale.befemall.activity.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void bringToFront()>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"fw: <android.view.View: void bringToFront()>, <android.view.ViewGroup: void bringChildToFront(android.view.View)>, <android.view.View: void requestLayout()>, <android.view.ViewRootImpl: void requestLayout()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"com.blizzardscale.befemall.activity.MainActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blizzardscale.befemall.activity.MainActivity.menuClick",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorShow()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorHide()>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ImageView: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"fw: <android.widget.ImageView: void setVisibility(int)>, <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blizzardscale.befemall.activity.MainActivity.reflashNoticeUnReadCount",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorShow()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorHide()>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.widget.ImageView: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"fw: <android.widget.ImageView: void setVisibility(int)>, <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blizzardscale.befemall.activity.MainActivity.setNavigatorHide",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorShow()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorHide()>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blizzardscale.befemall.activity.MainActivity.setNavigatorShow",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<com.blizzardscale.befemall.activity.MainActivity: void reflashNoticeUnReadCount()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void menuClick(android.view.View)>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorShow()>",
+							"<com.blizzardscale.befemall.activity.MainActivity: void setNavigatorHide()>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

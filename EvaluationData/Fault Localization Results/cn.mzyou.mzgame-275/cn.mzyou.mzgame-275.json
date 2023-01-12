@@ -1,0 +1,71 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cn.mzyou.mzgame-275",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"cn.mzyou.mzgame.net.ProxyConfig.update",
+			"cn.mzyou.mzgame.net.ProxyConfig.init",
+			"cn.mzyou.mzgame.BlackJack.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"cn.mzyou.mzgame.net.ProxyConfig.update"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cn.mzyou.mzgame.net.ProxyConfig.update",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"cn.mzyou.mzgame.net.ProxyConfig.update"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.mzyou.mzgame.net.ProxyConfig.init",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"cn.mzyou.mzgame.net.ProxyConfig.init"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cn.mzyou.mzgame.BlackJack.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"cn.mzyou.mzgame.BlackJack.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

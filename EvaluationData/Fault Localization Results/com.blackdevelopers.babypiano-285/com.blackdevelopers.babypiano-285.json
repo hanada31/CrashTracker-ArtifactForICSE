@@ -1,0 +1,113 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.blackdevelopers.babypiano-285",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://search?q=blackdevelopers.net baby&utm_source=app&utm_medium=button&utm_campaign=piano }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.blackdevelopers.babypiano.CommonResources.cStartSearchMoreApps",
+			"com.blackdevelopers.babypiano.MainActivity.startSearchMoreApps",
+			"com.blackdevelopers.babypiano.MainActivity.access$000",
+			"com.blackdevelopers.babypiano.MainActivity$2.onClick",
+			"android.view.View.performClick",
+			"android.view.View$PerformClick.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.blackdevelopers.babypiano.CommonResources.cStartSearchMoreApps"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.blackdevelopers.babypiano.CommonResources.cStartSearchMoreApps",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.blackdevelopers.babypiano.CommonResources: void cStartSearchMoreApps(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.blackdevelopers.babypiano.CommonResources.cStartSearchMoreApps"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blackdevelopers.babypiano.MainActivity.startSearchMoreApps",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.blackdevelopers.babypiano.MainActivity.startSearchMoreApps"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blackdevelopers.babypiano.MainActivity.access$000",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.blackdevelopers.babypiano.MainActivity.access$000"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.blackdevelopers.babypiano.MainActivity$2.onClick",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.blackdevelopers.babypiano.MainActivity$2.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

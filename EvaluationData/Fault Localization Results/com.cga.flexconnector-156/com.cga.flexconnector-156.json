@@ -1,0 +1,235 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.cga.flexconnector-156",
+		"Method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+		"Crash Message":"table DATA_WO_cc already exists (code 1): , while compiling: create table DATA_WO_cc (_id int primary key, woid int, company string, eid int, active int)",
+		"stack trace":[
+			"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+			"android.database.sqlite.SQLiteConnection.acquirePreparedStatement",
+			"android.database.sqlite.SQLiteConnection.prepare",
+			"android.database.sqlite.SQLiteSession.prepare",
+			"android.database.sqlite.SQLiteProgram.<init>",
+			"android.database.sqlite.SQLiteStatement.<init>",
+			"android.database.sqlite.SQLiteDatabase.executeSql",
+			"android.database.sqlite.SQLiteDatabase.execSQL",
+			"com.cga.flexconnector.content.helper.Helper_DB.onCreate",
+			"com.cga.flexconnector.content.helper.Helper_DB.onUpgrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"com.cga.flexconnector.content.provider.BaseContentProvider.query",
+			"android.content.ContentProvider.query",
+			"android.content.ContentProvider$Transport.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.cga.flexlibrary.content.helper.Helper_ConnectionState.getState",
+			"com.cga.flexconnector.home.CGAApp.onCreate",
+			"android.app.Instrumentation.callApplicationOnCreate",
+			"android.app.ActivityThread.handleBindApplication"
+		],
+		"Labeled Buggy Method":"com.cga.flexconnector.content.helper.Helper_DB.onUpgrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.cga.flexconnector.content.helper.Helper_DB.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.cga.flexconnector.content.helper.Helper_DB.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void dropTables(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void dropTables(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexconnector.content.helper.Helper_DB.onUpgrade",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.cga.flexconnector.content.helper.Helper_DB.onUpgrade"
+						]
+					},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[0].Reasons[2]"}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexconnector.content.helper.Helper_DB.dropTables",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.<clinit>",
+							"android.database.sqlite.SQLiteOpenHelper.setFilePermissionsForDb",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void dropTables(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+							"android.database.sqlite.SQLiteOpenHelper.onUpgrade",
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+							"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+							"<com.cga.flexconnector.content.helper.Helper_DB: void onCreate(android.database.sqlite.SQLiteDatabase)>",
+							"android.database.sqlite.SQLiteOpenHelper.onCreate",
+							"android.database.sqlite.SQLiteOpenHelper.onBeforeDelete",
+							"android.database.sqlite.SQLiteOpenHelper.onConfigure",
+							"android.database.sqlite.SQLiteOpenHelper.onOpen"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexconnector.content.provider.BaseContentProvider.query",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.cga.flexconnector.content.provider.BaseContentProvider.query"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.content.ContentProvider.query",
+							"<com.cga.flexconnector.content.provider.BaseContentProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"<com.cga.flexconnector.content.provider.BaseContentProvider: long getId(android.net.Uri)>",
+							"<android.net.Uri: java.lang.String getLastPathSegment()>",
+							"<java.lang.Long: long parseLong(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: void setNotificationUri(android.content.ContentResolver,android.net.Uri)>",
+							"<android.content.Context: android.content.ContentResolver getContentResolver()>",
+							"<android.content.ContentProvider: android.content.Context getContext()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"android.content.ContentProvider.query"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexconnector.content.provider.BaseContentProvider.getId",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.content.ContentProvider.query",
+							"<com.cga.flexconnector.content.provider.BaseContentProvider: android.database.Cursor query(android.net.Uri,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String)>",
+							"<com.cga.flexconnector.content.provider.BaseContentProvider: long getId(android.net.Uri)>",
+							"<android.net.Uri: java.lang.String getLastPathSegment()>",
+							"<java.lang.Long: long parseLong(java.lang.String)>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(long)>",
+							"<java.lang.StringBuilder: void <init>(java.lang.String)>",
+							"<android.database.Cursor: boolean moveToFirst()>",
+							"<android.database.Cursor: void setNotificationUri(android.content.ContentResolver,android.net.Uri)>",
+							"<android.content.Context: android.content.ContentResolver getContentResolver()>",
+							"<android.content.ContentProvider: android.content.Context getContext()>",
+							"<android.database.sqlite.SQLiteDatabase: android.database.Cursor query(java.lang.String,java.lang.String[],java.lang.String,java.lang.String[],java.lang.String,java.lang.String,java.lang.String)>",
+							"<android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getReadableDatabase()>",
+							"android.content.ContentProvider.query"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexlibrary.content.helper.Helper_ConnectionState.getState",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.cga.flexlibrary.content.helper.Helper_ConnectionState.getState"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cga.flexconnector.home.CGAApp.onCreate",
+				"Candidate Score":90,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.sqlite.SQLiteConnection.nativePrepareStatement",
+						"Trace":[
+							"com.cga.flexconnector.home.CGAApp.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

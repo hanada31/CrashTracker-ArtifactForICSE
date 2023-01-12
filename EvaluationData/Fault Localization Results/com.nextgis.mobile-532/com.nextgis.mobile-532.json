@@ -1,0 +1,277 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.nextgis.mobile-532",
+		"Method":"android.os.Parcel.readParcelableCreator",
+		"Crash Message":"ClassNotFoundException when unmarshalling: android.support.v7.widget.Toolbar$SavedState",
+		"stack trace":[
+			"android.os.Parcel.readParcelableCreator",
+			"android.os.Parcel.readParcelable",
+			"android.os.Parcel.readValue",
+			"android.os.Parcel.readSparseArrayInternal",
+			"android.os.Parcel.readSparseArray",
+			"android.os.Parcel.readValue",
+			"android.os.Parcel.readArrayMapInternal",
+			"android.os.Bundle.unparcel",
+			"android.os.Bundle.getSparseParcelableArray",
+			"com.android.internal.policy.impl.PhoneWindow.restoreHierarchyState",
+			"android.app.Dialog.onRestoreInstanceState",
+			"android.preference.DialogPreference.showDialog",
+			"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.showDialog",
+			"android.preference.DialogPreference.onRestoreInstanceState",
+			"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onRestoreInstanceState",
+			"android.preference.Preference.dispatchRestoreInstanceState",
+			"android.preference.PreferenceGroup.dispatchRestoreInstanceState",
+			"android.preference.Preference.restoreHierarchyState",
+			"android.preference.PreferenceFragment.onActivityCreated",
+			"android.app.Fragment.performActivityCreated",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.dispatchActivityCreated",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.showDialog"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QClassNotFoundException when unmarshalling: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r4 != null\", \"r64 != null\", \"r63 != null\", \"r1 != null\", \"$z0 != 0\", \"$i1 != 0\", \"$z1 != 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.showDialog",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.showDialog"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.os.Parcel.readParcelableCreator",
+						"Trace":[
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void showDialog(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readParcelableCreator",
+						"Trace":[
+							"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.showDialog"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.preference.DialogPreference.onRestoreInstanceState",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void showDialog(android.os.Bundle)>",
+							"<android.preference.DialogPreference: void showDialog(android.os.Bundle)>",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void updateButtons()>",
+							"<android.preference.DialogPreference: android.app.Dialog getDialog()>",
+							"<android.widget.TextView: void setEnabled(boolean)>",
+							"<android.app.AlertDialog: android.widget.Button getButton(int)>",
+							"android.preference.DialogPreference.showDialog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onBindDialogView",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.preference.DialogPreference: void showDialog(android.os.Bundle)>",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void showDialog(android.os.Bundle)>",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void onBindDialogView(android.view.View)>",
+							"<android.view.View: android.view.View findViewById(int)>",
+							"<android.preference.DialogPreference: void onBindDialogView(android.view.View)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setPathLayout(android.widget.LinearLayout)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter$PathView: void <init>(com.nextgis.maplibui.dialog.LocalResourcesListAdapter,android.widget.LinearLayout)>",
+							"<java.lang.Object: void <init>()>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter$PathView: void onUpdate(java.io.File)>",
+							"<android.view.ViewGroup: void removeAllViewsInLayout()>",
+							"<android.widget.ImageView: void setImageDrawable(android.graphics.drawable.Drawable)>",
+							"<android.support.v4.content.ContextCompat: android.graphics.drawable.Drawable getDrawable(android.content.Context,int)>",
+							"<android.view.View: void setLayoutParams(android.view.ViewGroup$LayoutParams)>",
+							"<android.widget.LinearLayout$LayoutParams: void <init>(int,int)>",
+							"<com.nextgis.maplibui.util.ControlHelper: int dpToPx(int,android.content.res.Resources)>",
+							"<android.content.res.Resources: android.util.DisplayMetrics getDisplayMetrics()>",
+							"<java.lang.Math: int round(float)>",
+							"<android.content.Context: android.content.res.Resources getResources()>",
+							"<android.widget.ImageView: void <init>(android.content.Context)>",
+							"<java.io.File: java.io.File getParentFile()>",
+							"<android.view.ViewGroup: void addView(android.view.View,int)>",
+							"<android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter$PathView$1: void <init>(com.nextgis.maplibui.dialog.LocalResourcesListAdapter$PathView,java.io.File)>",
+							"<java.lang.Object: void <init>()>",
+							"<android.view.View: void setBackgroundResource(int)>",
+							"<android.widget.TextView: void setMaxLines(int)>",
+							"<android.widget.TextView: void setSingleLine(boolean)>",
+							"<android.widget.TextView: void setTextSize(int,float)>",
+							"<android.widget.TextView: void setTypeface(android.graphics.Typeface,int)>",
+							"<android.widget.TextView: android.graphics.Typeface getTypeface()>",
+							"<android.widget.TextView: void setText(java.lang.CharSequence)>",
+							"<java.io.File: java.lang.String getName()>",
+							"<android.widget.TextView: void <init>(android.content.Context)>",
+							"<android.widget.AdapterView: void setOnItemClickListener(android.widget.AdapterView$OnItemClickListener)>",
+							"<android.widget.ListView: void setAdapter(android.widget.ListAdapter)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setCanSelectMulti(boolean)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setCanWrite(boolean)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setCheckState(java.util.List)>",
+							"<java.util.ArrayList: void <init>()>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setCurrentPath(java.io.File)>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void fillFiles()>",
+							"<java.util.ArrayList: void <init>()>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: int getFileType(java.io.File)>",
+							"<java.io.File: boolean isDirectory()>",
+							"<java.lang.String: boolean endsWith(java.lang.String)>",
+							"<java.io.File: java.lang.String getName()>",
+							"<java.io.File: java.io.File[] listFiles()>",
+							"<java.util.List: boolean add(java.lang.Object)>",
+							"<java.io.File: java.io.File getParentFile()>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter$PathView: void onUpdate(java.io.File)>",
+							"<android.widget.BaseAdapter: void notifyDataSetChanged()>",
+							"<com.nextgis.maplibui.dialog.LocalResourcesListAdapter: void setTypeMask(int)>",
+							"android.preference.DialogPreference.onBindDialogView",
+							"android.preference.DialogPreference.getDialogMessage",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void onPrepareDialogBuilder(android.app.AlertDialog$Builder)>",
+							"<android.preference.DialogPreference: void onPrepareDialogBuilder(android.app.AlertDialog$Builder)>",
+							"<android.app.AlertDialog$Builder: android.app.AlertDialog$Builder setInverseBackgroundForced(boolean)>",
+							"android.preference.DialogPreference.onPrepareDialogBuilder",
+							"android.preference.DialogPreference.needInputMethod",
+							"android.preference.DialogPreference.onCreateDialogView",
+							"android.preference.DialogPreference.requestInputMethod"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onPrepareDialogBuilder",
+				"Candidate Score":97,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[1].Reasons[0]"}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onRestoreInstanceState",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onRestoreInstanceState"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.os.Parcel.readParcelableCreator",
+						"Trace":[
+							"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.onRestoreInstanceState"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference.updateButtons",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"android.preference.DialogPreference.onRestoreInstanceState",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void showDialog(android.os.Bundle)>",
+							"<android.preference.DialogPreference: void showDialog(android.os.Bundle)>",
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference: void updateButtons()>",
+							"<android.preference.DialogPreference: android.app.Dialog getDialog()>",
+							"<android.widget.TextView: void setEnabled(boolean)>",
+							"<android.app.AlertDialog: android.widget.Button getButton(int)>",
+							"android.preference.DialogPreference.showDialog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState.<init>",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.Parcel: void readStringList(java.util.List)>",
+						"Trace":[
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState: void <init>(android.os.Parcel)>",
+							"fw: <android.os.Parcel: void readStringList(java.util.List)>, <android.os.Parcel: int readInt()>, <android.os.Parcel: void <clinit>()>, key field: <android.os.Parcel: java.util.HashMap mCreators>, <android.os.Parcel: android.os.Parcelable$Creator readParcelableCreator(java.lang.ClassLoader)>"
+						],
+						"Influenced Field":[
+							"android.os.Parcel: java.util.HashMap mCreators"
+						],
+						"Signaler":"android.os.Parcel.readParcelableCreator"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.Parcel: java.io.Serializable readSerializable()>",
+						"Trace":[
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState: void <init>(android.os.Parcel)>",
+							"fw: <android.os.Parcel: java.io.Serializable readSerializable()>, <android.os.Parcel: java.io.Serializable readSerializable(java.lang.ClassLoader)>, <android.os.Parcel: byte createByteArray()>, <android.os.Parcel: void <clinit>()>, key field: <android.os.Parcel: java.util.HashMap mCreators>, <android.os.Parcel: android.os.Parcelable$Creator readParcelableCreator(java.lang.ClassLoader)>"
+						],
+						"Influenced Field":[
+							"android.os.Parcel: java.util.HashMap mCreators"
+						],
+						"Signaler":"android.os.Parcel.readParcelableCreator"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState.writeToParcel",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.Parcel: void writeStringList(java.util.List)>",
+						"Trace":[
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState: void writeToParcel(android.os.Parcel,int)>",
+							"<com.google.android.gms.common.internal.safeparcel.zzc: void zzb(android.os.Parcel,int,java.util.List,boolean)>",
+							"fw: <android.os.Parcel: void writeStringList(java.util.List)>, <android.os.Parcel: void writeInt(int)>, <android.os.Parcel: void <clinit>()>, key field: <android.os.Parcel: java.util.HashMap mCreators>, <android.os.Parcel: android.os.Parcelable$Creator readParcelableCreator(java.lang.ClassLoader)>"
+						],
+						"Influenced Field":[
+							"android.os.Parcel: java.util.HashMap mCreators"
+						],
+						"Signaler":"android.os.Parcel.readParcelableCreator"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.os.Parcel: void writeSerializable(java.io.Serializable)>",
+						"Trace":[
+							"<com.nextgis.mobile.dialog.SelectMapPathDialogPreference$SavedState: void writeToParcel(android.os.Parcel,int)>",
+							"fw: <android.os.Parcel: void writeSerializable(java.io.Serializable)>, <android.os.Parcel: void writeByteArray(byte)>, <android.os.Parcel: void writeByteArray(byte,int,int)>, <android.os.Parcel: void <clinit>()>, key field: <android.os.Parcel: java.util.HashMap mCreators>, <android.os.Parcel: android.os.Parcelable$Creator readParcelableCreator(java.lang.ClassLoader)>"
+						],
+						"Influenced Field":[
+							"android.os.Parcel: java.util.HashMap mCreators"
+						],
+						"Signaler":"android.os.Parcel.readParcelableCreator"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

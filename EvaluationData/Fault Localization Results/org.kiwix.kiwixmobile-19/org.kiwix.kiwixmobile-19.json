@@ -1,0 +1,58 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kiwix.kiwixmobile-19",
+		"Method":"android.widget.ListView.addHeaderView",
+		"Crash Message":"Cannot add header view to list -- setAdapter has already been called.",
+		"stack trace":[
+			"android.widget.ListView.addHeaderView",
+			"android.widget.ListView.addHeaderView",
+			"org.kiwix.kiwixmobile.utils.HTMLUtils$HTMLinterface$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.kiwix.kiwixmobile.utils.HTMLUtils$HTMLinterface$1.run"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCannot add header view to list -- setAdapter has already been called.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z2 != 0\", \"$r1 == null\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kiwix.kiwixmobile.utils.HTMLUtils$HTMLinterface$1.run",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kiwix.kiwixmobile.utils.HTMLUtils$HTMLinterface$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

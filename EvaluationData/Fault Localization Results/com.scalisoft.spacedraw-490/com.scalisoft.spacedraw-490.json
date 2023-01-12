@@ -1,0 +1,278 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.scalisoft.spacedraw-490",
+		"Method":"android.opengl.GLErrorWrapper.checkError",
+		"Crash Message":"invalid enum",
+		"stack trace":[
+			"android.opengl.GLErrorWrapper.checkError",
+			"android.opengl.GLErrorWrapper.glGetIntegerv",
+			"com.scalisoft.spacedraw.ThA$Rdr.onSurfaceChanged",
+			"android.opengl.GLSurfaceView$GLThread.guardedRun",
+			"android.opengl.GLSurfaceView$GLThread.run"
+		],
+		"Labeled Buggy Method":"com.scalisoft.spacedraw.ThA$Rdr.onSurfaceChanged"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 == 0\", \"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Rdr.onSurfaceChanged",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.scalisoft.spacedraw.ThA$Rdr.onSurfaceChanged"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Glv.<init>",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.opengl.GLSurfaceView: void setRenderer(android.opengl.GLSurfaceView$Renderer)>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Glv: void <init>(com.scalisoft.spacedraw.ThA,android.content.Context)>",
+							"<com.scalisoft.spacedraw.ThA$Glv: void setRenderer(android.opengl.GLSurfaceView$Renderer)>",
+							"fw: <android.opengl.GLSurfaceView: void setRenderer(android.opengl.GLSurfaceView$Renderer)>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Glv.setRenderer",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.opengl.GLSurfaceView: void setRenderer(android.opengl.GLSurfaceView$Renderer)>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Glv: void <init>(com.scalisoft.spacedraw.ThA,android.content.Context)>",
+							"<com.scalisoft.spacedraw.ThA$Glv: void setRenderer(android.opengl.GLSurfaceView$Renderer)>",
+							"fw: <android.opengl.GLSurfaceView: void setRenderer(android.opengl.GLSurfaceView$Renderer)>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Be.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Fp.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Me.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Pe.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Se.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Ul.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Vl.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.scalisoft.spacedraw.ThA$Vu.dwn",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.scalisoft.spacedraw.ThA$Pe: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Ul: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Se: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vl: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Vu: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Be: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Fp: void dwn()>",
+							"<com.scalisoft.spacedraw.ThA$Me: void dwn()>",
+							"fw: <java.lang.Thread: void run()>, <android.media.MediaPlayer2Impl$ProvisioningThread: void run()>, <com.android.internal.util.ConcurrentUtils$1$1: void run()>, <android.opengl.GLSurfaceView$GLThread: void run()>, <android.opengl.GLSurfaceView$GLThread: void guardedRun()>, <android.opengl.GLSurfaceView$EglHelper: javax.microedition.khronos.opengles.GL createGL()>, <android.opengl.GLDebugHelper: javax.microedition.khronos.opengles.GL wrap(javax.microedition.khronos.opengles.GL,int,java.io.Writer)>, <android.opengl.GLErrorWrapper: void <init>(javax.microedition.khronos.opengles.GL,int)>, key field: <android.opengl.GLErrorWrapper: boolean mCheckError>, <android.opengl.GLErrorWrapper: void checkError()>"
+						],
+						"Influenced Field":[
+							"android.opengl.GLErrorWrapper: boolean mCheckError"
+						],
+						"Signaler":"android.opengl.GLErrorWrapper.checkError"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

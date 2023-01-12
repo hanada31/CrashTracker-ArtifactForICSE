@@ -1,0 +1,111 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"se.nansen.coop-463",
+		"Method":"android.media.MediaPlayer.prepareAsync",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.media.MediaPlayer.prepareAsync",
+			"android.widget.VideoView.openVideo",
+			"android.widget.VideoView.setVideoURI",
+			"android.widget.VideoView.setVideoURI",
+			"se.nansen.coop.content.startguide.StartGuidePointsFragment.setMenuVisibility",
+			"android.support.v4.app.FragmentStatePagerAdapter.setPrimaryItem",
+			"android.support.v4.view.ViewPager.populate",
+			"android.support.v4.view.ViewPager.setCurrentItemInternal",
+			"android.support.v4.view.ViewPager.setCurrentItemInternal",
+			"android.support.v4.view.ViewPager.setCurrentItem",
+			"android.support.v4.view.ViewPager.pageRight",
+			"android.support.v4.view.ViewPager.arrowScroll",
+			"android.support.v4.view.ViewPager.executeKeyEvent",
+			"android.support.v4.view.ViewPager.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"android.support.v7.app.ActionBarActivityDelegateICS$WindowCallbackWrapper.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"se.nansen.coop.content.startguide.StartGuidePointsFragment.setMenuVisibility"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"se.nansen.coop.content.startguide.StartGuidePointsFragment.setMenuVisibility",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.media.MediaPlayer.prepareAsync",
+						"Trace":[
+							"se.nansen.coop.content.startguide.StartGuidePointsFragment.setMenuVisibility"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<se.nansen.coop.content.startguide.StartGuidePointsFragment: android.net.Uri mVideoUri>",
+						"Influenced By Method":"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void setMenuVisibility(boolean)>",
+						"Trace":[
+							"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void setMenuVisibility(boolean)>",
+							"modify key field: <se.nansen.coop.content.startguide.StartGuidePointsFragment: android.net.Uri mVideoUri>",
+							"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void setMenuVisibility(boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"se.nansen.coop.content.startguide.StartGuidePointsFragment.onActivityCreated",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<se.nansen.coop.content.startguide.StartGuidePointsFragment: android.net.Uri mVideoUri>",
+						"Influenced By Method":"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void onActivityCreated(android.os.Bundle)>",
+						"Trace":[
+							"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void onActivityCreated(android.os.Bundle)>",
+							"modify key field: <se.nansen.coop.content.startguide.StartGuidePointsFragment: android.net.Uri mVideoUri>",
+							"<se.nansen.coop.content.startguide.StartGuidePointsFragment: void setMenuVisibility(boolean)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

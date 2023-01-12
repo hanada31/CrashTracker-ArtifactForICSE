@@ -1,0 +1,116 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.iasku.iaskujuniorchemistry-396",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"WifiService: Neither user 10636 nor current process has android.permission.CHANGE_WIFI_STATE.",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.net.wifi.IWifiManager$Stub$Proxy.setWifiEnabled",
+			"android.net.wifi.WifiManager.setWifiEnabled",
+			"com.iasku.iaskujuniorchemistry.MainActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.iasku.iaskujuniorchemistry.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.iasku.iaskujuniorchemistry.MainActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.iasku.iaskujuniorchemistry.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<com.iasku.iaskujuniorchemistry.MainActivity: void onCreate(android.os.Bundle)>",
+							"android.app.ActivityGroup.onCreate",
+							"android.app.Activity.getAutofillManager",
+							"android.app.Activity.getApplication",
+							"<com.iasku.iaskujuniorchemistry.MainActivity: void onCreate(android.os.Bundle)>",
+							"<android.app.Activity: void onCreate(android.os.Bundle)>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<java.lang.Thread: void run()>",
+							"<java.lang.Thread: void start()>",
+							"<java.lang.Thread: void <init>(java.lang.Runnable)>",
+							"<com.iasku.dialog.ProgressDialogTask: void onPreExecute()>",
+							"<com.iasku.dialog.ProgressDialogTask: void startProgressDialog()>",
+							"<com.iasku.dialog.CustomProgressDialog: com.iasku.dialog.CustomProgressDialog createDialog(android.content.Context)>",
+							"<com.iasku.dialog.CustomProgressDialog: void <init>(android.content.Context,int)>",
+							"<android.app.Dialog: void <init>(android.content.Context,int)>",
+							"<android.view.Window: android.view.WindowManager$LayoutParams getAttributes()>",
+							"<android.app.Dialog: android.view.Window getWindow()>",
+							"<android.app.Dialog: void setContentView(int)>",
+							"<android.app.Dialog: void show()>",
+							"<android.os.AsyncTask: android.os.AsyncTask execute(java.lang.Object[])>",
+							"<com.iasku.dialog.ProgressDialogTask: java.lang.Object doInBackground(java.lang.Object[])>",
+							"<com.iasku.dialog.ProgressDialogTask: java.lang.Integer doInBackground(java.lang.Integer[])>",
+							"<java.lang.Thread: void sleep(long)>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<com.iasku.dialog.ProgressDialogTask: void onPostExecute(java.lang.Object)>",
+							"<com.iasku.dialog.ProgressDialogTask: void onPostExecute(java.lang.Integer)>",
+							"<com.iasku.dialog.ProgressDialogTask: void <init>(android.content.Context)>",
+							"<android.os.AsyncTask: void <init>()>",
+							"<android.telephony.TelephonyManager: java.lang.String getDeviceId()>",
+							"<com.iasku.md5.MD5: java.lang.String getMD5Value(java.lang.String)>",
+							"<java.security.MessageDigest: java.security.MessageDigest getInstance(java.lang.String)>",
+							"<java.lang.Integer: java.lang.String toHexString(int)>",
+							"<java.lang.StringBuffer: java.lang.StringBuffer append(java.lang.String)>",
+							"<java.lang.Throwable: void printStackTrace()>",
+							"<java.lang.StringBuffer: java.lang.String toString()>",
+							"<java.lang.StringBuffer: void <init>()>",
+							"<java.security.MessageDigest: byte[] digest(byte[])>",
+							"<java.lang.String: char[] toCharArray()>",
+							"<java.lang.StringBuilder: java.lang.String toString()>",
+							"<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>",
+							"<android.net.wifi.WifiInfo: java.lang.String getMacAddress()>",
+							"<java.lang.StringBuilder: void <init>()>",
+							"<android.net.wifi.WifiManager: android.net.wifi.WifiInfo getConnectionInfo()>",
+							"<java.lang.Thread: void sleep(long)>",
+							"<android.net.wifi.WifiManager: boolean setWifiEnabled(boolean)>",
+							"<android.net.wifi.WifiManager: int getWifiState()>",
+							"<android.net.NetworkInfo: boolean isAvailable()>",
+							"<android.os.Handler: boolean sendMessage(android.os.Message)>",
+							"<android.os.Message: android.os.Message obtain()>",
+							"<android.net.ConnectivityManager: android.net.NetworkInfo getActiveNetworkInfo()>",
+							"<android.app.Activity: java.lang.Object getSystemService(java.lang.String)>",
+							"<com.iasku.manager.UpdateManager: void checkUpdate()>",
+							"<java.lang.Thread: void <init>(java.lang.Runnable)>",
+							"<java.lang.Runnable: void run()>",
+							"<java.lang.Thread: void start()>",
+							"<com.iasku.manager.UpdateManager: void <init>(android.content.Context)>",
+							"<java.lang.Object: void <init>()>",
+							"<com.iasku.manager.UpdateManager$2: void <init>(com.iasku.manager.UpdateManager)>",
+							"<java.lang.Object: void <init>()>",
+							"<com.iasku.manager.UpdateManager$1: void <init>(com.iasku.manager.UpdateManager)>",
+							"<android.os.Handler: void <init>()>",
+							"<android.view.Display: void getMetrics(android.util.DisplayMetrics)>",
+							"<android.view.WindowManager: android.view.Display getDefaultDisplay()>",
+							"<android.app.Activity: android.view.WindowManager getWindowManager()>",
+							"<android.util.DisplayMetrics: void <init>()>",
+							"<android.view.Window: void setFlags(int,int)>",
+							"<android.app.Activity: android.view.Window getWindow()>",
+							"<android.app.Activity: boolean requestWindowFeature(int)>",
+							"android.app.Activity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Manifest XML"
+		]
+	}
+}

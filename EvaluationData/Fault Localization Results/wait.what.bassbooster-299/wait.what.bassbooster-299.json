@@ -1,0 +1,32 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"wait.what.bassbooster-299",
+		"Method":"android.media.MediaPlayer.isPlaying",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.media.MediaPlayer.isPlaying",
+			"wait.what.bassbooster.MainActivity.onBoostButtonClick"
+		],
+		"Labeled Buggy Method":"wait.what.bassbooster.MainActivity.onResume"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"wait.what.bassbooster.MainActivity.onBoostButtonClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.media.MediaPlayer.isPlaying",
+						"Trace":[
+							"wait.what.bassbooster.MainActivity.onBoostButtonClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

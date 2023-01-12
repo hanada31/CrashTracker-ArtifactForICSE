@@ -1,0 +1,152 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"facebook-android-sdk-997",
+		"Method":"android.app.PendingIntent.checkFlags",
+		"Crash Message":"my.app.id: Targeting S+ (version 31 and above) requires that one of FLAG_IMMUTABLE or FLAG_MUTABLE be specified when creating a PendingIntent.\nStrongly consider using FLAG_IMMUTABLE, only use FLAG_MUTABLE if some functionality depends on the PendingIntent being mutable, e.g. if it needs to be used with inline replies or bubbles.",
+		"stack trace":[
+			"android.app.PendingIntent.checkFlags",
+			"android.app.PendingIntent.getBroadcastAsUser",
+			"android.app.PendingIntent.getBroadcast",
+			"com.facebook.AccessTokenManager.setTokenExpirationBroadcastAlarm",
+			"com.facebook.AccessTokenManager.setCurrentAccessToken",
+			"com.facebook.AccessTokenManager.setCurrentAccessToken",
+			"com.facebook.AccessToken$Companion.setCurrentAccessToken",
+			"com.facebook.AccessToken.setCurrentAccessToken",
+			"com.facebook.login.LoginManager.finishLogin",
+			"com.facebook.login.LoginManager.onActivityResult",
+			"com.facebook.login.LoginManager$1.onActivityResult"
+		],
+		"Labeled Buggy Method":"com.facebook.AccessTokenManager.setTokenExpirationBroadcastAlarm"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*\\Q: Targeting S+ (version 31 and above) requires that one of FLAG_IMMUTABLE or FLAG_MUTABLE be specified when creating a PendingIntent.\nStrongly consider using FLAG_IMMUTABLE, only use FLAG_MUTABLE if some functionality depends on the PendingIntent being mutable, e.g. if it needs to be used with inline replies or bubbles.\\E",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			3
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z3 == 0\", \"$i1 == 0\", \"$i0 == 0\", \"z2 != 0\", \"$z1 == 0\", \"z2 == 0\", \"z3 != 0\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.facebook.AccessTokenManager.setTokenExpirationBroadcastAlarm",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							3
+						],
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"<com.facebook.AccessTokenManager: void setTokenExpirationBroadcastAlarm()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.AccessTokenManager.setTokenExpirationBroadcastAlarm"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.AccessTokenManager.setCurrentAccessToken",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.AccessTokenManager.setCurrentAccessToken"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.AccessToken$Companion.setCurrentAccessToken",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.AccessToken$Companion.setCurrentAccessToken"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.AccessToken.setCurrentAccessToken",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.AccessToken.setCurrentAccessToken"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginManager.finishLogin",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.login.LoginManager.finishLogin"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginManager.onActivityResult",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.login.LoginManager.onActivityResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginManager$1.onActivityResult",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.PendingIntent.checkFlags",
+						"Trace":[
+							"com.facebook.login.LoginManager$1.onActivityResult"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

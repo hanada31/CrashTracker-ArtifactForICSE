@@ -1,0 +1,196 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.worldnewsnow4alead.app-86",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=com.worldnewsnow4alead.app flg=0x10000000 }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"com.worldnewsnow4alead.app.Main.onClick",
+			"android.view.View.performClick",
+			"android.view.View.onKeyUp",
+			"android.widget.TextView.onKeyUp",
+			"android.view.KeyEvent.dispatch",
+			"android.view.View.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.widget.ScrollView.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"android.view.ViewGroup.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.superDispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow.superDispatchKeyEvent",
+			"android.app.Activity.dispatchKeyEvent",
+			"com.android.internal.policy.impl.PhoneWindow$DecorView.dispatchKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.processKeyEvent",
+			"android.view.ViewRootImpl$ViewPostImeInputStage.onProcess",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$AsyncInputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$InputStage.apply",
+			"android.view.ViewRootImpl$InputStage.deliver",
+			"android.view.ViewRootImpl$InputStage.onDeliverToNext",
+			"android.view.ViewRootImpl$InputStage.forward",
+			"android.view.ViewRootImpl$AsyncInputStage.forward",
+			"android.view.ViewRootImpl$ImeInputStage.onFinishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$PendingEvent.run",
+			"android.view.inputmethod.InputMethodManager.invokeFinishedInputEventCallback",
+			"android.view.inputmethod.InputMethodManager.finishedInputEvent",
+			"android.view.inputmethod.InputMethodManager$ImeInputEventSender.onInputEventFinished",
+			"android.view.InputEventSender.dispatchInputEventFinished",
+			"android.os.MessageQueue.nativePollOnce",
+			"android.os.MessageQueue.next",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.worldnewsnow4alead.app.Main.onClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.worldnewsnow4alead.app.Main.onClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.worldnewsnow4alead.app.Main: void onClick(android.view.View)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.worldnewsnow4alead.app.Main.onClick"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.worldnewsnow4alead.app.Main.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.worldnewsnow4alead.app.Main: void onClick(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.worldnewsnow4alead.app.Main: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.worldnewsnow4alead.app.Main: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<android.app.Activity: void startActivity(android.content.Intent)>",
+							"<com.worldnewsnow4alead.app.Main: void onClick(android.view.View)>",
+							"android.app.Activity.startActivity",
+							"android.app.Activity.startActivityForResult",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.ActivityOptions.getAnimationType",
+							"android.app.Activity.getActivityOptions",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityManager$1.<init>",
+							"android.app.ActivityOptions.fromBundle",
+							"<com.worldnewsnow4alead.app.Main: void <init>()>",
+							"<android.app.Activity: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"<com.worldnewsnow4alead.app.Main: void <init>()>",
+							"android.app.ActivityOptions.<init>",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.ActivityOptions.toBundle",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityTransitionState.startExitOutTransition",
+							"android.app.Activity.isTopOfTask",
+							"android.app.ActivityManager.getService",
+							"android.app.ActivityManager.<clinit>",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.getActivityToken",
+							"android.app.Activity.startActivityForResult",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread$ApplicationThread.scheduleSendResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.onProvideReferrer",
+							"android.app.Activity.startActivityFromChild",
+							"android.app.Activity.transferSpringboardActivityOptions",
+							"android.app.Activity.cancelInputsAndStartExitTransition",
+							"android.app.ActivityThread.sendActivityResult",
+							"android.app.ActivityThread.getApplicationThread",
+							"android.app.Activity.startActivityFromChild"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

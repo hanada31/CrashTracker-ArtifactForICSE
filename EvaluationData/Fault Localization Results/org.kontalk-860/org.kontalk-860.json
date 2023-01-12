@@ -1,0 +1,68 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-860",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.support.v4.app.ActivityCompat.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityFromFragment",
+			"android.support.v4.app.FragmentActivity$HostCallbacks.onStartActivityFromFragment",
+			"android.support.v4.app.Fragment.startActivityForResult",
+			"android.support.v4.app.Fragment.startActivityForResult",
+			"org.kontalk.ui.prefs.AppearanceFragment$2.onPreferenceClick"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.prefs.AppearanceFragment$2.onPreferenceClick"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.ui.prefs.AppearanceFragment$2.onPreferenceClick",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"org.kontalk.ui.prefs.AppearanceFragment$2.onPreferenceClick"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.ui.prefs.AppearanceFragment$2: org.kontalk.ui.prefs.AppearanceFragment this$0>",
+						"Influenced By Method":"<org.kontalk.ui.prefs.AppearanceFragment$2: boolean onPreferenceClick(android.preference.Preference)>",
+						"Trace":[
+							"<org.kontalk.ui.prefs.AppearanceFragment$2: boolean onPreferenceClick(android.preference.Preference)>",
+							"modify key field: <org.kontalk.ui.prefs.AppearanceFragment$2: org.kontalk.ui.prefs.AppearanceFragment this$0>",
+							"<org.kontalk.ui.prefs.AppearanceFragment$2: boolean onPreferenceClick(android.preference.Preference)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.prefs.AppearanceFragment$2.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<org.kontalk.ui.prefs.AppearanceFragment$2: org.kontalk.ui.prefs.AppearanceFragment this$0>",
+						"Influenced By Method":"<org.kontalk.ui.prefs.AppearanceFragment$2: void <init>(org.kontalk.ui.prefs.AppearanceFragment)>",
+						"Trace":[
+							"<org.kontalk.ui.prefs.AppearanceFragment$2: void <init>(org.kontalk.ui.prefs.AppearanceFragment)>",
+							"modify key field: <org.kontalk.ui.prefs.AppearanceFragment$2: org.kontalk.ui.prefs.AppearanceFragment this$0>",
+							"<org.kontalk.ui.prefs.AppearanceFragment$2: boolean onPreferenceClick(android.preference.Preference)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

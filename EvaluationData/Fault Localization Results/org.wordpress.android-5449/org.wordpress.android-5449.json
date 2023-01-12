@@ -1,0 +1,75 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-5449",
+		"Method":"dalvik.system.BaseDexClassLoader.findClass",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"dalvik.system.BaseDexClassLoader.findClass",
+			"java.lang.ClassLoader.loadClass",
+			"java.lang.ClassLoader.loadClass",
+			"android.view.LayoutInflater.createView",
+			"android.view.LayoutInflater.createViewFromTag",
+			"android.view.LayoutInflater.createViewFromTag",
+			"android.view.LayoutInflater.rInflate",
+			"android.view.LayoutInflater.rInflateChildren",
+			"android.view.LayoutInflater.rInflate",
+			"android.view.LayoutInflater.rInflateChildren",
+			"android.view.LayoutInflater.rInflate",
+			"android.view.LayoutInflater.rInflateChildren",
+			"android.view.LayoutInflater.inflate",
+			"android.view.LayoutInflater.inflate",
+			"android.view.LayoutInflater.inflate",
+			"android.support.v7.app.AppCompatDelegateImplV9.setContentView",
+			"android.support.v7.app.AppCompatActivity.setContentView",
+			"org.wordpress.android.ui.comments.EditCommentActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.-wrap12",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.comments.EditCommentActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.comments.EditCommentActivity.onCreate",
+				"Candidate Score":83,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"dalvik.system.BaseDexClassLoader.findClass",
+						"Trace":[
+							"org.wordpress.android.ui.comments.EditCommentActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.BaseDexClassLoader.findClass",
+				"Candidate Score":80,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"dalvik.system.BaseDexClassLoader.findClass",
+						"Trace":[
+							"dalvik.system.BaseDexClassLoader.findClass"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

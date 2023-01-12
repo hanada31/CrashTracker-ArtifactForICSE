@@ -1,0 +1,145 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.masslight.nrmp-235",
+		"Method":"android.database.sqlite.SQLiteClosable.acquireReference",
+		"Crash Message":"attempt to re-open an already-closed object: SQLiteDatabase: /data/user/0/com.masslight.nrmp/databases/nrmp_android_user.db",
+		"stack trace":[
+			"android.database.sqlite.SQLiteClosable.acquireReference",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.j256.ormlite.android.AndroidCompiledStatement.getCursor",
+			"com.j256.ormlite.android.AndroidCompiledStatement.runQuery",
+			"com.j256.ormlite.stmt.SelectIterator.<init>",
+			"com.j256.ormlite.stmt.StatementExecutor.buildIterator",
+			"com.j256.ormlite.dao.BaseDaoImpl.createIterator",
+			"com.j256.ormlite.dao.BaseDaoImpl.iterator",
+			"com.j256.ormlite.dao.BaseDaoImpl.iterator",
+			"com.j256.ormlite.dao.LazyForeignCollection.seperateIteratorThrow",
+			"com.j256.ormlite.dao.LazyForeignCollection.iteratorThrow",
+			"com.j256.ormlite.dao.LazyForeignCollection.closeableIterator",
+			"com.j256.ormlite.dao.LazyForeignCollection.iterator",
+			"com.j256.ormlite.dao.LazyForeignCollection.size",
+			"com.masslight.nrmp.model20140630.User.getCurrentUser",
+			"com.masslight.nrmp.model20140630.DBHelperUserConcrete.getCurrentUserInternal",
+			"com.masslight.nrmp.model.DBHelperUser.getCurrentUser",
+			"com.masslight.nrmp.MainActivity.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.j256.ormlite.android.AndroidCompiledStatement.close"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qattempt to re-open an already-closed object: \\E[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 > 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.j256.ormlite.android.AndroidCompiledStatement.execSql",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteClosable: void close()>",
+						"Trace":[
+							"<com.masslight.nrmp.helping.DBMigrationManager: void performMigrationIfRequired()>",
+							"<com.j256.ormlite.android.AndroidCompiledStatement: int execSql(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.String,java.lang.Object[])>",
+							"<com.j256.ormlite.android.AndroidDatabaseConnection: long queryForLong(java.lang.String)>",
+							"<com.j256.ormlite.android.AndroidDatabaseConnection: int insert(java.lang.String,java.lang.Object[],com.j256.ormlite.field.FieldType[],com.j256.ormlite.support.GeneratedKeyHolder)>",
+							"<com.j256.ormlite.android.AndroidDatabaseConnection: void close()>",
+							"<com.j256.ormlite.android.AndroidDatabaseConnection: int update(java.lang.String,java.lang.Object[],com.j256.ormlite.field.FieldType[],java.lang.String)>",
+							"fw: <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.android.AndroidCompiledStatement.getCursor",
+				"Candidate Score":55,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.android.AndroidCompiledStatement.getCursor"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.android.AndroidCompiledStatement.runQuery",
+				"Candidate Score":54,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.android.AndroidCompiledStatement.runQuery"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.stmt.SelectIterator.<init>",
+				"Candidate Score":53,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.stmt.SelectIterator.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.stmt.StatementExecutor.buildIterator",
+				"Candidate Score":52,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.stmt.StatementExecutor.buildIterator"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.dao.BaseDaoImpl.createIterator",
+				"Candidate Score":51,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.dao.BaseDaoImpl.createIterator"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.j256.ormlite.dao.BaseDaoImpl.iterator",
+				"Candidate Score":50,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.j256.ormlite.dao.BaseDaoImpl.iterator"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

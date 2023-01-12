@@ -1,0 +1,43 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.nextgis.mobile-346",
+		"Method":"android.app.SharedPreferencesImpl.getString",
+		"Crash Message":"java.lang.Boolean cannot be cast to java.lang.String",
+		"stack trace":[
+			"android.app.SharedPreferencesImpl.getString",
+			"com.nextgis.mobile.fragment.MapFragment.onResume",
+			"android.support.v4.app.Fragment.performResume",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.moveToState",
+			"android.support.v4.app.FragmentManagerImpl.dispatchResume",
+			"android.support.v4.app.FragmentController.dispatchResume",
+			"android.support.v4.app.FragmentActivity.onResumeFragments",
+			"android.support.v4.app.FragmentActivity.onPostResume",
+			"android.support.v7.app.AppCompatActivity.onPostResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.nextgis.mobile.fragment.MapFragment.onResume"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.nextgis.mobile.fragment.MapFragment.onResume",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.app.SharedPreferencesImpl.getString",
+						"Trace":[
+							"com.nextgis.mobile.fragment.MapFragment.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

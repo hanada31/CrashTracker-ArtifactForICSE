@@ -1,0 +1,150 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.silvermoonapps.learnkoreanquicklite-147",
+		"Method":"android.content.res.Resources.getValue",
+		"Crash Message":"Resource ID #0x0",
+		"stack trace":[
+			"android.content.res.Resources.getValue",
+			"android.content.res.Resources.openRawResourceFd",
+			"android.media.SoundPool$SoundPoolImpl.load",
+			"android.media.SoundPool.load",
+			"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.setupLayout",
+			"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.setupLayout"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QResource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z1 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.setupLayout",
+				"Candidate Score":102,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getIdentifier(java.lang.String,java.lang.String,java.lang.String)>",
+						"Trace":[
+							"<com.silvermoonapps.learnkoreanquicklite.LanguageSetsView: void setupLayout()>",
+							"fw: <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[],
+						"Signaler":"android.content.res.Resources.getValue"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.setupLayout"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1",
+							"2"
+						],
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"<com.silvermoonapps.learnkoreanquicklite.LanguageSetsView: void setupLayout()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.setupLayout"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.loadXML",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: android.content.res.XmlResourceParser getXml(int)>",
+						"Trace":[
+							"<com.silvermoonapps.learnkoreanquicklite.WritingView: java.util.ArrayList loadXML(int,java.lang.String)>",
+							"<com.silvermoonapps.learnkoreanquicklite.MultichoiceView: java.util.ArrayList loadXML(int,java.lang.String)>",
+							"<com.google.android.gms.analytics.k: com.google.android.gms.analytics.j p(int)>",
+							"<com.silvermoonapps.learnkoreanquicklite.ListeningView: java.util.ArrayList loadXML(int,java.lang.String)>",
+							"<com.silvermoonapps.learnkoreanquicklite.LanguageSetsView: java.util.ArrayList loadXML(int,java.lang.String)>",
+							"fw: <android.content.res.Resources: android.content.res.XmlResourceParser getXml(int)>, <android.content.res.Resources: android.content.res.XmlResourceParser loadXmlResourceParser(int,java.lang.String)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":0,
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"android.media.SoundPool.load",
+							"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.loadXML"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.Resources.getValue",
+						"Trace":[
+							"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.silvermoonapps.learnkoreanquicklite.LanguageSetsView.onOptionsItemSelected",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.google.android.gms.internal.fs: void c(android.content.res.Resources,int,int)>",
+							"<com.silvermoonapps.learnkoreanquicklite.LanguageSetsView: boolean onOptionsItemSelected(android.view.MenuItem)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.AssetManager mAssets>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.AssetManager mAssets"
+						],
+						"Signaler":"android.content.res.Resources.getValue"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

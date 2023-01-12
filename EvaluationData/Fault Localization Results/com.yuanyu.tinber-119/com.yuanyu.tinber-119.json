@@ -1,0 +1,75 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.yuanyu.tinber-119",
+		"Method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+		"Crash Message":"Unable to create directory: /storage/sdcard/Download",
+		"stack trace":[
+			"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+			"com.yuanyu.tinber.ui.launch.ApkDownLoad.execute",
+			"com.yuanyu.tinber.ui.launch.LaunchActivity$6.onClick",
+			"com.android.internal.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.yuanyu.tinber.ui.launch.ApkDownLoad.execute"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to create directory: \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 != 0\", \"$z0 == 0\", \"r1 != null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.yuanyu.tinber.ui.launch.ApkDownLoad.execute",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+						"Trace":[
+							"<com.yuanyu.tinber.ui.launch.ApkDownLoad: void execute()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+						"Trace":[
+							"com.yuanyu.tinber.ui.launch.ApkDownLoad.execute"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.yuanyu.tinber.ui.launch.LaunchActivity$6.onClick",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.app.DownloadManager$Request.setDestinationInExternalPublicDir",
+						"Trace":[
+							"com.yuanyu.tinber.ui.launch.LaunchActivity$6.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

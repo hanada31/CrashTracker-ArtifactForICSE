@@ -1,0 +1,134 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.spice.hangman-421",
+		"Method":"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+		"Crash Message":"Can't downgrade database from version 7 to 4",
+		"stack trace":[
+			"android.database.sqlite.SQLiteOpenHelper.onDowngrade",
+			"android.database.sqlite.SQLiteOpenHelper.getDatabaseLocked",
+			"android.database.sqlite.SQLiteOpenHelper.getReadableDatabase",
+			"com.spice.hangman.StoreProvider.query",
+			"android.content.ContentProvider.query",
+			"android.content.ContentProvider$Transport.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.mobisoc.mitr.framework.storage.StorageManager.getRecordData",
+			"com.mobisoc.mitr.framework.storage.StorageManager.getRecordByteArray",
+			"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordByteArray",
+			"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordByteArray",
+			"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordObject",
+			"com.mobisoc.mitr.j2me.framework.InitStorage.getRecordObject",
+			"com.spice.hangman.ReferenceWrapper.onUpgarde",
+			"com.spice.hangman.ReferenceWrapper.extraWorkForHangmanInitializtion",
+			"com.spice.hangman.ReferenceWrapper.<init>",
+			"com.spice.hangman.ReferenceWrapper.getRef",
+			"com.spice.hangman.Hangman.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.spice.hangman.StoreProvider$DatabaseHelper.onDowngrade"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan't downgrade database from version \\E[\\s\\S]*\\Q to \\E[\\s\\S]*",
+		"Related Variable Type":"Empty",
+		"Related Condition Type":"EmptyCondition",
+		"ETS-related Type":"NoConditionVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.spice.hangman.StoreProvider$DatabaseHelper.onDowngrade",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Not Override Method",
+						"Explanation":"Forgets to override the signaler method",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.spice.hangman.StoreProvider.query",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.spice.hangman.StoreProvider.query"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mobisoc.mitr.framework.storage.StorageManager.getRecordData",
+				"Candidate Score":77,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.mobisoc.mitr.framework.storage.StorageManager.getRecordData"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mobisoc.mitr.framework.storage.StorageManager.getRecordByteArray",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.mobisoc.mitr.framework.storage.StorageManager.getRecordByteArray"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordByteArray",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordByteArray"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordObject",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.mobisoc.mitr.j2me.framework.StorageMgr.getRecordObject"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.mobisoc.mitr.framework.storage.StoreProvider$DatabaseHelper.onDowngrade",
+				"Candidate Score":66,
+				"Reasons":[
+					{
+						"Reason Type":"Not Override Method",
+						"Explanation":"Forgets to override the signaler method",
+						"Trace":[
+							"android.database.sqlite.SQLiteOpenHelper.onDowngrade"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

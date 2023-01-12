@@ -1,0 +1,171 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"cgeo.geocaching-6061547",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x0",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.res.Resources.getString",
+			"cgeo.geocaching.enumerations.CacheAttribute.getL10n",
+			"cgeo.geocaching.export.GpxExport$ExportTask.writeAttributes",
+			"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground$5f8445a4",
+			"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask$Sync.innerRun",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"cgeo.geocaching.export.GpxExport$ExportTask.writeAttributes"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"cgeo.geocaching.enumerations.CacheAttribute.getL10n",
+				"Candidate Score":101,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: java.lang.String getString(int)>",
+						"Trace":[
+							"<cgeo.geocaching.cgData: java.util.List getLists(android.content.res.Resources)>",
+							"<cgeo.geocaching.cgData: cgeo.geocaching.StoredList getList(int,android.content.res.Resources)>",
+							"<cgeo.geocaching.enumerations.CacheAttribute: java.lang.String getL10n(boolean)>",
+							"<cgeo.geocaching.apps.cache.navi.NavigationAppFactory: android.view.MenuItem addMenuItems$7a39a9e1(android.view.Menu,android.content.res.Resources)>",
+							"<cgeo.geocaching.CacheDetailActivity$DetailsViewCreator$AbstractWatchlistClickListener: void doExecute(int,int,java.lang.Thread)>",
+							"<cgeo.geocaching.enumerations.StatusCode: java.lang.String getErrorString(android.content.res.Resources)>",
+							"fw: <android.content.res.Resources: java.lang.String getString(int)>, <android.content.res.Resources: java.lang.CharSequence getText(int)>, key field: <android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl>, <android.content.res.Resources: java.lang.CharSequence getText(int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.content.res.ResourcesImpl mResourcesImpl"
+						],
+						"Signaler":"android.content.res.Resources.getText"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.enumerations.CacheAttribute.getL10n"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"<cgeo.geocaching.enumerations.CacheAttribute: java.lang.String getL10n(boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cgeo.geocaching.enumerations.CacheAttribute.getL10n"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.enumerations.CacheAttribute.<init>",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<cgeo.geocaching.enumerations.CacheAttribute: int stringIdYes>",
+						"Influenced By Method":"<cgeo.geocaching.enumerations.CacheAttribute: void <init>(java.lang.String,int,int,java.lang.String,int,int,int)>",
+						"Trace":[
+							"<cgeo.geocaching.enumerations.CacheAttribute: void <init>(java.lang.String,int,int,java.lang.String,int,int,int)>",
+							"modify key field: <cgeo.geocaching.enumerations.CacheAttribute: int stringIdYes>",
+							"<cgeo.geocaching.enumerations.CacheAttribute: java.lang.String getL10n(boolean)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.export.GpxExport$ExportTask.writeAttributes",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.writeAttributes"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.writeAttributes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground$5f8445a4",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground$5f8445a4"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground$5f8445a4"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"cgeo.geocaching.export.GpxExport$ExportTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

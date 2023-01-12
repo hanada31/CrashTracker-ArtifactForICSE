@@ -1,0 +1,112 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.nextgis.mobile-260",
+		"Method":"android.content.res.Resources.loadDrawable",
+		"Crash Message":"Resource is not a Drawable (color or path): TypedValue{t=0x2/d=0x7f0100df a=3}",
+		"stack trace":[
+			"android.content.res.Resources.loadDrawable",
+			"android.content.res.TypedArray.getDrawable",
+			"android.view.View.<init>",
+			"android.widget.ImageView.<init>",
+			"android.widget.ImageButton.<init>",
+			"android.support.v7.widget.Toolbar.ensureNavButtonView",
+			"android.support.v7.widget.Toolbar.setNavigationOnClickListener",
+			"android.support.v7.internal.widget.ToolbarWidgetWrapper.<init>",
+			"android.support.v7.internal.widget.ToolbarWidgetWrapper.<init>",
+			"android.support.v7.internal.app.ToolbarActionBar.<init>",
+			"android.support.v7.app.AppCompatDelegateImplV7.setSupportActionBar",
+			"android.support.v7.app.AppCompatActivity.setSupportActionBar",
+			"com.nextgis.mobile.activity.MainActivity.onCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.nextgis.mobile.activity.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QResource is not a Drawable (color or path): \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r22 != null\", \"r63 != null\", \"z4 == 0\", \"i0 < 28\", \"i20 > 31\", \"r64 == null\", \"z4 == 0\", \"r63 == null\", \"z4 == 0\", \"z4 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.nextgis.mobile.activity.MainActivity.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.res.Resources: int getColor(int)>",
+						"Trace":[
+							"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"<com.nextgis.maplibui.fragment.ReorderedLayerView: android.graphics.Bitmap getBitmapFromView(android.view.View)>",
+							"<com.nextgis.maplibui.util.NotificationHelper: android.graphics.Bitmap getLargeIcon(int,android.content.res.Resources)>",
+							"fw: <android.content.res.Resources: int getColor(int)>, <android.content.res.Resources: void getValue(int,android.util.TypedValue,boolean)>, <android.content.res.AssetManager: boolean getResourceValue(int,int,android.util.TypedValue,boolean)>, <android.content.res.StringBlock: java.lang.CharSequence get(int)>, <android.content.res.StringBlock: java.lang.CharSequence applyStyles(java.lang.String,int,android.content.res.StringBlock$StyleIDs)>, <android.content.res.StringBlock: android.text.style.CharacterStyle getColor(java.lang.String,boolean)>, <android.content.res.Resources: android.content.res.Resources getSystem()>, <android.content.res.Resources: void <init>()>, key field: <android.content.res.Resources: android.util.LongSparseArray mColorDrawableCache>, <android.content.res.Resources: android.graphics.drawable.Drawable loadDrawable(android.util.TypedValue,int)>"
+						],
+						"Influenced Field":[
+							"android.content.res.Resources: android.util.LongSparseArray mColorDrawableCache"
+						],
+						"Signaler":"android.content.res.Resources.loadDrawable"
+					},
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.nextgis.mobile.activity.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.content.res.Resources.loadDrawable",
+						"Trace":[
+							"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.loadDrawable",
+						"Trace":[
+							"com.nextgis.mobile.activity.MainActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.nextgis.mobile.activity.MainActivity: android.support.v7.widget.Toolbar mToolbar>",
+						"Influenced By Method":"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>",
+							"modify key field: <com.nextgis.mobile.activity.MainActivity: android.support.v7.widget.Toolbar mToolbar>",
+							"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.nextgis.mobile.activity.MainActivity.setActionBarState",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.nextgis.mobile.activity.MainActivity: android.support.v7.widget.Toolbar mToolbar>",
+						"Influenced By Method":"<com.nextgis.mobile.activity.MainActivity: void setActionBarState(boolean)>",
+						"Trace":[
+							"<com.nextgis.mobile.activity.MainActivity: void setActionBarState(boolean)>",
+							"modify key field: <com.nextgis.mobile.activity.MainActivity: android.support.v7.widget.Toolbar mToolbar>",
+							"<com.nextgis.mobile.activity.MainActivity: void onCreate(android.os.Bundle)>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Resource XML"
+		]
+	}
+}

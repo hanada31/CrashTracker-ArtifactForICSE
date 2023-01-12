@@ -1,0 +1,93 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-1843",
+		"Method":"android.content.res.Resources.getText",
+		"Crash Message":"String resource ID #0x0",
+		"stack trace":[
+			"android.content.res.Resources.getText",
+			"android.content.Context.getText",
+			"android.app.AlertDialog$Builder.setTitle",
+			"org.wordpress.android.widgets.AuthErrorDialogFragment.onCreateDialog",
+			"android.app.DialogFragment.getLayoutInflater",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.moveToState",
+			"android.app.FragmentManagerImpl.dispatchActivityCreated",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.access$600",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.widgets.AuthErrorDialogFragment.onCreateDialog"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QString resource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.widgets.AuthErrorDialogFragment.onCreateDialog",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.widgets.AuthErrorDialogFragment.onCreateDialog"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"org.wordpress.android.widgets.AuthErrorDialogFragment.onCreateDialog"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":78,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.content.res.Resources.getText",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

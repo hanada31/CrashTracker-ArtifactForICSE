@@ -1,0 +1,1496 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.justnote-78",
+		"Method":"android.database.sqlite.SQLiteClosable.acquireReference",
+		"Crash Message":"attempt to re-open an already-closed object: SQLiteDatabase: /data/data/com.justnote/databases/NoteWithYourMind.db",
+		"stack trace":[
+			"android.database.sqlite.SQLiteClosable.acquireReference",
+			"android.database.sqlite.SQLiteDatabase.rawQueryWithFactory",
+			"android.database.sqlite.SQLiteDatabase.rawQuery",
+			"com.justnote.CNoteDBCtrl.getNotesByID",
+			"com.justnote.NoteListUICtrl.updateListData",
+			"com.justnote.NoteListUICtrl.initializeSource",
+			"com.justnote.RootViewList.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.justnote.CNoteDBCtrl.updateDBFile"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\Qattempt to re-open an already-closed object: \\E[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i0 > 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getNotesByID",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.justnote.CNoteDBCtrl.getNotesByID"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.NoteListUICtrl.updateListData",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.justnote.NoteListUICtrl.updateListData"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.NoteListUICtrl.initializeSource",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.justnote.NoteListUICtrl.initializeSource"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.RootViewList.onCreate",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.justnote.RootViewList.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.Delete",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void endTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void endTransaction()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void endTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void beginTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void beginTransaction()>, <android.database.sqlite.SQLiteDatabase: void beginTransaction(android.database.sqlite.SQLiteTransactionListener,boolean)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String,java.lang.Object[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void Delete(java.lang.Integer[])>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String,java.lang.Object[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void Delete(java.lang.Integer[])>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.endTransaction",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void endTransaction()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void endTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void endTransaction()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void endTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void setTransactionSuccessful()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.beginTransaction",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void beginTransaction()>",
+						"Trace":[
+							"<com.justnote.SDSQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void beginTransaction()>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void beginTransaction()>, <android.database.sqlite.SQLiteDatabase: void beginTransaction(android.database.sqlite.SQLiteTransactionListener,boolean)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.updateDBFile",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: void close()>",
+						"Trace":[
+							"<com.justnote.MemeorySqlDB: void close()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: void close()>",
+							"<com.justnote.CNoteDBCtrl: void updateDBFile(com.justnote.Setting$DBStoreMedia_Type)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.justnote.Setting: void copyDatabase(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.MemeorySqlDB: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: java.lang.String getPassWord()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.Cursor getAllNoteRecords()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void updateDBFile(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.CNoteDBCtrl: void <init>(android.content.Context)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.Create",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void onDBCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int Create(com.justnote.CMemoInfo,android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int insertMemoInfo(com.justnote.CMemoInfo)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.insertMemoInfo",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void onDBCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int Create(com.justnote.CMemoInfo,android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int insertMemoInfo(com.justnote.CMemoInfo)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.onDBCreate",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void onDBUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.justnote.CNoteDBCtrl: void onDBCreate(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void onDBCreate(android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int Create(com.justnote.CMemoInfo,android.database.sqlite.SQLiteDatabase)>",
+							"<com.justnote.CNoteDBCtrl: int insertMemoInfo(com.justnote.CMemoInfo)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: long insert(java.lang.String,java.lang.String,android.content.ContentValues)>, <android.database.sqlite.SQLiteDatabase: long insertWithOnConflict(java.lang.String,java.lang.String,android.content.ContentValues,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.onDBUpgrade",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void onDBUpgrade(android.database.sqlite.SQLiteDatabase,int,int)>",
+							"<com.justnote.CNoteDBCtrl: void onDBCreate(android.database.sqlite.SQLiteDatabase)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.setPassWord",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void setPassWord(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: void updateMemInfo(com.justnote.CMemoInfo)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int updateWithOnConflict(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.updateMemInfo",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: void setPassWord(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: void updateMemInfo(com.justnote.CMemoInfo)>",
+							"fw: <android.database.sqlite.SQLiteDatabase: int update(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int updateWithOnConflict(java.lang.String,android.content.ContentValues,java.lang.String,java.lang.String,int)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.deleteAdditionalFile",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.CNoteDBCtrl: void deleteMediaFile(android.database.Cursor)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItems(android.database.Cursor,java.util.List)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.deleteMediaFile",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.CNoteDBCtrl: void deleteMediaFile(android.database.Cursor)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getAllNotEncodeMemo",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getEncodeInfo",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getFolderInRoot",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getNoteRec",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getPassWord",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getRecCountInFolder",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: long getLong(int)>",
+						"Trace":[
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.SDDBCtrl: void setRemind(android.database.Cursor,int,int)>",
+							"<com.justnote.SDDBCtrl: int Update(int,android.database.Cursor,int)>",
+							"<com.justnote.SDDBCtrl: int Insert(int,android.database.Cursor)>",
+							"<com.justnote.CRemindOperator: int getRemindInfo(android.database.Cursor,com.justnote.CRemindInfo)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItem(android.database.Cursor,com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"fw: <android.database.Cursor: long getLong(int)>, <android.database.MergeCursor: long getLong(int)>, <com.android.internal.database.SortCursor: long getLong(int)>, <android.database.AbstractWindowedCursor: long getLong(int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.getRemindInfo",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.selectRecByuuid",
+				"Candidate Score":71,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String[])>",
+						"Trace":[
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor selectRecByuuid(java.lang.String)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getRemindInfo()>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getPassWord()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNotesByID(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getNoteRec(int)>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getFolderInRoot()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getEncodeInfo()>",
+							"<com.justnote.CNoteDBCtrl: android.database.Cursor getAllNotEncodeMemo()>",
+							"fw: <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQuery(java.lang.String,java.lang.String)>, <android.database.sqlite.SQLiteDatabase: android.database.Cursor rawQueryWithFactory(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String,java.lang.String,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteDirectCursorDriver: android.database.Cursor query(android.database.sqlite.SQLiteDatabase$CursorFactory,java.lang.String)>, <android.database.sqlite.SQLiteQuery: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.transferDatabase",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItems(android.database.Cursor,java.util.List)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.transferDatabaseFromMemory",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItems(android.database.Cursor,java.util.List)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.updateEncodeInfo",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.CNoteDBCtrl.<init>",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.justnote.Setting: void copyDatabase(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.MemeorySqlDB: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: java.lang.String getPassWord()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.Cursor getAllNoteRecords()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void updateDBFile(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.CNoteDBCtrl: void <init>(android.content.Context)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.NoteListArrayAdapter.updateCursor",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean requery()>",
+						"Trace":[
+							"<com.justnote.NoteListArrayAdapter: void updateCursor()>",
+							"fw: <android.database.Cursor: boolean requery()>, <android.database.sqlite.SQLiteCursor: boolean requery()>, <android.database.CursorWindow: void clear()>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void deactivate()>",
+						"Trace":[
+							"<com.justnote.NoteListArrayAdapter: void updateCursor()>",
+							"fw: <android.database.Cursor: void deactivate()>, <android.database.BulkCursorToCursorAdaptor: void deactivate()>, <android.database.CursorToBulkCursorAdaptor: void deactivate()>, <android.database.AbstractCursor: void deactivate()>, <android.database.AbstractWindowedCursor: void onDeactivateOrClose()>, <android.database.AbstractWindowedCursor: void closeWindow()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.NoteListUICtrl.processMoveClick",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.RootViewList.ChangeFolderName",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: java.lang.String getString(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.CNoteDBCtrl: void deleteMediaFile(android.database.Cursor)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: java.lang.String getString(int)>, <android.database.MergeCursor: java.lang.String getString(int)>, <com.android.internal.database.SortCursor: java.lang.String getString(int)>, <android.database.AbstractWindowedCursor: java.lang.String getString(int)>, <android.database.CursorWindow: java.lang.String getString(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.RootViewList$6.onClick",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItems(android.database.Cursor,java.util.List)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.RootViewList.ChangeFolderEncode",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.RootViewList.cancelNoteRecEncode",
+				"Candidate Score":67,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToNext()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.SDDBCtrl: void subImport(int,android.database.Cursor)>",
+							"<com.justnote.BootReceiver: void onReceive(android.content.Context,android.content.Intent)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.ConvertCursorToMemoInfo: void ConvertItems(android.database.Cursor,java.util.List)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabaseFromMemory(com.justnote.SimpleNoteDBAccessorMemory)>",
+							"<com.justnote.CNoteDBCtrl: void transferDatabase(com.justnote.SimpleNoteDBAccessorSDCard)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToNext()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, <android.database.BulkCursorToCursorAdaptor: boolean onMove(int,int)>, <android.database.CursorToBulkCursorAdaptor: android.database.CursorWindow getWindow(int)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getInt(int)>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getInt(int)>, <android.database.MergeCursor: int getInt(int)>, <com.android.internal.database.SortCursor: int getInt(int)>, <android.database.AbstractWindowedCursor: int getInt(int)>, <android.database.CursorWindow: int getInt(int,int)>, <android.database.CursorWindow: long getLong(int,int)>, <android.database.sqlite.SQLiteClosable: void acquireReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: int getCount()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void processMoveClick(android.view.View)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: int getCount()>, <android.database.MergeCursor: int getCount()>, <com.android.internal.database.SortCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: int getCount()>, <android.database.sqlite.SQLiteCursor: void fillWindow(int)>, <android.database.AbstractWindowedCursor: void clearOrCreateWindow(java.lang.String)>, <android.database.CursorWindow: void <init>(java.lang.String)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: void close()>",
+						"Trace":[
+							"<com.justnote.RootViewList: void cancelNoteRecEncode()>",
+							"<com.justnote.RootViewList: void ChangeFolderName(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList: void ChangeFolderEncode(android.widget.AdapterView$AdapterContextMenuInfo)>",
+							"<com.justnote.RootViewList$6: void onClick(android.content.DialogInterface,int)>",
+							"<com.justnote.NoteListUICtrl: void updateListData(int)>",
+							"<com.justnote.CNoteDBCtrl: long getRecCountInFolder(int)>",
+							"<com.justnote.CNoteDBCtrl: boolean Delete(java.util.ArrayList)>",
+							"<com.justnote.CNoteDBCtrl: void updateEncodeInfo(com.justnote.CMemoInfo)>",
+							"<com.justnote.CNoteDBCtrl: boolean deleteAdditionalFile(int)>",
+							"fw: <android.database.Cursor: void close()>, <android.database.MergeCursor: void close()>, <android.database.BulkCursorToCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void close()>, <android.database.CursorToBulkCursorAdaptor: void disposeLocked()>, <android.database.sqlite.SQLiteCursor: void close()>, <android.database.sqlite.SQLiteClosable: void close()>, <android.database.sqlite.SQLiteClosable: void releaseReference()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.justnote.Setting.copyDatabase",
+				"Candidate Score":64,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+						"Trace":[
+							"<com.justnote.Setting: void copyDatabase(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.MemeorySqlDB: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: java.lang.String getPassWord()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.Cursor getAllNoteRecords()>",
+							"<com.justnote.SimpleNoteDBAccessorMemory: android.database.sqlite.SQLiteDatabase getWritableDatabase()>",
+							"<com.justnote.CNoteDBCtrl: void updateDBFile(com.justnote.Setting$DBStoreMedia_Type)>",
+							"<com.justnote.CNoteDBCtrl: void <init>(android.content.Context)>",
+							"fw: <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getWritableDatabase()>, <android.database.sqlite.SQLiteOpenHelper: android.database.sqlite.SQLiteDatabase getDatabaseLocked(boolean)>, <android.database.sqlite.SQLiteDatabase: void setVersion(int)>, <android.database.sqlite.SQLiteDatabase: void execSQL(java.lang.String)>, <android.database.sqlite.SQLiteDatabase: int executeSql(java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteStatement: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object)>, <android.database.sqlite.SQLiteProgram: void <init>(android.database.sqlite.SQLiteDatabase,java.lang.String,java.lang.Object,android.os.CancellationSignal)>, <android.database.sqlite.SQLiteClosable: void <init>()>, key field: <android.database.sqlite.SQLiteClosable: int mReferenceCount>, <android.database.sqlite.SQLiteClosable: void acquireReference()>"
+						],
+						"Influenced Field":[
+							"android.database.sqlite.SQLiteClosable: int mReferenceCount"
+						],
+						"Signaler":"android.database.sqlite.SQLiteClosable.acquireReference"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

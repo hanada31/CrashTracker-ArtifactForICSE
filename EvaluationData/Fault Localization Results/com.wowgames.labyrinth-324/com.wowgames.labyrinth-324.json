@@ -1,0 +1,469 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.wowgames.labyrinth-324",
+		"Method":"android.app.LoadedApk.forgetServiceDispatcher",
+		"Crash Message":"Service not registered: com.wowgames.labyrinth.iabutils.IabHelper$1@a47eb93",
+		"stack trace":[
+			"android.app.LoadedApk.forgetServiceDispatcher",
+			"android.app.ContextImpl.unbindService",
+			"android.content.ContextWrapper.unbindService",
+			"com.wowgames.labyrinth.iabutils.IabHelper.dispose",
+			"com.wowgames.labyrinth.GameStarterActivity.onDestroy",
+			"android.app.Activity.performDestroy",
+			"android.app.Instrumentation.callActivityOnDestroy",
+			"android.app.ActivityThread.performDestroyActivity"
+		],
+		"Labeled Buggy Method":"com.wowgames.labyrinth.iabutils.IabHelper.startSetup"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QService not registered: \\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"r3 != null\", \"r42 == null\", \"r6 == null\", \"r38 == null\", \"r43 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.wowgames.labyrinth.iabutils.IabHelper.dispose",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.wowgames.labyrinth.iabutils.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>",
+							"fw: <android.content.Context: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1"
+						],
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"com.wowgames.labyrinth.iabutils.IabHelper.dispose"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.wowgames.labyrinth.iabutils.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>",
+							"modify key field: <com.wowgames.labyrinth.iabutils.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.iabutils.IabHelper.startSetup",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<com.facebook.android.Facebook: boolean extendAccessToken(android.content.Context,com.facebook.android.Facebook$ServiceListener)>",
+							"<com.facebook.internal.PlatformServiceClient: boolean start()>",
+							"<com.google.android.gms.analytics.c: void connect()>",
+							"<com.google.android.gms.internal.ej: boolean a(java.lang.String,com.google.android.gms.internal.eh$f)>",
+							"<com.google.android.gms.auth.GoogleAuthUtil: java.lang.String getToken(android.content.Context,java.lang.String,java.lang.String,android.os.Bundle)>",
+							"<com.google.android.gms.auth.GoogleAuthUtil: void clearToken(android.content.Context,java.lang.String)>",
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void startSetup(com.wowgames.labyrinth.iabutils.IabHelper$OnIabSetupFinishedListener)>",
+							"<com.google.android.gms.ads.identifier.AdvertisingIdClient: com.google.android.gms.common.a g(android.content.Context)>",
+							"<com.facebook.Session$TokenRefreshRequest: void bind()>",
+							"fw: <android.content.Context: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.wowgames.labyrinth.iabutils.IabHelper: android.content.ServiceConnection mServiceConn>",
+						"Influenced By Method":"<com.wowgames.labyrinth.iabutils.IabHelper: void startSetup(com.wowgames.labyrinth.iabutils.IabHelper$OnIabSetupFinishedListener)>",
+						"Trace":[
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void startSetup(com.wowgames.labyrinth.iabutils.IabHelper$OnIabSetupFinishedListener)>",
+							"modify key field: <com.wowgames.labyrinth.iabutils.IabHelper: android.content.ServiceConnection mServiceConn>",
+							"<com.wowgames.labyrinth.iabutils.IabHelper: void dispose()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.onDestroy",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.wowgames.labyrinth.GameStarterActivity.onDestroy"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1",
+						"Influenced method":"android.app.LoadedApk.forgetServiceDispatcher",
+						"Trace":[
+							"com.wowgames.labyrinth.GameStarterActivity.onDestroy"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.unbindService",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity: void unbindService(android.content.ServiceConnection)>",
+							"fw: <android.content.ContextWrapper: void unbindService(android.content.ServiceConnection)>, <android.app.ContextImpl: void unbindService(android.content.ServiceConnection)>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.bindService",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>",
+							"fw: <android.content.ContextWrapper: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindService(android.content.Intent,android.content.ServiceConnection,int)>, <android.app.ContextImpl: boolean bindServiceCommon(android.content.Intent,android.content.ServiceConnection,int,android.os.Handler,android.os.UserHandle)>, <android.app.LoadedApk: android.app.IServiceConnection getServiceDispatcher(android.content.ServiceConnection,android.content.Context,android.os.Handler,int)>, key field: <android.app.LoadedApk: android.util.ArrayMap mServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.createPackageContext",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity: android.content.Context createPackageContext(java.lang.String,int)>",
+							"fw: <android.content.ContextWrapper: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContext(java.lang.String,int)>, <android.app.ContextImpl: android.content.Context createPackageContextAsUser(java.lang.String,int,android.os.UserHandle)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(java.lang.String,android.content.res.CompatibilityInfo,int,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,int)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity$16.run",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$16: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$4: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$3: void run()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createRateDialog()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createQuitDialog()>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity$5.handleMessage",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.alert",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Dialog: void show()>",
+						"Trace":[
+							"<com.google.example.games.basegameutils.BaseGameUtils: void showAlert(android.app.Activity,java.lang.String)>",
+							"<com.google.example.games.basegameutils.BaseGameUtils: void showActivityResultError(android.app.Activity,int,int,int)>",
+							"<com.google.example.games.basegameutils.BaseGameUtils: boolean resolveConnectionFailure(android.app.Activity,com.google.android.gms.common.api.GoogleApiClient,com.google.android.gms.common.ConnectionResult,int,java.lang.String)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void alert(java.lang.String)>",
+							"fw: <android.app.Dialog: void show()>, <android.app.Dialog: void dispatchOnCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onCreate(android.os.Bundle)>, <android.app.ProgressDialog: void onProgressChanged()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.createQuitDialog",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$16: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$4: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$3: void run()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createRateDialog()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createQuitDialog()>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.createRateDialog",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.AlertDialog$Builder: android.app.AlertDialog show()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$16: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$4: void run()>",
+							"<com.badlogic.gdx.backends.android.AndroidInput$3: void run()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createRateDialog()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void createQuitDialog()>",
+							"fw: <android.app.AlertDialog$Builder: android.app.AlertDialog show()>, <android.app.TimePickerDialog: void show()>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.finishAfterTransition",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void finishAfterTransition()>",
+						"Trace":[
+							"<com.badlogic.gdx.backends.android.AndroidApplication: void finishAfterTransition()>",
+							"<com.google.android.gms.ads.AdActivity: void finishAfterTransition()>",
+							"<com.batch.android.AdActivity: void finishAfterTransition()>",
+							"<com.google.android.gms.tagmanager.PreviewActivity: void finishAfterTransition()>",
+							"<com.facebook.LoginActivity: void finishAfterTransition()>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void finishAfterTransition()>",
+							"fw: <android.app.Activity: void finishAfterTransition()>, <android.app.ActivityTransitionState: boolean startExitBackTransition(android.app.Activity)>, <android.app.ExitTransitionCoordinator: void startExit(int,android.content.Intent)>, <android.app.ExitTransitionCoordinator: void delayCancel()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.setGpSignOutByHisWill",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.setIsPremium",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.setIsRated",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.setWasGpSignedOut",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.setWasUserGpLoggedIn",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.content.SharedPreferences$Editor: boolean commit()>",
+						"Trace":[
+							"<com.wowgames.labyrinth.GameStarterActivity$5: void handleMessage(android.os.Message)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasUserGpLoggedIn(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setWasGpSignedOut(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsRated(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setIsPremium(boolean)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void setGpSignOutByHisWill(boolean)>",
+							"fw: <android.content.SharedPreferences$Editor: boolean commit()>, <android.app.SharedPreferencesImpl: void access$100(android.app.SharedPreferencesImpl,android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.SharedPreferencesImpl: void enqueueDiskWrite(android.app.SharedPreferencesImpl$MemoryCommitResult,java.lang.Runnable)>, <android.app.QueuedWork: void queue(java.lang.Runnable,boolean)>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.wowgames.labyrinth.GameStarterActivity.showDialog",
+				"Candidate Score":68,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void showDialog(int)>",
+						"Trace":[
+							"<com.badlogic.gdx.backends.android.AndroidApplication: void showDialog(int)>",
+							"<com.google.android.gms.ads.AdActivity: void showDialog(int)>",
+							"<com.batch.android.AdActivity: void showDialog(int)>",
+							"<com.google.android.gms.tagmanager.PreviewActivity: void showDialog(int)>",
+							"<com.facebook.LoginActivity: void showDialog(int)>",
+							"<com.wowgames.labyrinth.GameStarterActivity: void showDialog(int)>",
+							"fw: <android.app.Activity: void showDialog(int)>, <android.app.Activity: boolean showDialog(int,android.os.Bundle)>, <android.app.Dialog: void show()>, <android.app.Presentation: void onStart()>, <android.app.ActivityThread$H: void handleMessage(android.os.Message)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfoNoCheck(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo)>, <android.app.ActivityThread: android.app.LoadedApk getPackageInfo(android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, <android.app.LoadedApk: void <init>(android.app.ActivityThread,android.content.pm.ApplicationInfo,android.content.res.CompatibilityInfo,java.lang.ClassLoader,boolean,boolean,boolean)>, key field: <android.app.LoadedApk: android.util.ArrayMap mUnboundServices>, <android.app.LoadedApk: android.app.IServiceConnection forgetServiceDispatcher(android.content.Context,android.content.ServiceConnection)>"
+						],
+						"Influenced Field":[
+							"android.app.LoadedApk: android.util.ArrayMap mUnboundServices"
+						],
+						"Signaler":"android.app.LoadedApk.forgetServiceDispatcher"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

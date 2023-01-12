@@ -1,0 +1,67 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.apps.salad.bengali.recipe-229",
+		"Method":"android.widget.Spinner.setAdapter",
+		"Crash Message":"Spinner adapter view type count must be 1",
+		"stack trace":[
+			"android.widget.Spinner.setAdapter",
+			"com.android.internal.widget.ActionBarView.setDropdownParams",
+			"com.android.internal.app.WindowDecorActionBar.setListNavigationCallbacks",
+			"android.support.v7.a.s.a",
+			"android.support.v7.a.u.a",
+			"com.apps.salad.bengali.recipe.ui.RecipeItemListActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.apps.salad.bengali.recipe.ui.RecipeItemListActivity$Inner.getViewTypeCount"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QSpinner adapter view type count must be 1\\E",
+		"Related Variable Type":"ParaAndField",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$i1 == 1\", \"r2 == null\", \"i0 < 21\", \"$r1 != null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.apps.salad.bengali.recipe.ui.RecipeItemListActivity.onCreate",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.apps.salad.bengali.recipe.ui.RecipeItemListActivity.onCreate"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.widget.Spinner.setAdapter",
+						"Trace":[
+							"<com.apps.salad.bengali.recipe.ui.RecipeItemListActivity: void onCreate(android.os.Bundle)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.widget.Spinner.setAdapter",
+						"Trace":[
+							"com.apps.salad.bengali.recipe.ui.RecipeItemListActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"OS Update"
+		]
+	}
+}

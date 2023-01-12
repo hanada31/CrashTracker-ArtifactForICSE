@@ -1,0 +1,139 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-808",
+		"Method":"android.database.AbstractCursor.checkPosition",
+		"Crash Message":"Index 0 requested, with a size of 0",
+		"stack trace":[
+			"android.database.AbstractCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.getString",
+			"android.database.CursorWrapper.getString",
+			"org.kontalk.ui.ComposeMessageFragment.onActivityResult",
+			"android.support.v4.app.FragmentActivity.onActivityResult",
+			"org.kontalk.ui.ComposeMessage.onActivityResult",
+			"android.app.Activity.dispatchActivityResult",
+			"android.app.ActivityThread.deliverResults",
+			"android.app.ActivityThread.handleSendResult",
+			"android.app.ActivityThread.access$1300",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.ComposeMessageFragment.onActivityResult"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"-1 == $i0\", \"$i3 != $i4\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment$TextMessageThread.run",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.AbstractCursor: boolean moveToFirst()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void sendBinaryMessage(android.net.Uri,java.lang.String,boolean,java.lang.Class)>",
+							"<org.kontalk.ui.ComposeMessageFragment$TextMessageThread: void run()>",
+							"fw: <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.processArguments",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.AbstractCursor: boolean moveToFirst()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void sendBinaryMessage(android.net.Uri,java.lang.String,boolean,java.lang.Class)>",
+							"<org.kontalk.ui.ComposeMessageFragment$TextMessageThread: void run()>",
+							"fw: <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.sendBinaryMessage",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.AbstractCursor: boolean moveToFirst()>",
+						"Trace":[
+							"<org.kontalk.ui.ComposeMessageFragment: void processArguments(android.os.Bundle)>",
+							"<org.kontalk.ui.ComposeMessageFragment: void sendBinaryMessage(android.net.Uri,java.lang.String,boolean,java.lang.Class)>",
+							"<org.kontalk.ui.ComposeMessageFragment$TextMessageThread: void run()>",
+							"fw: <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessageFragment.onActivityResult",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.ui.ComposeMessageFragment.onActivityResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.ComposeMessage.onActivityResult",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.ui.ComposeMessage.onActivityResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

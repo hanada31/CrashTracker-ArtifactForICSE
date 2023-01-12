@@ -1,0 +1,53 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"de.tum.in.tumcampus-150363580",
+		"Method":"android.database.AbstractCursor.checkPosition",
+		"Crash Message":"Index -1 requested, with a size of 1",
+		"stack trace":[
+			"android.database.AbstractCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.checkPosition",
+			"android.database.AbstractWindowedCursor.getString",
+			"de.tum.in.tumcampus.services.SilenceService.onHandleIntent",
+			"android.app.IntentService$ServiceHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.os.HandlerThread.run"
+		],
+		"Labeled Buggy Method":"de.tum.in.tumcampus.services.SilenceService.onHandleIntent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"[\\s\\S]*",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"-1 == $i0\", \"$i3 != $i4\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"de.tum.in.tumcampus.services.SilenceService.onHandleIntent",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"de.tum.in.tumcampus.services.SilenceService.onHandleIntent"
+						]
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.database.Cursor: boolean moveToFirst()>",
+						"Trace":[
+							"<de.tum.in.tumcampus.services.SilenceService: void onHandleIntent(android.content.Intent)>",
+							"fw: <android.database.Cursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToFirst()>, <android.database.AbstractCursor: boolean moveToPosition(int)>, key field: <android.database.AbstractCursor: int mPos>, <android.database.AbstractCursor: void checkPosition()>"
+						],
+						"Influenced Field":[
+							"android.database.AbstractCursor: int mPos"
+						],
+						"Signaler":"android.database.AbstractCursor.checkPosition"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

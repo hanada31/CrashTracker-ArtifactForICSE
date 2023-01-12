@@ -1,0 +1,175 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"ch.logixisland.anuto-1",
+		"Method":"android.app.FragmentManagerImpl.checkStateLoss",
+		"Crash Message":"Can not perform this action after onSaveInstanceState",
+		"stack trace":[
+			"android.app.FragmentManagerImpl.checkStateLoss",
+			"android.app.FragmentManagerImpl.enqueueAction",
+			"android.app.BackStackRecord.commitInternal",
+			"android.app.BackStackRecord.commit",
+			"ch.logixisland.anuto.GameOverFragment.onGameStarted",
+			"ch.logixisland.anuto.game.GameManager.onGameStarted",
+			"ch.logixisland.anuto.game.GameManager.restart",
+			"ch.logixisland.anuto.game.GameManager.setLevel",
+			"ch.logixisland.anuto.MainActivity.onCreate"
+		],
+		"Labeled Buggy Method":"ch.logixisland.anuto.MainActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan not perform this action after onSaveInstanceState\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"ch.logixisland.anuto.GameOverFragment.onGameStarted",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ch.logixisland.anuto.GameOverFragment.onGameStarted"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.game.GameManager.onGameStarted",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ch.logixisland.anuto.game.GameManager.onGameStarted"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.game.GameManager.restart",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ch.logixisland.anuto.game.GameManager.restart"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.game.GameManager.setLevel",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ch.logixisland.anuto.game.GameManager.setLevel"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.MainActivity.onCreate",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"ch.logixisland.anuto.MainActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.GameOverFragment.setUserVisibleHint",
+				"Candidate Score":72,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Fragment: void setUserVisibleHint(boolean)>",
+						"Trace":[
+							"<ch.logixisland.anuto.TowerInfoFragment: void setUserVisibleHint(boolean)>",
+							"<ch.logixisland.anuto.InventoryFragment: void setUserVisibleHint(boolean)>",
+							"<ch.logixisland.anuto.GameOverFragment: void setUserVisibleHint(boolean)>",
+							"<ch.logixisland.anuto.StatusFragment: void setUserVisibleHint(boolean)>",
+							"fw: <android.app.Fragment: void setUserVisibleHint(boolean)>, <android.app.FragmentManagerImpl: void performPendingDeferredStart(android.app.Fragment)>, <android.app.FragmentManagerImpl: void moveToState(android.app.Fragment,int,int,int,boolean)>, <android.app.Fragment: void performResume()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.GameOverFragment.getChildFragmentManager",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Fragment: android.app.FragmentManager getChildFragmentManager()>",
+						"Trace":[
+							"<ch.logixisland.anuto.TowerInfoFragment: android.app.FragmentManager getChildFragmentManager()>",
+							"<ch.logixisland.anuto.InventoryFragment: android.app.FragmentManager getChildFragmentManager()>",
+							"<ch.logixisland.anuto.GameOverFragment: android.app.FragmentManager getChildFragmentManager()>",
+							"<ch.logixisland.anuto.StatusFragment: android.app.FragmentManager getChildFragmentManager()>",
+							"fw: <android.app.Fragment: android.app.FragmentManager getChildFragmentManager()>, <android.app.FragmentManagerImpl: void dispatchStart()>, <android.app.FragmentManagerImpl: void dispatchMoveToState(int)>, <android.app.FragmentManagerImpl: void moveToState(int,boolean)>, <android.app.FragmentManagerImpl: void moveFragmentToExpectedState(android.app.Fragment)>, <android.app.FragmentManagerImpl: void moveToState(android.app.Fragment,int,int,int,boolean)>, <android.app.Fragment: void performResume()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.GameOverFragment.onCreate",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Fragment: void onCreate(android.os.Bundle)>",
+						"Trace":[
+							"<ch.logixisland.anuto.TowerInfoFragment: void onCreate(android.os.Bundle)>",
+							"<ch.logixisland.anuto.InventoryFragment: void onCreate(android.os.Bundle)>",
+							"<ch.logixisland.anuto.GameOverFragment: void onCreate(android.os.Bundle)>",
+							"<ch.logixisland.anuto.StatusFragment: void onCreate(android.os.Bundle)>",
+							"fw: <android.app.Fragment: void onCreate(android.os.Bundle)>, <android.app.FragmentManagerImpl: void dispatchCreate()>, <android.app.FragmentManagerImpl: void dispatchMoveToState(int)>, <android.app.FragmentManagerImpl: void moveToState(int,boolean)>, <android.app.FragmentManagerImpl: void moveFragmentToExpectedState(android.app.Fragment)>, <android.app.FragmentManagerImpl: void moveToState(android.app.Fragment,int,int,int,boolean)>, <android.app.Fragment: void performResume()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			},
+			{
+				"Candidate Name":"ch.logixisland.anuto.game.GameEngine.tick",
+				"Candidate Score":63,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Runnable: void run()>",
+						"Trace":[
+							"<ch.logixisland.anuto.game.GameEngine: void tick()>",
+							"fw: <java.lang.Runnable: void run()>, <android.app.FragmentManagerImpl: boolean execPendingActions()>, <android.app.FragmentManagerImpl: void doPendingDeferredStart()>, <android.app.FragmentManagerImpl: void startPendingDeferredFragments()>, <android.app.FragmentManagerImpl: void performPendingDeferredStart(android.app.Fragment)>, <android.app.FragmentManagerImpl: void moveToState(android.app.Fragment,int,int,int,boolean)>, <android.app.Fragment: void performResume()>, <android.app.FragmentManagerImpl: void noteStateNotSaved()>, key field: <android.app.FragmentManagerImpl: boolean mStateSaved>, <android.app.FragmentManagerImpl: void checkStateLoss()>"
+						],
+						"Influenced Field":[
+							"android.app.FragmentManagerImpl: boolean mStateSaved"
+						],
+						"Signaler":"android.app.FragmentManagerImpl.checkStateLoss"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

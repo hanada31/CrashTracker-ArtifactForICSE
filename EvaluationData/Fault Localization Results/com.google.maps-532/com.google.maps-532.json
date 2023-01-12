@@ -1,0 +1,226 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.google.maps-532",
+		"Method":"android.content.res.ResourcesImpl.getValue",
+		"Crash Message":"Resource ID #0x7f080060",
+		"stack trace":[
+			"android.content.res.ResourcesImpl.getValue",
+			"android.content.res.Resources.getDrawable",
+			"android.content.Context.getDrawable",
+			"androidx.core.content.ContextCompat.getDrawable",
+			"com.google.maps.android.ui.BubbleDrawable.<init>",
+			"com.google.maps.android.ui.IconGenerator.<init>",
+			"com.google.maps.android.clustering.view.DefaultClusterRenderer.<init>",
+			"com.google.maps.android.clustering.ClusterManager.<init>",
+			"com.google.maps.android.clustering.ClusterManager.<init>",
+			"com.ojoelectric.ojo.ui.map.ScooterMapFragment.onMapReady",
+			"com.google.android.gms.maps.zzak.zza",
+			"com.google.android.gms.maps.internal.zzaq.dispatchTransaction",
+			"com.google.android.gms.internal.maps.zzb.onTransact",
+			"ck.b",
+			"com.google.maps.api.android.lib6.impl.be.run",
+			"android.os.Handler.dispatchMessage",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.google.maps.android.ui.BubbleDrawable.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QResource ID #0x\\E[\\s\\S]*",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z1 == 0\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.google.maps.android.ui.BubbleDrawable.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.ui.BubbleDrawable.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0",
+							"1",
+							"2"
+						],
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"<com.google.maps.android.ui.BubbleDrawable: void <init>(android.content.Context)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.maps.android.ui.BubbleDrawable.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.ui.IconGenerator.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.ui.IconGenerator.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.maps.android.ui.IconGenerator.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.clustering.view.DefaultClusterRenderer.<init>",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.clustering.view.DefaultClusterRenderer.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.maps.android.clustering.view.DefaultClusterRenderer.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.android.clustering.ClusterManager.<init>",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.google.maps.android.clustering.ClusterManager.<init>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.maps.android.clustering.ClusterManager.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.maps.zzak.zza",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.android.gms.maps.zzak.zza"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.maps.internal.zzaq.dispatchTransaction",
+				"Candidate Score":92,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.android.gms.maps.internal.zzaq.dispatchTransaction"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.android.gms.internal.maps.zzb.onTransact",
+				"Candidate Score":91,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.android.gms.internal.maps.zzb.onTransact"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.google.maps.api.android.lib6.impl.be.run",
+				"Candidate Score":89,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.google.maps.api.android.lib6.impl.be.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.ojoelectric.ojo.ui.map.ScooterMapFragment.onMapReady",
+				"Candidate Score":74,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.ojoelectric.ojo.ui.map.ScooterMapFragment.onMapReady"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0, 1, 2",
+						"Influenced method":"android.content.res.ResourcesImpl.getValue",
+						"Trace":[
+							"com.ojoelectric.ojo.ui.map.ScooterMapFragment.onMapReady"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Asset",
+			"Resource XML"
+		]
+	}
+}

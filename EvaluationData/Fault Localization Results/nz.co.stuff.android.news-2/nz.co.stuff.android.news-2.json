@@ -1,0 +1,97 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"nz.co.stuff.android.news-2",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.intent.action.VIEW dat=market://details?id=nz.co.stuff.android.news flg=0x40000000 }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"android.app.Activity.startActivity",
+			"android.app.Activity.startActivity",
+			"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.gotoPlayStore",
+			"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.access$400",
+			"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity$2$5.onClick",
+			"com.android.internal.app.AlertController$ButtonHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.gotoPlayStore"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Fault Inducing Paras":[
+			0
+		],
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.gotoPlayStore",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							0
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity: void gotoPlayStore()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.gotoPlayStore"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.access$400",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity.access$400"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity$2$5.onClick",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"nz.co.stuff.android.news.ui.activities.FirstLoadSectionsDownloadActivity$2$5.onClick"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

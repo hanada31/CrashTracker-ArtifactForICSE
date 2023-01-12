@@ -1,0 +1,52 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.ciberdroix.ghostsandspirits-406",
+		"Method":"android.hardware.Camera.startPreview",
+		"Crash Message":"startPreview failed",
+		"stack trace":[
+			"android.hardware.Camera.startPreview",
+			"com.ciberdroix.ghostsandspirits.c.surfaceCreated",
+			"android.view.SurfaceView.updateWindow",
+			"android.view.SurfaceView$3.onPreDraw",
+			"android.view.ViewTreeObserver.dispatchOnPreDraw",
+			"android.view.ViewRootImpl.performTraversals",
+			"android.view.ViewRootImpl.doTraversal",
+			"android.view.ViewRootImpl$TraversalRunnable.run",
+			"android.view.Choreographer$CallbackRecord.run",
+			"android.view.Choreographer.doCallbacks",
+			"android.view.Choreographer.doFrame",
+			"android.view.Choreographer$FrameDisplayEventReceiver.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"com.ciberdroix.ghostsandspirits.c.surfaceCreated"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.ciberdroix.ghostsandspirits.c.surfaceCreated",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.hardware.Camera.startPreview",
+						"Trace":[
+							"com.ciberdroix.ghostsandspirits.c.surfaceCreated"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

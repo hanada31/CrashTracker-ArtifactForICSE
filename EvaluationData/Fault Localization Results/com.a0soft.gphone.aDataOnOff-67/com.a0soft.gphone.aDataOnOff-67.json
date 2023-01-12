@@ -1,0 +1,51 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.a0soft.gphone.aDataOnOff-67",
+		"Method":"android.hardware.biometrics.BiometricAuthenticator.authenticate",
+		"Crash Message":"Stub!",
+		"stack trace":[
+			"android.app.IActivityWatcher$Stub.<init>",
+			"com.a0soft.gphone.aDataOnOff.bgsrvc.e.<init>",
+			"com.a0soft.gphone.aDataOnOff.bgsrvc.DontKillMeSrvc.onCreate",
+			"android.app.ActivityThread.handleCreateService"
+		],
+		"Labeled Buggy Method":"com.a0soft.gphone.aDataOnOff.bgsrvc.e.<init>"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QStub!\\E",
+		"Related Variable Type":"Empty",
+		"Related Condition Type":"EmptyCondition",
+		"ETS-related Type":"NoConditionVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.a0soft.gphone.aDataOnOff.bgsrvc.e.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.a0soft.gphone.aDataOnOff.bgsrvc.e.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.a0soft.gphone.aDataOnOff.bgsrvc.DontKillMeSrvc.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"com.a0soft.gphone.aDataOnOff.bgsrvc.DontKillMeSrvc.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

@@ -1,0 +1,88 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-1320",
+		"Method":"android.app.FragmentManagerImpl.checkStateLoss",
+		"Crash Message":"Can not perform this action after onSaveInstanceState",
+		"stack trace":[
+			"android.support.v4.app.FragmentManagerImpl.checkStateLoss",
+			"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+			"android.support.v4.app.BackStackRecord.commitInternal",
+			"android.support.v4.app.BackStackRecord.commit",
+			"org.wordpress.android.ui.notifications.NotificationsActivity.onPostClicked",
+			"org.wordpress.android.ui.notifications.NotificationsActivity$1.notesLoaded",
+			"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.notifications.NotificationsActivity.onPostClicked"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QCan not perform this action after onSaveInstanceState\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z0 == 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.notifications.NotificationsActivity.onPostClicked",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.notifications.NotificationsActivity.onPostClicked"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.notifications.NotificationsActivity$1.notesLoaded",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.notifications.NotificationsActivity$1.notesLoaded"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.notifications.NotificationsActivity$2$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":76,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

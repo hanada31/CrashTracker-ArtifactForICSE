@@ -1,0 +1,218 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"hu.psicore.mfportable-290",
+		"Method":"android.view.ViewRootImpl.setView",
+		"Crash Message":"Unable to add window -- token android.os.BinderProxy@1203d2d is not valid; is your activity running?",
+		"stack trace":[
+			"android.view.ViewRootImpl.setView",
+			"android.view.WindowManagerGlobal.addView",
+			"android.view.WindowManagerImpl.addView",
+			"android.app.Dialog.show",
+			"hu.psicore.mfportable.MFStart.ShowHelp",
+			"hu.psicore.mfportable.MFStart$8.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"hu.psicore.mfportable.MFStart.ShowHelp"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QUnable to add window -- token \\E[\\s\\S]*\\Q is not valid; is your activity running?\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"i11\", \"i11 >= 0\", \"$r40 == null\", \"z6 == 0\", \"$r17 != null\", \"$z5 != 0\", \"$z0 == 0\", \"$r14 != null\", \"$r167 == null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart.ShowHelp",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"hu.psicore.mfportable.MFStart.ShowHelp"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"0"
+						],
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart: void ShowHelp()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"hu.psicore.mfportable.MFStart.ShowHelp"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart$8.run",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"hu.psicore.mfportable.MFStart$8.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"0",
+						"Influenced method":"android.view.ViewRootImpl.setView",
+						"Trace":[
+							"hu.psicore.mfportable.MFStart$8.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart$CheckMFLogin.onPostExecute",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPreExecute()>",
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPostExecute(java.lang.String)>",
+							"<hu.psicore.mfportable.MFStart: void onRequestPermissionsResult(int,java.lang.String[],int[])>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart$CheckMFLogin.onPreExecute",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPreExecute()>",
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPostExecute(java.lang.String)>",
+							"<hu.psicore.mfportable.MFStart: void onRequestPermissionsResult(int,java.lang.String[],int[])>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart.onCreate",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart: void onCreate(android.os.Bundle)>",
+							"<hu.psicore.mfportable.MFStart: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					},
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart: void onCreate(android.os.Bundle)>",
+							"<hu.psicore.mfportable.MFStart: void ShowWhatsNew()>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart.onRequestPermissionsResult",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setVisibility(int)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPreExecute()>",
+							"<hu.psicore.mfportable.MFStart$CheckMFLogin: void onPostExecute(java.lang.String)>",
+							"<hu.psicore.mfportable.MFStart: void onRequestPermissionsResult(int,java.lang.String[],int[])>",
+							"fw: <android.view.View: void setVisibility(int)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart.setContentView",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.app.Activity: void setContentView(int)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart: void onCreate(android.os.Bundle)>",
+							"<hu.psicore.mfportable.MFStart: void setContentView(int)>",
+							"fw: <android.app.Activity: void setContentView(int)>, <com.android.internal.policy.PhoneWindow: void setContentView(int)>, <android.view.View: void requestApplyInsets()>, <android.view.View: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void requestFitSystemWindows()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			},
+			{
+				"Candidate Name":"hu.psicore.mfportable.MFStart.ShowWhatsNew",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>",
+						"Trace":[
+							"<hu.psicore.mfportable.MFStart: void onCreate(android.os.Bundle)>",
+							"<hu.psicore.mfportable.MFStart: void ShowWhatsNew()>",
+							"fw: <android.view.View: void setOnClickListener(android.view.View$OnClickListener)>, <android.view.View: void setClickable(boolean)>, <android.view.View: void setFlags(int,int)>, <android.view.ViewGroup: void invalidateChild(android.view.View,android.graphics.Rect)>, <android.view.ViewRootImpl: android.view.ViewParent invalidateChildInParent(int,android.graphics.Rect)>, <android.view.ViewRootImpl: void invalidate()>, <android.view.ViewRootImpl: void scheduleTraversals()>, <android.view.ViewRootImpl: void pokeDrawLockIfNeeded()>, key field: <android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow>, <android.view.ViewRootImpl: void setView(android.view.View,android.view.WindowManager$LayoutParams,android.view.View)>"
+						],
+						"Influenced Field":[
+							"android.view.ViewRootImpl: android.view.ViewRootImpl$W mWindow"
+						],
+						"Signaler":"android.view.ViewRootImpl.setView"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

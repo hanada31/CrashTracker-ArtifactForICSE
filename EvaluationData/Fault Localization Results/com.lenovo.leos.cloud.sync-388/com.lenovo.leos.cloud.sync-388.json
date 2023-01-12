@@ -1,0 +1,285 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.lenovo.leos.cloud.sync-388",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"Permission Denial: not allowed to send broadcast android.intent.action.MEDIA_MOUNTED from pid=2024, uid=10746",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.ActivityManagerProxy.broadcastIntent",
+			"android.app.ContextImpl.sendBroadcast",
+			"android.content.ContextWrapper.sendBroadcast",
+			"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.refreshMediaStorage",
+			"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.init",
+			"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.initData",
+			"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.refreshMediaStorage"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.refreshMediaStorage",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.refreshMediaStorage"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void <init>(android.content.Context)>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.init",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.init"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.registeImageObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registeImageObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registeImageObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.registerCalllogObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerCalllogObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerCalllogObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.registerContactObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerContactObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerContactObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.registerMmsObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerMmsObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerMmsObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.registerSmsObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerSmsObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void registerSmsObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.unregisteImageObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisteImageObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisteImageObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.unregisterCalllogObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterCalllogObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterCalllogObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.unregisterContactObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterContactObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterContactObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.unregisterMmsObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterMmsObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterMmsObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.auto.AppInitWork.unregisterSmsObserver",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+						"Influenced By Method":"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterSmsObserver()>",
+						"Trace":[
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void unregisterSmsObserver()>",
+							"modify key field: <com.lenovo.leos.cloud.sync.common.auto.AppInitWork: android.content.Context context>",
+							"<com.lenovo.leos.cloud.sync.common.auto.AppInitWork: void refreshMediaStorage()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.initData",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.initData"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.lenovo.leos.cloud.sync.common.activity.MainActivityV3.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

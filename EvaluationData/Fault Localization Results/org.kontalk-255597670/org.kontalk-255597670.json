@@ -1,0 +1,129 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-255597670",
+		"Method":"android.database.CursorWindow.nativeGetLong",
+		"Crash Message":"Couldn't read row 0, col 3 from CursorWindow.  Make sure the Cursor is initialized correctly before accessing data from it.",
+		"stack trace":[
+			"android.database.CursorWindow.nativeGetLong",
+			"android.database.CursorWindow.getLong",
+			"android.database.CursorWindow.getInt",
+			"android.database.AbstractWindowedCursor.getInt",
+			"android.database.CursorWrapper.getInt",
+			"org.kontalk.provider.UsersProvider.getTrustedKeys",
+			"org.kontalk.authenticator.Authenticator.exportDefaultPersonalKey",
+			"org.kontalk.Kontalk.exportPersonalKey",
+			"org.kontalk.ui.prefs.MaintenanceFragment.exportPersonalKey",
+			"org.kontalk.ui.prefs.MaintenanceFragment.onActivityResult",
+			"android.support.v4.app.FragmentActivity.onActivityResult",
+			"android.app.Activity.dispatchActivityResult",
+			"android.app.ActivityThread.deliverResults",
+			"android.app.ActivityThread.handleSendResult",
+			"android.app.ActivityThread.access$1300",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.kontalk.provider.UsersProvider.getTrustedKeys"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.provider.UsersProvider.getTrustedKeys",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"org.kontalk.provider.UsersProvider.getTrustedKeys"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.authenticator.Authenticator.exportDefaultPersonalKey",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"org.kontalk.authenticator.Authenticator.exportDefaultPersonalKey"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.Kontalk.exportPersonalKey",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"org.kontalk.Kontalk.exportPersonalKey"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.prefs.MaintenanceFragment.exportPersonalKey",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"org.kontalk.ui.prefs.MaintenanceFragment.exportPersonalKey"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.prefs.MaintenanceFragment.onActivityResult",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"org.kontalk.ui.prefs.MaintenanceFragment.onActivityResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":62,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.database.CursorWindow.nativeGetLong",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

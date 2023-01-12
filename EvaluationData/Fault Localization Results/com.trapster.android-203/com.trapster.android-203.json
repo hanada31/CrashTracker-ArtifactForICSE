@@ -1,0 +1,96 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.trapster.android-203",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.trapster.android.service.TrapsterService.startNetworkLocationListener",
+			"com.trapster.android.service.TrapsterService.startLocationServices",
+			"com.trapster.android.service.TrapsterService.startBackgroundServices",
+			"com.trapster.android.service.TrapsterService.onStartCommand",
+			"android.app.ActivityThread.handleServiceArgs"
+		],
+		"Labeled Buggy Method":"com.trapster.android.service.TrapsterService.startNetworkLocationListener"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.trapster.android.service.TrapsterService.startNetworkLocationListener",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.trapster.android.service.TrapsterService.startNetworkLocationListener"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.trapster.android.service.TrapsterService: android.location.LocationListener firstTimeNetworkListener>",
+						"Influenced By Method":"<com.trapster.android.service.TrapsterService: void startNetworkLocationListener()>",
+						"Trace":[
+							"<com.trapster.android.service.TrapsterService: void startNetworkLocationListener()>",
+							"modify key field: <com.trapster.android.service.TrapsterService: android.location.LocationListener firstTimeNetworkListener>",
+							"<com.trapster.android.service.TrapsterService: void startNetworkLocationListener()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.trapster.android.service.TrapsterService.startLocationServices",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.trapster.android.service.TrapsterService.startLocationServices"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.trapster.android.service.TrapsterService.startBackgroundServices",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.trapster.android.service.TrapsterService.startBackgroundServices"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.trapster.android.service.TrapsterService.onStartCommand",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.trapster.android.service.TrapsterService.onStartCommand"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

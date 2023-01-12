@@ -1,0 +1,123 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.onelouder.baconreader-242",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"\"gps\" location provider requires ACCESS_FINE_LOCATION permission.",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.onelouder.baconreader.utils.MyLocationSystem.getLocation",
+			"com.onelouder.baconreader.utils.MyLocationAbs.getLocation",
+			"com.onelouder.baconreader.FrontPage.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.onelouder.baconreader.utils.MyLocationSystem.getLocation"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.onelouder.baconreader.utils.MyLocationSystem.getLocation",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.onelouder.baconreader.utils.MyLocationSystem.getLocation"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerGps>",
+						"Influenced By Method":"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>",
+						"Trace":[
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>",
+							"modify key field: <com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerGps>",
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerNetwork>",
+						"Influenced By Method":"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>",
+						"Trace":[
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>",
+							"modify key field: <com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerNetwork>",
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.onelouder.baconreader.utils.MyLocationAbs.getLocation",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.onelouder.baconreader.utils.MyLocationAbs.getLocation"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.onelouder.baconreader.utils.MyLocationSystem.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerGps>",
+						"Influenced By Method":"<com.onelouder.baconreader.utils.MyLocationSystem: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void <init>(android.content.Context)>",
+							"modify key field: <com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerGps>",
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerNetwork>",
+						"Influenced By Method":"<com.onelouder.baconreader.utils.MyLocationSystem: void <init>(android.content.Context)>",
+						"Trace":[
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void <init>(android.content.Context)>",
+							"modify key field: <com.onelouder.baconreader.utils.MyLocationSystem: android.location.LocationListener locationListenerNetwork>",
+							"<com.onelouder.baconreader.utils.MyLocationSystem: void getLocation()>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.onelouder.baconreader.FrontPage.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.onelouder.baconreader.FrontPage.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Manifest XML"
+		]
+	}
+}

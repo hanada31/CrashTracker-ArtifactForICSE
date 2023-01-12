@@ -1,0 +1,136 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.sensortracker.sensor_zh-487",
+		"Method":"android.view.Surface.checkNotReleasedLocked",
+		"Crash Message":"Surface has already been released.",
+		"stack trace":[
+			"android.view.Surface.checkNotReleasedLocked",
+			"android.view.Surface.unlockCanvasAndPost",
+			"android.view.SurfaceView$4.unlockCanvasAndPost",
+			"org.sensortracker.sensor_zh.BaseActivity.drawAll",
+			"org.sensortracker.sensor_zh.BaseActivity$1.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invoke",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main"
+		],
+		"Labeled Buggy Method":"org.sensortracker.sensor_zh.BaseActivity.drawAll"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QSurface has already been released.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$b1 != 0\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity.drawAll",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.sensortracker.sensor_zh.BaseActivity.drawAll"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity$1.handleMessage",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.sensortracker.sensor_zh.BaseActivity$1.handleMessage"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity.init",
+				"Candidate Score":73,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.SurfaceView: void setVisibility(int)>",
+						"Trace":[
+							"<org.sensortracker.sensor_zh.BaseActivity: void init(android.os.Bundle,int,int,java.lang.String,boolean)>",
+							"fw: <android.view.SurfaceView: void setVisibility(int)>, <android.view.SurfaceView: void updateSurface()>, <android.view.Surface: void copyFrom(android.view.SurfaceControl)>, <android.view.Surface: void setNativeObjectLocked(long)>, key field: <android.view.Surface: long mNativeObject>, <android.view.Surface: void checkNotReleasedLocked()>"
+						],
+						"Influenced Field":[
+							"android.view.Surface: long mNativeObject"
+						],
+						"Signaler":"android.view.Surface.checkNotReleasedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity.onTouchEvent",
+				"Candidate Score":70,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <android.view.GestureDetector: boolean onTouchEvent(android.view.MotionEvent)>",
+						"Trace":[
+							"<org.sensortracker.sensor_zh.BaseActivity: boolean onTouchEvent(android.view.MotionEvent)>",
+							"fw: <android.view.GestureDetector: boolean onTouchEvent(android.view.MotionEvent)>, <android.view.ViewRootImpl$ViewRootHandler: void handleMessage(android.os.Message)>, <android.view.ViewRootImpl: void access$1200(android.view.ViewRootImpl,android.view.DragEvent)>, <android.view.ViewRootImpl: void handleDragEvent(android.view.DragEvent)>, <android.media.MediaCodec$PersistentSurface: void release()>, <android.view.Surface: void release()>, <android.view.Surface: void setNativeObjectLocked(long)>, key field: <android.view.Surface: long mNativeObject>, <android.view.Surface: void checkNotReleasedLocked()>"
+						],
+						"Influenced Field":[
+							"android.view.Surface: long mNativeObject"
+						],
+						"Signaler":"android.view.Surface.checkNotReleasedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity.start_audio",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.a: void start()>",
+							"<org.sensortracker.sensor_zh.BaseActivity: void start_timer()>",
+							"<org.sensortracker.sensor_zh.BaseActivity: void start_audio()>",
+							"fw: <java.lang.Thread: void run()>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl$ViewRootHandler: void handleMessage(android.os.Message)>, <android.view.ViewRootImpl: void access$1200(android.view.ViewRootImpl,android.view.DragEvent)>, <android.view.ViewRootImpl: void handleDragEvent(android.view.DragEvent)>, <android.media.MediaCodec$PersistentSurface: void release()>, <android.view.Surface: void release()>, <android.view.Surface: void setNativeObjectLocked(long)>, key field: <android.view.Surface: long mNativeObject>, <android.view.Surface: void checkNotReleasedLocked()>"
+						],
+						"Influenced Field":[
+							"android.view.Surface: long mNativeObject"
+						],
+						"Signaler":"android.view.Surface.checkNotReleasedLocked"
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.sensortracker.sensor_zh.BaseActivity.start_timer",
+				"Candidate Score":69,
+				"Reasons":[
+					{
+						"Reason Type":"Key API Related",
+						"Explanation":"Caller of keyAPI <java.lang.Thread: void run()>",
+						"Trace":[
+							"<com.google.android.gms.tagmanager.a: void start()>",
+							"<org.sensortracker.sensor_zh.BaseActivity: void start_timer()>",
+							"<org.sensortracker.sensor_zh.BaseActivity: void start_audio()>",
+							"fw: <java.lang.Thread: void run()>, <android.view.ViewRootImpl$4: void run()>, <android.view.ViewRootImpl$ViewRootHandler: void handleMessage(android.os.Message)>, <android.view.ViewRootImpl: void access$1200(android.view.ViewRootImpl,android.view.DragEvent)>, <android.view.ViewRootImpl: void handleDragEvent(android.view.DragEvent)>, <android.media.MediaCodec$PersistentSurface: void release()>, <android.view.Surface: void release()>, <android.view.Surface: void setNativeObjectLocked(long)>, key field: <android.view.Surface: long mNativeObject>, <android.view.Surface: void checkNotReleasedLocked()>"
+						],
+						"Influenced Field":[
+							"android.view.Surface: long mNativeObject"
+						],
+						"Signaler":"android.view.Surface.checkNotReleasedLocked"
+					}
+				]
+			}
+		],
+		"None-Code Labels":[
+			"Hardware"
+		]
+	}
+}

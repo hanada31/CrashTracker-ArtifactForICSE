@@ -1,0 +1,112 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.thoughtcrime.securesms-92317259",
+		"Method":"android.view.ViewRootImpl.checkThread",
+		"Crash Message":"Only the original thread that created a view hierarchy can touch its views.",
+		"stack trace":[
+			"android.view.ViewRootImpl.checkThread",
+			"android.view.ViewRootImpl.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.widget.RelativeLayout.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.widget.AbsListView.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.widget.RelativeLayout.requestLayout",
+			"android.view.View.requestLayout",
+			"android.widget.RelativeLayout.requestLayout",
+			"android.view.View.requestLayout",
+			"android.widget.RelativeLayout.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.requestLayout",
+			"android.view.View.setFlags",
+			"android.view.View.setVisibility",
+			"android.widget.ImageView.setVisibility",
+			"org.thoughtcrime.securesms.components.ForegroundImageView.hide",
+			"org.thoughtcrime.securesms.ConversationItem$SlideDeckListener.onSuccess",
+			"org.thoughtcrime.securesms.ConversationItem$SlideDeckListener.onSuccess",
+			"org.thoughtcrime.securesms.util.ListenableFutureTask.callback",
+			"org.thoughtcrime.securesms.util.ListenableFutureTask.callback",
+			"org.thoughtcrime.securesms.util.ListenableFutureTask.done",
+			"java.util.concurrent.FutureTask$Sync.innerSet",
+			"java.util.concurrent.FutureTask.set",
+			"java.util.concurrent.FutureTask$Sync.innerRun",
+			"java.util.concurrent.FutureTask.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"org.thoughtcrime.securesms.ConversationItem$SlideDeckListener.onSuccess"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QOnly the original thread that created a view hierarchy can touch its views.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 == $r2\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.thoughtcrime.securesms.components.ForegroundImageView.hide",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.thoughtcrime.securesms.components.ForegroundImageView.hide"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.thoughtcrime.securesms.ConversationItem$SlideDeckListener.onSuccess",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.thoughtcrime.securesms.ConversationItem$SlideDeckListener.onSuccess"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.thoughtcrime.securesms.util.ListenableFutureTask.callback",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.thoughtcrime.securesms.util.ListenableFutureTask.callback"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.thoughtcrime.securesms.util.ListenableFutureTask.done",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.thoughtcrime.securesms.util.ListenableFutureTask.done"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

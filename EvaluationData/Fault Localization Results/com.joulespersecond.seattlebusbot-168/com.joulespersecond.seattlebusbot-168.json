@@ -1,0 +1,126 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.joulespersecond.seattlebusbot-168",
+		"Method":"android.os.Bundle.getInt",
+		"Crash Message":"java.lang.Float cannot be cast to java.lang.Integer",
+		"stack trace":[
+			"android.os.Bundle.getInt",
+			"com.joulespersecond.seattlebusbot.map.StopMapController.setState",
+			"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.setMapMode",
+			"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.initMap",
+			"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.onCreate",
+			"com.joulespersecond.seattlebusbot.HomeActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity",
+			"android.app.ActivityThread.handleLaunchActivity",
+			"android.app.ActivityThread.handleRelaunchActivity",
+			"android.app.ActivityThread.access$900",
+			"android.app.ActivityThread$H.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"com.joulespersecond.seattlebusbot.map.StopMapController.setState"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.joulespersecond.seattlebusbot.map.StopMapController.setState",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"com.joulespersecond.seattlebusbot.map.StopMapController.setState"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.setMapMode",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.setMapMode"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.initMap",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.initMap"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.onCreate",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"com.joulespersecond.seattlebusbot.map.googlemapsv1.BaseMapActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.joulespersecond.seattlebusbot.HomeActivity.onCreate",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"com.joulespersecond.seattlebusbot.HomeActivity.onCreate"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":61,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Bundle.getInt",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,248 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.cenker.yardimci.app-308",
+		"Method":"android.app.Instrumentation.checkStartActivityResult",
+		"Crash Message":"No Activity found to handle Intent { act=android.speech.action.RECOGNIZE_SPEECH (has extras) }",
+		"stack trace":[
+			"android.app.Instrumentation.checkStartActivityResult",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"android.app.Activity.startActivityForResult",
+			"android.support.v4.app.FragmentActivity.startActivityForResult",
+			"com.cenker.yardimci.app.YardimciActivity.g",
+			"com.cenker.yardimci.app.YardimciActivity.p",
+			"com.cenker.yardimci.app.YardimciActivity.a",
+			"com.cenker.yardimci.app.es.a",
+			"com.cenker.yardimci.app.eq.run",
+			"android.app.Activity.runOnUiThread",
+			"com.cenker.yardimci.app.YardimciActivity.a",
+			"com.cenker.yardimci.app.YardimciActivity.a",
+			"com.cenker.yardimci.app.YardimciActivity.a",
+			"com.cenker.yardimci.app.YardimciActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.cenker.yardimci.app.YardimciActivity.g"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QNo Activity found to handle \\E[\\s\\S]*",
+		"Related Variable Type":"Parameter",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$z1 == 0\", \"i0\", \"$z0 != 0\", \"$r9 == null\"",
+		"ETS-related Type":"OnlyKeyVar",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.cenker.yardimci.app.YardimciActivity.g",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(java.lang.String,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(java.lang.String,java.lang.String,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(com.cenker.yardimci.app.CThreadListener)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g()>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(com.cenker.yardimci.app.YardimciActivity)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(java.lang.String,com.cenker.yardimci.app.CThreadListener)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: boolean g(com.cenker.yardimci.app.YardimciActivity,boolean)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: com.cenker.yardimci.app.a g(java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: java.lang.String g(com.cenker.yardimci.app.YardimciActivity,java.lang.String)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1",
+							"0"
+						],
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"<com.cenker.yardimci.app.YardimciActivity: void g(com.cenker.yardimci.app.YardimciActivity,com.cenker.yardimci.app.CThreadListener)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.YardimciActivity.g"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cenker.yardimci.app.YardimciActivity.p",
+				"Candidate Score":89,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.YardimciActivity.p"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cenker.yardimci.app.YardimciActivity.a",
+				"Candidate Score":88,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.YardimciActivity.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cenker.yardimci.app.es.a",
+				"Candidate Score":87,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.es.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cenker.yardimci.app.eq.run",
+				"Candidate Score":86,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.eq.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.cenker.yardimci.app.YardimciActivity.onCreate",
+				"Candidate Score":81,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1, 0",
+						"Influenced method":"android.app.Instrumentation.checkStartActivityResult",
+						"Trace":[
+							"com.cenker.yardimci.app.YardimciActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

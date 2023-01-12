@@ -1,0 +1,74 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-795",
+		"Method":"android.view.ViewRootImpl.checkThread",
+		"Crash Message":"Only the original thread that created a view hierarchy can touch its views.",
+		"stack trace":[
+			"android.view.ViewRootImpl.checkThread",
+			"android.view.ViewRootImpl.invalidateChildInParent",
+			"android.view.ViewGroup.invalidateChild",
+			"android.view.View.invalidateInternal",
+			"android.view.View.invalidate",
+			"android.view.View.invalidate",
+			"android.widget.ImageView.invalidateDrawable",
+			"android.graphics.drawable.Drawable.invalidateSelf",
+			"android.graphics.drawable.ShapeDrawable.updateShape",
+			"android.graphics.drawable.ShapeDrawable.onBoundsChange",
+			"android.graphics.drawable.Drawable.setBounds",
+			"org.kontalk.util.MessageUtils.drawableToBitmap",
+			"org.kontalk.ui.MessagingNotification.updateMessagesNotification",
+			"org.kontalk.ui.MessagingNotification$1.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.MessagingNotification.updateMessagesNotification"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QOnly the original thread that created a view hierarchy can touch its views.\\E",
+		"Related Variable Type":"Field",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"$r1 == $r2\"",
+		"ETS-related Type":"OnlyKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.util.MessageUtils.drawableToBitmap",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.util.MessageUtils.drawableToBitmap"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.MessagingNotification.updateMessagesNotification",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.ui.MessagingNotification.updateMessagesNotification"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.MessagingNotification$1.run",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.kontalk.ui.MessagingNotification$1.run"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

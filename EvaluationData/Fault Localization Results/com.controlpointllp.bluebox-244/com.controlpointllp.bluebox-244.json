@@ -1,0 +1,71 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.controlpointllp.bluebox-244",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"provider doesn't exist: network",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.location.ILocationManager$Stub$Proxy.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"android.location.LocationManager.requestLocationUpdates",
+			"com.controlpointllp.bluebox.managers.GpsManager.start",
+			"com.controlpointllp.bluebox.helpers.BlueBoxActivity.onResume",
+			"com.controlpointllp.bluebox.AccessoryPicker.onResume",
+			"android.app.Instrumentation.callActivityOnResume",
+			"android.app.Activity.performResume",
+			"android.app.ActivityThread.performResumeActivity"
+		],
+		"Labeled Buggy Method":"com.controlpointllp.bluebox.managers.GpsManager.start"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.controlpointllp.bluebox.managers.GpsManager.start",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.controlpointllp.bluebox.managers.GpsManager.start"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.controlpointllp.bluebox.helpers.BlueBoxActivity.onResume",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.controlpointllp.bluebox.helpers.BlueBoxActivity.onResume"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.controlpointllp.bluebox.AccessoryPicker.onResume",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.controlpointllp.bluebox.AccessoryPicker.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

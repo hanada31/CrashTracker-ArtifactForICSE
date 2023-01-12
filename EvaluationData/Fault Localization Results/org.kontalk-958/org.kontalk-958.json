@@ -1,0 +1,62 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.kontalk-958",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"notFound",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionWithFileNotFoundExceptionFromParcel",
+			"android.content.ContentProviderProxy.openTypedAssetFile",
+			"android.content.ContentResolver.openTypedAssetFileDescriptor",
+			"android.content.ContentResolver.openAssetFileDescriptor",
+			"android.content.ContentResolver.openInputStream",
+			"org.kontalk.util.MediaStorage.cacheThumbnail",
+			"org.kontalk.util.MediaStorage.cacheThumbnail",
+			"org.kontalk.ui.view.ImageContentView$GenerateThumbnailTask.doInBackground",
+			"org.kontalk.ui.view.ImageContentView$GenerateThumbnailTask.doInBackground",
+			"android.os.AsyncTask$2.call",
+			"java.util.concurrent.FutureTask.run",
+			"android.os.AsyncTask$SerialExecutor$1.run",
+			"java.util.concurrent.ThreadPoolExecutor.runWorker",
+			"java.util.concurrent.ThreadPoolExecutor$Worker.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"org.kontalk.ui.view.ImageContentView$GenerateThumbnailTask.doInBackground"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.kontalk.util.MediaStorage.cacheThumbnail",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kontalk.util.MediaStorage.cacheThumbnail"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.kontalk.ui.view.ImageContentView$GenerateThumbnailTask.doInBackground",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"org.kontalk.ui.view.ImageContentView$GenerateThumbnailTask.doInBackground"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

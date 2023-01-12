@@ -1,0 +1,163 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.anyview-111",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.anyview.a.g.a",
+			"com.anyview.a.b.<init>",
+			"com.anyview.Anyview.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.anyview.a.g.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.anyview.a.g.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.anyview.a.g.a"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.anyview.a.g: android.net.Uri m>",
+						"Influenced By Method":"<com.anyview.a.g: byte a(android.content.Context)>",
+						"Trace":[
+							"<com.anyview.a.g: byte a(android.content.Context)>",
+							"modify key field: <com.anyview.a.g: android.net.Uri m>",
+							"<com.anyview.a.g: byte a(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.anyview.a.b.<init>",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.anyview.a.b.<init>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.anyview.a.g.<clinit>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.anyview.a.g: byte a(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.anyview.a.g: void <clinit>()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.anyview.a.g: byte a(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.anyview.a.g: void <clinit>()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: boolean equals(java.lang.Object)>",
+							"<com.anyview.a.g: byte a(android.content.Context)>",
+							"java.lang.StringLatin1.equals",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.coder",
+							"<com.anyview.a.g: void <clinit>()>",
+							"<android.net.Uri: android.net.Uri parse(java.lang.String)>",
+							"java.lang.String.<clinit>",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.String.isLatin1",
+							"<com.anyview.a.g: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringUTF16.equals"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 2",
+						"Explanation":"Influences the value of keyVar by modifying the value of related object fields",
+						"Influenced Field":"<com.anyview.a.g: android.net.Uri m>",
+						"Influenced By Method":"<com.anyview.a.g: void <clinit>()>",
+						"Trace":[
+							"<com.anyview.a.g: void <clinit>()>",
+							"modify key field: <com.anyview.a.g: android.net.Uri m>",
+							"<com.anyview.a.g: byte a(android.content.Context)>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.anyview.Anyview.onCreate",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.anyview.Anyview.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

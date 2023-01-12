@@ -1,0 +1,157 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"org.wordpress.android-1504",
+		"Method":"android.app.FragmentManagerImpl.enqueueAction",
+		"Crash Message":"Activity has been destroyed",
+		"stack trace":[
+			"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+			"android.support.v4.app.BackStackRecord.commitInternal",
+			"android.support.v4.app.BackStackRecord.commitAllowingStateLoss",
+			"org.wordpress.android.ui.reader.ReaderActivity.showListFragmentForTag",
+			"org.wordpress.android.ui.reader.ReaderActivity.access$200",
+			"org.wordpress.android.ui.reader.ReaderActivity$1.onUpdateResult",
+			"org.wordpress.android.ui.reader.actions.ReaderTagActions$5$1.run",
+			"android.os.Handler.handleCallback",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.app.ActivityThread.main",
+			"java.lang.reflect.Method.invokeNative",
+			"java.lang.reflect.Method.invoke",
+			"com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run",
+			"com.android.internal.os.ZygoteInit.main",
+			"dalvik.system.NativeStart.main"
+		],
+		"Labeled Buggy Method":"org.wordpress.android.ui.reader.ReaderActivity.showListFragmentForTag"
+	},
+	"Fault Localization by CrashTracker":{
+		"Regression Message":"\\QActivity has been destroyed\\E",
+		"Related Variable Type":"ParaAndField",
+		"Related Condition Type":"BasicCondition",
+		"Conditions":"\"z0 == 0\", \"$z1 != 0\", \"z0 != 0\", \"$r4 != null\"",
+		"ETS-related Type":"KeyVarAndKeyAPI",
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"org.wordpress.android.ui.reader.ReaderActivity.showListFragmentForTag",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity.showListFragmentForTag"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":[
+							"1"
+						],
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"<org.wordpress.android.ui.reader.ReaderActivity: void showListFragmentForTag(java.lang.String,org.wordpress.android.ui.reader.ReaderActivity$ReaderPostListType)>"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity.showListFragmentForTag"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.reader.ReaderActivity.access$200",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity.access$200"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity.access$200"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.reader.ReaderActivity$1.onUpdateResult",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity$1.onUpdateResult"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"org.wordpress.android.ui.reader.ReaderActivity$1.onUpdateResult"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"org.wordpress.android.ui.reader.actions.ReaderTagActions$5$1.run",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"org.wordpress.android.ui.reader.actions.ReaderTagActions$5$1.run"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"org.wordpress.android.ui.reader.actions.ReaderTagActions$5$1.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"dalvik.system.NativeStart.main",
+				"Candidate Score":75,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 1",
+						"Explanation":"Not influence the keyVar but in crash trace",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					},
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"1",
+						"Influenced method":"android.support.v4.app.FragmentManagerImpl.enqueueAction",
+						"Trace":[
+							"dalvik.system.NativeStart.main"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

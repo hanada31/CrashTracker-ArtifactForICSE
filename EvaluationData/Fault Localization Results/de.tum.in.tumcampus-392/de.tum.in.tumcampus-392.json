@@ -1,0 +1,39 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"de.tum.in.tumcampus-392",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"Not allowed to change Do Not Disturb state",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.media.IAudioService$Stub$Proxy.setRingerModeExternal",
+			"android.media.AudioManager.setRingerMode",
+			"de.tum.in.tumcampusapp.services.SilenceService.onHandleIntent",
+			"android.app.IntentService$ServiceHandler.handleMessage",
+			"android.os.Handler.dispatchMessage",
+			"android.os.Looper.loop",
+			"android.os.HandlerThread.run"
+		],
+		"Labeled Buggy Method":"de.tum.in.tumcampusapp.services.SilenceService.onHandleIntent"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"de.tum.in.tumcampusapp.services.SilenceService.onHandleIntent",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"de.tum.in.tumcampusapp.services.SilenceService.onHandleIntent"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,325 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.xixun.textimage-276",
+		"Method":"android.os.Parcel.readException",
+		"Crash Message":"No permission to write APN settings",
+		"stack trace":[
+			"android.os.Parcel.readException",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.database.DatabaseUtils.readExceptionFromParcel",
+			"android.content.ContentProviderProxy.query",
+			"android.content.ContentResolver.query",
+			"android.content.ContentResolver.query",
+			"com.xixun.textimage.a.e.a",
+			"com.xixun.textimage.a.e.a",
+			"com.xixun.textimage.v.run",
+			"java.lang.Thread.run"
+		],
+		"Labeled Buggy Method":"com.xixun.textimage.a.e.a"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.xixun.textimage.a.e.a",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.xixun.textimage.a.e.a"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xixun.textimage.a.e.<clinit>",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<com.xixun.textimage.a.e: java.lang.String a(org.apache.http.HttpResponse)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"<com.xixun.textimage.a.f: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.xixun.textimage.a.g: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getSocketFactory()>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<com.xixun.textimage.a.e: java.lang.String a(org.apache.http.HttpResponse)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"<com.xixun.textimage.a.f: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.xixun.textimage.a.g: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getSocketFactory()>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xixun.textimage.a.e: org.json.JSONObject a(android.content.Context,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xixun.textimage.a.e: org.json.JSONObject a(android.content.Context,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xixun.textimage.a.e: org.json.JSONObject a(android.content.Context,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					},
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.String: java.lang.String valueOf(java.lang.Object)>",
+							"<com.xixun.textimage.a.e: org.json.JSONObject a(android.content.Context,java.lang.String)>",
+							"java.lang.String.toString",
+							"java.lang.StringUTF16.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String$CaseInsensitiveComparator.<init>",
+							"java.lang.StringLatin1.toBytes",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringLatin1.canEncode",
+							"java.lang.StringBuffer.toString",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"java.lang.String.<init>",
+							"java.lang.StringUTF16.toBytes",
+							"java.lang.StringUTF16.<clinit>",
+							"java.lang.String.rangeCheck",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringBuilder.append",
+							"java.lang.StringBuilder.<init>",
+							"java.lang.StringBuilder.toString",
+							"java.lang.StringIndexOutOfBoundsException.<init>",
+							"<com.xixun.textimage.a.e: void <init>()>",
+							"java.lang.String.<init>",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.String.<clinit>",
+							"java.lang.StringCoding.<clinit>",
+							"java.lang.StringUTF16.compress",
+							"java.lang.StringCoding.decode",
+							"java.lang.String.checkBoundsOffCount",
+							"java.lang.StringUTF16.toBytes"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xixun.textimage.a.e.<init>",
+				"Candidate Score":98,
+				"Reasons":[
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[1].Reasons[2]"},
+					{"$ref":"$.Fault\\ Localization\\ by\\ CrashTracker.Buggy\\ Method\\ Candidates[1].Reasons[5]"}
+				]
+			},
+			{
+				"Candidate Name":"com.xixun.textimage.v.run",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.readException",
+						"Trace":[
+							"com.xixun.textimage.v.run"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xixun.textimage.a.f.<init>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<com.xixun.textimage.a.e: java.lang.String a(org.apache.http.HttpResponse)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"<com.xixun.textimage.a.f: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.xixun.textimage.a.g: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getSocketFactory()>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.xixun.textimage.a.g.<init>",
+				"Candidate Score":93,
+				"Reasons":[
+					{
+						"Reason Type":"Executed Method 2",
+						"Explanation":"Not in the crash stack but has been executedNot in the crash stack but has been executed",
+						"Trace":[
+							"<java.lang.Object: java.lang.String toString()>",
+							"<com.xixun.textimage.a.e: java.lang.String a(org.apache.http.HttpResponse)>",
+							"java.lang.Object.getClass",
+							"java.lang.Object.hashCode",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"<com.xixun.textimage.a.f: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<com.xixun.textimage.a.g: void <init>()>",
+							"<java.lang.Object: void <init>()>",
+							"<org.apache.http.conn.ssl.SSLSocketFactory: org.apache.http.conn.ssl.SSLSocketFactory getSocketFactory()>",
+							"java.lang.Object.<clinit>",
+							"java.lang.Object.registerNatives",
+							"<com.xixun.textimage.a.e: void <clinit>()>",
+							"java.lang.Object.<clinit>"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

@@ -1,0 +1,36 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"com.seafile.seadroid-474",
+		"Method":"com.android.internal.policy.impl.PhoneWindow.requestFeature",
+		"Crash Message":"requestFeature() must be called before adding content",
+		"stack trace":[
+			"com.android.internal.policy.impl.PhoneWindow.requestFeature",
+			"android.app.Activity.requestWindowFeature",
+			"com.seafile.seadroid2.ui.activity.UnlockGesturePasswordActivity.onCreate",
+			"android.app.Activity.performCreate",
+			"android.app.Instrumentation.callActivityOnCreate",
+			"android.app.ActivityThread.performLaunchActivity"
+		],
+		"Labeled Buggy Method":"com.seafile.seadroid2.ui.activity.UnlockGesturePasswordActivity.onCreate"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.seafile.seadroid2.ui.activity.UnlockGesturePasswordActivity.onCreate",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"com.android.internal.policy.impl.PhoneWindow.requestFeature",
+						"Trace":[
+							"com.seafile.seadroid2.ui.activity.UnlockGesturePasswordActivity.onCreate"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}

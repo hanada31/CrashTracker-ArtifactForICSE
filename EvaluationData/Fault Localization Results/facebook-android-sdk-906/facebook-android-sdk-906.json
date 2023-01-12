@@ -1,0 +1,141 @@
+{
+	"Crash Info in Dataset":{
+		"Apk name":"facebook-android-sdk-906",
+		"Method":"android.os.Parcel.createException",
+		"Crash Message":"Attempt to read from field 'java.lang.String android.content.pm.PackageItemInfo.packageName' on a null object reference",
+		"stack trace":[
+			"android.os.Parcel.createException",
+			"android.os.Parcel.readException",
+			"android.os.Parcel.readException",
+			"android.app.IActivityTaskManager$Stub$Proxy.startActivity",
+			"android.app.Instrumentation.execStartActivity",
+			"android.app.Activity.startActivityForResult",
+			"androidx.activity.ComponentActivity.startActivityForResult",
+			"androidx.core.app.ActivityCompat.startActivityForResult",
+			"androidx.activity.ComponentActivity$2.onLaunch",
+			"androidx.activity.result.ActivityResultRegistry$3.launch",
+			"androidx.activity.result.ActivityResultLauncher.launch",
+			"androidx.fragment.app.FragmentManager.launchStartActivityForResult",
+			"androidx.fragment.app.Fragment.startActivityForResult",
+			"androidx.fragment.app.Fragment.startActivityForResult",
+			"com.facebook.login.NativeAppLoginMethodHandler.tryIntent",
+			"com.facebook.login.KatanaProxyLoginMethodHandler.tryAuthorize",
+			"com.facebook.login.LoginClient.tryCurrentHandler",
+			"com.facebook.login.LoginClient.tryNextHandler",
+			"com.facebook.login.LoginClient.authorize",
+			"com.facebook.login.LoginClient.startOrContinueAuth",
+			"com.facebook.login.LoginFragment.onResume"
+		],
+		"Labeled Buggy Method":"com.facebook.login.KatanaProxyLoginMethodHandler.tryAuthorize"
+	},
+	"Fault Localization by CrashTracker":{
+		"Buggy Method Candidates":[
+			{
+				"Candidate Name":"com.facebook.login.NativeAppLoginMethodHandler.tryIntent",
+				"Candidate Score":100,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.NativeAppLoginMethodHandler.tryIntent"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.KatanaProxyLoginMethodHandler.tryAuthorize",
+				"Candidate Score":99,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.KatanaProxyLoginMethodHandler.tryAuthorize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.tryCurrentHandler",
+				"Candidate Score":98,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.LoginClient.tryCurrentHandler"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.tryNextHandler",
+				"Candidate Score":97,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.LoginClient.tryNextHandler"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.authorize",
+				"Candidate Score":96,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.LoginClient.authorize"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginClient.startOrContinueAuth",
+				"Candidate Score":95,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.LoginClient.startOrContinueAuth"
+						]
+					}
+				]
+			},
+			{
+				"Candidate Name":"com.facebook.login.LoginFragment.onResume",
+				"Candidate Score":94,
+				"Reasons":[
+					{
+						"Reason Type":"Key Variable Related 1",
+						"Explanation":"Influences the value of keyVar by modifying the value of the passed parameters",
+						"Influenced parameter id":"Unknown",
+						"Influenced method":"android.os.Parcel.createException",
+						"Trace":[
+							"com.facebook.login.LoginFragment.onResume"
+						]
+					}
+				]
+			}
+		],
+		"None-Code Labels":[]
+	}
+}
