@@ -52,7 +52,7 @@ def analyzeJar(jarPath, resPath, sdk, frameworkVersion, strategy):
                 resFile = outputDir + os.sep + jar[:-4] + os.sep +jar[:-4] + ".json"
                 analyzed = isJarisAnalyzed(resPath,jar[:-4])
                 if(reRun or not os.path.exists(resFile) or not analyzed ): 
-                    command = "java -jar "+jarFile+"  -path "+ jarPath +" -name "+jar+" -androidJar "+ sdk +" "+ extraArgs +" -crashInput ..\CrashDataset"+ os.sep +"crashInfo.json  -exceptionInput ..\FrameworkETS/  -client JarCrashAnalysisClient" +" -outputDir "+outputDir #+ " >> "+logDir+"/"+jar[:-4]+".txt"
+                    command = "java -jar "+jarFile+"  -path "+ jarPath +" -name "+jar+" -androidJar "+ sdk +" "+ extraArgs +" -crashInput .."+ os.sep +"CrashDataset"+ os.sep +"crashInfo.json  -exceptionInput .."+ os.sep +"FrameworkETS  -client JarCrashAnalysisClient" +" -outputDir "+outputDir #+ " >> "+logDir+ os.sep +jar[:-4]+".txt"
                     print(command + "@@@"+ str(analyzed))
                     future1 = pool.submit(executeCmd, command)
         pool.shutdown()
@@ -79,11 +79,10 @@ if __name__ == '__main__' :
     resPath = sys.argv[2]
     frameworkVersion = sys.argv[3]
     strategy = sys.argv[4] 
-    #os.system("git submodule update --init soot-dev")
     #os.system("mvn -f pom.xml clean package -DskipTests")
-    if os.path.exists("target/CrashTracker.jar"):
+    if os.path.exists("target"+ os.sep +"CrashTracker.jar"):
         print("Successfully build! generate jar-with-dependencies in folder target/")
-        shutil.copy("target/CrashTracker.jar", jarFile)
+        shutil.copy("target"+ os.sep +"CrashTracker.jar", jarFile)
         print("copy jar to the root directory.")
     else:
         print("Fail to build! Please run \"mvn -f pom.xml package\" to see the detail info.")

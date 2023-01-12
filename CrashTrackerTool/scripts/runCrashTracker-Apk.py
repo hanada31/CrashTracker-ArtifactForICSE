@@ -52,7 +52,7 @@ def analyzeApk(apkPath, resPath, sdk, frameworkVersion, strategy):
             if apk[-4:] ==".apk":
                 resFile = outputDir + os.sep + apk[:-4] + os.sep +apk[:-4] + ".json"
                 if(reRun or not os.path.exists(resFile) or not isAPKisAnalyzed(resPath,apk[:-4])): 
-                    command = "java -jar "+jarFile+"  -path "+ apkPath +" -name "+apk+" -androidJar "+ sdk +" "+ extraArgs +" -crashInput .."+os.sep+"CrashDataset"+ os.sep +"crashInfo.json  -exceptionInput .."+os.sep+"FrameworkETS  -client ApkCrashAnalysisClient" +" -outputDir "+outputDir #+ " >> "+logDir+"/"+apk[:-4]+".txt"
+                    command = "java -jar "+jarFile+"  -path "+ apkPath +" -name "+apk+" -androidJar "+ sdk +" "+ extraArgs +" -crashInput .."+os.sep+"CrashDataset"+ os.sep +"crashInfo.json  -exceptionInput .."+os.sep+"FrameworkETS  -client ApkCrashAnalysisClient" +" -outputDir "+outputDir #+ " >> "+logDir+ os.sep +apk[:-4]+".txt"
                     future1 = pool.submit(executeCmd, command)
         pool.shutdown()
 

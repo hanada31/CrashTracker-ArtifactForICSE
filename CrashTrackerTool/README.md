@@ -40,7 +40,7 @@ unzip ../FrameworkETS/android11.0.zip -d ../FrameworkETS/android11.0/
 unzip ../FrameworkETS/android12.0.zip -d ../FrameworkETS/android12.0/
 
 # Run the tool
-## for apk ..files (When using Windows, the separator should be changed from / to \)
+## for apk files (When using Windows, the separator should be changed from / to \)
 java -jar CrashTracker.jar  -path M_application -name cgeo.geocaching-4450.apk -androidJar platforms  -crashInput  ../CrashDataset/crashInfo.json  -exceptionInput ../FrameworkETS -client ApkCrashAnalysisClient -time 30  -outputDir results/output
 
 ## for java libraries based on android framework files (When using Windows, the separator should be changed from / to \)
