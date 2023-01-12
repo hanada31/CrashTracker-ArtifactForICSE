@@ -51,3 +51,4 @@ ETSResults/
 !/apk/facebook-android-sdk-905.jar
 dependency-reduced-pom.xml
 ../FrameworkETS/*
+src/
