@@ -50,3 +50,4 @@ ETSResults/
 !/apk/cgeo.geocaching-4450.apk
 !/apk/facebook-android-sdk-905.jar
 dependency-reduced-pom.xml
+../FrameworkETS/*
