@@ -34,8 +34,8 @@ Overview of Tool:
 
 - README.md. The ReadMe file for this artifact.
 
-- [**CrashTrackerTool.**](CrashTrackerTool\)
-  - [**README.md.** ](CrashTrackerTool\README.md) Instructions to use tool CrashTracker to achieve crash fault location for android framework-specific exceptions.
+- [**CrashTrackerTool.**](CrashTrackerTool/)
+  - [**README.md.** ](CrashTrackerTool/README.md) Instructions to use tool CrashTracker to achieve crash fault location for android framework-specific exceptions.
   - others. The source code and scripts of the tool **CrashTracker**.
   
 - **EvaluationData.** The results that displayed in the evaluation section.
