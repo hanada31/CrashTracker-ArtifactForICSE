@@ -78,8 +78,7 @@ if __name__ == '__main__' :
     resPath = sys.argv[2]
     frameworkVersion = sys.argv[3]
     strategy = sys.argv[4] 
-    os.system("git submodule update --init soot-dev")
-    os.system("mvn -f pom.xml clean package -DskipTests")
+    #os.system("mvn -f pom.xml clean package -DskipTests")
     if os.path.exists("target"+os.sep+"CrashTracker.jar"):
         print("Successfully build! generate jar-with-dependencies in folder target/")
         shutil.copy("target"+os.sep+"CrashTracker.jar", jarFile)

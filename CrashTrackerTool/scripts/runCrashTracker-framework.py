@@ -13,7 +13,8 @@ if __name__ == '__main__' :
     #sdk = "E:/AndroidSDK/android-sdk-windows-new/platforms"
     jarFile = "CrashTracker.jar"
    
-    os.system("mvn -f pom.xml package  -DskipTests")
+    #os.system("mvn -f pom.xml package  -DskipTests")
+    
     if os.path.exists("target/CrashTracker.jar"):
         print("Successfully build! generate jar-with-dependencies in folder target/")
         shutil.copy("target/CrashTracker.jar", jarFile)
