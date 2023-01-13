@@ -28,7 +28,7 @@ For ICSE 2023 paper：
 - PAPER.pdf, our accepted paper in ICSE 2023. 
 - The README.md, STATUS.md, AUTHORS.md and LICENSE.md files for this artifact.
 - [**CrashTrackerTool.**](CrashTrackerTool/) The folder of tool CrashTracker.
-  - [**INSTALL.md.** ](CrashTrackerTool/README.md) and REQUIREMENTS.md (CrashTrackerTool/REQUIREMENTS.md). How to use this tool to achieve crash fault location.
+  - The [INSTALL.md ](CrashTrackerTool/INSTALL.md) and [REQUIREMENTS.md](CrashTrackerTool/REQUIREMENTS.md). How to use this tool to achieve crash fault location.
   - others. The source code and scripts of the tool **CrashTracker**.
   
 - **EvaluationData.** The results that displayed in the evaluation section.
