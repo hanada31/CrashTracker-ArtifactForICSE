@@ -21,7 +21,7 @@ Recommended versions:
 2. Java 1.8
 3. maven 3.6
 4. Linux OS  (by default)
-5. When using Windows, the separator should be changed from / to  \\ for part of commands. 
+5. When using Windows, the separator should be changed from / to  \\ for part of commands.  Also, please use the Windows PowerShell to execute commands.
 
 ## Steps to run *CrashTracker* 
 
@@ -49,6 +49,8 @@ unzip ../FrameworkETS/android9.0.zip -d ../FrameworkETS/android9.0/
 unzip ../FrameworkETS/android10.0.zip -d ../FrameworkETS/android10.0/
 unzip ../FrameworkETS/android11.0.zip -d ../FrameworkETS/android11.0/
 unzip ../FrameworkETS/android12.0.zip -d ../FrameworkETS/android12.0/
+
+# If unzip failed on windows, use other unzip commands or unzip them manually.
 ```
 
 Then, You have two choices:
@@ -67,11 +69,11 @@ you can config the -path, -name, -androidJar and -outputDir.
    **Choice 2:**  analyze apks under given folder with Python script:
 
 ```
-Run the .py file.
+Run the .py file. (use python or python3 according to your configration)
 
 # for apk files
 python scripts/runCrashTracker-Apk.py  [apkPath] [resultPath] [target framework version] [strategy name]
-e.g., python ./scripts/runCrashTracker-Apk.py  M_application results "no" "no"
+e.g., python scripts/runCrashTracker-Apk.py  M_application results "no" "no"
 
 # for java libraries based on android framework files
 python scripts/runCrashTracker-Jar.py  [apkPath] [resultPath] [target framework version] [strategy name]
