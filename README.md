@@ -1,10 +1,17 @@
-# [CrashTracker](https://github.com/hanada31/CrashTracker)
+# CrashTracker: Locating Framework-specific Crashing Faults with Compact and Explainable Candidate Set
 
-[TOC]
+- [CrashTracker: Locating Framework-specific Crashing Faults with Compact and Explainable Candidate Set](#crashtracker-locating-framework-specific-crashing-faults-with-compact-and-explainable-candidate-set)
+- [Paper Information](#paper-information)
+  - [Name \& Abstract](#name--abstract)
+- [Contents for This Artifact](#contents-for-this-artifact)
+- [Lateset CrashTracker Tool](#lateset-crashtracker-tool)
 
-## Paper information
 
-Artifact for ICSE 2023 paper：
+# Paper Information
+
+## Name & Abstract 
+
+Tool for ICSE 2023 paper：
 
 > **Locating Framework-specific Crashing Faults with Compact and Explainable Candidate Set**
 
@@ -21,16 +28,7 @@ Keywords:
 Fault localization, Framework-specific Exception, Crash Stack Trace, Android Application
 ```
 
-Overview of Tool:
-
-<p align="left">
-<img src="Figures/LoFDroid-overview.png" width="70%">
-</p>
-------
-
-
-
-## Contents for this artifact
+# Contents for This Artifact
 
 - README.md. The ReadMe file for this artifact.
 
@@ -51,11 +49,9 @@ Overview of Tool:
 
 - **Figures**. Figures used in ReadMe file.
 
-------
 
 
+# Lateset CrashTracker Tool
 
-## Tips
-
-For more information about the tool, please go to the CrashTracker\README.md file.
+To get the lateset version the tool, please go to the the [**CrashTracker** ](https://github.com/hanada31/CrashTracker) project under development.
 
