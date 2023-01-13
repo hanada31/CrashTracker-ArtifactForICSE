@@ -1,6 +1,6 @@
-# [CrashTracker](https://github.com/hanada31/CrashTracker)
+# CrashTracker: Locating Framework-specific Crashing Faults with Compact and Explainable Candidate Set
 
-- [CrashTracker](#crashtracker)
+- [CrashTracker: Locating Framework-specific Crashing Faults with Compact and Explainable Candidate Set](#crashtracker-locating-framework-specific-crashing-faults-with-compact-and-explainable-candidate-set)
   - [Tool Overview](#tool-overview)
   - [Install Requirements](#install-requirements)
   - [Steps to run *CrashTracker*](#steps-to-run-crashtracker)
