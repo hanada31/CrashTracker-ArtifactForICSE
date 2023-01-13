@@ -1,9 +1,20 @@
 # [CrashTracker](https://github.com/hanada31/CrashTracker)
 
-[TOC]
+- [CrashTracker](#crashtracker)
+  - [Tool Overview](#tool-overview)
+  - [Install Requirements](#install-requirements)
+  - [Steps to run *CrashTracker*](#steps-to-run-crashtracker)
+  - [CrashTracker.jar -h Arguments](#crashtrackerjar--h-arguments)
+  - [Examples for CrashTracker's Report](#examples-for-crashtrackers-report)
+  - [Examples for Exception-Thrown Summary (ETS)](#examples-for-exception-thrown-summary-ets)
 
-## Install Requirements：
 
+## Tool Overview
+<p align="left">
+<img src="../Figures/LoFDroid-overview.png" width="70%">
+</p>
+
+## Install Requirements
 1. Python 3+ 
 2. Java 1.8+
 3. maven 3.6
@@ -91,7 +102,7 @@ run:
 
 
 
-## CrashTracker.jar -h arguments
+## CrashTracker.jar -h Arguments
 
 ```
 java -jar CrashTracker.jar -h
@@ -117,7 +128,7 @@ usage: java -jar CrashTracker.jar [options] [-path] [-name] [-androidJar] [-outp
 
 ```
 
-## Examples for CrashTracker‘s report 
+## Examples for CrashTracker's Report 
 
 In folder EvaluationData/Fault Localization Results//
 
@@ -148,7 +159,7 @@ In folder EvaluationData/Fault Localization Results//
 
 
 
-## Examples for ETS of exception 
+## Examples for Exception-Thrown Summary (ETS)
 
 In folder FrameworkETS
 
