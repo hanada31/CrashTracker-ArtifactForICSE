@@ -50,10 +50,12 @@ unzip ../FrameworkETS/android10.0.zip -d ../FrameworkETS/android10.0/
 unzip ../FrameworkETS/android11.0.zip -d ../FrameworkETS/android11.0/
 unzip ../FrameworkETS/android12.0.zip -d ../FrameworkETS/android12.0/
 
-# If unzip failed on windows, use other unzip commands or unzip them manually.
+# If unzip failed on windows, use other commands or unzip them manually.
 ```
 
 Then, You have two choices:
+
+**Choice 1:** build and run *CrashTracker* to analyze single apk with java command:
 
 ```
 # Run the tool
@@ -66,7 +68,7 @@ java -jar CrashTracker.jar  -path M_application -name facebook-android-sdk-905.j
 you can config the -path, -name, -androidJar and -outputDir.
 ```
 
-   **Choice 2:**  analyze apks under given folder with Python script:
+   **Choice 2:**  build and run *CrashTracker* to analyze a set of apks under given folder with Python script:
 
 ```
 Run the .py file. (use python or python3 according to your configration)
